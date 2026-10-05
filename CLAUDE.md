@@ -120,7 +120,7 @@ the only logo, and `wordmark.png` is the **production logo** — no other source
 | `wordmark-on-dark.png` | Same file, slate text → white; cyan/blue untouched. Nexor-made variant — `[NEEDS INPUT — client approval]` | Logo on dark nav / footer / dark sections |
 | `w-mark.png` | 173×59 ribbon "W" cropped from the wordmark, native pixels | Mobile mark |
 | `favicon.ico` · `favicon-16.png` · `favicon-32.png` · `favicon-48.png` | Ribbon "W" on transparent | Favicon |
-| `apple-touch-icon.png` | 180×180, ribbon "W" on transparent | Apple touch icon |
+| `apple-touch-icon.png` | 180×180, ribbon "W" on solid white (iOS renders transparency as black) | Apple touch icon |
 
 **FROZEN rules:**
 - The source is only 155px tall — the logo **never renders above ~72px tall** anywhere (nav,
@@ -442,6 +442,12 @@ prominent (RGV market).
 - Canonical host `www.wound-institute.com` set as Vercel Primary at launch. Keep the existing
   domain; point it to Vercel (preserve any live email MX/records on the domain — do NOT touch
   email DNS, only website A/CNAME). Submit sitemap to GSC at launch.
+
+## Local Server / Screenshot Workflow
+- **This machine serves WCIT on `PORT=3200`:** `PORT=3200 node serve.mjs` (background; don't
+  double-start), then `node screenshot.mjs http://localhost:3200 [label] [width]` →
+  `./temporary screenshots/screenshot-N[-label].png`. Never screenshot a `file:///` path.
+- **Port 3000 is in use by another project on this machine — never kill it or reuse it.**
 
 ---
 
