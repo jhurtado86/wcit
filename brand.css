@@ -1,43 +1,49 @@
 /* ============================================================
    brand.css — single source of truth for the color system.
-   primary = derive from client logo.
-   Neutral graphite / slate placeholders — the template ships NO
-   brand color. Recolor a client by editing ONLY the tokens in the
-   first :root block below; everything else references these.
-   Recolor check (every build): accent-deep vs bg >=4.5:1 ·
-   accent-bright vs dark >=4.5:1 · muted vs bg-2 >=4.5:1.
+   WCIT palette, measured from brand_assets/wordmark.png (blue
+   ribbon #4688C7, cyan ribbon #5CC6D2, slate text #718192) —
+   see the "Brand color system" table in CLAUDE.md.
+   Recolor ONLY the tokens in the first :root block below;
+   everything else references these.
+   Recolor check: accent-deep vs bg 7.43:1 · accent-bright vs
+   dark 9.59:1 · muted vs bg-2 5.06:1 (all >=4.5:1).
    ============================================================ */
 :root {
   /* — Core palette (hex) — */
-  --color-primary:      #232838;  /* brand primary slot (= dark) */
-  --color-primary-mid:  #313749;  /* first dark-elevation step + primary hover */
-  --color-accent:       #5E6675;  /* the "pop" / CTA accent — replace per client */
-  --color-accent-deep:  #4A515E;  /* accent hover / pressed — the on-LIGHT accent fallback */
-  --color-accent-bright:#A2AEC3;  /* on-DARK accent — every accent use on --color-dark; keep >=4.5:1 vs dark */
-  --color-dark:         #232838;  /* single canonical dark-section bg (== primary) */
-  --color-dark-3:       #363D4E;  /* deepest dark-elevation surface */
-  --color-ink:          #1A1D28;  /* body + heading text */
-  --color-muted:        #666D79;  /* muted / secondary text — clears 4.5:1 vs bg-2 (4.74) & bg (5.21) */
-  --color-muted-light:  #8A929E;  /* lighter muted text */
-  --color-line:         #D8DAE2;  /* hairlines / borders */
+  --color-primary:      #0A0E1A;  /* brand primary slot (= dark) */
+  --color-primary-mid:  #11182C;  /* first dark-elevation step + primary hover */
+  --color-accent:       #306FAB;  /* brand blue — CTA fill under a white label (5.27:1); logo blue, deepened */
+  --color-accent-deep:  #265887;  /* accent hover / pressed — the on-LIGHT accent fallback (7.43:1 on white) */
+  --color-accent-bright:#5CC6D2;  /* logo cyan — every accent use on --color-dark (9.59:1); never on light */
+  --color-dark:         #0A0E1A;  /* single canonical dark-section bg (== primary) — locked design decision */
+  --color-dark-3:       #17203B;  /* deepest dark-elevation surface */
+  --color-ink:          #202B37;  /* body + heading text — wordmark slate hue, darkened (14.36:1) */
+  --color-muted:        #5B6B7A;  /* muted / secondary text — clears 4.5:1 vs bg-2 (5.06) & bg (5.48) */
+  --color-muted-light:  #9AA8B6;  /* muted text on dark (7.93:1 vs dark) */
+  --color-line:         #CBD6DF;  /* hairlines / borders */
   --color-bg:           #FFFFFF;  /* page background */
-  --color-bg-2:         #F3F4F7;  /* light section tint */
+  --color-bg-2:         #F3F6F9;  /* light section tint */
   --color-rating:       #F59E0B;  /* star-rating gold — functional, not brand */
+  --color-wave-blue:    #4688C7;  /* raw logo blue — gradient + large graphics ONLY (3.75:1 on white) */
+
+  /* — Signature ribbon gradient (light cyan → cyan → blue) — */
+  --gradient-brand: linear-gradient(135deg, #B1E0EB 0%, var(--color-accent-bright) 40%, var(--color-wave-blue) 100%);
 
   /* — Channel triplets (R, G, B) for rgba() tinting — */
-  --color-primary-rgb:     35, 40, 56;
-  --color-primary-mid-rgb: 49, 55, 73;
-  --color-accent-rgb:      94, 102, 117;
-  --color-accent-deep-rgb: 74, 81, 94;
-  --color-accent-bright-rgb: 162, 174, 195;
-  --color-dark-rgb:        35, 40, 56;
-  --color-dark-3-rgb:      54, 61, 78;
-  --color-ink-rgb:         26, 29, 40;
+  --color-primary-rgb:     10, 14, 26;
+  --color-primary-mid-rgb: 17, 24, 44;
+  --color-accent-rgb:      48, 111, 171;
+  --color-accent-deep-rgb: 38, 88, 135;
+  --color-accent-bright-rgb: 92, 198, 210;
+  --color-dark-rgb:        10, 14, 26;
+  --color-dark-3-rgb:      23, 32, 59;
+  --color-ink-rgb:         32, 43, 55;
+  --color-wave-blue-rgb:   70, 136, 199;
 
-  /* size the nav off the client logo — see CLAUDE.md logo rules */
-  --nav-height:         96px;   /* nav bar height — starting point, not fixed */
-  --nav-logo-height:    72px;   /* client logo <img> height in the nav */
-  --footer-logo-height: 116px;  /* client logo <img> height in the footer */
+  /* logo source is 155px tall — never render it above 72px, no upscaling (CLAUDE.md logo rules) */
+  --nav-height:         96px;   /* nav bar height — clears the 72px logo with breathing room */
+  --nav-logo-height:    72px;   /* wordmark <img> height in the nav — max, do not raise */
+  --footer-logo-height: 72px;   /* wordmark <img> height in the footer — max, do not raise */
 }
 
 /* ============================================================
