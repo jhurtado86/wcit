@@ -24,11 +24,23 @@ const MIME = {
 };
 
 http.createServer((req, res) => {
-  let filePath = path.join(__dirname, req.url === '/' ? 'index.html' : req.url);
+  // Clean URLs, mirroring vercel.json (trailingSlash: true): ignore the query string,
+  // serve folder/index.html for trailing-slash URLs, and redirect a bare directory URL
+  // to its trailing-slash form so relative links resolve the same as in production.
+  const [rawPath, query] = req.url.split(/\?(.*)/s);
+  let urlPath = rawPath;
+  try { urlPath = decodeURIComponent(rawPath); } catch {}
+  let filePath = path.join(__dirname, urlPath);
+  if (urlPath.endsWith('/')) filePath = path.join(filePath, 'index.html');
   const ext = path.extname(filePath).toLowerCase();
   const contentType = MIME[ext] || 'application/octet-stream';
 
   fs.stat(filePath, (err, stat) => {
+    if (!err && stat.isDirectory()) {
+      res.writeHead(308, { Location: `${rawPath}/${query ? `?${query}` : ''}` });
+      res.end();
+      return;
+    }
     if (err) {
       res.writeHead(404, { 'Content-Type': 'text/plain' });
       res.end('Not found');
