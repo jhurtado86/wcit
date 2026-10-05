@@ -1,494 +1,434 @@
-# CLAUDE-SKELETON.md — Nexor AI blank CLAUDE.md
+# CLAUDE.md — Wound Care Institute of Texas (WCIT)
 
-This is the **starting point for every client's `CLAUDE.md`**. Copy it to the new client
-repo, rename it `CLAUDE.md`, and fill it in from the onboarding form.
+This is the **Wound Care Institute of Texas (WCIT)** website, a Nexor AI full rebuild. It is a
+**wound care medical practice** — serious, clinical, credential-forward (like STVI, NOT like the
+Thrive wellness build). Build CLEAN from the base template; do NOT clone-and-strip another
+client's repo. Reuse the proven STVI design *patterns* (clean nav, hero treatment, section
+rhythm, condition/service-page template, bilingual method, anti-generic guardrails) by following
+the rules below — Code builds them fresh for this client's brand and content.
 
-## How to use this skeleton
+Trade: **Outpatient wound care / chronic non-healing wound treatment.**
 
-Two layers, marked throughout:
+⚠️ **TWO-AUDIENCE SITE (the defining structural feature).** WCIT is a **referral-driven**
+practice. It serves BOTH:
+1. **Patients / families** — people with chronic wounds looking for care (→ GHL lead capture)
+2. **Referring providers** — hospitals, nursing homes, other physicians sending wound patients
+   (→ LeadingReach referral platform, kept)
+The nav, CTAs, and architecture must serve both audiences distinctly. "Refer a Patient" is as
+prominent as "Request an Appointment."
 
-- **FROZEN** — identical on every build. The proven Nexor conventions. Do NOT rewrite
-  these per client. If you improve one, improve it *here* and roll it to all future
-  builds — never fork it silently in one client's file.
-- **`[NEEDS INPUT — …]`** — a client fact to fill from the onboarding form. If the form
-  didn't provide it, leave the flag; do NOT invent it. `[DECIDE — …]` marks a judgment
-  call to resolve at strategy lock. `[DERIVE — …]` marks something computed from an asset
-  (e.g. palette from logo).
+Do not invent client facts; confirm or flag `[NEEDS INPUT]`.
 
-Fill every `[NEEDS INPUT]` you can, flag the rest, resolve every `[DECIDE]` at the
-strategy-lock gate. When every flag is either filled or consciously deferred to backfill,
-`CLAUDE.md` is locked and the build (BUILD-PROMPTS.md, Code-only) begins.
-
----
-
-## What This Is — FILL PER CLIENT (boilerplate frozen)
-
-This is the **[NEEDS INPUT — Business Name]** website, built on the Nexor AI template.
-The generic template placeholders are resolved to this client's real identity below;
-anything not yet confirmed is left `[NEEDS INPUT]` and must NOT be invented. Keep the
-template's structure, section rhythm, nav pattern, dark sections, footer layout, and
-design system intact — only content, brand, service area, colors, logo, photos, and copy
-are client-specific.
-
-Trade: **[NEEDS INPUT — industry/trade]**. Several template modules are home-services
-artifacts that may not apply to this trade — see "Template Sections to DELETE."
-
-Treat any remaining `[NEEDS INPUT]` field as fill-in-the-blank. Do not invent client
-facts; confirm with the client / Juan before filling.
+**STATUS: LOCKED.** All `[DECIDE]` items resolved (see DECISIONS log). Remaining
+`[NEEDS INPUT]` items are asset/integration backfill only — they never block structure.
 
 ---
 
-## Resolved token reference — FILL PER CLIENT
+## Build approach notes (read first)
+
+- **Full rebuild**, built CLEAN from the nexor-template base (not cloned from STVI/Thrive).
+- **Bilingual EN + /es/ mirror** — full Spanish mirror, same method as STVI (translate copy,
+  freeze structure/schema facts, reciprocal hreflang, translated slugs, Español toggle).
+- **Two locations** (McAllen + Mission) — schema and a Locations treatment handle both.
+- **Two audiences** (patients + referring providers) — dual CTA pattern throughout.
+- **Keep LeadingReach** for provider referrals + patient appointment requests (their existing
+  HIPAA-grade referral pipeline — load-bearing, do not replace). **Add GHL** for patient-direct
+  lead capture + follow-up. CTA routing is locked in "CTA routing" below.
+- **No pricing** (medical practice) — route to consultation/referral.
+- Reuse STVI's gated screenshot discipline on the key template pages only.
+
+---
+
+## Resolved token reference
 
 | Token | Resolved value |
 |---|---|
-| Business name | [NEEDS INPUT] (short brand: [NEEDS INPUT]) |
-| Service One … Service Six | [NEEDS INPUT — the six locked service names] |
-| service slugs | [NEEDS INPUT — one slug per service] |
-| Primary city | [NEEDS INPUT — physical-location city; anchors NAP + homepage] |
-| City 2 … City 6 | [NEEDS INPUT — priority order below] |
-| city slugs | [NEEDS INPUT] |
-| Region | [NEEDS INPUT] |
-| State (full) | [NEEDS INPUT — e.g. Texas] |
-| State abbreviation | [NEEDS INPUT — e.g. TX] |
-| Phone (site) | [NEEDS INPUT — GHL tracking number ONLY; owner's personal line is never published] |
-| Email | [NEEDS INPUT] |
-| Domain | [NEEDS INPUT] — canonical host [NEEDS INPUT — www vs non-www, set as Vercel Primary day one] |
-
-> ⚠️ **Email domain may differ from website domain.** If so, both can be correct — do NOT
-> "fix" one to match the other, and never build a URL off the email domain. Confirm.
+| Business name | Wound Care Institute of Texas, PLLC (short: WCIT) |
+| Trade | Outpatient wound care — chronic/non-healing wounds |
+| Locations | **McAllen** (primary) + **Mission** |
+| McAllen address | 2101 S. M Street, Suite A, McAllen, TX 78503 |
+| Mission address | 900 Plaza Drive, Suite 5, Mission, TX 78572 |
+| Phone | (956) 317-4044 · alt (956) 317-4043 |
+| Fax | (956) 800-4275 |
+| Email | wcit@wound-institute.com |
+| Hours (both locations) | Mon–Fri 8:00 AM – 5:00 PM; Sat–Sun Closed |
+| Office Manager | Anita Maria Rodriguez (authorized official on record; not necessarily published) |
+| NPI | 1275142622 (reference only — **do not publish a founding/established year**; see Business Identity) |
+| Domain | wound-institute.com — canonical host **https://www.wound-institute.com** (www primary on Vercel) |
+| Socials | Facebook, YouTube, Instagram (all active — pull real URLs from current site/profiles) |
 
 ---
 
-## Brand color system — FROZEN methodology, FILL the values
+## Brand color system — derived from the WCIT logo
 
-Palette is **derived from the client logo every build** — extract the hexes from
-`brand_assets/logo.png`; never assume the template's colors. Define once via CSS custom
-properties + Tailwind `theme.extend.colors`; reuse everywhere; never hardcode hexes per
-page.
+Palette derived from the logo (blue/cyan gradient "W" wave on a dark badge). The brand's
+signature is a **blue–cyan–teal gradient on dark/black** — a clean, modern medical-tech feel.
+⚠️ This must read DISTINCT from the sibling medical builds: STVI (navy/red/gold) and Thrive
+(navy/teal, wellness). WCIT leans into the **darker, gradient, medical-tech badge aesthetic**.
+Define via CSS custom properties + Tailwind theme.extend; never hardcode per page.
 
-| Token | Hex | Role |
+| Token | Hex (DERIVE/refine from logo) | Role |
 |---|---|---|
-| `--color-primary` | [DERIVE from logo] | Primary brand — dark hero/sections, footer, nav, primary buttons |
-| `--color-primary-mid` | [DERIVE] | Mid-tone — hover, secondary buttons, borders/dividers on dark |
-| `--color-accent` | [DERIVE] | Accent — icons, link accents, eyebrows, highlights on light |
-| `--color-accent-deep` | [DERIVE] | On-light fallback for the accent (see rule below) |
-| `--color-accent-bright` | [DERIVE] | On-dark counterpart of the accent (see rule below) |
-| `--color-silver` / neutral | [DERIVE] | Muted borders, secondary text on dark, chrome |
-| `--color-dark` (canonical) | [= primary] | THE single dark-section background token |
-| `--color-ink` | [DERIVE] | Near-black headings/body |
-| `--color-bg` | `#FFFFFF` | Body/content backgrounds |
-| `--color-muted` | [DERIVE] | Muted/secondary text |
+| `--color-primary` | `~#4A90C2` (logo wave blue) | Primary brand — buttons, links, key accents |
+| `--color-accent` | `~#5BC8D4` (bright cyan/teal — circle outline) | Accent — highlights, eyebrows, icon accents |
+| `--color-primary-deep` | `~#3A6B8F` (deep gradient blue) | Hover, secondary, dividers |
+| `--color-dark` (canonical) | `~#0A0E1A` (near-black badge bg) | THE dark-section background token (signature) |
+| `--color-ink` | `~#2D3E50` (slate-gray from wordmark) | Headings/body |
+| `--color-bg` | `#FFFFFF` | Content backgrounds |
+| `--color-muted` | `~#5B6B7A` | Secondary text |
+| `--color-silver` | `~#CBD6DF` | Borders, chrome |
 
 **FROZEN rules:**
-- **Accent-on-light fallback:** a bright accent is fine as fill / text-on-dark; as small
-  text or dividers on white it goes low-contrast — fall back to `--color-accent-deep`.
-- **Accent-on-dark fallback:** the same failure runs in reverse on dark sections — a deep
-  or mid-tone accent goes low-contrast on `--color-dark`. Every accent use on a dark
-  background (colored heading spans, dark-section eyebrows, step numbers, the footer
-  tagline, check strokes) uses `--color-accent-bright`, holding ≥4.5:1 against
-  `--color-dark` (≥3:1 covers large text/graphics, but the same token also sets small
-  text, so hold 4.5). Documented cross-build lesson — never ship raw `--color-accent` on
-  a dark section.
-- **Recolor contrast check (every build):** after deriving the palette and before any page
-  work, verify: `--color-accent-deep` vs `--color-bg` ≥4.5:1 · `--color-accent-bright` vs
-  `--color-dark` ≥4.5:1 · `--color-muted` vs `--color-bg-2` ≥4.5:1. Fix the token, never
-  the page.
-- **One canonical dark token:** `--color-dark` is the only dark-section background. Never
-  let a second near-identical dark hex drift in.
-- **Strip the template's red.** The template ships red as de-facto primary — remove it.
-  Red is semantic (emergency/urgency) only, and only if the brand actually uses it.
-  `[DECIDE — does this brand's palette include red at all? Default: no.]`
-- **Never use default Tailwind blue/indigo/sky/cyan.** Drive every color from the brand
-  tokens and derive shades from them.
+- Blue–cyan gradient is the brand signature — use the gradient intentionally (the "W" wave,
+  section accents), not as flat fills everywhere.
+- Dark/near-black sections are a signature (from the badge) — use them for depth and contrast.
+- `[DERIVE]` exact hexes from `brand_assets/` logo files and refine; values above are approximate.
+- No default Tailwind blue/indigo — drive everything from these tokens.
 
 ---
 
-## Nav & logo sizing — FROZEN methodology, FILL the values
+## Logo — two versions in hand
 
-Nav height is **sized off the client logo** — a documented cross-build issue: past builds
-needed a 96–104px nav to fit 76px+ logos, and the template never inherited it. It is now
-driven by three tokens in `brand.css` (the defaults are a **starting point, not a fixed
-value** — resize per client from the logo):
+- **Circle badge** (dark bg, cyan outline, blue "W" wave, "WOUND CARE INSTITUTE OF TEXAS"
+  around the ring) — favicon, mobile mark, dark-section use.
+- **Horizontal wordmark** ("WO₂UND CARE / INSTITUTE OF TEXAS" — note the clever O₂ oxygen
+  reference tying to hyperbaric O₂ therapy) — nav/header logo on light backgrounds.
+- Both decent quality. For the DARK nav/footer, ensure a version that reads on dark (the badge
+  works; the wordmark may need a light/white-text variant) — `[DERIVE/create inverted if needed]`.
 
-| Token | Default | Role |
+---
+
+## Integration placeholders
+
+### CTA routing — LOCKED
+| CTA | Audience | Destination |
 |---|---|---|
-| `--nav-height` | `96px` | Nav bar height. |
-| `--nav-logo-height` | `72px` | Client logo `<img>` height in the nav (swap the `<span>` wordmark for `<img class="nav-logo">`). |
-| `--footer-logo-height` | `116px` | Client logo `<img>` height in the footer (`<img class="footer-logo">`). |
+| **Request an Appointment** (header, hero, final CTA) | Patients/families | `/contact/` (internal) — GHL patient form is the PRIMARY element there |
+| **Refer a Patient** (header, hero, provider page, final CTA) | Referring providers | LeadingReach referral URL (external, new tab) — always direct, never via a form |
+| LeadingReach appointment request | Patients | SECONDARY option on `/contact/` ("Prefer our secure online request? …") |
+| Click-to-call | Both | `tel:+19563174044` — sticky on mobile |
 
-**FROZEN rules:**
-- These tokens are the ONLY place nav/logo heights are set. Every page consumes them —
-  the sticky + scrolled nav state, the mobile nav, and the desktop dropdowns all key off
-  `--nav-height` — so per-client resizing is **one edit in `brand.css`, never a 15-file sweep.**
-- Size `--nav-height` off the logo: it must clear `--nav-logo-height` with breathing room.
-- Changing the token keeps the scrolled/solid nav, the transparent-at-top state, hero
-  clearance, the mobile toggle, and the dropdown menus aligned — verify these after a resize.
+ES equivalents: "Solicitar una Cita" → `/es/contacto/`; "Referir a un Paciente" → same LeadingReach URL.
 
----
-
-## Integration placeholders — FROZEN insertion points, DECIDE per client
-
-- `<!-- GHL CONTACT FORM EMBED -->` — [NEEDS INPUT — form name]. Use the GHL embed; never a custom form.
-- `<!-- GHL CHAT WIDGET SCRIPT -->` — [NEEDS INPUT] (insert before `</body>`).
-- `<!-- GHL EXTERNAL TRACKING SCRIPT -->` — [NEEDS INPUT] (insert in `<head>`).
-- `<!-- GHL REVIEW WIDGET EMBED -->` — [DECIDE]. Wire ONLY if review count/rating is
-  confirmed AND displayed. Until then: no widget, no stars, no counts, no `aggregateRating`.
-- `<!-- GOOGLE MAPS EMBED -->` — [DECIDE — wire only if the client has a public address].
-- `<!-- INSURANCE CARRIER LOGO ROW -->` — [DECIDE]. DO NOT wire unless specific carrier
-  partnerships are confirmed. Shipping a logo row means fabricating logos (burned prior
-  builds). Cover insurance in copy, not a logo wall.
-- `<!-- FINANCING SECTION -->` — [DECIDE — delete unless financing is actually offered].
-- Social share image: `brand_assets/og-image.jpg` (1200×630) — [NEEDS INPUT — create before launch].
+- **LeadingReach — KEEP (provider referral + appointment request pipeline):**
+  - "Refer a Patient" → `https://referral.leadingreach.com/wound-care-institute-of-texas`
+  - "Request an Appointment" → `https://remote.leadingreach.com/appt-request?os=wound-care-institute-of-texas`
+  - (Confirm exact current URLs against the live site before launch.) These are external links,
+    open in a new tab. Do NOT replace with a GHL form — this is their HIPAA-grade referral plumbing.
+- **GHL CONTACT/PATIENT FORM EMBED** — `[NEEDS INPUT — Juan providing embed]`. For patient-direct
+  lead capture (patient/family inquiry → GHL CRM → follow-up). Insertion: Contact page + a patient
+  CTA path. GHL embed only.
+  ⚠️ **PHI rule (FROZEN):** unless Juan confirms a signed GHL BAA, the GHL form collects
+  CONTACT INFO ONLY — name, phone, email, preferred location (McAllen/Mission), preferred
+  language, best time to call. NO wound description, diagnosis, insurance ID, or other health
+  details. Add helper text: "Please don't include medical details — our team will call you."
+  Clinical information flows through LeadingReach only.
+- **GHL CHAT WIDGET SCRIPT** — `[NEEDS INPUT — Juan providing embed]`. Before `</body>`, site-wide.
+- **GHL EXTERNAL TRACKING SCRIPT** — `[NEEDS INPUT — wire in `<head>` if Juan provides it; otherwise leave the placeholder comment]`.
+- **Google Maps embed** — wire for BOTH locations (McAllen + Mission) on the Contact/Locations page.
+- **og-image** `brand_assets/og-image.jpg` (1200×630) — `[NEEDS INPUT — create before launch]`.
 
 ---
 
-## Template Sections to DELETE for this client — FROZEN candidates, FILL the list
+## Business Identity
 
-Standard removable modules (delete any this trade doesn't offer):
-- Financing block / CTA — [DECIDE]
-- Insurance carrier-logo row — [DECIDE]
-- Review widget / star rating / review-count blocks — [DECIDE, default delete until confirmed]
-- Inventory / gallery page — [DECIDE — see gallery rules below]
-- Trust-badge pill row in the hero — delete by default (redundant with the eyebrow)
-- [NEEDS INPUT — any other home-services artifact irrelevant to this trade]
+- Business: **Wound Care Institute of Texas, PLLC (WCIT)**
+- Type: community-based **outpatient wound care clinic** — multidisciplinary treatment of
+  chronic/non-healing wounds. Serving Hidalgo County and the Rio Grande Valley.
+- Two locations (McAllen primary + Mission), shared phone/hours.
+- **Founding year: NOT displayed (DECIDED).** NPI enumeration (2020) conflicts with provider
+  tenure history, so publish no "established/founded/since [year]" claim anywhere — copy,
+  footer, About, or schema (`foundingDate` omitted). Revisit only if the client confirms history.
+- **No pricing** anywhere (copy, FAQ, schema). Route to consultation/referral.
+- Review/reputation status: `[NEEDS INPUT — no aggregateRating/reviews until confirmed + displayed]`
 
----
+### Mission (confirmed, use verbatim as the mission line)
+"To enhance the lives and health of our patients through improved access to quality, affordable,
+and innovative wound care services."
 
-## Business Identity — FILL PER CLIENT (guardrails frozen)
+### Positioning / differentiators (the trust story)
+- **A genuine certified wound-specialty team** — this is the trust anchor (the WCIT equivalent of
+  STVI's "board-certified vascular surgeon"). **Credential-accurate framing (LOCKED):** two
+  ABWM-certified wound specialists — Dr. Sobrevilla (CWSP) and Cesar Martinez, RN (CWS) — plus
+  Dr. Abanto, FACP, with hyperbaric medicine training, and nurse practitioners with wound/
+  critical-care backgrounds. Lead with: "certified wound specialists on our team,"
+  "multidisciplinary team." NEVER state or imply that every provider, or both physicians, are
+  ABWM-certified.
+- **Multidisciplinary, evidence-based, outpatient** — "greater chance of healing, improving
+  quality of life." Safe, effective, comfortable outpatient care, cost-effective. (Never "painless.")
+- **Strong referral network** — serves 20+ nursing facilities, 8 hospitals, partners with South
+  Texas Health System Wound Healing Center. (Reinforces credibility to BOTH audiences.)
+- **Two convenient RGV locations.**
 
-Every field is confirmed from onboarding or flagged `[NEEDS INPUT]`. Nothing inferred.
-
-- Business name / short brand: [NEEDS INPUT]
-- Industry / trade: [NEEDS INPUT]
-- Owner: [NEEDS INPUT]. **FROZEN rule:** owner name is referenced only in a dedicated
-  "About the Owner" section or where genuinely required — never threaded through general
-  body copy, headings, meta/OG, or CTAs.
-- Staff / team: [NEEDS INPUT — names + roles]. **Never infer staff or roles from social
-  posts. Confirm directly with the client.**
-- Relationship claims: **FROZEN** — no "family owned," "husband and wife," "couple," or
-  any relationship structure without explicit written confirmation. "Family-run" is a
-  tone signal (safe); a relationship *claim* is a fact (needs confirmation). [NEEDS INPUT]
-- Differentiator / ownership signal (e.g. veteran-owned): [NEEDS INPUT — confirmed only]
-- Owner background (for About page): [NEEDS INPUT]
-- **FROZEN framing rule:** an experience figure is a PERSONAL claim, not a business-age
-  claim. Write "[N] years in the [trade]" — never "[N] years serving [City]" (implies
-  business age). Founding year is separate and [NEEDS INPUT] until confirmed.
-- Supplier / franchise / dealer relationship: [NEEDS INPUT]
-- Physical address: [NEEDS INPUT — or "service-area only, no public address"]
-  → this sets the schema variant (PostalAddress included vs omitted; see SEO section).
-- Phone (site): [NEEDS INPUT — GHL tracking number]
-- Phone (owner personal — NOT FOR PUBLICATION): [NEEDS INPUT — recorded only so it's never
-  mistaken for the site number; must return zero grep hits before deploy]
-- Email: [NEEDS INPUT]
-- Domain + canonical host: [NEEDS INPUT]
-- Founded year: [NEEDS INPUT — do not state or compute until confirmed]
-- Licenses / certifications: [NEEDS INPUT — publish none until confirmed]
-- Official tagline: [NEEDS INPUT]
-- Review / reputation status: [NEEDS INPUT — until confirmed: no widget, no stars, no
-  counts, no `aggregateRating`, no testimonials. Unattributed testimonials are never published.]
-- Price range: [NEEDS INPUT — for JSON-LD `priceRange`]
-
-### Key operational facts — [NEEDS INPUT] (must be accurate everywhere once filled)
-- Service model (in-shop / mobile / both): [NEEDS INPUT]
-- Service-area / free-travel radius: [NEEDS INPUT]
-- Intake method / primary CTA framing: [NEEDS INPUT]
-- Any confirmed differentiators: [NEEDS INPUT]
-
-### Hours — [NEEDS INPUT] (for `openingHoursSpecification`)
+### "When to see a wound specialist" (confirmed content — use on home/conditions/FAQ)
+A wound needs specialist care if: it hasn't started healing in ~2 weeks or isn't fully healed in
+~6 weeks; or the patient has diabetes, poor circulation/vascular disease, or other risk factors.
 
 ---
 
-## Services — FROZEN methodology, FILL the six
+## Providers — 6 (team page + schema). CONFIRMED bios condensed from client.
 
-**FROZEN:** select service pages for search volume + lead intent (broad high-intent
-categories over narrow component terms). Minor/related services fold in as on-page
-sections or FAQ, not their own pages. Default is six pages; flex only if the client
-genuinely needs more/fewer.
+**FROZEN rule:** condense each into a clean professional bio (narrative paragraph + a credentials/
+education list) — do NOT replicate the verbatim year-by-year career timelines from the old site.
+Photos: `[NEEDS INPUT — provider headshots]`.
 
-- Flagship (highest volume + call volume): [NEEDS INPUT]
-- Secondary push (differentiator / highest ticket): [NEEDS INPUT]
-- Standard ×4: [NEEDS INPUT]
-- Folded-in sub-services (sections/FAQ, not pages): [NEEDS INPUT]
+**FROZEN (LOCKED) bio rules:**
+- **No tenure dates.** Omit every "with WCIT since [year]" — it conflicts with the unpublished
+  founding year. The "since" notes below are internal context only.
+- **No founder claims.** Do not say anyone "founded" or "co-founded" WCIT.
+- **Schema:** `Physician` ONLY for the two MDs (Sobrevilla, Abanto). The RN and three NPs are
+  `Person` with `jobTitle`, `hasCredential`, and `worksFor` → the clinic `@id`. Never mark an
+  RN/NP as a Physician.
+- Display order: physicians → RN → NPs (as listed).
 
-> ⚠️ **FROZEN anti-cannibalization:** keep distinct search intents on distinct pages
-> (e.g. repair vs replacement). Never introduce a broad umbrella page that cannibalizes
-> two narrower ones.
+**1. Dr. José R. Sobrevilla, MD, CWSP** — Physician · Certified Wound Specialist Physician,
+   Hospitalist & Family Medicine
+   - American Board of Wound Management Diplomate; **Certified Wound Specialist Physician (CWSP)**
+   - Family Medicine board certified; USMLE 1, 2CS, 2CK, 3
+   - Med school: Universidad de Montemorelos (Nuevo León, Mexico); Residency: McAllen Family
+     Medicine Residency Program; Internship: ISSSTE Monterrey
+   - Narrative arc: Mexico-trained → McAllen residency → hospitalist/clinic roles → Wound
+     Healing Center → wound care at WCIT + earned CWSP. (Internal: with WCIT since 2020 — do not
+     publish. Do NOT use "co-founded.")
+
+**2. Dr. Pedro Abanto, MD, FACP** — Physician · Internal Medicine · Wound Care & Hyperbaric Medicine
+   - ⚠️ Do NOT title him "Certified Wound Specialist" — his wound credential is the Essentials of
+     Wound Care and Hyperbaric Medicine certification, not ABWM. Use exactly that wording.
+   - **FACP** (Fellow, American College of Physicians); American Board of Internal Medicine (2009)
+   - **Essentials of Wound Care and Hyperbaric Medicine** certification (ties to the HBO service)
+   - ACLS, BLS, ECFMG; USMLE 1, 2CS, 2CK, 3
+   - Med school: Universidad de Montemorelos; Internal Medicine Residency: Regional Academy Health
+     Center — UTHSCSA, Harlingen, TX. (Internal: with WCIT since 2017 — do not publish.)
+
+**3. Cesar Trinidad Martinez Cavada, RN** — Registered Nurse · Wound Care
+   - RN License #1090398 (TX BON / NCSBN); **Certified Wound Specialist, American Board of Wound
+     Management**; ACLS
+   - BSN/MSN: Escuela de Enfermería Dr. José Ángel Cadena y Cadena, Reynosa, Mexico; Médico
+     Cirujano Partero: UMAN. Role: nursing-facility wound care, assists debridements,
+     assessments, patient/family education. (Internal: since 2018 — do not publish.)
+
+**4. Andrea Garza, FNP-C** — Family Nurse Practitioner · MSN
+   - FNP-C; MSN-FNP: Chamberlain College of Nursing (honors); BSN: UT Pan-American (Cum Laude)
+   - ICU/critical-care + complex-wound-care RN background (Rio Grande Regional, DHR, Edinburg
+     Regional). (Internal: since 2019 — do not publish.)
+
+**5. Patrizia Cantu, MSN, FNP-BC** — Family Nurse Practitioner (Board Certified) · MSN
+   - FNP-BC; MSN-FNP: Houston Baptist University; BSN (Bio/Chem minor): UT Pan-American
+   - **Dedicated wound-care RN experience** (long-term acute care — diabetic/venous/arterial/
+     pressure ulcers; debridement, negative pressure, collagen films), plus CVICU and neuro/trauma.
+     (Internal: since 2022 — do not publish.) Strongest direct wound background among the NPs.
+
+**6. Edwardo Bernal, FNP-BC** — Family Nurse Practitioner (Board Certified) · MSN
+   - FNP-BC; MSN-FNP: Walden University; BSN: UT Pan-American
+   - Clinical leadership background (Clinical Director/Administrator), lifespan care, chronic-
+     disease management (diabetes/hypertension — relevant to wound population). (Internal: since
+     2020 — do not publish.)
+
+> (Cassandra Piñon, listed on the old site, is NO LONGER with the practice — do not include.)
 
 ---
 
-## Site Architecture — FROZEN structure, FILL the slugs
+## Services — 7 pages (write FRESH clinical content; old site copy not required)
 
-> ⚠️ **FROZEN — VERIFY BEFORE WRITING PATHS.** After cloning the template and before
-> finalizing any path here, run `find . -name "*.html"` and confirm the real tree matches.
-> Prior builds shipped `CLAUDE.md` paths that didn't match the repo and paid for it every
-> session. **Disk is the source of truth.**
+**FROZEN:** write accurate, professional, patient-readable descriptions of each from medical
+accuracy + the service list (old thin WordPress copy is not needed and not better). 5th-grade
+readability where possible; tie each to the conditions it treats and the relevant provider
+expertise. No pricing.
 
-- Homepage `index.html`
-- About `about.html`
-- Contact / Thank-You `thank-you.html` (noindex, nofollow)
-- 6 service pages under `/services/`: [NEEDS INPUT — slugs]
-- 6 city pages under `/areas/`: [NEEDS INPUT — slugs]
-- Inventory/gallery page: [DECIDE — include only if applicable; see gallery rules]
+1. **Hyperbaric Oxygen Therapy (HBO/HBOT)** — flagship/differentiator. 100% oxygen in a
+   pressurized chamber to boost tissue oxygen and accelerate healing of hard-to-heal wounds;
+   ~daily sessions. Tie to Dr. Abanto's hyperbaric certification and the clinic's HBO capability.
+2. **Negative Pressure Wound Therapy (Wound VAC)** — controlled suction to remove exudate and
+   promote granulation/healing.
+3. **Debridement of Wounds** — surgical/sharp/bedside removal of necrotic tissue to prepare the
+   wound bed for healing.
+4. **Total Contact Casting** — offloading for diabetic foot ulcers to redistribute pressure and
+   promote healing.
+5. **Bio-engineered Skin (skin substitutes)** — advanced cellular/tissue-based products to support
+   closure of chronic wounds.
+6. **Compression Therapy** — for venous stasis ulcers/edema to improve circulation and healing.
+7. **Application of Specialty Dressings/Ointments** — advanced wound dressings and topical therapy
+   matched to wound type.
 
-### City priority — FROZEN methodology, FILL the order
-Home city anchors the homepage + NAP. Deepest city page = highest-volume target and
-becomes the CITY-PAGE TEMPLATE. Order drives GSC indexing sequence.
-- [NEEDS INPUT — primary → secondary → … with a one-line rationale each]
-- [DECIDE — any cities pending real search-volume data]
+**Conditions treated (content for home / a conditions section / FAQ):** diabetic & neuropathic
+foot ulcers, ischemic/arterial ulcers, pressure ulcers (bedsores), venous stasis ulcers,
+non-healing surgical wounds, peristomal irritation, radiation wounds, burns, fistulas, and other
+resistant/chronic wounds.
 
 ---
 
-## Always Do First — FROZEN
-Invoke the frontend-design skill before writing frontend code **if available** in the
-environment (it may not be installed in Claude Code — proceed without it if not).
+## Site Architecture — FROZEN structure, verify slugs on disk
+
+Full medical site, two audiences, bilingual. (Fewer "condition pages" than STVI; the depth is in
+the 7 service pages + a conditions overview.)
+
+Clean trailing-slash URLs: every page is `folder/index.html` (homepage = root `index.html`).
+
+### Slug table — LOCKED (EN ↔ ES twins; hreflang pairs)
+| Page | EN URL | ES URL |
+|---|---|---|
+| Home | `/` | `/es/` |
+| About | `/about/` | `/es/nosotros/` |
+| Our Team | `/our-team/` | `/es/nuestro-equipo/` |
+| Services overview | `/services/` | `/es/servicios/` |
+| Hyperbaric Oxygen Therapy (FLAGSHIP) | `/services/hyperbaric-oxygen-therapy/` | `/es/servicios/terapia-de-oxigeno-hiperbarico/` |
+| Negative Pressure Wound Therapy | `/services/negative-pressure-wound-therapy/` | `/es/servicios/terapia-de-presion-negativa/` |
+| Debridement of Wounds | `/services/wound-debridement/` | `/es/servicios/desbridamiento-de-heridas/` |
+| Total Contact Casting | `/services/total-contact-casting/` | `/es/servicios/yeso-de-contacto-total/` |
+| Bio-engineered Skin | `/services/bioengineered-skin-substitutes/` | `/es/servicios/sustitutos-de-piel/` |
+| Compression Therapy | `/services/compression-therapy/` | `/es/servicios/terapia-de-compresion/` |
+| Specialty Dressings/Ointments | `/services/specialty-wound-dressings/` | `/es/servicios/apositos-especializados/` |
+| Conditions We Treat | `/conditions/` | `/es/condiciones/` |
+| Locations | `/locations/` | `/es/ubicaciones/` |
+| For Referring Providers | `/referring-providers/` | `/es/profesionales-que-refieren/` |
+| Patient Resources | `/patient-resources/` | `/es/recursos-para-pacientes/` |
+| Contact | `/contact/` | `/es/contacto/` |
+| Thank-You (noindex) | `/thank-you/` | `/es/gracias/` |
+
+Disk is the source of truth — Prompt 0 verifies this table against the real tree.
+
+### Page roles
+- **Home** — both audiences; dual CTA; "when to see a wound specialist"; conditions teaser;
+  services; team trust story; two locations; referral-network credibility.
+- **About** — the practice, mission (verbatim), multidisciplinary approach, referral network.
+- **Our Team** — 6 providers; credential-accurate certified-wound-specialist story.
+- **Services overview + 7 service pages** (list above).
+- **Conditions We Treat — ONE overview page (DECIDED).** One strong page with a real section per
+  wound type (what it is · why it won't heal · which services treat it, linking to those service
+  pages). Each section gets an `id` anchor (e.g. `#diabetic-foot-ulcers`) for deep links from
+  service pages and FAQ. NO separate condition pages at launch. Diabetic foot ulcer intent is
+  served primarily by Total Contact Casting — do not create a competing DFU page. (Post-launch:
+  promote a section to its own page only if GSC shows demand.)
+- **Locations** — BOTH McAllen + Mission (addresses, maps, hours, phone).
+- **For Referring Providers (DECIDED naming):** nav label **"For Providers"** · H1/title **"For
+  Referring Providers"** · CTA button **"Refer a Patient"** (→ LeadingReach). ES: nav **"Para
+  Profesionales"** · H1 **"Para Médicos y Profesionales que Refieren"** · button **"Referir a un
+  Paciente"** (flag for bilingual review). Content: why/how to refer, what WCIT handles (wound
+  types, services incl. HBOT), what happens after a referral, referral network (20+ nursing
+  facilities, 8 hospitals, South Texas Health System Wound Healing Center partnership), fax +
+  phone for referral offices. Clinical/operational tone. Never name this page "Healthcare
+  Providers" (collides with Our Team) or "Refer a Patient" (that's the button).
+- **Patient Resources / What to Expect** — first visit, pre/post care, insurance (general
+  framing only — no carrier list, no coverage promises), forms `[NEEDS INPUT — any patient forms]`.
+- **Contact** — GHL patient form (primary) + LeadingReach appt request (secondary) + both
+  locations + maps.
+- **Thank-You** — noindex trio.
+- **Full `/es/` Spanish mirror of all of the above.**
+
+### Navigation (serves BOTH audiences)
+Primary nav: Home · Services (dropdown — overview + the 7) · Conditions We Treat · Our Team ·
+Locations · Patient Resources · For Providers · Contact. Plus: click-to-call, Español toggle
+(→ the page's exact ES twin per the slug table). **Dual CTA:** "Request an Appointment" (→
+`/contact/`) + "Refer a Patient" (→ LeadingReach, new tab) — both prominent, visually distinct
+(primary vs secondary style), per CTA routing above. On mobile, keep both CTAs + call reachable
+without opening the menu.
+
+---
 
 ## Content Writing Methodology — FROZEN
-For all page copy, read and follow `SEO-CONTENT-PROMPT.md` in full as the PRIMARY writing
-methodology before writing any content. If wording ever conflicts with the technical rules
-below, `SEO-CONTENT-PROMPT.md` wins on wording; the rules below govern technical
-implementation.
+Follow `SEO-CONTENT-PROMPT.md` for voice. Professional, clinical, warm, patient-readable. Two
+audiences — most pages speak to patients/families; the "For Providers" page speaks to referring
+clinicians (more clinical/operational tone there). Structured content (symptom lists, "when to
+see a specialist," what-to-expect steps, FAQ) over wall-of-text. Spanish mirror AI-translated,
+flagged for bilingual staff review before launch.
 
 ---
 
-## Local SEO Requirements — FROZEN (fill only the title/description tokens)
+## Local SEO / Schema — FROZEN (medical, TWO locations)
 
-**Per-page metadata (every page):** unique `<title>` <60 chars; unique
-`<meta description>` <160 with a service + city + CTA; local `keywords`;
-`robots` index/follow with max-image/snippet/video-preview; self-referential `canonical`;
-`<html lang="en">` + viewport.
-
-**Open Graph + Twitter (every page):** og:title/description/url/type/image/locale/site_name;
-twitter summary_large_image + title/description/image; images → 1200×630 (flag if not created).
-
-**Structured Data (JSON-LD) — FROZEN patterns:**
-- Homepage: the correct `@type` for the trade `[NEEDS INPUT — e.g. AutoRepair / HVACBusiness / LocalBusiness]`
-  (never a mismatched type, never bare LocalBusiness if a specific subtype fits). Include
-  name, telephone (GHL), email, priceRange (pending), `openingHoursSpecification`,
-  `areaServed` (full city list), `hasOfferCatalog` (the six services).
-- **PostalAddress:** INCLUDE only if the client has a public address; OMIT entirely for
-  service-area businesses. `[DECIDE per address field above]`
-- **`aggregateRating`:** include ONLY when real reviews are confirmed AND displayed.
-- License numbers → `additionalProperty`.
-- **Service pages:** 3 blocks — `Service` + `FAQPage` (min 6 Q&As) + `BreadcrumbList`.
-- **City pages:** 3 blocks — `LocalBusiness` ref (same `@id` as homepage, not a
-  re-declaration) + `FAQPage` (min 4 city-scoped Q&As) + `BreadcrumbList`.
-  `areaServed` = that city only, never the full list.
-- **Inventory/gallery pages:** `ImageGallery` or `CollectionPage` only — never `Service`.
-- **Thank-you trio (one atomic unit):** noindex/nofollow meta + excluded from `sitemap.xml`
-  + Disallow in `robots.txt`.
-- **Per-page title collision:** the flagship service title must lead with a different
-  phrase than the homepage title even when they share a keyword.
-- **Offer-catalog count == live service-page count.**
-- Validate at `search.google.com/test/rich-results` before launch.
-
-**Visible on-page SEO — FROZEN:** exactly one `<h1>`/page; H2/H3 hierarchy, no skipped
-levels; city names in human-readable body text; service+city combos appear naturally;
-descriptive alt text with service/location context.
-
-**City pages — anti-duplicate — FROZEN:** each city page ≥30–40% unique content; never
-just swap the city name (doorway-page penalty); reference real, VERIFIED local anchors
-(highways/neighborhoods/landmarks/districts) — flag `[VERIFY]` rather than invent; unique
-intro + unique "why [City] chooses us" per page.
-
-**Technical SEO files — FROZEN:** `sitemap.xml` (all indexable pages; exclude thank-you);
-`robots.txt` (allow crawl, disallow thank-you, point to sitemap).
-
-**Title/description patterns — FILL:**
-- Homepage: [NEEDS INPUT]
-- Service page: [NEEDS INPUT]
-- City page: [NEEDS INPUT]
+- **Homepage/Org schema:** `MedicalClinic` (or `MedicalBusiness`) for WCIT, with the wound-care
+  medical specialty, telephone, email, hours (Mon–Fri 08:00–17:00), and **two `PostalAddress`
+  locations** (McAllen + Mission) — model both locations (e.g. a Department/branch or two
+  LocalBusiness location entries referencing the org). areaServed = Hidalgo County / RGV cities.
+- **No `priceRange`.** No `aggregateRating` until reviews confirmed + displayed.
+- **Service pages:** `MedicalWebPage`/`MedicalProcedure` + `FAQPage` (min 6) + `BreadcrumbList`.
+- **Our Team:** `Physician` for the two MDs; `Person` (+ `jobTitle`, `hasCredential`,
+  `worksFor`) for the RN and three NPs. Credentials exactly as stated — do not invent.
+- **Conditions page:** `MedicalWebPage` + `FAQPage` + `BreadcrumbList`; `about` →
+  `MedicalCondition` entries for the wound types.
+- **Homepage `hasOfferCatalog` / available services count = 7** (the service pages).
+- **No `foundingDate`.**
+- **Locations page:** both locations with full NAP + geo + hours.
+- Per-page metadata: unique title <60, meta desc <160 (service/condition + McAllen/Mission/RGV +
+  CTA), self-canonical, lang + viewport. OG/Twitter. **Reciprocal hreflang en/es/x-default.**
+- `sitemap.xml` (all indexable EN + ES; exclude thank-you); `robots.txt` (disallow thank-you +
+  es thank-you; point to sitemap). Canonical host `https://www.wound-institute.com`.
 
 ---
 
-## Hero & Asset Patterns — FROZEN
+## Hero & Asset Patterns — FROZEN (same system as STVI)
+- Dedicated `hero-background.*` / `cta-background.*` named slots — never a content photo; dark
+  overlay + text. placehold.co at exact dims until real assets land.
+- Uniform aspect-ratio containers for content photos; provider headshots `aspect-[3/4]`,
+  `object-position: center top`.
+- Leaner, trust-first photo strategy (medical) — real clinical/provider/facility imagery over
+  generic stock; medical illustration/diagrams carry informational load. `[NEEDS INPUT]` all real
+  photos (providers, facilities for both locations, clinical).
+- Export images as JPG, web-optimized/compressed (lesson from prior builds — avoid heavy PNGs;
+  de-border Canva exports).
 
-### Hero + Final-CTA backgrounds — dedicated named slots ONLY
-- The hero background and the final-CTA background are **their own asset slots.** They are
-  filled **only** by a purpose-made image named exactly `hero-background.*` and
-  `cta-background.*` in `brand_assets/`.
-- **They NEVER use a client content/job photo.** A client's section/gallery photos are
-  never promoted into either background. Ever.
-- Until the dedicated file exists, both stay on `https://placehold.co/1920x1080` at exact
-  final dimensions. Flag as pending — never substitute another image to "fill" it.
-- **Off-limits on every content-photo and layout pass** (also enforced in WORKFLOW.md).
-  A photo/layout prompt must not touch these two backgrounds unless it is explicitly about
-  them.
-- Static full-bleed image is the default hero on every page including the homepage
-  (`min-h-screen`, left-anchored text block, image + dark overlay ~0.7 + edge vignette +
-  text-shadows).
+## Anti-Generic / Anti-AI-Generated Guardrails — FROZEN (highest priority)
+Brand tokens only. **No decorative icon-grids, no invented badges/emblems** (only real, supplied
+credential marks). **Prose-first** — cards/grids only for genuinely parallel content (the 7
+services, provider cards, FAQ, the two locations). Vary section rhythm; no two consecutive
+sections share a skeleton. Real medical illustration over glyphs. Layered color-tinted shadows,
+animate transform/opacity only, hover+focus-visible+active states, ≥18px body, ≥48px tap targets.
+Self-check each page before screenshot: could this be prose? is any icon/badge empty or invented?
+do sections look identical?
 
-### Hero video — enhancement, homepage only
-Only when the client provides a usable clip. Replaces the static homepage hero; the
-`hero-background` image becomes the poster/fallback. **FROZEN sequence, never skipped:**
-trim only → save preview → client approves in/out → compress separately (H.264, strip
-audio, ~2–3MB) → wire in last. `.gitignore` the raw source + trim preview; commit only the
-final compressed clip.
-
-### Uniform photo sizing — every section, every page
-- **Every content photo uses the same-size aspect-ratio container** (`aspect-ratio` +
-  `object-fit: cover`), never a fixed `h-[Npx]`. One ratio applied site-wide so no photo
-  is a different size than another within or across sections.
-- This is independent of the photo *tier* (which sets how MANY photos a page gets, below).
-  Tiers govern count; this rule governs that every container is the same dimensions.
-
-### Split-section layout — FROZEN
-Interior page content is built from **alternating split sections**: two ~50/50 columns —
-a text column and **one** uniform `.photo-frame` photo — stacking text-first on mobile.
-The photo side alternates down the page (right, left, right…) and section backgrounds
-alternate light/dark. **One photo per split; never a photo grid inside a split.** Text
-column = optional eyebrow → H2 → 1–2 short paragraphs → optional 2×2 checklist → optional
-inline `link-arrow`. The photo *tier* (below) sets how many splits a page gets — one split
-per photo slot (flagship service = 5 splits, standard = 2, city = 1 coverage split).
-
-### Cards — icon-free, centered — FROZEN
-Service / feature / value cards ship **without icons or emblems** (no icon squares, no
-emblem circles) and with **centered text**. Card containers (border/shadow/radius) are
-unchanged. **Numbered step cards keep their 01–04 numbers** — those aren't icons. Cards on
-a dark section take a translucent dark-card treatment so text stays legible. The contact
-block keeps its functional call/email/address icons (contact affordances, not card emblems).
-
-**OPTIONAL MODULE accent sweep:** the commented-out OPTIONAL MODULE blocks (insurance carrier row, review widget) sit on dark sections and use raw `--color-accent` internally on their dark-card labels — any build that enables one must sweep those labels to `--color-accent-bright` per the accent-on-dark rule.
-
-### Homepage FAQ + gallery — FROZEN
-The homepage ships an **active** FAQ accordion (5–6 token Q&As, same `<details>` styling as
-service/city pages) and an **active** uniform gallery grid (8 `.photo-frame` tiles at 1-
-and 2-column breakpoints so the last row always fills). These are page sections, distinct
-from the optional inventory/gallery *page* below.
-
-### Gallery / inventory section — uniform grid, no dead space
-If the client has a dedicated gallery or inventory section:
-- **Uniform grid:** equal cells, consistent gutters, every image the same size.
-- **No dead space and no ragged last row** — size the grid so the final row fills or is
-  balanced; never leave an orphaned single image floating in an empty row.
-- Inventory/gallery page is **blocked until real photos exist** — do not ship it against
-  placeholders.
-- Excluded photo types apply here too (see below).
-
-### Photo Tier Allocation — FROZEN default (override per client at strategy lock)
-| Page type | Body photos | Hero |
-|---|---|---|
-| Flagship service | 5 | ✓ |
-| Secondary push service | 3 | ✓ |
-| Standard service | 2 | ✓ |
-| City page | 1 | ✓ |
-| About | 2 (2 splits) | ✓ |
-| Inventory / gallery | No limit (reuse accepted) | ✓ |
-
-**FROZEN rules:** one-photo-one-slot on all non-inventory pages (no photo twice on a
-page); cross-page reuse minimized except on inventory; excluded types everywhere —
-readable license plates, strong tilt/rotation, stained/damaged subjects, anything
-privacy-sensitive; owner/people slots use `aspect-[3/4]` + `object-position: center top`
-(portrait is the norm for headshots); document EXACT asset filenames confirmed by
-`ls brand_assets/` — never assume naming.
-
-### City-page clone zones — FROZEN
-Four unique zones per city, everything else shared:
-`<!-- CITY-SWAP: intro -->` · `<!-- CITY-SWAP: local-anchors -->` ·
-`<!-- CITY-SWAP: why-city -->` · `<!-- CITY-SWAP: faq -->`
-The Areas We Serve dropdown (desktop + mobile) is a protected shared zone — mark it and
-never modify it during a city clone pass:
-`<!-- SHARED ZONE: Areas We Serve dropdown — do NOT modify during city clone pass -->`
+## Older-user UX — FROZEN
+Wound care skews older/chronically-ill patients (and caregivers). ≥18px body, high contrast,
+large tap targets, sticky click-to-call, simple obvious nav, prominent phone. Español toggle
+prominent (RGV market).
 
 ---
 
-## Screenshot discipline — FROZEN (tiered)
+## Locked Language / Hard Rules — FROZEN
+- No pricing / "starting at" anywhere (copy, FAQ, schema) — route to consultation/referral.
+- No invented facts, credentials, founding claims, reviews. Credentials exactly as stated.
+- Healing/outcome language stays honest — "greater chance of healing," "promotes healing,"
+  "may help" — never guarantee healing or specific outcomes.
+- Keep LeadingReach referral links intact; never replace the provider-referral pipeline with a
+  form. GHL is additive (patient capture), not a replacement.
+- Two audiences kept distinct — don't bury the provider-referral path or the patient path.
+- Blue/cyan-on-dark brand; no default Tailwind blue/indigo; no `transition-all`.
+- Bilingual: Español toggle on every page → correct ES twin; reciprocal hreflang.
 
-Code MUST save real PNG files to `./temporary screenshots/` and report the exact path — a
-prose description is never a substitute. **Number of rounds is tiered by page type:**
-
-- **Gated template pages — homepage, flagship service, deepest city: 2 comparison rounds.**
-  These set the pattern everything inherits; iterate until right.
-- **Clones and structural pages — remaining services/cities, about, thank-you: 1 round +
-  a click-through.** They inherit an approved parent, so verify, don't re-iterate.
-- More rounds only if the 1-round check surfaces a real problem.
-
-(Serve on localhost first — never screenshot a `file:///` path.)
-
----
-
-## Reference Images — FROZEN
-Default: build ORIGINAL pages from this file with high craft — do NOT match a provided
-reference. The match-exactly rules apply ONLY when a reference image is explicitly
-provided (then: match layout/spacing/type/color, swap placeholder content, don't improve
-the design, 2 comparison rounds).
-
-## Local Server / Screenshot Workflow — FROZEN
-`node serve.mjs` (root at `http://localhost:3000`, background, don't double-start).
-`node screenshot.mjs http://localhost:3000 [label]` → `./temporary screenshots/screenshot-N[-label].png`
-(auto-incremented). Read the PNG back and analyze specifics (px sizes, exact hexes,
-spacing, alignment, radii, shadows).
-
-## Output Defaults — FROZEN
-Self-contained HTML; Tailwind via CDN; `https://placehold.co/WIDTHxHEIGHT` placeholders;
-mobile-first responsive.
-
-## Anti-Generic Guardrails — FROZEN
-Brand tokens only (never default Tailwind palette). Layered color-tinted shadows (never
-flat `shadow-md`). Distinct display + body fonts; tight tracking on large headings,
-generous body line-height. Layered radial gradients + SVG-noise grain for depth. Animate
-only `transform`/`opacity` (never `transition-all`), spring easing. Every clickable
-element has hover + focus-visible + active states. Image overlays + a color-treatment
-layer. Intentional spacing tokens. A base→elevated→floating depth system.
+## Git / Deploy Discipline — FROZEN
+- Build clean from nexor-template base. Branch, three-command pre-commit check
+  (`git status`/`git branch`/`git remote -v` → WCIT repo). Logical commits.
+- Clean trailing-slash URLs (folder/index.html + vercel.json trailingSlash/cleanUrls — same as
+  STVI). serve.mjs patched for directory-index if needed.
+- Canonical host `www.wound-institute.com` set as Vercel Primary at launch. Keep the existing
+  domain; point it to Vercel (preserve any live email MX/records on the domain — do NOT touch
+  email DNS, only website A/CNAME). Submit sitemap to GSC at launch.
 
 ---
 
-## Locked Language — FROZEN framework, FILL per client
-Freeze anything that must never drift:
-- Insurance framing: [NEEDS INPUT — e.g. "works with all carriers"; never name a carrier
-  or promise coverage outcomes / $0 deductible; route to "we'll help you file the claim"]
-- Warranty: [NEEDS INPUT — publish no warranty scope until confirmed in writing]
-- Certification/quality claims: [NEEDS INPUT — no cert claim until confirmed]
-- Ownership signal: [NEEDS INPUT — confirmed only]
-- Experience framing: [NEEDS INPUT — personal-experience wording, not business-age]
-- Testimonials/reviews: [NEEDS INPUT — none publishable until reputation confirmed]
-- **Guarantee / warranty scope, licensing & insurance status, and insurance-coverage
-  outcomes are `[NEEDS INPUT]` per client and must NEVER be asserted in base template
-  copy** — not in body, headings, cards, trust badges/pills, meta, or JSON-LD. Ship them
-  as claim-free or self-flagged placeholders (see the service-page guarantee-FAQ answer
-  for the pattern); the client confirms scope in writing before any such claim goes live.
-  Covers "satisfaction guarantee," "Licensed & Insured," and "we bill your carrier / most
-  claims cost little or nothing."
+## Active Blockers & Backfill
 
-## Hard Rules — FROZEN
-- No invented facts; confirm before filling any `[NEEDS INPUT]`.
-- No price / range / "starting at" unless explicitly confirmed here — route pricing intent
-  to the quote CTA (applies to copy, FAQ, AND JSON-LD Offer blocks).
-- No insurance coverage-outcome claims.
-- No relationship claim without written confirmation.
-- No review widgets/stars/counts/`aggregateRating` until reputation is confirmed.
-- Never infer ownership/roles/relationships from social posts.
-- Never publish the owner's personal number — GHL tracking number only; grep returns zero
-  hits for the personal number before deploy.
-- Never promote a client photo into the `hero-background` / `cta-background` slots.
-- No readable license plates or privacy-sensitive photos.
-- Strip the template's red; no default Tailwind blue/indigo as primary.
-- No `transition-all`.
-- Follow the tiered screenshot rule above — don't stop after one pass on a *gated template
-  page*; a single round + click-through is correct for clones.
+**Launch-blocking:** GHL form + chat widget embeds (Juan providing); og-image; confirm exact
+LeadingReach URLs; provider headshots; real location/facility photos.
 
-## Git Discipline — FROZEN
-- Commit/push only when asked; branch first if on the default branch.
-- Rename a service/city → update its filename, all hrefs, nav/footer labels, schema,
-  title/meta, and breadcrumb together.
-- Three-command pre-commit check, no exceptions: `git status`, `git branch`,
-  `git remote -v` (the client repo, NOT nexor-template).
-- Logical commit separation: CLAUDE.md → own commit; brand_assets → own commit; page
-  builds grouped by phase. Never mix client-layer decisions with build work.
-- Commit assets immediately on placement (their own commit).
-- Set the canonical host as Vercel **Primary on day one**, not at launch.
-- Submit the sitemap to GSC as the full canonical URL. Indexing order: services → primary
-  city → remaining cities → about. ~10–12 URL inspections/day; spread across days. Re-check
-  the homepage canonical in GSC 3–5 days post-launch.
+**Backfillable (build against placeholders):** provider photos, hero/cta backgrounds, service
+imagery, og-image, exact brand hexes (derive from logo), social URLs, any service-detail the
+client wants to tweak, reviews/reputation status.
 
----
+**Bilingual:** all `/es/` copy AI-translated at build; bilingual staff review before launch.
 
-## Active Blockers — [NEEDS INPUT] summary (fill per client)
-
-**Launch-blocking:** [NEEDS INPUT — e.g. GHL tracking number, GHL form embed, chat/tracking scripts, og-image]
-
-**Backfillable (build against placeholders, swap in one pass):** [NEEDS INPUT — e.g.
-photos, review status, certifications, founding year, social links, priceRange, warranty terms]
-
-**Open decisions for Juan (resolve at strategy lock):** [DECIDE — e.g. cities pending
-volume data, any framing calls, gallery/inventory page yes/no]
+## DECISIONS log
+- ✅ Full rebuild (not refresh). ✅ Keep domain `wound-institute.com` → www on Vercel.
+- ✅ Bilingual EN/ES. ✅ Keep LeadingReach (provider referrals + appt request) + ADD GHL (patient
+  capture + chat). ✅ Two locations, shared hours Mon–Fri 8–5. ✅ 6 providers (Cassandra removed).
+- ✅ Brand: blue/cyan/teal-on-dark (distinct from STVI navy/red/gold and Thrive navy/teal-wellness).
+- ✅ Conditions: ONE overview page `/conditions/` with anchored sections; no separate condition
+  pages at launch; DFU intent served by Total Contact Casting.
+- ✅ Provider page: nav "For Providers" / H1 "For Referring Providers" / slug
+  `/referring-providers/` / button "Refer a Patient" → LeadingReach.
+- ✅ Founding year: not displayed anywhere; no tenure dates in bios; no "co-founded."
+- ✅ Credentials: Dr. Abanto not titled "Certified Wound Specialist"; framing = two ABWM-certified
+  specialists (Sobrevilla CWSP, Martinez RN CWS) + hyperbaric-trained internist + NPs.
+- ✅ Schema: Physician for MDs only; Person for RN/NPs.
+- ✅ CTA routing: "Request an Appointment" → /contact/ (GHL primary, LeadingReach appt secondary);
+  "Refer a Patient" → LeadingReach direct. GHL form = contact info only unless BAA confirmed.
+- ✅ Slug table locked (EN + ES). ✅ "Painless" removed from claims.
