@@ -59,42 +59,80 @@ Do not invent client facts; confirm or flag `[NEEDS INPUT]`.
 
 ---
 
-## Brand color system — derived from the WCIT logo
+## Brand color system — LOCKED (measured from the WCIT wordmark)
 
-Palette derived from the logo (blue/cyan gradient "W" wave on a dark badge). The brand's
-signature is a **blue–cyan–teal gradient on dark/black** — a clean, modern medical-tech feel.
+Palette measured from the wordmark (`brand_assets/wordmark.png`): a blue ribbon "W"
+(`#4688C7` → `#5996C6`), a cyan ribbon (`#B1E0EB` → `#5CC6D2`) with cyan "WO₂UND" text
+(`#6EC6D8`), and slate text (`#718192`). The brand's signature is a **blue–cyan gradient on
+dark/near-black** — a clean, modern medical-tech feel.
 ⚠️ This must read DISTINCT from the sibling medical builds: STVI (navy/red/gold) and Thrive
-(navy/teal, wellness). WCIT leans into the **darker, gradient, medical-tech badge aesthetic**.
-Define via CSS custom properties + Tailwind theme.extend; never hardcode per page.
+(navy/teal, wellness). WCIT leans into the **darker, gradient, medical-tech aesthetic**.
 
-| Token | Hex (DERIVE/refine from logo) | Role |
-|---|---|---|
-| `--color-primary` | `~#4A90C2` (logo wave blue) | Primary brand — buttons, links, key accents |
-| `--color-accent` | `~#5BC8D4` (bright cyan/teal — circle outline) | Accent — highlights, eyebrows, icon accents |
-| `--color-primary-deep` | `~#3A6B8F` (deep gradient blue) | Hover, secondary, dividers |
-| `--color-dark` (canonical) | `~#0A0E1A` (near-black badge bg) | THE dark-section background token (signature) |
-| `--color-ink` | `~#2D3E50` (slate-gray from wordmark) | Headings/body |
-| `--color-bg` | `#FFFFFF` | Content backgrounds |
-| `--color-muted` | `~#5B6B7A` | Secondary text |
-| `--color-silver` | `~#CBD6DF` | Borders, chrome |
+Tokens live in `brand.css` (single source of truth) and keep the **template's token roles** —
+pages consume them through `var(--color-*)` and the Tailwind `theme.extend` map; never hardcode
+per page. Role mapping to remember: the button/CTA blue is `--color-accent` (white label), the
+cyan is `--color-accent-bright` (on dark only), and `--color-primary` == `--color-dark`.
+
+| Token | Hex | Role | Contrast basis |
+|---|---|---|---|
+| `--color-dark` (canonical) = `--color-primary` | `#0A0E1A` | THE dark-section background (signature). **Locked design decision** — not a logo measurement | white text 19.25:1 |
+| `--color-primary-mid` | `#11182C` | First dark-elevation step | accent-bright 8.79:1 |
+| `--color-dark-3` | `#17203B` | Second dark-elevation step | accent-bright 8.01:1 |
+| `--color-accent` | `#306FAB` | Brand blue — button/CTA fill (white label), links, icons, eyebrows on light. Logo blue hue, deepened | white label 5.27:1 · on bg-2 4.86:1 |
+| `--color-accent-deep` | `#265887` | Hover/pressed; on-light text fallback | 7.43:1 on white · 6.85:1 on bg-2 |
+| `--color-accent-bright` | `#5CC6D2` | Logo cyan — EVERY accent use on a dark background | 9.59:1 on `--color-dark` |
+| `--color-wave-blue` | `#4688C7` | Raw logo blue — gradient + large graphics ONLY | 3.75:1 on white — never small text, never under a white label |
+| `--gradient-brand` | `#B1E0EB` → `#5CC6D2` → `#4688C7` | The signature ribbon gradient | decorative |
+| `--color-ink` | `#202B37` | Headings/body — wordmark slate hue, darkened | 14.36:1 on white |
+| `--color-muted` | `#5B6B7A` | Secondary text on light | 5.48:1 on white · 5.06:1 on bg-2 |
+| `--color-muted-light` | `#9AA8B6` | Muted text on dark | 7.93:1 on `--color-dark` |
+| `--color-line` | `#CBD6DF` | Borders, hairlines, chrome | non-text |
+| `--color-bg` | `#FFFFFF` | Content backgrounds | — |
+| `--color-bg-2` | `#F3F6F9` | Light section tint | — |
+| `--color-rating` | `#F59E0B` | Functional star gold — unused until reviews are confirmed | — |
 
 **FROZEN rules:**
-- Blue–cyan gradient is the brand signature — use the gradient intentionally (the "W" wave,
-  section accents), not as flat fills everywhere.
-- Dark/near-black sections are a signature (from the badge) — use them for depth and contrast.
-- `[DERIVE]` exact hexes from `brand_assets/` logo files and refine; values above are approximate.
+- Blue–cyan gradient is the brand signature — use `--gradient-brand` intentionally (the "W"
+  ribbon, section accents), not as flat fills everywhere.
+- Dark/near-black sections are a signature — use them for depth and contrast.
+- **Cyan is an on-dark color.** `--color-accent-bright` is ~2:1 on white — never cyan text,
+  dividers, or button fills on a light background. On light, accents use `--color-accent` /
+  `--color-accent-deep`.
+- **Accent-on-dark:** every accent use on `--color-dark` (heading spans, eyebrows, step numbers,
+  check strokes, footer tagline) uses `--color-accent-bright`, never raw `--color-accent`.
+- The raw logo slate (`#718192`, 3.99:1 on white) is never body text — use `--color-ink` /
+  `--color-muted`.
+- Recolor contrast check (passes): accent-deep vs bg 7.43 · accent-bright vs dark 9.59 · muted
+  vs bg-2 5.06. Fix the token, never the page.
 - No default Tailwind blue/indigo — drive everything from these tokens.
 
 ---
 
-## Logo — two versions in hand
+## Logo — horizontal wordmark ONLY (no circle badge)
 
-- **Circle badge** (dark bg, cyan outline, blue "W" wave, "WOUND CARE INSTITUTE OF TEXAS"
-  around the ring) — favicon, mobile mark, dark-section use.
-- **Horizontal wordmark** ("WO₂UND CARE / INSTITUTE OF TEXAS" — note the clever O₂ oxygen
-  reference tying to hyperbaric O₂ therapy) — nav/header logo on light backgrounds.
-- Both decent quality. For the DARK nav/footer, ensure a version that reads on dark (the badge
-  works; the wordmark may need a light/white-text variant) — `[DERIVE/create inverted if needed]`.
+The client does NOT use a circle badge. The horizontal wordmark ("WO₂UND CARE / INSTITUTE OF
+TEXAS" under the ribbon "W" — the O₂ is an oxygen reference tying to hyperbaric O₂ therapy) is
+the only logo, and `wordmark.png` is the **production logo** — no other source exists.
+
+| File in `brand_assets/` | What it is | Use |
+|---|---|---|
+| `wordmark.png` | 440×155 transparent PNG, original from the live site | Logo on light backgrounds |
+| `wordmark-on-dark.png` | Same file, slate text → white; cyan/blue untouched. Nexor-made variant — `[NEEDS INPUT — client approval]` | Logo on dark nav / footer / dark sections |
+| `w-mark.png` | 173×59 ribbon "W" cropped from the wordmark, native pixels | Mobile mark |
+| `favicon.ico` · `favicon-16.png` · `favicon-32.png` · `favicon-48.png` | Ribbon "W" on transparent | Favicon |
+| `apple-touch-icon.png` | 180×180, ribbon "W" on transparent | Apple touch icon |
+
+**FROZEN rules:**
+- The source is only 155px tall — the logo **never renders above ~72px tall** anywhere (nav,
+  footer, mobile). `--nav-logo-height` and `--footer-logo-height` in `brand.css` are both
+  `72px`; never raise them. **No upscaling anywhere.**
+- Light background → `wordmark.png`. Dark background → `wordmark-on-dark.png`. Never put
+  `wordmark.png` on dark (the slate half goes dim).
+- Never use the old site's white-box `favicon.jpg`.
+- **512px icon: not produced** — the ribbon is 173px wide in the source, so 512 would need
+  upscaling. Make it from the SVG redraw once that is approved.
+- **SVG redraw (not a blocker):** after the homepage gate, propose an SVG redraw of the
+  wordmark for Juan's approval (crisp footer/print use, and the 512px icon).
 
 ---
 
@@ -225,6 +263,8 @@ Photos: `[NEEDS INPUT — provider headshots]`.
      2020 — do not publish.)
 
 > (Cassandra Piñon, listed on the old site, is NO LONGER with the practice — do not include.)
+> The team is these 6, final. The live site's team banner photo shows a 7th person who is no
+> longer on the team — do not add them and do not use that photo anywhere on the new site.
 
 ---
 
@@ -409,10 +449,26 @@ prominent (RGV market).
 
 **Launch-blocking:** GHL form + chat widget embeds (Juan providing); og-image; confirm exact
 LeadingReach URLs; provider headshots; real location/facility photos.
+- **www canonical:** the live site currently resolves to non-www (`wound-institute.com`).
+  Making `www.wound-institute.com` canonical requires an apex → www **308** at launch.
+- **301 redirect map (required):** before launch, pull every live URL from the current
+  WordPress sitemap and map each one to its new slug in `vercel.json` (permanent redirects).
+  Nothing on the old site may 404.
+- **`wordmark-on-dark.png` client approval** — Nexor-made white-text variant of the wordmark.
 
 **Backfillable (build against placeholders):** provider photos, hero/cta backgrounds, service
-imagery, og-image, exact brand hexes (derive from logo), social URLs, any service-detail the
-client wants to tweak, reviews/reputation status.
+imagery, og-image, social URLs, any service-detail the client wants to tweak,
+reviews/reputation status.
+
+**Not blockers:**
+- **Logo source:** no high-res/vector wordmark exists — `wordmark.png` is the production logo.
+  After the homepage gate, propose an SVG redraw for Juan's approval (crisp footer/print use;
+  also unlocks the 512px icon).
+
+**Resolved:**
+- **Team = the 6 providers above, final.** The live site's team banner shows a 7th person —
+  do NOT add them, and do NOT use that banner photo anywhere on the new site (it shows someone
+  no longer on the team).
 
 **Bilingual:** all `/es/` copy AI-translated at build; bilingual staff review before launch.
 
@@ -432,3 +488,9 @@ client wants to tweak, reviews/reputation status.
 - ✅ CTA routing: "Request an Appointment" → /contact/ (GHL primary, LeadingReach appt secondary);
   "Refer a Patient" → LeadingReach direct. GHL form = contact info only unless BAA confirmed.
 - ✅ Slug table locked (EN + ES). ✅ "Painless" removed from claims.
+- ✅ Color tokens: template token roles kept (button blue = `--color-accent` `#306FAB`, cyan =
+  `--color-accent-bright` `#5CC6D2` on dark only); hexes measured from the wordmark.
+  `--color-dark` `#0A0E1A` locked as a design decision.
+- ✅ Logo: horizontal wordmark only — no circle badge. `wordmark.png` is the production logo;
+  never rendered above ~72px tall; no upscaling. SVG redraw proposed after the homepage gate.
+- ✅ Team: 6 providers, final. Live team banner photo is not used anywhere.
