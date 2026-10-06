@@ -55,7 +55,7 @@ Do not invent client facts; confirm or flag `[NEEDS INPUT]`.
 | Office Manager | Anita Maria Rodriguez (authorized official on record; not necessarily published) |
 | NPI | 1275142622 (reference only — **do not publish a founding/established year**; see Business Identity) |
 | Domain | wound-institute.com — canonical host **https://www.wound-institute.com** (www primary on Vercel) |
-| Socials | Facebook, YouTube, Instagram (all active — pull real URLs from current site/profiles) |
+| Socials | Facebook, YouTube, Instagram (all active) — **URLs not yet confirmed `[NEEDS INPUT]`.** Footer social links and schema `sameAs` are omitted until the real URLs are supplied; never guess them |
 
 ---
 
@@ -90,6 +90,22 @@ cyan is `--color-accent-bright` (on dark only), and `--color-primary` == `--colo
 | `--color-bg` | `#FFFFFF` | Content backgrounds | — |
 | `--color-bg-2` | `#F3F6F9` | Light section tint | — |
 | `--color-rating` | `#F59E0B` | Functional star gold — unused until reviews are confirmed | — |
+
+**Supporting tokens (also in `brand.css`):**
+
+| Token | Value | Role |
+|---|---|---|
+| `--color-wave-light` | `#B1E0EB` | Light end of the cyan ribbon — gradient stop ONLY, never text or fills |
+| `--gradient-brand-x` | same three stops at `90deg` | The ribbon run left-to-right: the 3px hairlines (`.hairline-brand`, link-bar and action-bar rules, panel top rules) and the eyebrow dash |
+| `--color-bg-rgb` | `255, 255, 255` | `rgba()` tinting of white on dark — dividers, contact-row rules, footer hairlines |
+| `--color-*-rgb` | channel triplets for every color token | Tinted shadows and translucent surfaces — never a flat grey shadow |
+| `--nav-height` · `--nav-links-height` | `96px` · `56px` | Desktop brand bar and link row heights (sticky offsets derive from these) |
+| `--nav-height-mobile` · `--nav-logo-height-mobile` | `72px` · `48px` | Brand bar and wordmark height below the 1280px desktop breakpoint |
+| `--nav-logo-height` · `--footer-logo-height` | `72px` · `72px` | Wordmark ceiling (see Logo rules) — never raise |
+| `--action-bar-height` | `76px` | Mobile sticky Call / Refer / Request bar; `body.site` reserves this as bottom padding |
+
+Pages never hardcode header geometry — header, menu panel, sticky offsets, and the action bar all
+read these tokens.
 
 **FROZEN rules:**
 - Blue–cyan gradient is the brand signature — use `--gradient-brand` intentionally (the "W"
@@ -133,6 +149,54 @@ the only logo, and `wordmark.png` is the **production logo** — no other source
   upscaling. Make it from the SVG redraw once that is approved.
 - **SVG redraw (not a blocker):** after the homepage gate, propose an SVG redraw of the
   wordmark for Juan's approval (crisp footer/print use, and the 512px icon).
+
+---
+
+## Typography + shared design system — LOCKED (Gate 1)
+
+### Font pairing
+Google Fonts, loaded per page with the `<link>` in `index.html`; declared as `--font-display` /
+`--font-body` in `site.css` and mirrored in the Tailwind `fontFamily` map (`font-display`,
+`font-body`).
+
+| Role | Face | Weights loaded | Why |
+|---|---|---|---|
+| Display — `--font-display` | **Sofia Sans Semi Condensed** | 500–800 | Condensed echo of the wordmark lettering; fits long Spanish headings |
+| Body — `--font-body` | **Atkinson Hyperlegible Next** | 400–800 + italic | Drawn for low-vision readers (older-patient UX); body never below 18px (19px desktop) |
+
+### Plain-zero rule — FROZEN
+Phone numbers, fax numbers, hours, and addresses render with a **plain (unslashed) zero**.
+Atkinson Hyperlegible Next ships only a slashed zero — its GSUB carries `ccmp frac locl pnum
+tnum` and no `zero`/`ss##` alternate (`zero.tf` is a composite of the same slashed glyph), so
+there is nothing to switch on. Those strings are therefore set in the display face, whose zero
+is plain:
+- `.num` — display family, `1.04em` (levels the two cap heights), `0.01em` tracking; **weight
+  inherits**, so bold contexts (call link, contact rows, facts, buttons) stay bold.
+- `.num--text` — adds weight 600; use it with `.num` inside regular running text (addresses,
+  footer hours, the © year, a fax in a sentence).
+- Apply to **every** phone/fax/hours/address string on every page: header call link, hero hours,
+  contact rows, location cards and their facts, CTA fax, footer NAP + hours, © year. Put the
+  class on the `<dd>`/`<address>`/`<span>` that holds the whole string, not on single digits.
+- Numerals in prose ("100% oxygen", "911") stay in the body face. Display-face headings
+  (ruler ticks, "20 nursing facilities") are already plain.
+
+### `site.css` + `site.js` — the shared design system
+Every page links `/brand.css` then `/site.css`, and loads `/site.js` with `defer`. Build pages
+from these classes; add a component here when two pages need it, never per page.
+- **`site.css`** owns: type scale and `.display-1/2/3`, `.heading-3/4`, `.lede`, `.prose`,
+  `.eyebrow`, `.grad-text` (dark only); spacing/radius/tinted-shadow/motion tokens; `.btn`
+  (primary = blue fill/white label, secondary = outline, `.btn--compact`, `.btn--block`);
+  the header (sticky brand bar + link bar + Services dropdown + mobile menu panel + mobile
+  action bar); `.section` / `.section--tint` / `.section--dark` / `.grain`; the hero and final
+  CTA slots with overlay + vignette; the week ruler, index list, flagship + ledger, roster,
+  mission, referral desk, location cards, paths, footer; focus rings; reduced-motion rules.
+  Class selectors only (Tailwind preflight never overrides them). No hex outside `brand.css`.
+- **`site.js`** owns: the smart header (brand bar always sticks; link row tucks on scroll
+  down, returns on scroll up or keyboard focus); the Services dropdown (click, hover, keyboard,
+  Esc, outside-click); the mobile menu (focus trap, Esc, closes on resize to desktop); and the
+  `.fade-up` → `.visible` reveal that `screenshot.mjs` forces visible.
+- Desktop breakpoint is **1280px** for the header, the hero split, and the five-column footer.
+  The footer's Contact column is `max-content` so the email never breaks at the `@`.
 
 ---
 
@@ -335,11 +399,18 @@ Disk is the source of truth — Prompt 0 verifies this table against the real tr
 - **Services overview + 7 service pages** (list above).
 - **Conditions We Treat — ONE overview page (DECIDED).** One strong page with a real section per
   wound type (what it is · why it won't heal · which services treat it, linking to those service
-  pages). Each section gets an `id` anchor (e.g. `#diabetic-foot-ulcers`) for deep links from
-  service pages and FAQ. NO separate condition pages at launch. Diabetic foot ulcer intent is
-  served primarily by Total Contact Casting — do not create a competing DFU page. (Post-launch:
+  pages). Each section gets an `id` anchor for deep links from the homepage, service pages and
+  FAQ. **Required anchors (LOCKED — the homepage already links every one):**
+  `#diabetic-foot-ulcers` · `#arterial-ulcers` · `#pressure-ulcers` · `#venous-stasis-ulcers` ·
+  `#non-healing-surgical-wounds` · `#radiation-wounds` · `#burns` ·
+  `#peristomal-skin-irritation` · `#fistulas` (nine; "other chronic wounds" links to the page
+  itself). NO separate condition pages at launch. Diabetic foot ulcer intent is served
+  primarily by Total Contact Casting — do not create a competing DFU page. (Post-launch:
   promote a section to its own page only if GSC shows demand.)
-- **Locations** — BOTH McAllen + Mission (addresses, maps, hours, phone).
+- **Locations** — BOTH McAllen + Mission (addresses, maps, hours, phone). **Required anchors
+  (LOCKED):** the McAllen block carries `id="mcallen"` and the Mission block `id="mission"` —
+  the homepage location cards deep-link to `/locations/#mcallen` and `/locations/#mission`,
+  and the homepage schema's two department `@id`s resolve to those same fragments.
 - **For Referring Providers (DECIDED naming):** nav label **"For Providers"** · H1/title **"For
   Referring Providers"** · CTA button **"Refer a Patient"** (→ LeadingReach). ES: nav **"Para
   Profesionales"** · H1 **"Para Médicos y Profesionales que Refieren"** · button **"Referir a un
@@ -462,8 +533,18 @@ LeadingReach URLs; provider headshots; real location/facility photos.
   Nothing on the old site may 404.
 - **`wordmark-on-dark.png` client approval** — Nexor-made white-text variant of the wordmark.
 
+**Client questions (ask before the copy ships):**
+- **(a) Spanish-speaking staff** — confirm which locations/roles offer Spanish-language care
+  before any "se habla español" / "Spanish-speaking staff" claim appears anywhere (EN or ES).
+  Until confirmed, the site offers a Spanish *website*, not Spanish-speaking *staff*.
+- **(b) Clinical review of the one-line descriptions** — the one-sentence service and condition
+  descriptions on the homepage (services ledger, HBOT flagship, conditions index), including
+  **"HBOT sessions are usually daily,"** need a clinician's sign-off before launch. Flag the
+  same review for every service/condition page as it is written.
+
 **Backfillable (build against placeholders):** provider photos, hero/cta backgrounds, service
-imagery, og-image, social URLs, any service-detail the client wants to tweak,
+imagery, og-image, social URLs (footer links + schema `sameAs` stay out until confirmed), any
+service-detail the client wants to tweak,
 reviews/reputation status.
 
 **Not blockers:**
@@ -500,3 +581,7 @@ reviews/reputation status.
 - ✅ Logo: horizontal wordmark only — no circle badge. `wordmark.png` is the production logo;
   never rendered above ~72px tall; no upscaling. SVG redraw proposed after the homepage gate.
 - ✅ Team: 6 providers, final. Live team banner photo is not used anywhere.
+- ✅ Gate 1 (homepage) approved 2026-10-05. Font pairing Sofia Sans Semi Condensed (display) +
+  Atkinson Hyperlegible Next (body); plain-zero rule for phone/fax/hours/addresses via `.num`;
+  `site.css` + `site.js` are the shared design system; social links + `sameAs` out until the
+  URLs are confirmed; no comparative healing-outcome claims in copy.
