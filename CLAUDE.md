@@ -165,20 +165,21 @@ Google Fonts, loaded per page with the `<link>` in `index.html`; declared as `--
 | Body — `--font-body` | **Atkinson Hyperlegible Next** | 400–800 + italic | Drawn for low-vision readers (older-patient UX); body never below 18px (19px desktop) |
 
 ### Plain-zero rule — FROZEN
-Phone numbers, fax numbers, hours, and addresses render with a **plain (unslashed) zero**.
-Atkinson Hyperlegible Next ships only a slashed zero — its GSUB carries `ccmp frac locl pnum
-tnum` and no `zero`/`ss##` alternate (`zero.tf` is a composite of the same slashed glyph), so
-there is nothing to switch on. Those strings are therefore set in the display face, whose zero
-is plain:
+**Any numeral containing a 0 in visible copy** renders with a **plain (unslashed) zero** —
+every phone, fax, hours string and address, and prose numerals such as "100% oxygen",
+"20 to 40 sessions", the © year. Atkinson Hyperlegible Next ships only a slashed zero — its
+GSUB carries `ccmp frac locl pnum tnum` and no `zero`/`ss##` alternate (`zero.tf` is a
+composite of the same slashed glyph), so there is nothing to switch on. Those strings are
+therefore set in the display face, whose zero is plain:
 - `.num` — display family, `1.04em` (levels the two cap heights), `0.01em` tracking; **weight
   inherits**, so bold contexts (call link, contact rows, facts, buttons) stay bold.
-- `.num--text` — adds weight 600; use it with `.num` inside regular running text (addresses,
-  footer hours, the © year, a fax in a sentence).
-- Apply to **every** phone/fax/hours/address string on every page: header call link, hero hours,
-  contact rows, location cards and their facts, CTA fax, footer NAP + hours, © year. Put the
-  class on the `<dd>`/`<address>`/`<span>` that holds the whole string, not on single digits.
-- Numerals in prose ("100% oxygen", "911") stay in the body face. Display-face headings
-  (ruler ticks, "20 nursing facilities") are already plain.
+- `.num--text` — the same, plus weight 600. Use it alone for any numeral inside regular
+  running text (addresses, footer hours, the © year, a fax in a sentence, "100% oxygen").
+- Wrap the **whole numeric phrase** ("8:00 AM – 5:00 PM", "20 to 40 sessions"), not single
+  digits, on the `<dd>`/`<address>`/`<span>` that holds it. A numeral with no 0 ("911",
+  "2 weeks") may stay in the body face, but wrap it too when it sits beside a wrapped one so a
+  sentence never mixes faces twice. Display-face headings (ruler ticks, "20 nursing
+  facilities") are already plain.
 
 ### `site.css` + `site.js` — the shared design system
 Every page links `/brand.css` then `/site.css`, and loads `/site.js` with `defer`. Build pages
@@ -197,6 +198,48 @@ from these classes; add a component here when two pages need it, never per page.
   `.fade-up` → `.visible` reveal that `screenshot.mjs` forces visible.
 - Desktop breakpoint is **1280px** for the header, the hero split, and the five-column footer.
   The footer's Contact column is `max-content` so the email never breaks at the `@`.
+
+### Service page template — LOCKED at Gate 2 (model: `/services/hyperbaric-oxygen-therapy/`)
+The HBOT page is the template; the other six service pages clone its order, CTA pattern,
+schema and breadcrumb. Per page: title leads with the service name (never the homepage's
+"McAllen Wound Care Clinic" phrase), <60 chars; meta <160 with city + CTA; canonical +
+reciprocal hreflang to the ES twin; Español toggle → the twin; Services link-bar button
+carries `.is-active`; the page's own dropdown, menu-sub and footer links carry
+`aria-current="page"`.
+
+**No "WCIT" in patient-facing copy** — headings, panel titles, titles, OG/Twitter, schema
+`name`. Patients do not know the acronym. Service-page titles therefore carry **no brand
+suffix** (the full name would push them past 60 chars); the brand reaches the SERP through
+`og:site_name` and the `WebSite` schema name. "WCIT" stays only in `alternateName`, code
+comments and this file.
+
+| # | Section | Status | Surface | Component(s) |
+|---|---|---|---|---|
+| 1 | Hero: breadcrumb (`.crumbs`) · eyebrow · H1 (service name; add "in McAllen and Mission" when it fits ~3 lines, else the lede names the cities) · plain-language lede · Request an Appointment + Call · hours/supervision line · **at-a-glance panel** (`.glance` + `.contact-rows`, title "[Service] at a glance") ending in the provider path (Refer through LeadingReach) | **REQUIRED** | dark, `hero--service` | `hero__bg` placeholder 1920×1080 |
+| 2 | What it is — plain-language prose | **REQUIRED** | white | `.split` |
+| 2a | The visual inside "what it is" — each service gets its own fitting diagram, or none. **Never reuse the oxygen scale** (`.o2-scale` is HBOT's alone) | FLEXIBLE | — | per page |
+| 3 | What to expect — numbered steps + the service photo (1200×900) + a call callout | **REQUIRED** | tint | `.steps`, `.split--start` + `.split__sticky`, `.callout` |
+| 4 | Conditions it treats — typographic index, every row linked to a locked `/conditions/` anchor; sibling-service links in the aside | **REQUIRED** | white | `.index-layout`, `.index-list` |
+| 5 | Who it's for — how we decide + side effects + **cost/insurance routed to `/contact/`** | **REQUIRED** | dark | prose |
+| 5a | Contraindication / "closer look" paired lists | FLEXIBLE — only where clinically relevant | — | `.pair`, `.dash-list` |
+| 6 | Team tie-in — credential-accurate paragraph naming the relevant expertise (exact wording from the Providers section) | **REQUIRED** | white | prose; flagship adds the 3:4 portrait (`.split--portrait`) |
+| 7 | FAQ — native `<details>`, **min 6** Q&As, mirrored word for word in the FAQPage schema | **REQUIRED** | tint | `.faq` |
+| 8 | Other services — the six siblings | **REQUIRED** | white | `.ledger.ledger--light` |
+| 9 | Final CTA — Patients (Request + Call) / Referring providers (Refer a Patient + fax) | **REQUIRED** | dark `final-cta` | `.paths` |
+
+**Order is fixed** for every service page (1 → 9). **Length by tier:** flagship (HBOT)
+~2,000 words / 5 photos (hero slot, session photo, portrait, + 2 reserved); standard
+~1,200–1,500 words / 2 photos (hero slot + the step-section photo). Total Contact Casting
+is the primary diabetic-foot-ulcer page and may run long within "standard."
+
+Rules: no two consecutive sections share a surface or a skeleton; only sections 3, 4, 7, 8
+(and 5a) are lists (genuinely parallel content); every outcome statement is "may help" /
+"promotes healing"; cost and insurance always route to `/contact/`; every frequency,
+course-length or clinical claim is added to the clinical-review list under Active Blockers
+before the page is screenshotted. Schema per page: `MedicalWebPage` (`about` → the
+procedure, `mentions` → the MedicalConditions it links, `provider` → the clinic `@id`,
+`breadcrumb`) + `["MedicalTherapy","MedicalProcedure"]` (`MedicalProcedure` alone for
+debridement) + `BreadcrumbList` + `FAQPage`.
 
 ---
 
@@ -541,6 +584,34 @@ LeadingReach URLs; provider headshots; real location/facility photos.
   descriptions on the homepage (services ledger, HBOT flagship, conditions index), including
   **"HBOT sessions are usually daily,"** need a clinician's sign-off before launch. Flag the
   same review for every service/condition page as it is written.
+- **(b, cont.) Clinical review — `/services/hyperbaric-oxygen-therapy/`** (every
+  frequency, course-length, and clinical statement on the page; also mirrored in the FAQPage
+  schema and the MedicalProcedure `howPerformed`/`preparation` text):
+  - "Each session: about 2 hours" (glance, step 4, FAQ) · "Once a day, Monday–Friday" ·
+    "Often 20 to 40 sessions, one each weekday" · "usually the next weekday"
+  - "two to three times normal pressure" (what-it-is prose, oxygen scale note)
+  - "has not improved after about a month / about 4 weeks of standard wound care" (DFU
+    threshold — candidate list + wounds index)
+  - Indications listed: diabetic foot ulcers · radiation wounds · failing skin grafts/flaps ·
+    chronic bone infection (osteomyelitis) · some serious burns · arterial ulcers "in select
+    cases, when blood flow has been restored as much as it can be"
+  - "We may order a simple test that measures oxygen in the skin near the wound" / "skin
+    oxygen test" (transcutaneous oximetry)
+  - Closer-look list: lung conditions (collapsed lung, severe COPD) · recent ear/sinus surgery
+    or inability to clear ears · certain chemotherapy medicines · fever, bad cold, seizure
+    disorder · pregnancy · anxiety in small spaces
+  - Side effects: ear pressure most common · temporary vision change during a course, usually
+    returns to normal · "serious side effects are rare"
+  - "You can drive home" after a session (no sedation) · "Physician-supervised sessions" ·
+    chamber rules (cotton gown; no phones, watches, hearing aids, lighters, batteries; no
+    lotions/perfume/hair products/makeup) · "Most people do not find HBOT painful"
+  - "HBOT has been used for decades and is considered safe when a trained team provides it"
+- **(c) Hyperbaric chamber facts** — which location(s) house the chamber(s) (McAllen,
+  Mission, or both), how many, and monoplace vs. multiplace. The HBOT page deliberately says
+  nothing location-specific and describes the chamber generically until this is answered;
+  the Locations page and any "HBOT in McAllen/Mission" copy depend on it. **If the chamber
+  is at only one clinic, the HBOT H1 and title must change to that city** (and the ES
+  twin, the glance panel, the homepage flagship blurb and the schema `howPerformed` follow).
 
 **Backfillable (build against placeholders):** provider photos, hero/cta backgrounds, service
 imagery, og-image, social URLs (footer links + schema `sameAs` stay out until confirmed), any

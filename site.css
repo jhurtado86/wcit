@@ -101,11 +101,12 @@
 .muted  { color: var(--color-muted); }
 .on-dark .muted { color: var(--color-muted-light); }
 
-/* Numerals — every phone number, fax, hours string and address. The body face only has a
-   slashed zero (no plain-zero alternate in the font), so these run in the display face,
-   whose zero is plain. 1.04em levels the two cap heights; weight is inherited, so bold
-   contexts stay bold, and regular running text gets 600 from .num--text. */
-.num { font-family: var(--font-display); font-size: 1.04em; letter-spacing: 0.01em; }
+/* Numerals — any numeral containing a 0 in visible copy (phone, fax, hours, addresses,
+   "100% oxygen", the © year). The body face only has a slashed zero (no plain-zero
+   alternate in the font), so these run in the display face, whose zero is plain. 1.04em
+   levels the two cap heights. .num inherits weight (bold contexts stay bold);
+   .num--text adds weight 600 for numerals inside regular running text. */
+.num, .num--text { font-family: var(--font-display); font-size: 1.04em; letter-spacing: 0.01em; }
 .num--text { font-weight: 600; }
 
 /* Eyebrow — wide-tracked caps, the wordmark's own lettering rhythm */
@@ -269,6 +270,7 @@
   .link-bar__link:hover { color: var(--color-accent-bright); }
   .link-bar__link:hover::after,
   .link-bar__link[aria-current="page"]::after,
+  .link-bar__link.is-active::after,                 /* parent of the current page (e.g. Services on a service page) */
   .link-bar__link[aria-expanded="true"]::after { transform: scaleX(1); }
   .link-bar__link:active { color: var(--color-wave-light); }
   .link-bar__link svg { width: 16px; height: 16px; transition: transform 0.25s var(--ease-out); }
@@ -408,18 +410,33 @@
   .hero__inner { grid-template-columns: minmax(0, 7fr) minmax(0, 4.4fr); gap: 72px; min-height: clamp(34rem, calc(100svh - var(--nav-height) - var(--nav-links-height)), 46rem); }
 }
 
-/* Provider panel — the second audience, in the hero */
-.provider-panel {
+/* Service-page hero: same slot and split, shorter, with a breadcrumb above the eyebrow */
+.hero--service .hero__inner { padding-block: clamp(2.5rem, 5vw, 4.5rem) clamp(3.5rem, 7vw, 6rem); }
+@media (min-width: 1280px) { .hero--service .hero__inner { min-height: 0; } }
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 0 4px; margin-bottom: 22px; font-size: 1.0625rem; color: var(--color-muted-light); }
+.crumbs a { display: inline-flex; align-items: center; min-height: 48px; margin-block: -12px; padding-inline: 2px; font-weight: 600; color: var(--color-bg); border-radius: 4px; }
+.crumbs a:hover  { color: var(--color-accent-bright); text-decoration: underline; text-underline-offset: 4px; }
+.crumbs a:active { color: var(--color-wave-light); }
+.crumbs svg { width: 16px; height: 16px; flex: none; color: var(--color-muted-light); }
+.crumbs [aria-current="page"] { font-weight: 600; color: var(--color-bg); }
+
+/* Glass panel in the hero — the provider panel (home) and the at-a-glance panel (service pages) */
+.provider-panel, .glance {
   position: relative; padding: clamp(24px, 3vw, 34px); border-radius: var(--radius-l);
   background: rgba(var(--color-primary-mid-rgb), 0.82);
   border: 1px solid rgba(var(--color-accent-bright-rgb), 0.28);
   box-shadow: var(--shadow-floating);
   -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
 }
-.provider-panel::before { content: ''; position: absolute; left: 28px; right: 28px; top: -1px; height: 3px; border-radius: 0 0 3px 3px; background: var(--gradient-brand-x); }
-.provider-panel__title { margin-top: 14px; }
+.provider-panel::before, .glance::before { content: ''; position: absolute; left: 28px; right: 28px; top: -1px; height: 3px; border-radius: 0 0 3px 3px; background: var(--gradient-brand-x); }
+.provider-panel__title, .glance__title { margin-top: 14px; }
 .provider-panel__text  { margin-top: 12px; color: var(--color-bg); }
 .provider-panel .btn   { margin-top: 22px; }
+.glance .contact-rows__row { flex-wrap: wrap; justify-content: flex-start; }
+.glance .contact-rows__row dt { flex: none; width: 9.5em; }
+.glance .contact-rows__row dd { flex: 1; min-width: 12ch; text-align: left; }
+.glance__foot { margin-top: 18px; color: var(--color-muted-light); }
+/* label / value rows on a dark panel (contact rows on the home hero and desk; facts in .glance) */
 .contact-rows { margin-top: 20px; border-top: 1px solid rgba(var(--color-bg-rgb), 0.16); }
 .contact-rows__row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid rgba(var(--color-bg-rgb), 0.16); }
 .contact-rows__row dt { color: var(--color-muted-light); }
@@ -523,12 +540,25 @@
 .ledger__link:hover .ledger__name  { color: var(--color-accent-bright); }
 .ledger__link:hover svg  { transform: translateX(6px); }
 .ledger__link:active .ledger__name { color: var(--color-wave-light); }
+/* Light variant — "other services" on service pages */
+.ledger--light, .ledger--light .ledger__item { border-color: var(--color-line); }
+.ledger--light { border-top: 2px solid var(--color-ink); }
+.ledger--light .ledger__name { color: var(--color-ink); }
+.ledger--light .ledger__desc { color: var(--color-muted); }
+.ledger--light .ledger__link svg { color: var(--color-accent); }
+.ledger--light .ledger__link:hover .ledger__name  { color: var(--color-accent-deep); }
+.ledger--light .ledger__link:active .ledger__name { color: var(--color-accent); }
 
 /* ============================================================
    Team — prose + photo, then the credential roster
    ============================================================ */
 .split { display: grid; gap: 40px; align-items: center; }
-@media (min-width: 1024px) { .split { grid-template-columns: minmax(0, 6.2fr) minmax(0, 5.8fr); gap: 80px; } }
+.split--start { align-items: start; }               /* a long column (steps) beside a short one */
+@media (min-width: 1024px) {
+  .split { grid-template-columns: minmax(0, 6.2fr) minmax(0, 5.8fr); gap: 80px; }
+  .split--portrait { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 72px; }  /* 3:4 portrait first, prose second */
+  .split__sticky { position: sticky; top: calc(var(--nav-height) + var(--nav-links-height) + 24px); }
+}
 .roster { display: grid; margin-top: clamp(3rem, 6vw, 5rem); border-top: 2px solid var(--color-ink); }
 @media (min-width: 720px)  { .roster { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; } }
 @media (min-width: 1100px) { .roster { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
@@ -574,6 +604,69 @@
 .location__facts a:hover  { color: var(--color-accent); }
 .location__facts a:active { color: var(--color-ink); }
 .location__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 26px; }
+
+/* ============================================================
+   Service pages — the shared template pieces (HBOT is the model)
+   ============================================================ */
+
+/* Oxygen scale (HBOT signature): two bars — room air vs. the chamber — on the week-ruler's
+   grammar. The ribbon gradient is a large graphic, so it is allowed on white. */
+.o2-scale { margin-top: 10px; display: grid; gap: 26px; }
+.o2-row { display: grid; gap: 10px; }
+.o2-row__head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.o2-row__label { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; line-height: 1.15; color: var(--color-ink); }
+.o2-row__value { font-family: var(--font-display); font-weight: 800; font-size: 1.75rem; line-height: 1; color: var(--color-muted); white-space: nowrap; }
+.o2-row--key .o2-row__value { color: var(--color-accent-deep); }
+.o2-row__bar { position: relative; height: 22px; border-radius: 999px; background: var(--color-bg-2); box-shadow: inset 0 0 0 1px var(--color-line); overflow: hidden; }
+.o2-row__fill { position: absolute; inset: 0; width: var(--pct); border-radius: inherit; background: var(--color-muted); transform: scaleX(0); transform-origin: left center; transition: transform 1.2s var(--ease-out) 0.2s; }
+.o2-row--key .o2-row__fill { background: var(--gradient-brand-x); transition-delay: 0.45s; }
+.fade-up.visible .o2-row__fill, .no-js .o2-row__fill { transform: scaleX(1); }
+.o2-row__note { color: var(--color-muted); line-height: 1.45; }
+.o2-scale__caption { margin-top: 26px; padding-left: 22px; border-left: 4px solid var(--color-accent-deep); font-weight: 600; max-width: 40ch; }
+
+/* Numbered steps — a vertical rail; one skeleton the week ruler does not share */
+.steps { position: relative; display: grid; gap: 0; counter-reset: step; }
+.step { position: relative; display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 0 22px; padding-bottom: 34px; }
+.step::before { content: ''; position: absolute; left: 27px; top: 60px; bottom: 0; width: 2px; background: var(--color-line); }
+.step:last-child { padding-bottom: 0; }
+.step:last-child::before { display: none; }
+.step__num {
+  display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%;
+  font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; line-height: 1; color: var(--color-bg);
+  background: var(--color-accent); box-shadow: var(--shadow-cta);
+}
+.step__title { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; line-height: 1.15; align-self: center; min-height: 56px; display: flex; align-items: center; }
+.step__text { grid-column: 2; margin-top: 10px; max-width: 52ch; }
+.step__text > * + * { margin-top: 0.8em; }
+.on-dark .step::before { background: rgba(var(--color-bg-rgb), 0.2); }
+.on-dark .step__num { background: var(--color-accent-bright); color: var(--color-dark); box-shadow: none; }
+
+/* Paired lists — "may be a good fit" / "may need a closer look" (dark) */
+.pair { display: grid; gap: 36px; margin-top: clamp(2rem, 4vw, 3rem); }
+@media (min-width: 900px) { .pair { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; } }
+.pair__col { padding-top: 22px; border-top: 2px solid rgba(var(--color-bg-rgb), 0.24); }
+.pair__col--key { border-top-color: var(--color-accent-bright); }
+.pair__title { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; line-height: 1.15; }
+.dash-list { display: grid; gap: 14px; margin-top: 18px; }
+.dash-list li { position: relative; padding-left: 30px; line-height: 1.5; }
+.dash-list li::before { content: ''; position: absolute; left: 0; top: 0.72em; width: 18px; height: 3px; border-radius: 2px; background: var(--color-accent-deep); }
+.on-dark .dash-list li::before { background: var(--color-accent-bright); }
+.pair__col--soft .dash-list li::before { background: var(--color-muted-light); }
+
+/* FAQ — native <details>; 64px rows, plus rotates to a cross (transform only) */
+.faq { border-top: 2px solid var(--color-ink); }
+.faq__item { border-bottom: 1px solid var(--color-line); }
+.faq__q {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 64px; padding: 16px 4px; cursor: pointer; list-style: none;
+  font-family: var(--font-display); font-weight: 700; font-size: 1.375rem; line-height: 1.2; color: var(--color-ink);
+}
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q:hover  { color: var(--color-accent-deep); }
+.faq__q:active { color: var(--color-accent); }
+.faq__q svg { flex: none; width: 24px; height: 24px; color: var(--color-accent); transition: transform 0.25s var(--ease-spring); }
+.faq__item[open] .faq__q svg { transform: rotate(45deg); }
+.faq__a { padding: 0 4px 24px; max-width: var(--measure); }
+.faq__a > * + * { margin-top: 0.9em; }
 
 /* ============================================================
    Final CTA — dedicated cta-background slot, both audiences
@@ -626,7 +719,8 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .fade-up { opacity: 1; transform: none; transition: none; }
-  .ruler__ribbon { transform: scaleX(1); transition: none; }
+  .ruler__ribbon, .o2-row__fill { transform: scaleX(1); transition: none; }
+  .faq__q svg { transition: none; }
   .btn, .btn:hover, .arrow-link svg, .index-list__link svg, .ledger__link svg, .link-bar, .skip-link, .lang-toggle, .menu-button, .menu-close, .action-bar__item { transition: none; transform: none; }
   .link-bar__item.is-open .dropdown { transition: none; }
   .site-header.is-tucked .link-bar { transform: none; }
