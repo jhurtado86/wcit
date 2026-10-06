@@ -227,10 +227,23 @@ comments and this file.
 | 8 | Other services — the six siblings | **REQUIRED** | white | `.ledger.ledger--light` |
 | 9 | Final CTA — Patients (Request + Call) / Referring providers (Refer a Patient + fax) | **REQUIRED** | dark `final-cta` | `.paths` |
 
-**Order is fixed** for every service page (1 → 9). **Length by tier:** flagship (HBOT)
-~2,000 words / 5 photos (hero slot, session photo, portrait, + 2 reserved); standard
-~1,200–1,500 words / 2 photos (hero slot + the step-section photo). Total Contact Casting
-is the primary diabetic-foot-ulcer page and may run long within "standard."
+**Order is fixed** for every service page (1 → 9). **Length by tier (content-only = words
+inside `<main>`, header/menu/footer excluded):** HBOT ~1,300 / 5 photos (hero slot, session
+photo, portrait, + 2 reserved); Total Contact Casting ~1,300 (it carries the diabetic-foot-
+ulcer intent); the other five ~1,000 / 2 photos (hero slot + the step-section photo).
+**Tightening rules (Gate 3):** team tie-in is 2–3 sentences + the "Meet our team" link;
+the "Other services" ledger is names + arrows only (`.ledger--compact`, no descriptions);
+"What it is" and "Who it's for" use short paragraphs and lists of 3–5 items; FAQ stays ≥6
+(collapsed, so it adds no visual length) and its FAQPage schema must match word for word after
+every edit; cut repetition across sections — every paragraph answers a patient question.
+
+**Team tie-in rule (LOCKED):** team-level, credential-accurate framing only — the two-ABWM
+sentence ("Two of our clinicians are certified by the American Board of Wound Management:
+Dr. José R. Sobrevilla, MD, CWSP, and Cesar Martinez, RN, CWS") + "physicians and nurse
+practitioners who bring wound care and critical care experience." **No per-service clinician
+attributions** (the bios describe prior roles, not WCIT service-line assignments). Dr. Abanto
+is named on HBOT only, where his hyperbaric credential is stated. Names return to a service
+page only if the client confirms (client question d).
 
 Rules: no two consecutive sections share a surface or a skeleton; only sections 3, 4, 7, 8
 (and 5a) are lists (genuinely parallel content); every outcome statement is "may help" /
@@ -604,8 +617,7 @@ LeadingReach URLs; provider headshots; real location/facility photos.
     returns to normal · "serious side effects are rare"
   - "You can drive home" after a session (no sedation) · "Physician-supervised sessions" ·
     chamber rules (cotton gown; no phones, watches, hearing aids, lighters, batteries; no
-    lotions/perfume/hair products/makeup) · "Most people do not find HBOT painful"
-  - "HBOT has been used for decades and is considered safe when a trained team provides it"
+    lotions/perfume/hair spray) · "Most people do not find HBOT painful"
 - **(b, cont.) Clinical review — the six standard service pages** (each statement also
   appears in that page's FAQPage schema and MedicalProcedure `howPerformed`/`preparation`):
   - **`/services/negative-pressure-wound-therapy/`** — dressing changes "usually 2 to 3 times
@@ -629,7 +641,7 @@ LeadingReach URLs; provider headshots; real location/facility photos.
     cast is changed · indications (plantar DFU, neuropathic ulcers, post-amputation foot
     wounds, Charcot foot) · closer-look list (poor blood flow, infection/osteomyelitis, very
     deep or heavily draining ulcer, fall risk, large day-to-day swelling, cannot keep dry or
-    return) · side effects (rub sores, calf weakening) · blood-sugar statements.
+    return) · side effects (rub sores) · blood-sugar statements.
   - **`/services/bioengineered-skin-substitutes/`** — "often once a week, for several
     weeks" · "takes minutes" · "most people feel little during application" · "not improved
     after about 4 weeks of good wound care" / "about a month" (DFU) · product sources (donated
@@ -641,7 +653,7 @@ LeadingReach URLs; provider headshots; real location/facility photos.
   - **`/services/compression-therapy/`** — wrap changes "usually once or twice a week" ·
     worn "day and night until we change it" · stockings "every day," "most people do"
     (lifelong) · ankle–arm pressure comparison (ABI) before any compression, "never skipped" ·
-    "less swelling within the first week" · "weeks to months to close" · indications (venous
+    "weeks to months to close" · indications (venous
     stasis ulcers, chronic leg swelling, leg incisions with swelling, mixed arterial/venous
     "with lighter compression" after ABI) · closer-look list (PAD, uncontrolled heart failure,
     neuropathy, cellulitis, intolerance) · warning signs (numb, pale, or blue toes; worsening
@@ -655,12 +667,11 @@ LeadingReach URLs; provider headshots; real location/facility photos.
     soak a wound" · "some dressings are waterproof; most are not."
   - **`/services/`** (overview) — the "Often used for" line on each card and the "plan built
     in layers" sequence (debride → offload/compress → dress → advanced therapies).
-- **(d) Provider–service attributions** — the team tie-ins name specific clinicians for
-  specific services from the CLAUDE.md bios: Patrizia Cantu for negative pressure, debridement,
-  collagen films, diabetic/venous ulcers; Andrea Garza (ICU + complex wound care) on the
-  compression page; Edwardo Bernal (chronic-disease management) on the casting page; Cesar
-  Martinez assisting debridements and teaching families. Confirm with the client that each
-  clinician actually works in that service line before launch.
+- **(d) Provider–service attributions (open)** — the service pages currently use team-level
+  framing only. If the client wants named clinicians on specific service pages (e.g. who
+  fits wound VACs, who applies casts, who performs sharp debridement), they must confirm each
+  assignment; the bios only describe prior roles. Until then, no names beyond the two-ABWM
+  sentence and Dr. Abanto on HBOT.
 - **(c) Hyperbaric chamber facts** — which location(s) house the chamber(s) (McAllen,
   Mission, or both), how many, and monoplace vs. multiplace. The HBOT page deliberately says
   nothing location-specific and describes the chamber generically until this is answered;

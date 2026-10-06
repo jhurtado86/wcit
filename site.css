@@ -549,6 +549,9 @@
 .ledger--light .ledger__link svg { color: var(--color-accent); }
 .ledger--light .ledger__link:hover .ledger__name  { color: var(--color-accent-deep); }
 .ledger--light .ledger__link:active .ledger__name { color: var(--color-accent); }
+/* Compact — names + arrows only (the "other services" list on service pages) */
+.ledger--compact .ledger__link { padding: 18px 4px; min-height: 64px; }
+.ledger--compact .ledger__link svg { grid-row: 1; }
 
 /* ============================================================
    Team — prose + photo, then the credential roster

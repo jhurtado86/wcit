@@ -74,10 +74,9 @@
   </script>
   <script src="/site.js" defer></script>
 
-  <!-- Service-page schema (the template for all 7 service pages): MedicalWebPage about a
-       MedicalProcedure/MedicalTherapy, a BreadcrumbList, and a FAQPage whose Q&As match the
-       visible FAQ word for word. The clinic and website nodes are referenced by the @ids the
-       homepage defines. No pricing, no outcome guarantees, no foundingDate. -->
+  <!-- Service-page schema (cloned from the HBOT template): MedicalWebPage about a MedicalProcedure, a BreadcrumbList, and a FAQPage whose Q&As match the visible FAQ word for word.
+       The clinic and website nodes are referenced by the @ids the homepage defines.
+       No pricing, no outcome guarantees, no foundingDate. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -87,46 +86,105 @@
         "@id": "https://www.wound-institute.com/services/hyperbaric-oxygen-therapy/#webpage",
         "url": "https://www.wound-institute.com/services/hyperbaric-oxygen-therapy/",
         "name": "Hyperbaric Oxygen Therapy in McAllen & Mission, TX",
-        "description": "Hyperbaric oxygen therapy (HBOT) for wounds that won't heal, in McAllen and Mission, TX. See how a session works and who it may help.",
+        "description": "Hyperbaric oxygen therapy (HBOT) for wounds that won't heal, in McAllen and Mission, TX. See how a session works and who it may help. Call (956) 317-4044.",
         "inLanguage": "en-US",
-        "isPartOf": { "@id": "https://www.wound-institute.com/#website" },
-        "provider": { "@id": "https://www.wound-institute.com/#clinic" },
-        "breadcrumb": { "@id": "https://www.wound-institute.com/services/hyperbaric-oxygen-therapy/#breadcrumb" },
-        "about": { "@id": "https://www.wound-institute.com/services/hyperbaric-oxygen-therapy/#procedure" },
+        "isPartOf": {
+          "@id": "https://www.wound-institute.com/#website"
+        },
+        "provider": {
+          "@id": "https://www.wound-institute.com/#clinic"
+        },
+        "breadcrumb": {
+          "@id": "https://www.wound-institute.com/services/hyperbaric-oxygen-therapy/#breadcrumb"
+        },
+        "about": {
+          "@id": "https://www.wound-institute.com/services/hyperbaric-oxygen-therapy/#procedure"
+        },
         "mentions": [
-          { "@type": "MedicalCondition", "name": "Diabetic foot ulcer", "url": "https://www.wound-institute.com/conditions/#diabetic-foot-ulcers" },
-          { "@type": "MedicalCondition", "name": "Radiation wound (delayed radiation injury)", "url": "https://www.wound-institute.com/conditions/#radiation-wounds" },
-          { "@type": "MedicalCondition", "name": "Non-healing surgical wound", "url": "https://www.wound-institute.com/conditions/#non-healing-surgical-wounds" },
-          { "@type": "MedicalCondition", "name": "Chronic refractory osteomyelitis" },
-          { "@type": "MedicalCondition", "name": "Burn", "url": "https://www.wound-institute.com/conditions/#burns" },
-          { "@type": "MedicalCondition", "name": "Arterial (ischemic) ulcer", "url": "https://www.wound-institute.com/conditions/#arterial-ulcers" }
+          {
+            "@type": "MedicalCondition",
+            "name": "Diabetic foot ulcers",
+            "url": "https://www.wound-institute.com/conditions/#diabetic-foot-ulcers"
+          },
+          {
+            "@type": "MedicalCondition",
+            "name": "Radiation wounds",
+            "url": "https://www.wound-institute.com/conditions/#radiation-wounds"
+          },
+          {
+            "@type": "MedicalCondition",
+            "name": "Non-healing surgical wounds",
+            "url": "https://www.wound-institute.com/conditions/#non-healing-surgical-wounds"
+          },
+          {
+            "@type": "MedicalCondition",
+            "name": "Burns",
+            "url": "https://www.wound-institute.com/conditions/#burns"
+          },
+          {
+            "@type": "MedicalCondition",
+            "name": "Arterial (ischemic) ulcers",
+            "url": "https://www.wound-institute.com/conditions/#arterial-ulcers"
+          }
         ],
         "medicalAudience": [
-          { "@type": "MedicalAudience", "audienceType": "Patient" },
-          { "@type": "MedicalAudience", "audienceType": "Clinician" }
+          {
+            "@type": "MedicalAudience",
+            "audienceType": "Patient"
+          },
+          {
+            "@type": "MedicalAudience",
+            "audienceType": "Clinician"
+          }
         ],
-        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://www.wound-institute.com/brand_assets/og-image.jpg", "width": 1200, "height": 630 }
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://www.wound-institute.com/brand_assets/og-image.jpg",
+          "width": 1200,
+          "height": 630
+        }
       },
       {
-        "@type": ["MedicalTherapy", "MedicalProcedure"],
+        "@type": [
+          "MedicalTherapy",
+          "MedicalProcedure"
+        ],
         "@id": "https://www.wound-institute.com/services/hyperbaric-oxygen-therapy/#procedure",
         "name": "Hyperbaric Oxygen Therapy",
-        "alternateName": ["HBOT", "HBO therapy", "Hyperbaric oxygen treatment"],
+        "alternateName": [
+          "HBOT",
+          "HBO therapy",
+          "Hyperbaric oxygen treatment"
+        ],
         "url": "https://www.wound-institute.com/services/hyperbaric-oxygen-therapy/",
         "description": "A treatment in which the patient breathes 100% oxygen inside a chamber pressurized above normal atmospheric pressure, so that more oxygen dissolves into the blood and reaches tissue around a hard-to-heal wound. Offered as part of a multidisciplinary outpatient wound care plan.",
         "procedureType": "https://schema.org/NoninvasiveProcedure",
         "howPerformed": "The patient rests inside a hyperbaric chamber and breathes 100% oxygen while the pressure is raised, held, and slowly returned to normal. Sessions are physician-supervised and scheduled on weekdays; the number of sessions is set by the treating physician.",
         "preparation": "A physician examines the wound, reviews the patient's health history and medications, and may order transcutaneous oximetry. Patients wear a cotton gown and leave lighters, electronics, and petroleum-based products outside the chamber.",
-        "followup": "Routine wound care continues throughout the course of therapy, with wound measurements and progress checks at each visit.",
-        "recognizingAuthority": { "@type": "Organization", "name": "Undersea and Hyperbaric Medical Society" }
+        "followup": "Routine wound care continues throughout the course of therapy, with wound measurements and progress checks at each visit."
       },
       {
         "@type": "BreadcrumbList",
         "@id": "https://www.wound-institute.com/services/hyperbaric-oxygen-therapy/#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.wound-institute.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.wound-institute.com/services/" },
-          { "@type": "ListItem", "position": 3, "name": "Hyperbaric Oxygen Therapy", "item": "https://www.wound-institute.com/services/hyperbaric-oxygen-therapy/" }
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.wound-institute.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://www.wound-institute.com/services/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Hyperbaric Oxygen Therapy",
+            "item": "https://www.wound-institute.com/services/hyperbaric-oxygen-therapy/"
+          }
         ]
       },
       {
@@ -137,42 +195,50 @@
           {
             "@type": "Question",
             "name": "Does hyperbaric oxygen therapy hurt?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Most people do not find HBOT painful. The most common feeling is pressure in your ears as the chamber pressurizes, like on an airplane. Swallowing, yawning, or chewing gum helps. Our team slows the pressure change if you need it." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most people do not find HBOT painful. The most common feeling is pressure in your ears as the chamber pressurizes, like on an airplane. Swallowing or yawning helps."
+            }
           },
           {
             "@type": "Question",
             "name": "How long does each session take?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Plan on about 2 hours from the time you arrive to the time you leave. Most of that time is spent resting inside the chamber while the pressure rises, holds, and comes back down." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Plan on about 2 hours from arrival to leaving. Most of that time is spent resting inside the chamber while the pressure rises, holds, and comes back down."
+            }
           },
           {
             "@type": "Question",
             "name": "How many sessions will I need?",
-            "acceptedAnswer": { "@type": "Answer", "text": "It depends on your wound. Many treatment plans call for 20 to 40 sessions, one each weekday. Your physician sets the number and checks your progress along the way." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It depends on your wound. Many treatment plans call for 20 to 40 sessions, one each weekday. Your physician sets the number and checks your progress."
+            }
           },
           {
             "@type": "Question",
             "name": "Can I drive myself home after a session?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. HBOT does not use sedation or any medicine that makes you drowsy. Some people feel tired or hungry afterward, so plan a light day." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. HBOT does not use sedation or any medicine that makes you drowsy. Some people feel tired afterward, so plan a light day."
+            }
           },
           {
             "@type": "Question",
             "name": "What can I bring into the chamber?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Very little. For safety, nothing that can spark goes inside: no phones, watches, hearing aids, lighters, or battery-powered devices. You wear a cotton gown we provide, and you skip lotions, perfume, and hair products on treatment days." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Very little. Nothing that can spark goes inside: no phones, watches, hearing aids, lighters, or batteries. You wear a cotton gown we provide."
+            }
           },
           {
             "@type": "Question",
             "name": "Does insurance cover HBOT?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Some insurance plans cover HBOT for specific wound diagnoses when certain conditions are met. Coverage depends on your plan and your wound. Request an appointment and our team will help you understand your options before you start." }
-          },
-          {
-            "@type": "Question",
-            "name": "Is HBOT safe?",
-            "acceptedAnswer": { "@type": "Answer", "text": "HBOT has been used for decades and is considered safe when a trained team provides it. Side effects are usually mild, like ear pressure. Some people notice a change in their vision during a course of treatment; it usually goes back to normal afterward. Serious problems are rare. We review your health history first to lower the risks." }
-          },
-          {
-            "@type": "Question",
-            "name": "Do I still need other wound treatments during HBOT?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Usually, yes. HBOT works alongside your regular wound care, such as debridement, dressings, offloading, or compression, not instead of it. Your team keeps treating the wound while the oxygen therapy supports healing." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Some plans cover HBOT for specific wound diagnoses when certain conditions are met. Request an appointment and our team will help you understand your options."
+            }
           }
         ]
       }
@@ -335,7 +401,7 @@
           </nav>
           <p class="eyebrow">Advanced wound care · HBOT</p>
           <h1 class="display-1 hero__title mt-6" id="page-title"><span class="grad-text">Hyperbaric oxygen therapy</span> in McAllen and Mission</h1>
-          <p class="lede hero__lede">Hyperbaric oxygen therapy, or HBOT, lets you breathe pure oxygen inside a pressurized chamber. The extra oxygen reaches tissue that blood flow alone cannot, and that may help a wound that has stalled start to heal. At Wound Care Institute of Texas, HBOT is one part of a full wound care plan.</p>
+          <p class="lede hero__lede">HBOT lets you breathe pure oxygen inside a pressurized chamber. The extra oxygen reaches tissue that blood flow alone cannot, and that may help a wound that has stalled start to heal.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="/contact/">Request an Appointment</a>
             <a class="btn btn--secondary" href="tel:+19563174044">
@@ -368,8 +434,8 @@
     </section>
 
     <!-- ============================================================
-         2. WHAT IT IS — plain-language explanation + the oxygen scale
-            (this page's signature visual: room air vs. the chamber).
+         2. WHAT IT IS — plain-language explanation + this service's own visual
+            (FLEXIBLE module; the oxygen scale belongs to HBOT alone).
     ============================================================ -->
     <section class="section" id="what-it-is" aria-labelledby="what-title">
       <div class="shell split">
@@ -377,9 +443,8 @@
           <p class="eyebrow">What it is</p>
           <h2 class="display-2 mt-5" id="what-title">What is hyperbaric oxygen therapy?</h2>
           <div class="prose mt-6">
-            <p>Hyperbaric oxygen therapy is a treatment where you breathe <span class="num--text">100%</span> oxygen inside a chamber. The air pressure inside the chamber is raised to two to three times normal. Under that pressure, your blood can carry far more oxygen than it does when you breathe room air.</p>
-            <p>Why does that matter? A wound needs oxygen to heal. Diabetes, poor circulation, swelling, and radiation damage can all cut off the oxygen supply to a wound. Without enough oxygen, the wound stalls.</p>
-            <p>HBOT pushes extra oxygen into your blood plasma, the liquid part of your blood. That oxygen can reach tissue even where blood flow is weak. Over a course of sessions, it may help your body grow new blood vessels, fight infection, and build new tissue.</p>
+            <p>Hyperbaric oxygen therapy is a treatment where you breathe <span class="num--text">100%</span> oxygen inside a chamber pressurized to two to three times normal. Under that pressure, your blood carries far more oxygen than it does from room air.</p>
+            <p>A wound needs oxygen to heal, and diabetes, poor circulation, swelling, and radiation damage can all cut off the supply. HBOT pushes extra oxygen into your blood plasma, which reaches tissue even where blood flow is weak. Over a course of sessions, it may help your body grow new blood vessels, fight infection, and build new tissue.</p>
           </div>
         </div>
 
@@ -389,7 +454,7 @@
             <div class="o2-row">
               <div class="o2-row__head"><span class="o2-row__label">Room air</span><span class="o2-row__value num">21%</span></div>
               <div class="o2-row__bar" aria-hidden="true"><div class="o2-row__fill" style="--pct: 21%"></div></div>
-              <p class="o2-row__note">Normal air pressure. Most oxygen travels on red blood cells, so it goes only where blood flows well.</p>
+              <p class="o2-row__note">Normal pressure. Oxygen travels on red blood cells, so it goes only where blood flows well.</p>
             </div>
             <div class="o2-row o2-row--key">
               <div class="o2-row__head"><span class="o2-row__label">Inside the chamber</span><span class="o2-row__value num">100%</span></div>
@@ -403,14 +468,14 @@
     </section>
 
     <!-- ============================================================
-         3. WHAT TO EXPECT — the visit as numbered steps + the flagship photo.
+         3. WHAT TO EXPECT — the visit as numbered steps + the service photo.
     ============================================================ -->
     <section class="section section--tint" id="what-to-expect" aria-labelledby="expect-title">
       <div class="shell">
         <div class="section-head section-head--split fade-up">
           <p class="eyebrow">What to expect</p>
           <h2 class="display-2" id="expect-title">What a session is like</h2>
-          <p class="lede muted">Most people find HBOT simple and calm. Here is how a visit goes, from your first exam to the drive home.</p>
+          <p class="lede muted">Most people find HBOT simple and calm.</p>
         </div>
 
         <div class="split split--start">
@@ -419,35 +484,35 @@
               <span class="step__num" aria-hidden="true">1</span>
               <h3 class="step__title">Before your first session</h3>
               <div class="step__text">
-                <p>A physician examines your wound and goes over your health history and every medicine you take. We may order a simple test that measures oxygen in the skin near the wound. We explain the risks and benefits, answer your questions, and you sign a consent form.</p>
+                <p>A physician examines your wound, reviews your health history and every medicine you take, and may order a simple skin oxygen test. You sign a consent form.</p>
               </div>
             </li>
             <li class="step">
               <span class="step__num" aria-hidden="true">2</span>
               <h3 class="step__title">Getting ready</h3>
               <div class="step__text">
-                <p>You change into a cotton gown we provide. Lighters, phones, watches, jewelry, and anything with a battery stay outside the chamber. Please skip lotions, perfume, hair spray, and makeup on treatment days. These rules keep you safe around pure oxygen.</p>
+                <p>You change into a cotton gown we provide. Lighters, phones, watches, and anything with a battery stay outside. Skip lotions, perfume, and hair spray on treatment days.</p>
               </div>
             </li>
             <li class="step">
               <span class="step__num" aria-hidden="true">3</span>
               <h3 class="step__title">In the chamber</h3>
               <div class="step__text">
-                <p>You lie down and rest while the pressure slowly rises. You may feel pressure in your ears, like on an airplane. Swallowing or yawning helps. Then you rest or nap while you breathe oxygen. Our team watches you the whole time and can talk with you.</p>
+                <p>You lie down and rest while the pressure slowly rises. You may feel pressure in your ears, like on an airplane; swallowing or yawning helps. Our team watches you the whole time.</p>
               </div>
             </li>
             <li class="step">
               <span class="step__num" aria-hidden="true">4</span>
               <h3 class="step__title">Coming back down</h3>
               <div class="step__text">
-                <p>Near the end, the pressure slowly returns to normal. Your ears may pop again. The whole visit takes about <span class="num--text">2 hours</span>.</p>
+                <p>Near the end, the pressure slowly returns to normal. The whole visit takes about <span class="num--text">2 hours</span>.</p>
               </div>
             </li>
             <li class="step">
               <span class="step__num" aria-hidden="true">5</span>
               <h3 class="step__title">After your session</h3>
               <div class="step__text">
-                <p>You can drive home and go about your day. Some people feel tired or hungry afterward. You come back for your next session, usually the next weekday, and we check your wound as you go.</p>
+                <p>You can drive home and go about your day. You come back for your next session, usually the next weekday.</p>
               </div>
             </li>
           </ol>
@@ -457,7 +522,7 @@
               <img src="https://placehold.co/1200x900" width="1200" height="900" loading="lazy" alt="A patient resting inside the hyperbaric oxygen chamber during a session at Wound Care Institute of Texas" />
             </div>
             <div class="callout mt-8">
-              <p class="callout__text">Have a question before your first session? <strong>Call us at <a class="text-link text-link--tap num" href="tel:+19563174044">(956) 317-4044</a>.</strong> We are glad to walk you through it.</p>
+              <p class="callout__text">Have a question before your first session? <strong>Call us at <a class="text-link text-link--tap num" href="tel:+19563174044">(956) 317-4044</a>.</strong></p>
             </div>
           </div>
         </div>
@@ -465,17 +530,16 @@
     </section>
 
     <!-- ============================================================
-         4. WOUNDS IT MAY HELP — typographic index; every row deep-links to the
+         4. CONDITIONS IT TREATS — typographic index; every row deep-links to the
             locked /conditions/ anchors. Indications are on the clinical-review list.
     ============================================================ -->
-    <section class="section" id="who-it-helps" aria-labelledby="wounds-title">
+    <section class="section" id="conditions-treated" aria-labelledby="wounds-title">
       <div class="shell index-layout">
         <div class="index-layout__aside fade-up">
           <p class="eyebrow">Who it helps</p>
           <h2 class="display-2 mt-5" id="wounds-title">Wounds that may respond to HBOT</h2>
           <div class="prose mt-6">
-            <p>HBOT is not for every wound. It is used for certain wounds that have not healed with standard care. After an exam, our team may recommend it for the wounds listed here.</p>
-            <p>Not sure if your wound is on this list? Ask us. Many wounds are treated first with other therapies, like <a class="text-link" href="/services/wound-debridement/">debridement</a>, <a class="text-link" href="/services/negative-pressure-wound-therapy/">negative pressure wound therapy</a>, or <a class="text-link" href="/services/total-contact-casting/">total contact casting</a>. HBOT is added when it is the right fit.</p>
+            <p>HBOT is used for certain wounds that have not healed with standard care, usually after <a class="text-link" href="/services/wound-debridement/">debridement</a>, <a class="text-link" href="/services/total-contact-casting/">offloading</a>, or <a class="text-link" href="/services/compression-therapy/">compression</a> have been tried.</p>
           </div>
           <a class="arrow-link mt-5" href="/conditions/">
             <span>All conditions we treat</span>
@@ -486,12 +550,12 @@
         <ul class="index-list fade-up">
           <li class="index-list__item"><a class="index-list__link" href="/conditions/#diabetic-foot-ulcers">
             <span class="index-list__name">Diabetic foot ulcers</span>
-            <span class="index-list__desc">Deep foot wounds that have not improved after about a month of standard wound care.</span>
+            <span class="index-list__desc">Deep foot wounds that have not improved after about a month of standard care.</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a></li>
           <li class="index-list__item"><a class="index-list__link" href="/conditions/#radiation-wounds">
             <span class="index-list__name">Radiation wounds</span>
-            <span class="index-list__desc">Skin, tissue, or bone damage that shows up months or years after radiation treatment.</span>
+            <span class="index-list__desc">Tissue damage that appears months or years after radiation treatment.</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a></li>
           <li class="index-list__item"><a class="index-list__link" href="/conditions/#non-healing-surgical-wounds">
@@ -501,7 +565,7 @@
           </a></li>
           <li class="index-list__item"><a class="index-list__link" href="/conditions/">
             <span class="index-list__name">Chronic bone infection</span>
-            <span class="index-list__desc">Osteomyelitis that keeps coming back despite antibiotics and surgery.</span>
+            <span class="index-list__desc">Osteomyelitis that keeps returning despite antibiotics.</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a></li>
           <li class="index-list__item"><a class="index-list__link" href="/conditions/#burns">
@@ -511,7 +575,7 @@
           </a></li>
           <li class="index-list__item"><a class="index-list__link" href="/conditions/#arterial-ulcers">
             <span class="index-list__name">Arterial (ischemic) ulcers</span>
-            <span class="index-list__desc">In select cases, when blood flow has been restored as much as it can be and the wound still will not close.</span>
+            <span class="index-list__desc">In select cases, when blood flow has been restored as far as it can be.</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a></li>
         </ul>
@@ -519,24 +583,24 @@
     </section>
 
     <!-- ============================================================
-         5. WHO IS A CANDIDATE (dark) — how we decide, two honest lists, side
+         5. WHO IT'S FOR (dark) — how we decide, two honest lists, side
             effects, and the cost/insurance route to the appointment CTA.
     ============================================================ -->
-    <section class="section section--dark grain on-dark" id="candidates" aria-labelledby="candidate-title">
+    <section class="section section--dark grain on-dark" id="who-its-for" aria-labelledby="who-title">
       <div class="shell">
         <div class="section-head section-head--split fade-up">
           <p class="eyebrow">Is HBOT right for you?</p>
-          <h2 class="display-2" id="candidate-title">Who is a candidate</h2>
-          <p class="lede">Before we recommend HBOT, a physician examines your wound and reviews your health history. We look at how long the wound has been open, what has already been tried, and whether the tissue near the wound is short on oxygen. A simple skin oxygen test can help us decide.</p>
+          <h2 class="display-2" id="who-title">Who it’s for</h2>
+          <p class="lede">Before we recommend HBOT, a physician examines your wound, reviews what has already been tried, and may order a simple skin oxygen test.</p>
         </div>
 
         <div class="pair fade-up">
           <div class="pair__col pair__col--key">
             <h3 class="pair__title">HBOT may be a good fit if…</h3>
             <ul class="dash-list">
-              <li>Your wound has not improved after about <span class="num--text">4 weeks</span> of standard wound care</li>
+              <li>Your wound has not improved after about <span class="num--text">4 weeks</span> of standard care</li>
               <li>You have diabetes and a deep foot ulcer</li>
-              <li>Your wound is in an area that was treated with radiation</li>
+              <li>Your wound is in an area treated with radiation</li>
               <li>A skin graft or flap is not taking</li>
               <li>A bone infection has not cleared with antibiotics</li>
             </ul>
@@ -545,27 +609,26 @@
             <h3 class="pair__title">We may need a closer look if…</h3>
             <ul class="dash-list">
               <li>You have certain lung conditions, like a collapsed lung or severe COPD</li>
-              <li>You have had recent ear or sinus surgery, or you cannot clear your ears</li>
+              <li>You have had recent ear or sinus surgery, or cannot clear your ears</li>
               <li>You are taking certain chemotherapy medicines</li>
               <li>You have a fever, a bad cold, or a seizure disorder</li>
               <li>You are pregnant</li>
-              <li>You feel very anxious in small spaces</li>
             </ul>
           </div>
         </div>
 
         <div class="prose mt-10 fade-up">
-          <p>Items on the second list do not always rule HBOT out. Tell us about every health condition and every medicine you take, and we will talk through your options.</p>
-          <p><strong>What about side effects?</strong> Most people feel fine. The most common issue is pressure or mild discomfort in the ears. Some people notice a change in their vision during a course of treatment; it usually goes back to normal after treatment ends. Serious side effects are rare. We go over all of the risks with you before you start.</p>
+          <p>These do not always rule it out; tell us about every health condition and medicine you take.</p>
+          <p><strong>What about side effects?</strong> Most people feel fine. The most common issue is ear pressure. Some people notice a temporary change in vision during a course of treatment; it usually returns to normal afterward. Serious side effects are rare.</p>
           <p><strong>Questions about cost or insurance?</strong> Coverage depends on your plan and your diagnosis. <a class="text-link" href="/contact/">Request an appointment</a> and our team will help you understand your options before you start.</p>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         6. OUR TEAM — credential-accurate (LOCKED): Dr. Abanto's exact hyperbaric
-            credential; two ABWM-certified specialists; NPs. Portrait is a
-            placeholder at final 3:4 dimensions.
+         6. TEAM TIE-IN — team-level, credential-accurate framing only (LOCKED wording
+            from CLAUDE.md). No per-service clinician attributions until the client
+            confirms them (client question d).
     ============================================================ -->
     <section class="section" id="team" aria-labelledby="team-title">
       <div class="shell split split--portrait">
@@ -575,10 +638,8 @@
         <div class="fade-up">
           <p class="eyebrow">Our team</p>
           <h2 class="display-2 mt-5" id="team-title">Hyperbaric medicine, inside a full wound care team</h2>
-          <div class="prose mt-6">
-            <p>HBOT works best as part of a plan. At Wound Care Institute of Texas, the same team that manages your wound also manages your oxygen therapy.</p>
-            <p>Dr. Pedro Abanto, MD, FACP, is an internal medicine physician who holds the Essentials of Wound Care and Hyperbaric Medicine certification. Our team also includes two clinicians certified by the American Board of Wound Management, Dr. José R. Sobrevilla, MD, CWSP, and Cesar Martinez, RN, CWS, along with nurse practitioners with wound care and critical care experience.</p>
-            <p>During your course of HBOT, we keep treating the wound itself: cleaning and debriding it, choosing the right dressings, and taking pressure off of it. The oxygen supports the healing your body is already working on.</p>
+          <div class="prose mt-6" style="max-width: 68ch">
+            <p>Dr. Pedro Abanto, MD, FACP, is an internal medicine physician who holds the Essentials of Wound Care and Hyperbaric Medicine certification. Two of our clinicians are certified by the American Board of Wound Management: Dr. José R. Sobrevilla, MD, CWSP, and Cesar Martinez, RN, CWS. Our nurse practitioners bring wound care and critical care experience, and the same team that manages your wound manages your oxygen therapy.</p>
           </div>
           <a class="arrow-link mt-5" href="/our-team/">
             <span>Meet our team</span>
@@ -590,48 +651,40 @@
 
     <!-- ============================================================
          7. FAQ — native details/summary. The FAQPage schema above repeats these
-            eight Q&As word for word; edit both together.
+            Q&As word for word; edit both together.
     ============================================================ -->
     <section class="section section--tint" id="faq" aria-labelledby="faq-title">
       <div class="shell index-layout">
         <div class="index-layout__aside fade-up">
           <p class="eyebrow">Questions</p>
           <h2 class="display-2 mt-5" id="faq-title">Hyperbaric oxygen therapy FAQ</h2>
-          <p class="lede muted mt-6">Short answers to what patients and families ask us most. Your care team can answer anything that is not here.</p>
+          <p class="lede muted mt-6">Short answers to what patients and families ask us most.</p>
         </div>
 
         <div class="faq fade-up">
           <details class="faq__item">
             <summary class="faq__q">Does hyperbaric oxygen therapy hurt?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-            <div class="faq__a"><p>Most people do not find HBOT painful. The most common feeling is pressure in your ears as the chamber pressurizes, like on an airplane. Swallowing, yawning, or chewing gum helps. Our team slows the pressure change if you need it.</p></div>
+            <div class="faq__a"><p>Most people do not find HBOT painful. The most common feeling is pressure in your ears as the chamber pressurizes, like on an airplane. Swallowing or yawning helps.</p></div>
           </details>
           <details class="faq__item">
             <summary class="faq__q">How long does each session take?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-            <div class="faq__a"><p>Plan on about <span class="num--text">2 hours</span> from the time you arrive to the time you leave. Most of that time is spent resting inside the chamber while the pressure rises, holds, and comes back down.</p></div>
+            <div class="faq__a"><p>Plan on about <span class="num--text">2 hours</span> from arrival to leaving. Most of that time is spent resting inside the chamber while the pressure rises, holds, and comes back down.</p></div>
           </details>
           <details class="faq__item">
             <summary class="faq__q">How many sessions will I need?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-            <div class="faq__a"><p>It depends on your wound. Many treatment plans call for <span class="num--text">20 to 40 sessions</span>, one each weekday. Your physician sets the number and checks your progress along the way.</p></div>
+            <div class="faq__a"><p>It depends on your wound. Many treatment plans call for <span class="num--text">20 to 40 sessions</span>, one each weekday. Your physician sets the number and checks your progress.</p></div>
           </details>
           <details class="faq__item">
             <summary class="faq__q">Can I drive myself home after a session?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-            <div class="faq__a"><p>Yes. HBOT does not use sedation or any medicine that makes you drowsy. Some people feel tired or hungry afterward, so plan a light day.</p></div>
+            <div class="faq__a"><p>Yes. HBOT does not use sedation or any medicine that makes you drowsy. Some people feel tired afterward, so plan a light day.</p></div>
           </details>
           <details class="faq__item">
             <summary class="faq__q">What can I bring into the chamber?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-            <div class="faq__a"><p>Very little. For safety, nothing that can spark goes inside: no phones, watches, hearing aids, lighters, or battery-powered devices. You wear a cotton gown we provide, and you skip lotions, perfume, and hair products on treatment days.</p></div>
+            <div class="faq__a"><p>Very little. Nothing that can spark goes inside: no phones, watches, hearing aids, lighters, or batteries. You wear a cotton gown we provide.</p></div>
           </details>
           <details class="faq__item">
             <summary class="faq__q">Does insurance cover HBOT?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-            <div class="faq__a"><p>Some insurance plans cover HBOT for specific wound diagnoses when certain conditions are met. Coverage depends on your plan and your wound. <a class="text-link" href="/contact/">Request an appointment</a> and our team will help you understand your options before you start.</p></div>
-          </details>
-          <details class="faq__item">
-            <summary class="faq__q">Is HBOT safe?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-            <div class="faq__a"><p>HBOT has been used for decades and is considered safe when a trained team provides it. Side effects are usually mild, like ear pressure. Some people notice a change in their vision during a course of treatment; it usually goes back to normal afterward. Serious problems are rare. We review your health history first to lower the risks.</p></div>
-          </details>
-          <details class="faq__item">
-            <summary class="faq__q">Do I still need other wound treatments during HBOT?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-            <div class="faq__a"><p>Usually, yes. HBOT works alongside your regular wound care, such as debridement, dressings, offloading, or compression, not instead of it. Your team keeps treating the wound while the oxygen therapy supports healing.</p></div>
+            <div class="faq__a"><p>Some plans cover HBOT for specific wound diagnoses when certain conditions are met. Request an appointment and our team will help you understand your options.</p></div>
           </details>
         </div>
       </div>
@@ -645,38 +698,32 @@
         <div class="section-head section-head--split fade-up">
           <p class="eyebrow">Related services</p>
           <h2 class="display-2" id="other-title">Other wound care services</h2>
-          <p class="lede muted">HBOT is one of seven treatments we offer. Your care plan may combine several of them.</p>
+          <p class="lede muted">HBOT is one of seven treatments we offer.</p>
         </div>
 
-        <ul class="ledger ledger--light fade-up mt-0">
+        <ul class="ledger ledger--light ledger--compact fade-up mt-0">
           <li class="ledger__item"><a class="ledger__link" href="/services/negative-pressure-wound-therapy/">
             <h3 class="heading-3 ledger__name">Negative Pressure Wound Therapy (Wound VAC)</h3>
-            <p class="ledger__desc">Controlled suction draws fluid away from the wound and promotes new tissue growth.</p>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a></li>
           <li class="ledger__item"><a class="ledger__link" href="/services/wound-debridement/">
             <h3 class="heading-3 ledger__name">Debridement of Wounds</h3>
-            <p class="ledger__desc">Removal of dead tissue to prepare the wound bed for healing.</p>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a></li>
           <li class="ledger__item"><a class="ledger__link" href="/services/total-contact-casting/">
             <h3 class="heading-3 ledger__name">Total Contact Casting</h3>
-            <p class="ledger__desc">A cast that spreads pressure away from a diabetic foot ulcer to promote healing.</p>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a></li>
           <li class="ledger__item"><a class="ledger__link" href="/services/bioengineered-skin-substitutes/">
             <h3 class="heading-3 ledger__name">Bio-engineered Skin</h3>
-            <p class="ledger__desc">Advanced skin substitutes that support the closing of chronic wounds.</p>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a></li>
           <li class="ledger__item"><a class="ledger__link" href="/services/compression-therapy/">
             <h3 class="heading-3 ledger__name">Compression Therapy</h3>
-            <p class="ledger__desc">Compression for venous stasis ulcers and leg swelling, to improve circulation and promote healing.</p>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a></li>
           <li class="ledger__item"><a class="ledger__link" href="/services/specialty-wound-dressings/">
             <h3 class="heading-3 ledger__name">Specialty Dressings and Ointments</h3>
-            <p class="ledger__desc">Advanced dressings and topical treatments matched to your wound type.</p>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a></li>
         </ul>
