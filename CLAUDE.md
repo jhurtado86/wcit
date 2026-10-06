@@ -606,6 +606,61 @@ LeadingReach URLs; provider headshots; real location/facility photos.
     chamber rules (cotton gown; no phones, watches, hearing aids, lighters, batteries; no
     lotions/perfume/hair products/makeup) · "Most people do not find HBOT painful"
   - "HBOT has been used for decades and is considered safe when a trained team provides it"
+- **(b, cont.) Clinical review — the six standard service pages** (each statement also
+  appears in that page's FAQPage schema and MedicalProcedure `howPerformed`/`preparation`):
+  - **`/services/negative-pressure-wound-therapy/`** — dressing changes "usually 2 to 3 times
+    a week" · pump worn "all day" and during sleep · can be disconnected briefly for bathing
+    if the dressing stays sealed · "some wounds need it for a few weeks, others longer" ·
+    indications (deep DFU incl. post-amputation, deep pressure ulcers, dehisced incisions,
+    grafts/flaps, select venous ulcers, some deep burns) · closer-look list (dead tissue,
+    untreated infection/osteomyelitis, exposed vessel/nerve/organ, malignancy, blood thinners
+    or bleeding disorder, poor blood flow) · side effects (film irritation, discomfort at
+    changes, uncommon bleeding).
+  - **`/services/wound-debridement/`** — "often a few minutes" · numbing "available when
+    needed" (gel or local anesthetic) · "often at weekly visits" · four methods (sharp,
+    enzymatic, autolytic, mechanical) · "a little bleeding is normal" · dry black eschar on an
+    ischemic foot "often left in place until circulation improves" · closer-look list (blood
+    thinners/bleeding disorder, poor blood flow, near a large vessel or tendon, significant
+    pain, infection first) · "the wound may look bigger after debridement."
+  - **`/services/total-contact-casting/`** — cast changes "usually every 1 to 2 weeks" ·
+    "often 6 to 12 weeks" · "many ulcers close in 6 to 12 weeks" · "considered the most
+    effective way" to offload a plantar DFU · "do not drive" with a right-foot cast; ask about
+    a left-foot cast with an automatic · shower with a waterproof cover / shower chair; a wet
+    cast is changed · indications (plantar DFU, neuropathic ulcers, post-amputation foot
+    wounds, Charcot foot) · closer-look list (poor blood flow, infection/osteomyelitis, very
+    deep or heavily draining ulcer, fall risk, large day-to-day swelling, cannot keep dry or
+    return) · side effects (rub sores, calf weakening) · blood-sugar statements.
+  - **`/services/bioengineered-skin-substitutes/`** — "often once a week, for several
+    weeks" · "takes minutes" · "most people feel little during application" · "not improved
+    after about 4 weeks of good wound care" / "about a month" (DFU) · product sources (donated
+    human tissue incl. amniotic membrane, animal collagen incl. pig/cow, lab-grown cells) ·
+    "screened and processed under strict rules" · indications (clean DFU, stalled venous
+    ulcers, select pressure ulcers, stalled surgical wounds, some partial-thickness burns) ·
+    closer-look list (infection/dead tissue, poor blood flow, malignancy, animal-product
+    allergy, tissue-source preferences) · "a sheet sometimes does not take."
+  - **`/services/compression-therapy/`** — wrap changes "usually once or twice a week" ·
+    worn "day and night until we change it" · stockings "every day," "most people do"
+    (lifelong) · ankle–arm pressure comparison (ABI) before any compression, "never skipped" ·
+    "less swelling within the first week" · "weeks to months to close" · indications (venous
+    stasis ulcers, chronic leg swelling, leg incisions with swelling, mixed arterial/venous
+    "with lighter compression" after ABI) · closer-look list (PAD, uncontrolled heart failure,
+    neuropathy, cellulitis, intolerance) · warning signs (numb, pale, or blue toes; worsening
+    pain) · walking/elevation advice.
+  - **`/services/specialty-wound-dressings/`** — "daily to weekly" change frequency ·
+    the dressing-matching table (hydrogel for dry; foam/alginate for heavy drainage;
+    silver/iodine/honey for infection risk; enzymatic ointment for dead tissue; collagen for
+    deep/stalled; film/hydrocolloid near closure; barrier creams/powders/rings for peristomal
+    skin) · nine conditions incl. radiation wounds, peristomal irritation, fistulas (pouching
+    systems) · infection signs list · allergy list (adhesives, silver, iodine, latex) · "never
+    soak a wound" · "some dressings are waterproof; most are not."
+  - **`/services/`** (overview) — the "Often used for" line on each card and the "plan built
+    in layers" sequence (debride → offload/compress → dress → advanced therapies).
+- **(d) Provider–service attributions** — the team tie-ins name specific clinicians for
+  specific services from the CLAUDE.md bios: Patrizia Cantu for negative pressure, debridement,
+  collagen films, diabetic/venous ulcers; Andrea Garza (ICU + complex wound care) on the
+  compression page; Edwardo Bernal (chronic-disease management) on the casting page; Cesar
+  Martinez assisting debridements and teaching families. Confirm with the client that each
+  clinician actually works in that service line before launch.
 - **(c) Hyperbaric chamber facts** — which location(s) house the chamber(s) (McAllen,
   Mission, or both), how many, and monoplace vs. multiplace. The HBOT page deliberately says
   nothing location-specific and describes the chamber generically until this is answered;

@@ -65,6 +65,7 @@
 .site.menu-open { overflow: hidden; }
 
 .shell { width: 100%; max-width: var(--shell); margin-inline: auto; padding-inline: var(--gutter); }
+.shell--narrow { max-width: 58rem; }                /* single-column prose sections (team tie-in) */
 
 .skip-link {
   position: absolute; left: 12px; top: 12px; z-index: 200;
@@ -623,6 +624,65 @@
 .fade-up.visible .o2-row__fill, .no-js .o2-row__fill { transform: scaleX(1); }
 .o2-row__note { color: var(--color-muted); line-height: 1.45; }
 .o2-scale__caption { margin-top: 26px; padding-left: 22px; border-left: 4px solid var(--color-accent-deep); font-weight: 600; max-width: 40ch; }
+
+/* Figure + numbered key — the per-service diagrams (wound VAC cross-section, foot soles,
+   compression leg). Labels live in HTML so they never shrink with the drawing. */
+.figure { display: grid; gap: 22px; }
+.figure svg { display: block; width: 100%; height: auto; max-width: 34rem; }
+.figure__marker { font-family: var(--font-display); font-weight: 800; }
+.figure-key { display: grid; gap: 12px; counter-reset: key; }
+.figure-key li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 14px; align-items: start; line-height: 1.45; }
+.figure-key li::before {
+  counter-increment: key; content: counter(key);
+  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+  font-family: var(--font-display); font-weight: 800; font-size: 1.125rem; color: var(--color-bg); background: var(--color-accent);
+}
+.figure-key b { font-weight: 700; }
+.figure__caption { padding-left: 22px; border-left: 4px solid var(--color-accent-deep); font-weight: 600; max-width: 40ch; }
+.figure__labels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.figure__label { line-height: 1.45; }
+.figure__label b { display: block; font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; line-height: 1.15; margin-bottom: 4px; }
+.figure__label--key b { color: var(--color-accent-deep); }
+
+/* Label / value rows on a light surface — "which method", "which dressing" */
+.key-rows { border-top: 2px solid var(--color-ink); }
+.key-rows__row { display: grid; gap: 4px 24px; padding: 16px 4px; border-bottom: 1px solid var(--color-line); }
+@media (min-width: 640px) { .key-rows__row { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); } }
+.key-rows__row dt { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; line-height: 1.2; color: var(--color-accent-deep); }
+.key-rows__row dd { color: var(--color-ink); line-height: 1.5; }
+
+/* Note panel — a light aside beside prose (the light twin of .desk) */
+.note-panel { position: relative; padding: clamp(24px, 3vw, 34px); border-radius: var(--radius-l); background: var(--color-bg-2); border: 1px solid var(--color-line); }
+.note-panel::before { content: ''; position: absolute; left: 28px; right: 28px; top: -1px; height: 3px; border-radius: 0 0 3px 3px; background: var(--gradient-brand-x); }
+.note-panel .dash-list { margin-top: 14px; }
+
+/* Services overview — the seven treatments (genuinely parallel → cards) */
+.service-cards { display: grid; gap: 20px; }
+@media (min-width: 720px)  { .service-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .service-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; } }
+.service-card {
+  position: relative; display: flex; flex-direction: column; gap: 12px; min-height: 100%; padding: clamp(24px, 3vw, 32px);
+  background: var(--color-bg); border: 1px solid var(--color-line); border-radius: var(--radius-l); box-shadow: var(--shadow-elevated);
+  transition: transform 0.25s var(--ease-spring);
+}
+.service-card::before { content: ''; position: absolute; left: 28px; right: 28px; top: -1px; height: 3px; border-radius: 0 0 3px 3px; background: var(--gradient-brand-x); opacity: 0; transition: opacity 0.25s var(--ease-out); }
+.service-card:hover { transform: translateY(-4px); }
+.service-card:hover::before { opacity: 1; }
+.service-card:active { transform: translateY(-1px); }
+.service-cards__flagship { grid-column: 1 / -1; }   /* the <li> spans; the article inside lays out in two columns */
+.service-card--flagship { background: var(--color-dark); color: var(--color-bg); border-color: rgba(var(--color-accent-bright-rgb), 0.3); }
+.service-card--flagship::before { opacity: 1; }
+.service-card__tag { font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-deep); }
+.service-card--flagship .service-card__tag { color: var(--color-accent-bright); }
+.service-card__name { font-family: var(--font-display); font-weight: 700; font-size: 1.625rem; line-height: 1.12; }
+.service-card__text { color: var(--color-muted); line-height: 1.5; }
+.service-card--flagship .service-card__text { color: var(--color-muted-light); max-width: 60ch; }
+.service-card__treats { font-size: 1.0625rem; color: var(--color-muted); }
+.service-card--flagship .service-card__treats { color: var(--color-muted-light); }
+.service-card__treats b { font-weight: 700; color: var(--color-ink); }
+.service-card--flagship .service-card__treats b { color: var(--color-bg); }
+.service-card .arrow-link { margin-top: auto; padding-top: 6px; }
+@media (min-width: 1100px) { .service-card--flagship { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 12px 56px; align-items: start; } .service-card--flagship .service-card__tag, .service-card--flagship .service-card__name { grid-column: 1; } .service-card--flagship .service-card__text { grid-column: 1; } .service-card--flagship .service-card__treats { grid-column: 2; grid-row: 1 / span 3; align-self: center; } .service-card--flagship .arrow-link { grid-column: 1; } }
 
 /* Numbered steps — a vertical rail; one skeleton the week ruler does not share */
 .steps { position: relative; display: grid; gap: 0; counter-reset: step; }
