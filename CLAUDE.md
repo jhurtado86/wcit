@@ -720,6 +720,18 @@ LeadingReach URLs; provider headshots; real location/facility photos.
   goes (steps 1 and 2). Also confirm the page's operational wording: "LeadingReach is our
   preferred channel"; "Facility staff can refer through LeadingReach or by fax"; "Want to
   discuss a patient before you refer? Call…"
+- **(f) Team-page bio details to confirm — `/our-team/`.** Built per the FROZEN bio rules
+  (no tenure dates, no founder claims, no service-line assignments, Physician schema for the
+  two MDs only). Client to confirm: **(1)** Dr. Abanto's residency is published as "Regional
+  Academic Health Center (UT Health Science Center at San Antonio), Harlingen, Texas" — the
+  institution's name; the Providers section above says "Regional Academy Health Center" ·
+  **(2)** Andrea Garza's prior hospitals are kept exactly as supplied ("Rio Grande Regional,
+  DHR, and Edinburg Regional") — supply full names if preferred · **(3)** omitted as
+  condensing choices: USMLE steps and ECFMG (both MDs), the ABIM certification year (2009),
+  and "collagen films" is written "collagen dressings" (Patrizia Cantu) — say so to restore
+  any · **(4)** Cesar Martinez's RN license number is published in his credential rows;
+  remove on request · **(5)** headshots: six 3:4 portrait slots (900×1200) with final alt
+  text, `[NEEDS INPUT]`.
 - **(d) Provider–service attributions (open)** — the service pages currently use team-level
   framing only. If the client wants named clinicians on specific service pages (e.g. who
   fits wound VACs, who applies casts, who performs sharp debridement), they must confirm each

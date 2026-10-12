@@ -654,6 +654,28 @@
 .key-rows__row dt { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; line-height: 1.2; color: var(--color-accent-deep); }
 .key-rows__row dd { color: var(--color-ink); line-height: 1.5; }
 
+/* Credential rows on a dark surface, and a stacked variant for narrow columns (team cards) */
+.on-dark .key-rows { border-top-color: rgba(var(--color-bg-rgb), 0.4); }
+.on-dark .key-rows__row { border-bottom-color: rgba(var(--color-bg-rgb), 0.16); }
+.on-dark .key-rows__row dt { color: var(--color-accent-bright); }
+.on-dark .key-rows__row dd { color: var(--color-bg); }
+.key-rows--stack .key-rows__row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+
+/* ============================================================
+   Team page — a bio beside its portrait (physicians, RN) and the
+   nurse-practitioner cards (genuinely parallel → cards)
+   ============================================================ */
+.person__role { margin-top: 10px; font-weight: 700; color: var(--color-accent-deep); line-height: 1.4; }
+.on-dark .person__role, .on-dark .roster__creds { color: var(--color-accent-bright); }
+.people { display: grid; gap: 24px; margin-top: clamp(2.5rem, 5vw, 4rem); }
+@media (min-width: 720px)  { .people { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .people { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; } }
+.person-card {
+  display: flex; flex-direction: column; padding: clamp(22px, 3vw, 30px);
+  background: var(--color-bg); border: 1px solid var(--color-line); border-radius: var(--radius-l); box-shadow: var(--shadow-elevated);
+}
+.person-card > .photo-frame { margin-bottom: 22px; }
+
 /* Note panel — a light aside beside prose (the light twin of .desk) */
 .note-panel { position: relative; padding: clamp(24px, 3vw, 34px); border-radius: var(--radius-l); background: var(--color-bg-2); border: 1px solid var(--color-line); }
 .note-panel::before { content: ''; position: absolute; left: 28px; right: 28px; top: -1px; height: 3px; border-radius: 0 0 3px 3px; background: var(--gradient-brand-x); }
