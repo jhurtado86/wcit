@@ -698,6 +698,28 @@ LeadingReach URLs; provider headshots; real location/facility photos.
     first-visit description (blood-flow and sensation check); nursing-facility patients
     referred through LeadingReach; the stoma/fistula "before your first visit" list (bring
     pouching supplies, leak notes, surgeon's name, medicines).
+  - **`/referring-providers/`** (also in its FAQPage schema) — referral criteria = the
+    confirmed 2-week / 6-week / risk-factor rule, reworded for clinicians ("any open wound in
+    a patient with diabetes, poor circulation, or vascular disease") · "physician-supervised"
+    HBOT sessions · HBOT FAQ indications ("diabetic foot ulcers that have not improved with
+    standard care and radiation injury") · "Every plan starts with a physician examination" ·
+    "examines and measures the wound and looks for the reason it has not healed" · the
+    treatment-plan sequence in step 3 · "Patients go home the same day after every visit."
+    Credential statements are the LOCKED framing plus the homepage's Dr. Abanto certification
+    sentence — no service-line attributions.
+- **(e) Referral workflow facts — `/referring-providers/` `[NEEDS INPUT]`.** The page's
+  "How to refer, and what happens next" steps state only what this file confirms (LeadingReach
+  or fax → seen at McAllen or Mission, Mon–Fri 8–5, by the multidisciplinary team → outpatient
+  treatment). Nothing else is stated until the client answers: time from referral to first
+  appointment · who contacts the patient to schedule (our office or the referring office) ·
+  required documents (demographics, insurance, wound history, orders, recent labs/imaging) ·
+  insurance / prior-authorization handling · referral criteria beyond the 2-week / 6-week /
+  risk-factor rule · how the referring office receives consult notes and progress updates
+  (LeadingReach, fax, both) · whether fax referrals are acknowledged · whether clinicians
+  round at nursing facilities or all care is in-clinic. HTML comments mark where each answer
+  goes (steps 1 and 2). Also confirm the page's operational wording: "LeadingReach is our
+  preferred channel"; "Facility staff can refer through LeadingReach or by fax"; "Want to
+  discuss a patient before you refer? Call…"
 - **(d) Provider–service attributions (open)** — the service pages currently use team-level
   framing only. If the client wants named clinicians on specific service pages (e.g. who
   fits wound VACs, who applies casts, who performs sharp debridement), they must confirm each

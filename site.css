@@ -746,6 +746,12 @@
 .dash-list li::before { content: ''; position: absolute; left: 0; top: 0.72em; width: 18px; height: 3px; border-radius: 2px; background: var(--color-accent-deep); }
 .on-dark .dash-list li::before { background: var(--color-accent-bright); }
 .pair__col--soft .dash-list li::before { background: var(--color-muted-light); }
+/* A dash list whose items are links: every link is a 48px-tall row (a wrapped link grows
+   taller, never tighter), so the rows keep the list's normal pitch with no gap between them.
+   The first text line sits at the row's midline, where the dash is. */
+.dash-list--links { gap: 0; }
+.dash-list--links li a { display: flex; align-items: flex-start; min-height: 48px; padding-top: calc((48px - 1.5em) / 2); }
+.dash-list--links li::before { top: 22.5px; }
 
 /* FAQ — native <details>; 64px rows, plus rotates to a cross (transform only) */
 .faq { border-top: 2px solid var(--color-ink); }
