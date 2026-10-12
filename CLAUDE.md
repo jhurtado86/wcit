@@ -732,6 +732,22 @@ LeadingReach URLs; provider headshots; real location/facility photos.
   any · **(4) RESOLVED:** the RN license number is NOT published (page or schema) — Juan's
   decision; credentials stay "RN, CWS" · **(5)** headshots: six 3:4 portrait slots
   (900×1200) with final alt text, `[NEEDS INPUT]`. Choices 1–3 approved as built.
+- **(g) Patient-visit logistics — `/patient-resources/`, `/contact/`, `/thank-you/`,
+  `/locations/` `[NEEDS INPUT]`.** Operational details not stated in this file are either
+  hedged generic wording (flagged here) or left as HTML comments — never invented. Confirm:
+  the "what to bring" list (photo ID, insurance card, medicine/allergy list, other doctors'
+  names, referral paperwork/records/photos, blood-sugar log, caregiver welcome) · arrival
+  time and paperwork before a first visit; whether forms can be completed ahead of time ·
+  patient forms themselves (PDF downloads or a GHL form) · the thank-you page's callback
+  window ("within a few business days" is a placeholder) · insurance wording ("some plans
+  require a referral … or an authorization before certain treatments; the office will help
+  you understand what yours requires") · "Getting ready for a visit" rows (keep dressings
+  dry unless waterproof; do not remove a cast or VAC dressing; loose clothing; usual
+  medicines; HBOT chamber rules) · the home-care warning-signs list (same-day call) ·
+  **Locations `[VERIFY]`:** parking, building entrance, suite access and landmarks for both
+  clinics (HTML comments mark the spots); geo coordinates for the two location schema
+  nodes (from the Google Business Profile); whether the Google Maps embeds pin the correct
+  suites · "Our McAllen clinic is our primary location" wording.
 - **(d) Provider–service attributions (open)** — the service pages currently use team-level
   framing only. If the client wants named clinicians on specific service pages (e.g. who
   fits wound VACs, who applies casts, who performs sharp debridement), they must confirm each
