@@ -729,9 +729,9 @@ LeadingReach URLs; provider headshots; real location/facility photos.
   DHR, and Edinburg Regional") — supply full names if preferred · **(3)** omitted as
   condensing choices: USMLE steps and ECFMG (both MDs), the ABIM certification year (2009),
   and "collagen films" is written "collagen dressings" (Patrizia Cantu) — say so to restore
-  any · **(4)** Cesar Martinez's RN license number is published in his credential rows;
-  remove on request · **(5)** headshots: six 3:4 portrait slots (900×1200) with final alt
-  text, `[NEEDS INPUT]`.
+  any · **(4) RESOLVED:** the RN license number is NOT published (page or schema) — Juan's
+  decision; credentials stay "RN, CWS" · **(5)** headshots: six 3:4 portrait slots
+  (900×1200) with final alt text, `[NEEDS INPUT]`. Choices 1–3 approved as built.
 - **(d) Provider–service attributions (open)** — the service pages currently use team-level
   framing only. If the client wants named clinicians on specific service pages (e.g. who
   fits wound VACs, who applies casts, who performs sharp debridement), they must confirm each
