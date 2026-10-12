@@ -659,6 +659,37 @@
 .note-panel::before { content: ''; position: absolute; left: 28px; right: 28px; top: -1px; height: 3px; border-radius: 0 0 3px 3px; background: var(--gradient-brand-x); }
 .note-panel .dash-list { margin-top: 14px; }
 
+/* ============================================================
+   Overview pages (conditions) — an on-page index in the hero
+   panel, and anchored entries that land clear of the sticky header
+   ============================================================ */
+/* Jump list — the hero panel's index of in-page anchors */
+.jump-list { margin-top: 18px; border-top: 1px solid rgba(var(--color-bg-rgb), 0.16); }
+.jump-list li { border-bottom: 1px solid rgba(var(--color-bg-rgb), 0.16); break-inside: avoid; }
+.jump-list a { display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 8px 2px; font-weight: 700; color: var(--color-bg); }
+.jump-list a svg { flex: none; width: 18px; height: 18px; color: var(--color-accent-bright); transition: transform 0.25s var(--ease-spring); }
+.jump-list a:hover  { color: var(--color-accent-bright); }
+.jump-list a:hover svg  { transform: translateX(4px); }
+.jump-list a:active { color: var(--color-wave-light); }
+@media (min-width: 640px) and (max-width: 1279px) { .jump-list { column-count: 2; column-gap: 40px; } }
+
+/* Entry — one anchored condition. scroll-margin keeps the heading below the sticky brand
+   bar (and the link row, while it shows) when another page deep-links to the id. */
+.entry { scroll-margin-top: calc(var(--nav-height-mobile) + 20px); }
+@media (min-width: 1280px) { .entry { scroll-margin-top: calc(var(--nav-height) + var(--nav-links-height) + 20px); } }
+/* Stacked entries in one column get a hairline between them (.pair and .entry-duo lay
+   theirs out side by side and keep their own rules) */
+.entry-stack > .entry + .entry { margin-top: clamp(2.5rem, 5vw, 4rem); padding-top: clamp(2.5rem, 5vw, 4rem); border-top: 1px solid var(--color-line); }
+.entry__label { margin-top: 4px; font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-deep); }
+.on-dark .entry__label { color: var(--color-accent-bright); }
+.entry__grid { display: grid; gap: 28px 48px; margin-top: 28px; }
+@media (min-width: 720px) { .entry__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.entry__grid .dash-list { margin-top: 12px; }
+.entry__treat { margin-top: 12px; line-height: 1.55; max-width: 46ch; }
+/* Two entries side by side (radiation wounds + burns) */
+.entry-duo { display: grid; gap: clamp(3rem, 6vw, 4.5rem); }
+@media (min-width: 1024px) { .entry-duo { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 72px; align-items: start; } }
+
 /* Services overview — the seven treatments (genuinely parallel → cards) */
 .service-cards { display: grid; gap: 20px; }
 @media (min-width: 720px)  { .service-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

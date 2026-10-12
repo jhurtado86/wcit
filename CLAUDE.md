@@ -190,7 +190,10 @@ from these classes; add a component here when two pages need it, never per page.
   the header (sticky brand bar + link bar + Services dropdown + mobile menu panel + mobile
   action bar); `.section` / `.section--tint` / `.section--dark` / `.grain`; the hero and final
   CTA slots with overlay + vignette; the week ruler, index list, flagship + ledger, roster,
-  mission, referral desk, location cards, paths, footer; focus rings; reduced-motion rules.
+  mission, referral desk, location cards, paths, footer; the overview-page pieces
+  (`.jump-list` in the hero panel; `.entry` anchored sections with `scroll-margin-top` so
+  deep links clear the sticky header, stacked in `.entry-stack` or paired in `.entry-duo`);
+  focus rings; reduced-motion rules.
   Class selectors only (Tailwind preflight never overrides them). No hex outside `brand.css`.
 - **`site.js`** owns: the smart header (brand bar always sticks; link row tucks on scroll
   down, returns on scroll up or keyboard focus); the Services dropdown (click, hover, keyboard,
@@ -667,6 +670,34 @@ LeadingReach URLs; provider headshots; real location/facility photos.
     soak a wound" · "some dressings are waterproof; most are not."
   - **`/services/`** (overview) — the "Often used for" line on each card and the "plan built
     in layers" sequence (debride → offload/compress → dress → advanced therapies).
+  - **`/conditions/`** (overview; every statement also appears in the FAQPage schema or the
+    MedicalCondition `description`s) — "when to see a specialist" wording: not started
+    healing in ~2 weeks / not closed in ~6 / diabetes, poor circulation or vascular disease
+    "and a wound of any age"; "a new sore on a numb foot can get worse quickly" ·
+    **DFU:** "a leading cause of amputation"; "if it stalls after about a month" → skin
+    substitute or HBOT; deep ulcers → wound VAC; Charcot foot grouped here · **arterial:**
+    sites (toes, heel, outer ankle), "punched out" with a pale, dry base, night/rest pain
+    eased by hanging the leg down, blood-flow test first, "a blocked artery is treated before
+    the wound, with a vascular specialist," HBOT "in select cases," compression can "do harm"
+    · **venous:** "the most common leg ulcer," valve/pooling mechanism, brown hard skin above
+    the ankle, ABI before compression, "compression stockings afterward help keep it from
+    coming back" · **pressure:** usual sites (tailbone, hips, heels, ankles), darker-skin
+    presentation (purple, warm, firm), "often goes deeper than it looks," pressure relief
+    "with families and facility staff," wound VAC for deep ulcers, skin substitute "select
+    ulcers" · **surgical:** cause list (infection, fluid under the skin, tension, diabetes,
+    poor flow, smoking, medicines), "still open after about 2 weeks," wound VAC "helps many
+    open incisions," failing graft / bone infection → HBOT, post-amputation foot wound → TCC
+    · **radiation:** onset "months to years later," microvascular scarring, HBOT "one of its
+    main uses" · **burns:** ER-first criteria (large or deep; face, hands, feet, genitals),
+    "not healing after about 2 to 3 weeks," VAC / skin substitute / HBOT indications ·
+    **peristomal:** causes (leak, fit, frequent changes, adhesive allergy, fungal rash),
+    "a pouch that lasts less time than it used to" · **fistulas:** causes (abdominal surgery,
+    Crohn's, infection, radiation), "some fistulas close once the output is controlled;
+    others need surgery," "work with your surgeon" · **operational (client to confirm, not
+    clinical):** patients may self-refer; "some insurance plans require a referral"; the
+    first-visit description (blood-flow and sensation check); nursing-facility patients
+    referred through LeadingReach; the stoma/fistula "before your first visit" list (bring
+    pouching supplies, leak notes, surgeon's name, medicines).
 - **(d) Provider–service attributions (open)** — the service pages currently use team-level
   framing only. If the client wants named clinicians on specific service pages (e.g. who
   fits wound VACs, who applies casts, who performs sharp debridement), they must confirm each
