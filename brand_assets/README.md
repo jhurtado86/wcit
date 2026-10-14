@@ -36,8 +36,13 @@ To re-export, re-run the crop from the original — never resave an export.
 
 ## Content photos — uniform container (`.photo-frame`)
 
-Every content photo uses the shared `.photo-frame` class (one ratio site-wide). Export at
-these sizes:
+Every content photo uses the shared `.photo-frame` class (one ratio site-wide). Two
+owner-approved exceptions carry their own ratio because the photo must not be cropped:
+`team-wcit-clinical-team.jpg` (1807×549, `.photo-frame--wide` — homepage team section + Our
+Team hero) and `home-hyperbaric-chamber.jpg` (native 768×923, `.flagship__photo`, capped at
+native width so it is never upscaled). A clinic exterior may repeat in every card for that
+clinic (`location-mcallen-exterior.jpg` fills the homepage, About and Locations McAllen cards).
+Export at these sizes:
 
 | Type | Ratio | Dimensions | Notes |
 |---|---|---|---|
