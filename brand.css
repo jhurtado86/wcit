@@ -78,3 +78,6 @@
 }
 .photo-frame--portrait { aspect-ratio: 3 / 4; }
 .photo-frame--portrait > img { object-position: center top; }
+/* The owner-approved seven-person team banner (1807×549, native width, nothing cropped):
+   its own wide ratio so every person stays in frame — homepage team section + Our Team hero */
+.photo-frame--wide { aspect-ratio: 1807 / 549; }

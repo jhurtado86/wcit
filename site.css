@@ -413,6 +413,10 @@
   .hero__inner { grid-template-columns: minmax(0, 7fr) minmax(0, 4.4fr); gap: 72px; min-height: clamp(34rem, calc(100svh - var(--nav-height) - var(--nav-links-height)), 46rem); }
 }
 
+/* Team banner row inside the Our Team hero — full shell width under the H1 / index split */
+.hero__banner { margin-top: calc(-1 * clamp(1.5rem, 3.5vw, 3rem)); padding-bottom: clamp(2.5rem, 5vw, 4rem); }
+.hero__banner .photo-frame { box-shadow: 0 0 0 1px rgba(var(--color-bg-rgb), 0.14), 0 24px 48px -28px rgba(var(--color-dark-rgb), 0.9); }
+
 /* Service-page hero: same slot and split, shorter, with a breadcrumb above the eyebrow */
 .hero--service .hero__inner { padding-block: clamp(2.5rem, 5vw, 4.5rem) clamp(3.5rem, 7vw, 6rem); }
 @media (min-width: 1280px) { .hero--service .hero__inner { min-height: 0; } }
@@ -530,6 +534,10 @@
    ============================================================ */
 .flagship { display: grid; gap: 36px; align-items: center; }
 @media (min-width: 1024px) { .flagship { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 72px; } }
+/* Portrait variant — the owner-approved chamber photo is a native 768×923 portrait: the frame
+   takes the photo's own ratio and is capped at native CSS width so it is never stretched */
+.flagship__photo { aspect-ratio: 768 / 923; max-width: 768px; }
+@media (min-width: 1024px) { .flagship--portrait { grid-template-columns: minmax(0, 420px) minmax(0, 1fr); } }
 .flagship__text > * + * { margin-top: 18px; }
 .flagship__note { padding: 16px 20px; border-left: 4px solid var(--color-accent-bright); background: rgba(var(--color-primary-mid-rgb), 0.9); border-radius: 0 var(--radius-s) var(--radius-s) 0; }
 

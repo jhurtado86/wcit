@@ -331,9 +331,11 @@ A wound needs specialist care if: it hasn't started healing in ~2 weeks or isn't
 
 **FROZEN rule:** condense each into a clean professional bio (narrative paragraph + a credentials/
 education list) — do NOT replicate the verbatim year-by-year career timelines from the old site.
-Photos: four studio headshots are placed (Abanto, Martinez, Garza, Bernal — `brand_assets/team-*.jpg`,
-900×1200; Abanto's also fills the HBOT portrait slot). `[NEEDS INPUT — headshots for Dr. Sobrevilla
-and Patrizia Cantu]`; their slots stay on placehold.co and their schema `image` stays a placeholder.
+Photos: five studio headshots are placed (Abanto, Martinez, Garza, Cantu, Bernal — `brand_assets/team-*.jpg`,
+900×1200; Abanto's also fills the HBOT portrait slot). `[NEEDS INPUT — a headshot for Dr. Sobrevilla]`:
+his slot and schema `image` stay placeholders — the only photo on file (`originals/IMG_8817.jpg`, him
+with two staff at the front desk) cannot give a solo 3:4 crop within the 1.25× upscale limit, so that
+photo is used as-is in the About team section instead.
 
 **FROZEN (LOCKED) bio rules:**
 - **No tenure dates.** Omit every "with WCIT since [year]" — it conflicts with the unpublished
@@ -389,7 +391,11 @@ and Patrizia Cantu]`; their slots stay on placehold.co and their schema `image` 
 
 > (Cassandra Piñon, listed on the old site, is NO LONGER with the practice — do not include.)
 > The team is these 6, final. The live site's team banner photo shows a 7th person who is no
-> longer on the team — do not add them and do not use that photo anywhere on the new site.
+> longer on the team — do not add them as a provider. **Owner decision (2026-10-13): the full
+> seven-person banner is APPROVED as-is** (`brand_assets/team-wcit-clinical-team.jpg`, nobody
+> cropped out, only empty black headroom trimmed) for exactly two slots — the homepage team
+> section and the Our Team hero — with alt text that names no one. The site still lists six
+> providers everywhere else.
 
 ---
 
@@ -586,9 +592,14 @@ prominent (RGV market).
 ## Active Blockers & Backfill
 
 **Launch-blocking:** GHL form + chat widget embeds (Juan providing); og-image; confirm exact
-LeadingReach URLs; headshots for Sobrevilla and Cantu; the Mission clinic exterior; a hyperbaric
-chamber photo with no patient in it (≥1200px wide); a team/providers photo of the six (the
-homepage team slot); confirmation of which clinic the interior photo set shows (see photo pass).
+LeadingReach URLs; a headshot for Dr. Sobrevilla; the Mission clinic exterior; **patient consent for
+the homepage chamber photo** (owner-approved 2026-10-13 — confirm with the client); confirmation of
+which clinic the interior photo set shows (see photo pass).
+
+**Location-photo exception (2026-10-13):** a clinic's exterior may repeat in EVERY card for that
+clinic — the McAllen exterior fills the homepage card, the About card and `/locations/#mcallen`;
+the Mission exterior will do the same once supplied. This is the only content-photo repeat besides
+a provider's own portrait slot. Still never McAllen's photo in a Mission slot.
 - **www canonical:** the live site currently resolves to non-www (`wound-institute.com`).
   Making `www.wound-institute.com` canonical requires an apex → www **308** at launch.
 - **301 redirect map (required):** before launch, pull every live URL from the current
@@ -774,9 +785,10 @@ homepage team slot); confirmation of which clinic the interior photo set shows (
   (`originals/IMG_00xx-scaled.jpg`: waiting room, front desk, two treatment rooms, hallway,
   office) has no location context — every placed interior uses location-neutral alt text
   ("at Wound Care Institute of Texas") until the client says McAllen or Mission. **(3)** The
-  hallway photo of four framed staff portraits (`IMG_0037`) and the three-person desk photo
-  (`IMG_8817`: a CNA and a second staffer beside Dr. Sobrevilla) show people outside the six
-  providers — not placed; `IMG_8817` is the only photo of Dr. Sobrevilla on file. **(4)** A
+  hallway photo of four framed staff portraits (`IMG_0037`) is not placed (people unverified).
+  The three-person desk photo (`IMG_8817`: a CNA and a second staffer beside Dr. Sobrevilla)
+  is placed as-is in the About team section per Juan (2026-10-13), alt naming only
+  Dr. Sobrevilla; it is the only photo of him on file. **(4)** A
   circle badge (`WCIT-Logo-Circle-2-768x768.png`) was supplied although the logo rules say
   the client does not use one — not placed; it could be the source for the 512px icon if Juan
   approves. **(5)** Every procedure photo supplied (debridement, graft, VAC, DFU "types",
@@ -784,15 +796,19 @@ homepage team slot); confirmation of which clinic the interior photo set shows (
   WordPress thumbnail and most show an open wound or a patient's body — all held for Juan's
   approval and too small for a 1200×900 slot regardless.
 
-**Backfillable (build against placeholders):** the placeholders still open after the photo pass —
-homepage HBOT chamber + team photo + both location cards; About's two location cards; the Mission
-exterior on `/locations/`; the step photo on HBOT, NPWT, Bio-engineered Skin, Compression and
-Specialty Dressings; Sobrevilla + Cantu headshots — plus og-image, social URLs (footer links +
-schema `sameAs` stay out until confirmed), any service-detail the client wants to tweak,
-reviews/reputation status. Placed photos: hero + CTA backgrounds (set once in `site.css`), four
-headshots, the McAllen exterior (`/locations/#mcallen` only — one photo, one slot), two treatment
-rooms (TCC + Debridement step slots), the front desk (About), the waiting room (Patient
-Resources). Originals stay in `brand_assets/originals/` (gitignored); exports are slot-named.
+**Backfillable (build against placeholders):** the placeholders still open after the two photo
+passes — the Mission card on the homepage and About and the Mission slot on `/locations/`; the step
+photo on HBOT, NPWT, Bio-engineered Skin, Compression and Specialty Dressings; the Sobrevilla
+headshot — plus og-image, social URLs (footer links + schema `sameAs` stay out until confirmed),
+any service-detail the client wants to tweak, reviews/reputation status. Placed photos: hero + CTA
+backgrounds (set once in `site.css`), five headshots, the McAllen exterior (all three McAllen
+cards — see the location-photo exception), the seven-person team banner (homepage team section +
+Our Team hero, `.photo-frame--wide`), the chamber photo (homepage flagship, `.flagship--portrait`
+at native 768×923, never upscaled), Dr. Sobrevilla with staff (About team section), two treatment
+rooms (TCC + Debridement step slots), the front desk (About), the waiting room (Patient Resources).
+Second-angle interiors (`IMG_0010`, `0022`, `0024`, `0029`) remain unplaced: the only open slots
+are service step photos and Mission cards, where a waiting room or front desk would be a forced
+fit. Originals stay in `brand_assets/originals/` (gitignored); exports are slot-named.
 
 **Not blockers:**
 - **Logo source:** no high-res/vector wordmark exists — `wordmark.png` is the production logo.
@@ -801,7 +817,9 @@ Resources). Originals stay in `brand_assets/originals/` (gitignored); exports ar
 
 **Resolved:**
 - **Team = the 6 providers above, final.** The live site's team banner shows a 7th person —
-  do NOT add them, and do NOT use that banner photo anywhere on the new site (it shows someone
+  do NOT add them as a provider. The banner photo itself is owner-approved as-is (2026-10-13)
+  for the homepage team section and the Our Team hero only — see the Providers note. (Earlier
+  rule, superseded: do NOT use that banner photo anywhere on the new site — it shows someone
   no longer on the team).
 
 **Bilingual:** all `/es/` copy AI-translated at build; bilingual staff review before launch.
@@ -827,7 +845,11 @@ Resources). Originals stay in `brand_assets/originals/` (gitignored); exports ar
   `--color-dark` `#0A0E1A` locked as a design decision.
 - ✅ Logo: horizontal wordmark only — no circle badge. `wordmark.png` is the production logo;
   never rendered above ~72px tall; no upscaling. SVG redraw proposed after the homepage gate.
-- ✅ Team: 6 providers, final. Live team banner photo is not used anywhere.
+- ✅ Team: 6 providers, final. ✅ (2026-10-13) Owner approved the full seven-person team banner
+  as-is for the homepage team section + Our Team hero; alt names no one; still six providers listed.
+- ✅ (2026-10-13) Owner approved the chamber photo (patient inside) for the homepage HBOT flagship
+  slot at native 768×923 — patient consent to be confirmed with the client. Location exteriors may
+  repeat across that clinic's cards (location-photo exception).
 - ✅ Gate 1 (homepage) approved 2026-10-05. Font pairing Sofia Sans Semi Condensed (display) +
   Atkinson Hyperlegible Next (body); plain-zero rule for phone/fax/hours/addresses via `.num`;
   `site.css` + `site.js` are the shared design system; social links + `sameAs` out until the
