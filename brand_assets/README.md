@@ -8,15 +8,25 @@ path; **alt text is already written in final form and must not change on swap.**
 
 All paths are root-relative (`/brand_assets/…`).
 
+**Originals vs. exports.** The client's source files (headshots, interiors, the exterior,
+stock/procedure photos) live untouched in `originals/`, which is gitignored. Only the
+web-ready exports in this folder are committed: cropped to the slot's exact ratio,
+EXIF-stripped, progressive JPG under 250 KB (backgrounds under 350 KB), named by slot
+(`team-<name>.jpg`, `location-<city>-exterior.jpg`, `service-<slug>.jpg`, …).
+To re-export, re-run the crop from the original — never resave an export.
+
 ## Named background slots — dedicated files ONLY (never a content/gallery photo)
 
 | File | Ratio | Dimensions | Used by |
 |---|---|---|---|
-| `hero-background.jpg` | 16:9 | 1920×1080 | Hero background on every page (incl. `about.html`, `thank-you.html`) |
-| `cta-background.jpg` | 16:9 | 1920×1080 | Final-CTA background on every page with a final-CTA |
+| `hero-background.jpg` | 16:9 | 1376×768 as supplied (soft gradient art — scales clean) | `.hero__bg` on every page — set ONCE in `site.css`; pages carry an empty `<div class="hero__bg">` |
+| `cta-background.jpg` | 16:9 | 1376×768 as supplied | `.final-cta__bg` on every page with a final CTA — set ONCE in `site.css` |
 
 > These two slots are marked `<!-- OFF-LIMITS: … -->` in the HTML. A client content photo
-> or gallery image is **never** promoted into either one.
+> or gallery image is **never** promoted into either one. They are also the ONLY images
+> that repeat across pages — every content photo is placed in exactly one slot site-wide
+> (a provider headshot may additionally fill a portrait slot that is specifically theirs,
+> e.g. Dr. Abanto on the HBOT page).
 
 ## Social / Open Graph
 
