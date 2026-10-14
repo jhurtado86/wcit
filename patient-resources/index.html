@@ -237,13 +237,7 @@
     ============================================================ -->
     <section class="hero hero--service on-dark" aria-labelledby="page-title">
       <!-- OFF-LIMITS: hero-background — dedicated named file only, never a content photo -->
-      <img
-        class="hero__bg"
-        src="https://placehold.co/1920x1080"
-        alt="Patient resources for wound care visits at Wound Care Institute of Texas"
-        width="1920" height="1080"
-        fetchpriority="high"
-      />
+      <div class="hero__bg" aria-hidden="true"></div>
       <div class="hero__overlay"></div>
       <div class="hero__vignette"></div>
 
@@ -342,19 +336,24 @@
             </li>
           </ol>
 
-          <aside class="note-panel split__sticky entry fade-up" id="what-to-bring" aria-labelledby="bring-title">
-            <h3 class="heading-3" id="bring-title">What to bring</h3>
-            <p class="mt-3">It helps to bring:</p>
-            <ul class="dash-list">
-              <li>A photo ID and your insurance card</li>
-              <li>A list of your medicines and allergies</li>
-              <li>The names of your other doctors</li>
-              <li>Any referral paperwork, records, or photos of the wound</li>
-              <li>Your blood sugar log, if you have diabetes</li>
-              <li>A family member or caregiver, if you would like one with you</li>
-            </ul>
-            <!-- [NEEDS INPUT — client question g] confirm this list with the office. -->
-          </aside>
+          <div class="split__sticky fade-up">
+            <div class="photo-frame">
+              <img src="/brand_assets/patient-resources-waiting-room.jpg" width="1200" height="900" loading="lazy" alt="The waiting room at Wound Care Institute of Texas: rows of grey chairs, a water fountain, and a coastal painting on the wall" />
+            </div>
+            <aside class="note-panel entry mt-8" id="what-to-bring" aria-labelledby="bring-title">
+              <h3 class="heading-3" id="bring-title">What to bring</h3>
+              <p class="mt-3">It helps to bring:</p>
+              <ul class="dash-list">
+                <li>A photo ID and your insurance card</li>
+                <li>A list of your medicines and allergies</li>
+                <li>The names of your other doctors</li>
+                <li>Any referral paperwork, records, or photos of the wound</li>
+                <li>Your blood sugar log, if you have diabetes</li>
+                <li>A family member or caregiver, if you would like one with you</li>
+              </ul>
+              <!-- [NEEDS INPUT — client question g] confirm this list with the office. -->
+            </aside>
+          </div>
         </div>
       </div>
     </section>

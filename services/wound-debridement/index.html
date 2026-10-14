@@ -376,13 +376,7 @@
     ============================================================ -->
     <section class="hero hero--service on-dark" aria-labelledby="page-title">
       <!-- OFF-LIMITS: hero-background — dedicated named file only, never a content photo -->
-      <img
-        class="hero__bg"
-        src="https://placehold.co/1920x1080"
-        alt="Wound debridement at Wound Care Institute of Texas"
-        width="1920" height="1080"
-        fetchpriority="high"
-      />
+      <div class="hero__bg" aria-hidden="true"></div>
       <div class="hero__overlay"></div>
       <div class="hero__vignette"></div>
 
@@ -508,7 +502,8 @@
 
           <div class="split__sticky fade-up">
             <div class="photo-frame">
-              <img src="https://placehold.co/1200x900" width="1200" height="900" loading="lazy" alt="A wound care specialist performing bedside debridement at Wound Care Institute of Texas" />
+              <!-- Clinic treatment room (the supplied debridement photo shows an open wound and is held for approval); swap when a procedure photo is approved. -->
+              <img src="/brand_assets/service-wound-debridement.jpg" width="1200" height="900" loading="lazy" alt="A treatment room at Wound Care Institute of Texas with a reclining procedure chair, a sink, and white supply cabinets" />
             </div>
             <div class="callout mt-8">
               <p class="callout__text">Never remove dead tissue from a wound yourself. If your wound looks worse or smells bad, call us. <strong>Call us at <a class="text-link text-link--tap num" href="tel:+19563174044">(956) 317-4044</a>.</strong></p>

@@ -331,7 +331,9 @@ A wound needs specialist care if: it hasn't started healing in ~2 weeks or isn't
 
 **FROZEN rule:** condense each into a clean professional bio (narrative paragraph + a credentials/
 education list) — do NOT replicate the verbatim year-by-year career timelines from the old site.
-Photos: `[NEEDS INPUT — provider headshots]`.
+Photos: four studio headshots are placed (Abanto, Martinez, Garza, Bernal — `brand_assets/team-*.jpg`,
+900×1200; Abanto's also fills the HBOT portrait slot). `[NEEDS INPUT — headshots for Dr. Sobrevilla
+and Patrizia Cantu]`; their slots stay on placehold.co and their schema `image` stays a placeholder.
 
 **FROZEN (LOCKED) bio rules:**
 - **No tenure dates.** Omit every "with WCIT since [year]" — it conflicts with the unpublished
@@ -584,7 +586,9 @@ prominent (RGV market).
 ## Active Blockers & Backfill
 
 **Launch-blocking:** GHL form + chat widget embeds (Juan providing); og-image; confirm exact
-LeadingReach URLs; provider headshots; real location/facility photos.
+LeadingReach URLs; headshots for Sobrevilla and Cantu; the Mission clinic exterior; a hyperbaric
+chamber photo with no patient in it (≥1200px wide); a team/providers photo of the six (the
+homepage team slot); confirmation of which clinic the interior photo set shows (see photo pass).
 - **www canonical:** the live site currently resolves to non-www (`wound-institute.com`).
   Making `www.wound-institute.com` canonical requires an apex → www **308** at launch.
 - **301 redirect map (required):** before launch, pull every live URL from the current
@@ -759,11 +763,36 @@ LeadingReach URLs; provider headshots; real location/facility photos.
   the Locations page and any "HBOT in McAllen/Mission" copy depend on it. **If the chamber
   is at only one clinic, the HBOT H1 and title must change to that city** (and the ES
   twin, the glance panel, the homepage flagship blurb and the schema `howPerformed` follow).
+  The supplied chamber photo shows TWO Sechrist monoplace chambers side by side in a
+  drop-ceiling room that does not match the interior set — ask which clinic that is.
+- **(h) Photo pass (2026-10-13) — facts to confirm.** **(1)** The street-sign photo
+  (`originals/IMG_0043-768x512.jpg`) reads "Pedro R. Abanto, MD, FACP, **CWSP**" — this
+  contradicts the LOCKED credential framing (his wound credential is the Essentials of Wound
+  Care and Hyperbaric Medicine certification, not ABWM). Confirm which is right before launch;
+  the site keeps the LOCKED wording until then. The sign also carries the alt phone
+  (956) 317-4043 and does not say which clinic it stands at. **(2)** The interior set
+  (`originals/IMG_00xx-scaled.jpg`: waiting room, front desk, two treatment rooms, hallway,
+  office) has no location context — every placed interior uses location-neutral alt text
+  ("at Wound Care Institute of Texas") until the client says McAllen or Mission. **(3)** The
+  hallway photo of four framed staff portraits (`IMG_0037`) and the three-person desk photo
+  (`IMG_8817`: a CNA and a second staffer beside Dr. Sobrevilla) show people outside the six
+  providers — not placed; `IMG_8817` is the only photo of Dr. Sobrevilla on file. **(4)** A
+  circle badge (`WCIT-Logo-Circle-2-768x768.png`) was supplied although the logo rules say
+  the client does not use one — not placed; it could be the source for the 512px icon if Juan
+  approves. **(5)** Every procedure photo supplied (debridement, graft, VAC, DFU "types",
+  cast, compression, dressing, lymphedema pump, epidermal grafting, OR scene) is a 768px
+  WordPress thumbnail and most show an open wound or a patient's body — all held for Juan's
+  approval and too small for a 1200×900 slot regardless.
 
-**Backfillable (build against placeholders):** provider photos, hero/cta backgrounds, service
-imagery, og-image, social URLs (footer links + schema `sameAs` stay out until confirmed), any
-service-detail the client wants to tweak,
-reviews/reputation status.
+**Backfillable (build against placeholders):** the placeholders still open after the photo pass —
+homepage HBOT chamber + team photo + both location cards; About's two location cards; the Mission
+exterior on `/locations/`; the step photo on HBOT, NPWT, Bio-engineered Skin, Compression and
+Specialty Dressings; Sobrevilla + Cantu headshots — plus og-image, social URLs (footer links +
+schema `sameAs` stay out until confirmed), any service-detail the client wants to tweak,
+reviews/reputation status. Placed photos: hero + CTA backgrounds (set once in `site.css`), four
+headshots, the McAllen exterior (`/locations/#mcallen` only — one photo, one slot), two treatment
+rooms (TCC + Debridement step slots), the front desk (About), the waiting room (Patient
+Resources). Originals stay in `brand_assets/originals/` (gitignored); exports are slot-named.
 
 **Not blockers:**
 - **Logo source:** no high-res/vector wordmark exists — `wordmark.png` is the production logo.

@@ -295,13 +295,7 @@
     ============================================================ -->
     <section class="hero hero--service on-dark" aria-labelledby="page-title">
       <!-- OFF-LIMITS: hero-background — dedicated named file only, never a content photo -->
-      <img
-        class="hero__bg"
-        src="https://placehold.co/1920x1080"
-        alt="Wound Care Institute of Texas clinics in McAllen and Mission, Texas"
-        width="1920" height="1080"
-        fetchpriority="high"
-      />
+      <div class="hero__bg" aria-hidden="true"></div>
       <div class="hero__overlay"></div>
       <div class="hero__vignette"></div>
 
@@ -348,11 +342,13 @@
 
     <!-- ============================================================
          2. McALLEN (white) — id="mcallen" is LOCKED (homepage + schema deep
-            links). Details beside the map. Parking, entrance and landmark
-            details are not stated by the client [VERIFY] — none invented.
+            links). Details beside the clinic exterior, the map full-width
+            below. Parking, entrance and landmark details are not stated by
+            the client [VERIFY] — none invented.
     ============================================================ -->
     <section class="section entry" id="mcallen" aria-labelledby="mcallen-title">
-      <div class="shell split split--start">
+      <div class="shell">
+       <div class="split">
         <div class="fade-up">
           <p class="eyebrow">McAllen clinic</p>
           <h2 class="display-2 mt-5" id="mcallen-title">Wound care in McAllen</h2>
@@ -379,18 +375,26 @@
           </div>
         </div>
 
-        <div class="map-frame fade-up">
+        <div class="photo-frame fade-up">
+          <img src="/brand_assets/location-mcallen-exterior.jpg" width="1200" height="900" loading="lazy" alt="Front of the Wound Care Institute of Texas clinic at 2101 S. M Street in McAllen: a tan stucco building with the clinic’s name above the entrance tower under a blue sky" />
+        </div>
+       </div>
+
+        <div class="map-frame map-frame--wide fade-up">
           <iframe src="https://www.google.com/maps?q=2101+S+M+St+Suite+A%2C+McAllen%2C+TX+78503&amp;output=embed" title="Map to the McAllen clinic, 2101 S. M Street, Suite A" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         3. MISSION (tint) — id="mission" is LOCKED. Map first on desktop,
-            details first on phones.
+         3. MISSION (tint) — id="mission" is LOCKED. Same skeleton as McAllen,
+            mirrored: photo first on desktop, details first on phones, the map
+            full-width below. The photo slot is MUST-BE-REAL (Mission exterior
+            [NEEDS INPUT]) — never the McAllen photo.
     ============================================================ -->
     <section class="section section--tint entry" id="mission" aria-labelledby="mission-title">
-      <div class="shell split split--start">
+      <div class="shell">
+       <div class="split">
         <div class="fade-up">
           <p class="eyebrow">Mission clinic</p>
           <h2 class="display-2 mt-5" id="mission-title">Wound care in Mission</h2>
@@ -417,7 +421,13 @@
           </div>
         </div>
 
-        <div class="map-frame fade-up lg:order-first">
+        <div class="photo-frame fade-up lg:order-first">
+          <!-- MUST-BE-REAL: Mission clinic exterior [NEEDS INPUT] -->
+          <img src="https://placehold.co/1200x900" width="1200" height="900" loading="lazy" alt="Wound Care Institute of Texas clinic at 900 Plaza Drive in Mission, Texas" />
+        </div>
+       </div>
+
+        <div class="map-frame map-frame--wide fade-up">
           <iframe src="https://www.google.com/maps?q=900+Plaza+Dr+Suite+5%2C+Mission%2C+TX+78572&amp;output=embed" title="Map to the Mission clinic, 900 Plaza Drive, Suite 5" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
