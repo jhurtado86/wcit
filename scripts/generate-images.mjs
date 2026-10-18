@@ -5,10 +5,10 @@
 // slot's exact size and the JPG export happen in a separate step — this script never touches
 // anything that ships.
 //
-//   node scripts/generate-images.mjs                 # every slot, 2 variants each, 4K, Nano Banana 2
+//   node scripts/generate-images.mjs                 # every slot, 2 variants each, 4K, Nano Banana 2.1
 //   node scripts/generate-images.mjs --variants 3    # v1…v3 per slot (existing files are skipped)
 //   node scripts/generate-images.mjs --only service-compression-therapy,service-specialty-wound-dressings
-//   node scripts/generate-images.mjs --model gemini-nano-banana-2.1   # the newer model the docs now recommend
+//   node scripts/generate-images.mjs --model gemini-3.1-flash-image   # Nano Banana 2 (previous generation)
 //   node scripts/generate-images.mjs --size 2K --force               # regenerate even if the file exists
 //   node scripts/generate-images.mjs --dry-run                       # print the plan, call nothing
 //
@@ -16,8 +16,9 @@
 // It is never printed.
 //
 // Model IDs verified against https://ai.google.dev/gemini-api/docs/image-generation (2026-10-18):
-//   gemini-3.1-flash-image   Nano Banana 2      1K / 2K / 4K   ← default (what this project asked for)
-//   gemini-nano-banana-2.1   Nano Banana 2.1    1K / 2K / 4K   "recommended for all new projects"
+//   gemini-nano-banana-2.1   Nano Banana 2.1    1K / 2K / 4K   ← default ("recommended for all new
+//                                                                 projects"; Juan's pick, 2026-10-18)
+//   gemini-3.1-flash-image   Nano Banana 2      1K / 2K / 4K
 //   gemini-3-pro-image       Nano Banana Pro    1K / 2K / 4K
 // Config shape verified against the installed SDK (node_modules/@google/genai/dist/genai.d.ts):
 //   GenerateContentConfig.imageConfig: { aspectRatio?: string; imageSize?: string }
@@ -32,7 +33,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PROMPTS_FILE = path.join(ROOT, 'scripts', 'image-prompts.json');
 const RAW_DIR = path.join(ROOT, 'brand_assets', '_generated-raw');
 
-const DEFAULT_MODEL = 'gemini-3.1-flash-image';
+const DEFAULT_MODEL = 'gemini-nano-banana-2.1';
 const SIZES = ['512px', '1K', '2K', '4K'];
 
 // ---------- CLI ----------
@@ -140,6 +141,11 @@ async function generateOne(prompt, aspectRatio) {
     } catch (err) {
       lastErr = err;
       const msg = String(err?.message || err);
+      // A free-tier key has a quota of ZERO for the image models — retrying can never help, and
+      // neither can the next job. Stop the whole run with the real fix.
+      if (/free_tier/i.test(msg) && /limit: 0\b/.test(msg)) {
+        fail(`${MODEL} is not available on this key's FREE tier (quota limit: 0). Enable billing on the Google Cloud project behind this API key (Google AI Studio → API keys → the project's "Set up billing"), or use a key from a billed project, then re-run.`);
+      }
       const transient = /429|503|RESOURCE_EXHAUSTED|UNAVAILABLE|overloaded|fetch failed|ECONNRESET|ETIMEDOUT/i.test(msg);
       if (!transient || attempt === 3) throw err;
       const wait = attempt * 15_000;

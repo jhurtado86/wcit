@@ -7,5 +7,7 @@ temporary screenshots/
 .claude/.env
 # Raw AI-generated image candidates (large PNGs) — only the picked, slot-named JPG exports are committed
 brand_assets/_generated-raw/
+# Local contact sheet built from those candidates (node scripts/build-review.mjs) — never committed or deployed
+_review/
 # Client-supplied source photos (large, unoptimized) — only the web exports beside them are committed
 brand_assets/originals/
