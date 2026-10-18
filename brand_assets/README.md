@@ -42,6 +42,15 @@ owner-approved exceptions carry their own ratio because the photo must not be cr
 Team hero) and `home-hyperbaric-chamber.jpg` (native 768×923, `.flagship__photo`, capped at
 native width so it is never upscaled). A clinic exterior may repeat in every card for that
 clinic (`location-mcallen-exterior.jpg` fills the homepage, About and Locations McAllen cards).
+
+**AI-generated generic fills (2026-10-18).** Five service step photos are AI-generated scenes,
+not client photos: `service-hyperbaric-oxygen-therapy.jpg`, `service-negative-pressure-wound-therapy.jpg`,
+`service-bioengineered-skin-substitutes.jpg`, `service-compression-therapy.jpg` and
+`service-specialty-wound-dressings.jpg` (Gemini `gemini-nano-banana-2.1`, prompts in
+`scripts/image-prompts.json`, Juan-picked variants exported with `scripts/export-picks.mjs` from
+the gitignored `_generated-raw/`). Their alt text describes the generic scene and must never
+imply WCIT's own facility, equipment, staff or patients; an `<!-- AI-generated -->` comment marks
+each slot in the HTML. Replace with a real clinic photo whenever one is approved.
 Export at these sizes:
 
 | Type | Ratio | Dimensions | Notes |

@@ -287,7 +287,10 @@ ES equivalents: "Solicitar una Cita" → `/es/contacto/`; "Referir a un Paciente
 - **GHL CHAT WIDGET SCRIPT** — `[NEEDS INPUT — Juan providing embed]`. Before `</body>`, site-wide.
 - **GHL EXTERNAL TRACKING SCRIPT** — `[NEEDS INPUT — wire in `<head>` if Juan provides it; otherwise leave the placeholder comment]`.
 - **Google Maps embed** — wire for BOTH locations (McAllen + Mission) on the Contact/Locations page.
-- **og-image** `brand_assets/og-image.jpg` (1200×630) — `[NEEDS INPUT — create before launch]`.
+- **og-image** `brand_assets/og-image.jpg` (1200×630) — DONE (2026-10-18): built from the brand
+  tokens by `scripts/build-og-image.mjs` (dark wordmark at native size, brand gradient,
+  "McAllen · Mission"); wired into `og:image` + `twitter:image` on every page. Re-run the script
+  after any token or wordmark change.
 
 ---
 
@@ -591,7 +594,7 @@ prominent (RGV market).
 
 ## Active Blockers & Backfill
 
-**Launch-blocking:** GHL form + chat widget embeds (Juan providing); og-image; confirm exact
+**Launch-blocking:** GHL form + chat widget embeds (Juan providing); confirm exact
 LeadingReach URLs; a headshot for Dr. Sobrevilla; the Mission clinic exterior; **patient consent for
 the homepage chamber photo** (owner-approved 2026-10-13 — confirm with the client); confirmation of
 which clinic the interior photo set shows (see photo pass).
@@ -797,18 +800,25 @@ a provider's own portrait slot. Still never McAllen's photo in a Mission slot.
   approval and too small for a 1200×900 slot regardless.
 
 **Backfillable (build against placeholders):** the placeholders still open after the two photo
-passes — the Mission card on the homepage and About and the Mission slot on `/locations/`; the step
-photo on HBOT, NPWT, Bio-engineered Skin, Compression and Specialty Dressings; the Sobrevilla
-headshot — plus og-image, social URLs (footer links + schema `sameAs` stay out until confirmed),
+passes — the Mission card on the homepage and About and the Mission slot on `/locations/`; the
+Sobrevilla headshot — plus social URLs (footer links + schema `sameAs` stay out until confirmed),
 any service-detail the client wants to tweak, reviews/reputation status. Placed photos: hero + CTA
 backgrounds (set once in `site.css`), five headshots, the McAllen exterior (all three McAllen
 cards — see the location-photo exception), the seven-person team banner (homepage team section +
 Our Team hero, `.photo-frame--wide`), the chamber photo (homepage flagship, `.flagship--portrait`
 at native 768×923, never upscaled), Dr. Sobrevilla with staff (About team section), two treatment
 rooms (TCC + Debridement step slots), the front desk (About), the waiting room (Patient Resources).
+**AI-generated generic fills (2026-10-18, Juan-picked):** the step photos on HBOT, NPWT,
+Bio-engineered Skin, Compression and Specialty Dressings are Gemini-generated generic scenes
+(`gemini-nano-banana-2.1`; prompts in `scripts/image-prompts.json`; `npm run generate-images` →
+`npm run review` at `/_review/` → `scripts/export-picks.mjs`). Generic slots only — never
+headshots, team photos, a clinic exterior, or anything presented as WCIT's own building, staff or
+patients; their alt text names the generic scene and an `<!-- AI-generated -->` comment marks each
+slot. Replace with a real clinic photo whenever one is approved. Raw candidates and `/_review/` are
+gitignored and in `.vercelignore`; the API key lives in the gitignored `.env`.
 Second-angle interiors (`IMG_0010`, `0022`, `0024`, `0029`) remain unplaced: the only open slots
-are service step photos and Mission cards, where a waiting room or front desk would be a forced
-fit. Originals stay in `brand_assets/originals/` (gitignored); exports are slot-named.
+are the Mission cards, where a waiting room or front desk would be a forced fit. Originals stay in
+`brand_assets/originals/` (gitignored); exports are slot-named.
 
 **Not blockers:**
 - **Logo source:** no high-res/vector wordmark exists — `wordmark.png` is the production logo.
