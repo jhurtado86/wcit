@@ -1,0 +1,16 @@
+# Never deployed — build tooling, secrets, raw/unpicked image candidates, and the local review sheet
+.env
+.env.*
+.claude/
+node_modules/
+scripts/
+temporary screenshots/
+brand_assets/originals/
+brand_assets/_generated-raw/
+_review/
+serve.mjs
+screenshot.mjs
+package.json
+package-lock.json
+CLAUDE.md
+SEO-CONTENT-PROMPT.md

@@ -1,0 +1,63 @@
+{
+  "_readme": [
+    "Generic photo slots to be filled with AI-generated images (Gemini image API). GENERIC scenes only:",
+    "never provider headshots, team photos, a clinic exterior, or anything presented as WCIT's own building, staff, or patients.",
+    "`slot` is the export filename stem (brand_assets/<slot>.jpg) and the raw-output stem (brand_assets/_generated-raw/<slot>-vN.png).",
+    "`width`/`height` are the slot's final export dimensions; `aspectRatio` is what the API is asked for; the raw output is always larger and is cropped/downscaled to the slot (never upscaled).",
+    "`alt` is the draft alt text written for the generic scene — it must never imply WCIT's own facility, staff or patients.",
+    "Every `prompt` ends with the shared style line (kept verbatim in each entry so the file is greppable)."
+  ],
+  "style": "Style: realistic photograph, soft natural daylight, clean modern outpatient clinic, calm cool palette of whites, soft blues and teal, shallow depth of field, no visible wounds, no faces, no text, no logos.",
+  "slots": [
+    {
+      "slot": "service-hyperbaric-oxygen-therapy",
+      "page": "/services/hyperbaric-oxygen-therapy/",
+      "section": "3. What to expect — \"What a session is like\" (step photo, .split__sticky)",
+      "width": 1200,
+      "height": 900,
+      "aspectRatio": "4:3",
+      "prompt": "A realistic clear acrylic monoplace hyperbaric oxygen chamber in a quiet treatment room, seen from a three-quarter angle: a long transparent cylindrical acrylic tube on a white powder-coated steel frame with a padded stretcher inside, the sliding gurney partly drawn out, a folded white cotton gown resting on the mattress, a small control panel and pressure gauges at the head end. The chamber is empty. Window light falls across the acrylic and the pale floor. Style: realistic photograph, soft natural daylight, clean modern outpatient clinic, calm cool palette of whites, soft blues and teal, shallow depth of field, no visible wounds, no faces, no text, no logos.",
+      "alt": "A clear acrylic monoplace hyperbaric oxygen chamber in a treatment room, its padded stretcher drawn partly out"
+    },
+    {
+      "slot": "service-negative-pressure-wound-therapy",
+      "page": "/services/negative-pressure-wound-therapy/",
+      "section": "3. What to expect — \"What a wound VAC visit is like\" (step photo, .split__sticky)",
+      "width": 1200,
+      "height": 900,
+      "aspectRatio": "4:3",
+      "prompt": "A realistic portable negative pressure wound therapy pump resting on a clinic countertop: a compact white and grey handheld unit about the size of a paperback book with a small dark display, a clear plastic collection canister clipped to its side, and a length of clear tubing coiled beside it. Next to the pump lie a block of black open-cell polyurethane foam, a sealed roll of transparent adhesive film, and the pump's grey fabric carrying case. No wound or patient in the frame. Style: realistic photograph, soft natural daylight, clean modern outpatient clinic, calm cool palette of whites, soft blues and teal, shallow depth of field, no visible wounds, no faces, no text, no logos.",
+      "alt": "A portable negative pressure wound therapy pump with its clear canister, tubing, black foam and film dressing on a clinic countertop"
+    },
+    {
+      "slot": "service-bioengineered-skin-substitutes",
+      "page": "/services/bioengineered-skin-substitutes/",
+      "section": "3. What to expect — \"What a skin substitute visit is like\" (step photo, .split__sticky)",
+      "width": 1200,
+      "height": 900,
+      "aspectRatio": "4:3",
+      "prompt": "Close-up of a clinician's hands in blue nitrile gloves, shown only from the wrists, lifting a thin translucent sheet of bio-engineered skin substitute from its sterile foil-lined tray with fine-tipped forceps over a draped procedure table. Beside the tray: a paper wound-measuring ruler, folded sterile gauze, a small bottle of saline and blunt-tip scissors on a blue sterile drape. The wound and the patient are outside the frame. Style: realistic photograph, soft natural daylight, clean modern outpatient clinic, calm cool palette of whites, soft blues and teal, shallow depth of field, no visible wounds, no faces, no text, no logos.",
+      "alt": "Gloved hands lifting a thin bio-engineered skin substitute sheet from its sterile tray with forceps, beside gauze and a measuring ruler"
+    },
+    {
+      "slot": "service-compression-therapy",
+      "page": "/services/compression-therapy/",
+      "section": "3. What to expect — \"What compression therapy is like\" (step photo, .split__sticky)",
+      "width": 1200,
+      "height": 900,
+      "aspectRatio": "4:3",
+      "prompt": "A clinician's hands in blue nitrile gloves, shown only from the wrists, smoothing the outer layer of a beige multi-layer compression bandage around a lower leg, wrapping upward from the foot toward just below the knee. The leg rests on a padded clinic treatment table with a white paper drape; it is already fully wrapped from the toes up, so no skin wound is visible. A second rolled cohesive bandage and a roll of soft padding wait on the table. Only the lower leg and the gloved hands are in the frame. Style: realistic photograph, soft natural daylight, clean modern outpatient clinic, calm cool palette of whites, soft blues and teal, shallow depth of field, no visible wounds, no faces, no text, no logos.",
+      "alt": "Gloved hands smoothing the outer layer of a multi-layer compression bandage around a lower leg on a clinic treatment table"
+    },
+    {
+      "slot": "service-specialty-wound-dressings",
+      "page": "/services/specialty-wound-dressings/",
+      "section": "3. What to expect — \"What dressing care is like\" (step photo, .split__sticky)",
+      "width": 1200,
+      "height": 900,
+      "aspectRatio": "4:3",
+      "prompt": "An overhead flat-lay on a stainless steel clinic tray of advanced wound dressings in plain, unprinted sterile packaging: a square of silver-grey foam dressing, a soft white alginate pad, a tan hydrocolloid sheet, a roll of transparent film, a small tube of clear hydrogel and a small tube of ointment, arranged beside blunt-tip scissors, forceps, a paper measuring ruler and a folded pair of blue nitrile gloves. The packaging is blank with no readable print. Style: realistic photograph, soft natural daylight, clean modern outpatient clinic, calm cool palette of whites, soft blues and teal, shallow depth of field, no visible wounds, no faces, no text, no logos.",
+      "alt": "An assortment of advanced wound dressings — foam, alginate, hydrocolloid, film, hydrogel and ointment — laid out on a clinic tray with scissors and forceps"
+    }
+  ]
+}

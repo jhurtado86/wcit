@@ -1,5 +1,11 @@
 node_modules/
 temporary screenshots/
 .DS_Store
+# Secrets — never committed (GEMINI_API_KEY lives here)
+.env
+.env.*
+.claude/.env
+# Raw AI-generated image candidates (large PNGs) — only the picked, slot-named JPG exports are committed
+brand_assets/_generated-raw/
 # Client-supplied source photos (large, unoptimized) — only the web exports beside them are committed
 brand_assets/originals/
