@@ -343,11 +343,11 @@ A wound needs specialist care if: it hasn't started healing in ~2 weeks or isn't
 
 **FROZEN rule:** condense each into a clean professional bio (narrative paragraph + a credentials/
 education list) — do NOT replicate the verbatim year-by-year career timelines from the old site.
-Photos: five studio headshots are placed (Abanto, Martinez, Garza, Cantu, Bernal — `brand_assets/team-*.jpg`,
-900×1200; Abanto's also fills the HBOT portrait slot). `[NEEDS INPUT — a headshot for Dr. Sobrevilla]`:
-his slot and schema `image` stay placeholders — the only photo on file (`originals/IMG_8817.jpg`, him
-with two staff at the front desk) cannot give a solo 3:4 crop within the 1.25× upscale limit, so that
-photo is used as-is in the About team section instead.
+Photos: all six studio headshots are placed (`brand_assets/team-*.jpg`, 900×1200; Abanto's also fills the
+HBOT portrait slot). Dr. Sobrevilla's portrait (`team-jose-sobrevilla.jpg`, cropped from the 2171×2560 studio
+original, no upscaling) was placed 2026-10-19 on Juan's approval; his schema `image` is restored. The front-desk
+photo of him with two staff (`originals/IMG_8817.jpg`) stays in the About team section and the homepage
+referral section.
 
 **FROZEN (LOCKED) bio rules:**
 - **No tenure dates.** Omit every "with WCIT since [year]" — it conflicts with the unpublished
@@ -625,7 +625,7 @@ prominent (RGV market).
 ## Active Blockers & Backfill
 
 **Launch-blocking:** GHL form + chat widget embeds (Juan providing); confirm exact
-LeadingReach URLs; a headshot for Dr. Sobrevilla; the Mission clinic exterior; **patient consent for
+LeadingReach URLs; the Mission clinic exterior; **patient consent for
 the homepage chamber photo** (owner-approved 2026-10-13 — confirm with the client); confirmation of
 which clinic the interior photo set shows (see photo pass).
 
@@ -836,10 +836,9 @@ replacing the "Refer a patient" desk box there (the hero panel already carries R
   approval and too small for a 1200×900 slot regardless.
 
 **Backfillable (build against placeholders):** the placeholders still open after the two photo
-passes — the Mission card on the homepage and About and the Mission slot on `/locations/`; the
-Sobrevilla headshot — plus social URLs (footer links + schema `sameAs` stay out until confirmed),
+passes — the Mission card on the homepage and About and the Mission slot on `/locations/` — plus social URLs (footer links + schema `sameAs` stay out until confirmed),
 any service-detail the client wants to tweak, reviews/reputation status. Placed photos: hero + CTA
-backgrounds (set once in `site.css`), five headshots, the McAllen exterior (all three McAllen
+backgrounds (set once in `site.css`), all six headshots, the McAllen exterior (all three McAllen
 cards — see the location-photo exception), the seven-person team banner (homepage team section +
 Our Team hero, `.photo-frame--wide`), the chamber photo (homepage flagship, `.flagship--portrait`
 at native 768×923, never upscaled), Dr. Sobrevilla with staff (About team section), two treatment
