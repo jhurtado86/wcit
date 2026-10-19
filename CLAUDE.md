@@ -899,6 +899,11 @@ are the Mission cards, where a waiting room or front desk would be a forced fit.
   Atkinson Hyperlegible Next (body); plain-zero rule for phone/fax/hours/addresses via `.num`;
   `site.css` + `site.js` are the shared design system; social links + `sameAs` out until the
   URLs are confirmed; no comparative healing-outcome claims in copy.
+- ✅ (2026-10-19) ES layout review (32 screenshots): no overflow; three CSS fixes for longer
+  Spanish strings — `.arrow-link` is inline + `text-wrap: balance` (the arrow stays beside the
+  last word when a label wraps), the eyebrow dash aligns to the first line of a wrapped label,
+  and `:lang(es)` glance panels use a 7.5em label column. Client questions now live in
+  `CLIENT-QUESTIONS.md` (send-ready).
 - ✅ (2026-10-19) Header overlays the hero on every page: transparent (top scrim only) at load so the
   hero photo shows through, solid bars fade in on scroll (`.is-scrolled`); `--header-h` drives the
   hero's top padding. Site-wide motion system in `site.css`/`site.js` (stagger, photo settle,
