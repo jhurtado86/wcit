@@ -380,9 +380,50 @@
 }
 
 /* Reveal — the class name is what screenshot.mjs forces visible */
-.fade-up { opacity: 0; transform: translateY(18px); transition: opacity 0.6s var(--ease-out), transform 0.7s var(--ease-out); }
+.fade-up { opacity: 0; transform: translateY(32px); transition: opacity 0.8s var(--ease-out), transform 0.95s var(--ease-out); }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 .no-js .fade-up { opacity: 1; transform: none; }
+
+/* ============================================================
+   Motion — transform/opacity only; every hidden start state is keyed on :not(.visible)
+   so no-JS and screenshot.mjs (which forces .visible) always render the final frame.
+   ============================================================ */
+/* Stagger: site.js adds .stagger + a per-child --i to lists, section heads and the hero
+   copy; the wrapper stops moving and its children rise one after another instead. */
+.fade-up.stagger { transform: none; transition: opacity 0.3s var(--ease-out); }
+.stagger > * { animation: none; }
+.fade-up.stagger:not(.visible) > *, .fade-up:not(.visible) .stagger > * { opacity: 0; }
+:is(.visible.stagger, .visible .stagger) > * { animation: rise 0.9s var(--ease-out) backwards; animation-delay: calc(min(var(--i, 0), 10) * 85ms + 60ms); }
+@keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+
+/* Photos settle into their frames as they reveal */
+.photo-frame > img { transition: scale 1.8s var(--ease-out); }
+html:not(.no-js) :is(.fade-up:not(.visible) .photo-frame, .photo-frame.fade-up:not(.visible)) > img { scale: 1.14; }
+
+/* Brand hairlines draw left-to-right: eyebrow dashes and the panel top rules */
+.eyebrow::before { transform-origin: left center; transition: transform 0.9s var(--ease-out) 0.25s; }
+html:not(.no-js) .fade-up:not(.visible) .eyebrow::before { transform: scaleX(0); }
+:is(.provider-panel, .glance, .desk)::before { transform-origin: left center; transition: transform 1.1s var(--ease-out) 0.35s; }
+html:not(.no-js) :is(.provider-panel, .glance, .desk).fade-up:not(.visible)::before { transform: scaleX(0); }
+
+/* Dark slots: a slow push-in on the hero photo at load, and on the final CTA as it reveals */
+.hero__bg { animation: push-in 2.8s var(--ease-out) both; }
+@keyframes push-in { from { transform: scale(1.12); } to { transform: none; } }
+.final-cta__bg { transition: transform 2.6s var(--ease-out); }
+.final-cta:not(:has(.fade-up.visible)) .final-cta__bg { transform: scale(1.12); }
+.no-js .final-cta__bg { transform: none; }
+
+/* Primary button: a light sweep crosses the fill on hover */
+.btn--primary { position: relative; overflow: hidden; isolation: isolate; }
+.btn--primary::after {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(105deg, transparent 30%, rgba(var(--color-bg-rgb), 0.28) 50%, transparent 70%);
+  transform: translateX(-110%);
+}
+.btn--primary:hover::after { transform: translateX(110%); transition: transform 0.75s var(--ease-out); }
+
+/* Reading progress: the brand ribbon fills across the top of the sticky header */
+.scroll-progress { position: absolute; top: 0; left: 0; right: 0; z-index: 3; height: 3px; background: var(--gradient-brand-x); transform: scaleX(var(--progress, 0)); transform-origin: left center; pointer-events: none; }
 
 /* ============================================================
    Hero — dedicated hero-background slot + ~0.7 overlay + vignette.
@@ -573,6 +614,9 @@
   .split--portrait { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 72px; }  /* 3:4 portrait first, prose second */
   .split__sticky { position: sticky; top: calc(var(--nav-height) + var(--nav-links-height) + 24px); }
 }
+/* Centered prose block under a full-width photo (homepage team intro) */
+.intro-centered { text-align: center; }
+.intro-centered > .prose { margin-inline: auto; }
 .roster { display: grid; margin-top: clamp(3rem, 6vw, 5rem); border-top: 2px solid var(--color-ink); }
 @media (min-width: 720px)  { .roster { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; } }
 @media (min-width: 1100px) { .roster { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
@@ -863,6 +907,14 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .fade-up { opacity: 1; transform: none; transition: none; }
+  .fade-up.stagger > *, .stagger > *, .fade-up:not(.visible) .stagger > * { opacity: 1; animation: none; }
+  .photo-frame > img, html:not(.no-js) :is(.fade-up:not(.visible) .photo-frame, .photo-frame.fade-up:not(.visible)) > img { scale: 1; transition: none; }
+  .eyebrow::before, :is(.provider-panel, .glance, .desk)::before { transition: none; }
+  html:not(.no-js) .fade-up:not(.visible) .eyebrow::before, html:not(.no-js) :is(.provider-panel, .glance, .desk).fade-up:not(.visible)::before { transform: none; }
+  .hero__bg { animation: none; }
+  .final-cta__bg, .final-cta:not(:has(.fade-up.visible)) .final-cta__bg { transform: none; transition: none; }
+  .btn--primary::after { display: none; }
+  .scroll-progress { display: none; }
   .ruler__ribbon, .o2-row__fill { transform: scaleX(1); transition: none; }
   .faq__q svg { transition: none; }
   .btn, .btn:hover, .arrow-link svg, .index-list__link svg, .ledger__link svg, .link-bar, .skip-link, .lang-toggle, .menu-button, .menu-close, .action-bar__item { transition: none; transform: none; }

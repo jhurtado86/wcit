@@ -1,5 +1,5 @@
 // site.js — shared behavior for every WCIT page: smart header, Services dropdown,
-// mobile menu, scroll reveal. No dependencies. Loaded with `defer`.
+// mobile menu, reading progress, staggered scroll reveal. No dependencies. Loaded with `defer`.
 (() => {
   const header = document.getElementById('site-header');
   const desktop = window.matchMedia('(min-width: 1280px)');
@@ -76,6 +76,31 @@
     });
     desktop.addEventListener('change', (e) => { if (e.matches && !menu.hidden) setMenu(false); });
   }
+
+  // — Reading progress: the brand ribbon across the top of the sticky header. —
+  if (header) {
+    const bar = document.createElement('div');
+    bar.className = 'scroll-progress';
+    bar.setAttribute('aria-hidden', 'true');
+    header.prepend(bar);
+    let ticking = false;
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.setProperty('--progress', max > 0 ? Math.min(window.scrollY / max, 1) : 0);
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
+  // — Stagger: lists, section heads and the hero copy reveal child by child (site.css). —
+  document.querySelectorAll(
+    '.fade-up:is(ul, ol, .faq, .section-head), .hero__inner > div.fade-up, .fade-up .paths'
+  ).forEach((el) => {
+    el.classList.add('stagger');
+    [...el.children].forEach((child, i) => child.style.setProperty('--i', i));
+  });
 
   // — Scroll reveal (.fade-up → .visible). screenshot.mjs relies on this class name. —
   const revealEls = document.querySelectorAll('.fade-up');
