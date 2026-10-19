@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Indexable EN pages built so far. The /es/ mirror is added as it is built.
+<!-- Every indexable EN page and its /es/ twin.
      /thank-you/ and /es/gracias/ are deliberately excluded (noindex + robots Disallow). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.wound-institute.com/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
@@ -18,4 +18,6 @@
   <url><loc>https://www.wound-institute.com/referring-providers/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.wound-institute.com/patient-resources/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.wound-institute.com/contact/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Spanish mirror -->
+  <url><loc>https://www.wound-institute.com/es/</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
 </urlset>

@@ -289,6 +289,10 @@ ES equivalents: "Solicitar una Cita" → `/es/contacto/`; "Referir a un Paciente
   language, best time to call. NO wound description, diagnosis, insurance ID, or other health
   details. Add helper text: "Please don't include medical details — our team will call you."
   Clinical information flows through LeadingReach only.
+  **Spanish form (`/es/contacto/`) `[NEEDS INPUT]`:** the live embed needs a Spanish GHL form
+  (or Spanish field labels on the same form) — the placeholder there carries the Spanish labels,
+  submit "Solicitar una Cita", and the helper text "Por favor no incluya detalles médicos —
+  nuestro equipo le llamará." Same PHI rule. Its thank-you is `/es/gracias/`.
 - **GHL CHAT WIDGET SCRIPT** — `[NEEDS INPUT — Juan providing embed]`. Before `</body>`, site-wide.
 - **GHL EXTERNAL TRACKING SCRIPT** — `[NEEDS INPUT — wire in `<head>` if Juan provides it; otherwise leave the placeholder comment]`.
 - **Google Maps embed** — wire for BOTH locations (McAllen + Mission) on the Contact/Locations page.
@@ -509,6 +513,27 @@ Locations · Patient Resources · For Providers · Contact. Plus: click-to-call,
 (primary vs secondary style), per CTA routing above. On mobile, keep both CTAs + call reachable
 without opening the menu.
 
+### ES chrome + labels — LOCKED (Gate 4, 2026-10-19)
+`/es/index.html` is the ES chrome source; every `/es/` page carries its header, menu panel,
+footer and action bar unchanged except for the page's own `aria-current` / `.is-active` and the
+toggle target (the EN twin, 3 places: brand bar, menu panel, footer "English"). Translation
+voice: **usted**, warm, clear, RGV-natural, accurate medical terms; credentials never stronger
+than the EN framing. Each ES file opens with `<!-- REVIEW: bilingual staff -->`.
+
+| Surface | Locked Spanish |
+|---|---|
+| Nav | Inicio · Servicios (dropdown: "Todos los servicios de cuidado de heridas" + the 7) · **Heridas que Tratamos** · Nuestro Equipo · Ubicaciones · **Para Pacientes** · Para Profesionales · Contacto |
+| CTAs | Solicitar una Cita (→ `/es/contacto/`) · Referir a un Paciente (→ LeadingReach) · Llámenos / Llamar · action bar: Llamar · Referir a un Paciente · Solicitar una Cita |
+| Toggle on ES pages | "EN English" (brand bar) · "View in English" (menu) · "English" (footer) — all → the EN twin |
+| Services (nav/footer short) | Terapia de Oxígeno Hiperbárico · Terapia de Presión Negativa · Desbridamiento de Heridas · Yeso de Contacto Total · Sustitutos de Piel · Terapia de Compresión · Apósitos y Ungüentos Especializados |
+| Services (full, ledger + schema + page titles) | …Terapia de Presión Negativa (Wound VAC) · **Sustitutos de Piel de Bioingeniería** (never "Bioingenierizada") |
+| Conditions | Úlceras del pie diabético y neuropáticas · Úlceras arteriales (isquémicas) · **Úlceras por presión (escaras o llagas)** · Úlceras venosas · Heridas quirúrgicas que no sanan · Heridas por radiación · Quemaduras · Irritación de la piel alrededor de un estoma · Fístulas · Otras heridas crónicas |
+| Provider roles | Médico Especialista Certificado en Heridas · Hospitalista y Medicina Familiar · Medicina Interna · Cuidado de Heridas y Medicina Hiperbárica · Enfermero Registrado · Especialista Certificado en Heridas · Enfermera/Enfermero Practicante de Familia (nurse practitioner) |
+| Mission line (ES) | "Mejorar la vida y la salud de nuestros pacientes a través de un mejor acceso a servicios de cuidado de heridas de calidad, accesibles e innovadores." — a faithful translation; see client question (i) |
+| Footer | Clínica de McAllen / Clínica de Mission · "Ubicaciones y cómo llegar" · Contacto (Teléfono · Alterno · Fax) · Horario ("Lunes a viernes / 8:00 AM – 5:00 PM / Sábado y domingo: cerrado") · Explorar · legal line ("…no constituye consejo médico. En una emergencia, llame al 911.") |
+| Anchor ids | ES pages **reuse the EN ids** (`#diabetic-foot-ulcers`, `#mcallen`, `#request-form`, …) — ids are not reader-facing, and the homepage schema's department `@id`s stay on `/locations/#…` |
+| Schema | Same `#clinic` / `#website` / location `@id`s as EN; `inLanguage` `es-US`; `og:locale` `es_US` + alternate `en_US`; Spanish text fields only — facts (NAP, hours, credentials) identical |
+
 ---
 
 ## Content Writing Methodology — FROZEN
@@ -619,6 +644,10 @@ a provider's own portrait slot. Still never McAllen's photo in a Mission slot.
 - **(a) Spanish-speaking staff** — confirm which locations/roles offer Spanish-language care
   before any "se habla español" / "Spanish-speaking staff" claim appears anywhere (EN or ES).
   Until confirmed, the site offers a Spanish *website*, not Spanish-speaking *staff*.
+- **(i) Spanish mission statement** — does the practice have its own Spanish wording of the
+  mission? The `/es/` pages carry a faithful translation of the verbatim English line (see ES
+  chrome table); if the client has an official Spanish version, it replaces that translation
+  on `/es/` and `/es/nosotros/`.
 - **(b) Clinical review of the one-line descriptions** — the one-sentence service and condition
   descriptions on the homepage (services ledger, HBOT flagship, conditions index), including
   **"HBOT sessions are usually daily,"** need a clinician's sign-off before launch. Flag the
@@ -878,3 +907,7 @@ are the Mission cards, where a waiting room or front desk would be a forced fit.
   Locations McAllen/Mission blocks are the same `.split` + `.key-rows` skeleton, mirrored —
   two genuinely parallel clinics. Open by design: the Providers FAQ stays at 5 until client
   question (e) is answered; HBOT length stays as is.
+- ✅ (2026-10-19) **Gate 4 (ES homepage + chrome) approved.** Nav labels "Heridas que Tratamos"
+  and "Para Pacientes", ES pages reuse the EN anchor ids, "Sustitutos de Piel de Bioingeniería",
+  "Úlceras por presión (escaras o llagas)" — all recorded in the ES chrome table. The rest of
+  the `/es/` mirror is built from the LOCKED EN pages with that chrome.
