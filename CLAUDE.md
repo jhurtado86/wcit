@@ -60,7 +60,7 @@ mirror is built FROM the locked EN pages.
 | Office Manager | Anita Maria Rodriguez (authorized official on record; not necessarily published) |
 | NPI | 1275142622 (reference only — **do not publish a founding/established year**; see Business Identity) |
 | Domain | wound-institute.com — canonical host **https://www.wound-institute.com** (www primary on Vercel) |
-| Socials | Facebook, YouTube, Instagram (all active) — **URLs not yet confirmed `[NEEDS INPUT]`.** Footer social links and schema `sameAs` are omitted until the real URLs are supplied; never guess them |
+| Socials | **Confirmed 2026-10-19:** Facebook `https://www.facebook.com/WoundCareInstituteofTexas` · Instagram `https://www.instagram.com/wound.care.institute/` · YouTube `https://www.youtube.com/channel/UChYbc7klLL6aLmxH8gF0f4A`. Icon links (`.social`, new tab) in the desktop brand bar, the mobile menu panel and the footer on every page; homepage `MedicalClinic` `sameAs` (EN + ES) |
 
 ---
 
@@ -836,7 +836,7 @@ replacing the "Refer a patient" desk box there (the hero panel already carries R
   approval and too small for a 1200×900 slot regardless.
 
 **Backfillable (build against placeholders):** the placeholders still open after the two photo
-passes — the Mission card on the homepage and About and the Mission slot on `/locations/` — plus social URLs (footer links + schema `sameAs` stay out until confirmed),
+passes — the Mission card on the homepage and About and the Mission slot on `/locations/` — plus
 any service-detail the client wants to tweak, reviews/reputation status. Placed photos: hero + CTA
 backgrounds (set once in `site.css`), all six headshots, the McAllen exterior (all three McAllen
 cards — see the location-photo exception), the seven-person team banner (homepage team section +

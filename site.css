@@ -333,6 +333,24 @@
 .menu-sub__link:hover  { color: var(--color-accent-deep); }
 .menu-sub__link:active { color: var(--color-accent); }
 .menu-panel__actions { display: grid; gap: 12px; margin-top: 28px; }
+/* Social profiles — header link row (desktop), menu panel, footer. Brand glyphs, currentColor. */
+.social { display: flex; align-items: center; gap: 6px; }
+.social__link {
+  display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px;
+  border-radius: 999px; color: var(--color-bg); border: 1px solid rgba(var(--color-bg-rgb), 0.24);
+  transition: transform 0.2s var(--ease-spring);
+}
+.social__link svg { width: 20px; height: 20px; }
+.social__link:hover  { transform: translateY(-2px); color: var(--color-accent-bright); border-color: var(--color-accent-bright); }
+.social__link:active { transform: translateY(0); }
+.social--nav { display: none; margin-right: 10px; gap: 2px; }
+@media (min-width: 1280px) { .social--nav { display: flex; } }
+.social--nav .social__link { border-color: transparent; }
+.social--nav .social__link:hover { border-color: rgba(var(--color-accent-bright-rgb), 0.55); }
+.social--menu { justify-content: center; gap: 12px; margin-top: 8px; }
+.social--menu .social__link { color: var(--color-accent-deep); border-color: var(--color-line); }
+.social--menu .social__link:hover { color: var(--color-accent-deep); border-color: var(--color-accent); background: rgba(var(--color-accent-rgb), 0.08); }
+.social--footer { margin-top: 22px; gap: 10px; }
 .menu-panel__lang { color: var(--color-ink); border-color: var(--color-accent); justify-content: center; }
 .menu-panel__lang:hover { background: rgba(var(--color-accent-rgb), 0.08); border-color: var(--color-accent-deep); }
 
@@ -938,6 +956,8 @@ html:not(.no-js) :is(.provider-panel, .glance, .desk).fade-up:not(.visible)::bef
   .hero__bg { animation: none; }
   .final-cta__bg, .final-cta:not(:has(.fade-up.visible)) .final-cta__bg { transform: none; transition: none; }
   .btn--primary::after { display: none; }
+  .social__link { transition: none; }
+  .social__link:hover { transform: none; }
   .scroll-progress { display: none; }
   .site-header::before, .brand-bar::before, .link-bar::before, .link-bar::after { transition: none; }
   .ruler__ribbon, .o2-row__fill { transform: scaleX(1); transition: none; }
