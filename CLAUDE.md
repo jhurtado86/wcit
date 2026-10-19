@@ -632,7 +632,9 @@ which clinic the interior photo set shows (see photo pass).
 **Location-photo exception (2026-10-13):** a clinic's exterior may repeat in EVERY card for that
 clinic — the McAllen exterior fills the homepage card, the About card and `/locations/#mcallen`;
 the Mission exterior will do the same once supplied. This is the only content-photo repeat besides
-a provider's own portrait slot. Still never McAllen's photo in a Mission slot.
+a provider's own portrait slot — and one Juan-approved exception (2026-10-19): the Dr. Sobrevilla
+front-desk photo (`about-team-front-desk.jpg`) also fills the homepage referral section (EN + ES),
+replacing the "Refer a patient" desk box there (the hero panel already carries Refer + fax + phone). Still never McAllen's photo in a Mission slot.
 - **www canonical:** the live site currently resolves to non-www (`wound-institute.com`).
   Making `www.wound-institute.com` canonical requires an apex → www **308** at launch.
 - **301 redirect map (required):** before launch, pull every live URL from the current
@@ -898,6 +900,10 @@ are the Mission cards, where a waiting room or front desk would be a forced fit.
   Atkinson Hyperlegible Next (body); plain-zero rule for phone/fax/hours/addresses via `.num`;
   `site.css` + `site.js` are the shared design system; social links + `sameAs` out until the
   URLs are confirmed; no comparative healing-outcome claims in copy.
+- ✅ (2026-10-19) Header overlays the hero on every page: transparent (top scrim only) at load so the
+  hero photo shows through, solid bars fade in on scroll (`.is-scrolled`); `--header-h` drives the
+  hero's top padding. Site-wide motion system in `site.css`/`site.js` (stagger, photo settle,
+  hairline draw-in, hero push-in, reading progress), all off under reduced motion.
 - ✅ (2026-10-18) **EN lock audit passed and English LOCKED.** Fixes applied: FAQ schema ↔ page
   parity (curly apostrophes), Sobrevilla schema `image` removed until a headshot exists, four
   service metas trimmed under 160, Our Team title reframed ("Certified Wound Specialists on
