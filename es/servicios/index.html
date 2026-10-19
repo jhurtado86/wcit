@@ -1,0 +1,635 @@
+<!-- REVIEW: bilingual staff — Spanish mirror of the LOCKED English Services overview (/services/). Copy was
+     translated at build (2026-10-19) for Rio Grande Valley patients (usted, plain everyday medical Spanish).
+     Review every string for tone and accuracy before launch; structure, schema facts, NAP, hours, credentials and
+     CTA destinations are frozen and identical to the English page. The "Se usa a menudo para" lines and the
+     layered-plan sequence are on the clinical-review list (CLAUDE.md, client question b). Header, menu, footer
+     and action bar are the approved ES chrome. -->
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios de Cuidado de Heridas en McAllen y Mission, TX</title>
+  <meta name="description" content="Siete servicios para heridas en McAllen y Mission, TX: oxígeno hiperbárico, Wound VAC, desbridamiento, yeso, sustitutos de piel y más. Llame al (956) 317-4044." />
+  <meta name="keywords" content="servicios de cuidado de heridas McAllen, tratamiento de heridas Mission TX, tratamientos para heridas crónicas Valle del Río Grande, oxígeno hiperbárico McAllen, Wound VAC McAllen, yeso de contacto total McAllen, Wound Care Institute of Texas" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://www.wound-institute.com/es/servicios/" />
+  <link rel="alternate" hreflang="en" href="https://www.wound-institute.com/services/" />
+  <link rel="alternate" hreflang="es" href="https://www.wound-institute.com/es/servicios/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.wound-institute.com/services/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Servicios de Cuidado de Heridas en McAllen y Mission, TX" />
+  <meta property="og:description" content="Siete servicios de cuidado de heridas en Wound Care Institute of Texas, desde la terapia de oxígeno hiperbárico hasta el yeso de contacto total. Llame al (956) 317-4044." />
+  <meta property="og:url" content="https://www.wound-institute.com/es/servicios/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.wound-institute.com/brand_assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_US" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="Wound Care Institute of Texas" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Servicios de Cuidado de Heridas en McAllen y Mission, TX" />
+  <meta name="twitter:description" content="Siete servicios de cuidado de heridas en Wound Care Institute of Texas, desde la terapia de oxígeno hiperbárico hasta el yeso de contacto total. Llame al (956) 317-4044." />
+  <meta name="twitter:image" content="https://www.wound-institute.com/brand_assets/og-image.jpg" />
+
+  <!-- Icons — the ribbon "W" cropped from the wordmark -->
+  <link rel="icon" href="/brand_assets/favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/brand_assets/favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand_assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/brand_assets/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/apple-touch-icon.png" />
+
+  <!-- GHL EXTERNAL TRACKING SCRIPT GOES HERE -->
+
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/brand.css" />
+  <link rel="stylesheet" href="/site.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400..800;1,400..800&family=Sofia+Sans+Semi+Condensed:wght@500..800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            /* Semantic palette — values resolve from /brand.css tokens */
+            primary: { DEFAULT: 'var(--color-primary)', mid: 'var(--color-primary-mid)' },
+            accent:  { DEFAULT: 'var(--color-accent)', deep: 'var(--color-accent-deep)', bright: 'var(--color-accent-bright)' },
+            dark:    { DEFAULT: 'var(--color-dark)', 3: 'var(--color-dark-3)' },
+            ink:     'var(--color-ink)',
+            muted:   { DEFAULT: 'var(--color-muted)', light: 'var(--color-muted-light)' },
+            line:    'var(--color-line)',
+            bg:      { DEFAULT: 'var(--color-bg)', 2: 'var(--color-bg-2)' },
+            rating:  'var(--color-rating)',
+            wave:    'var(--color-wave-blue)',
+          },
+          backgroundImage: { 'gradient-brand': 'var(--gradient-brand)' },
+          fontFamily: {
+            display: ['Sofia Sans Semi Condensed', 'Arial Narrow', 'sans-serif'],
+            body:    ['Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', 'Verdana', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <script src="/site.js" defer></script>
+
+  <!-- Services overview schema (ES): a MedicalWebPage/CollectionPage listing the seven services (ItemList, Spanish
+       names, /es/ URLs) + BreadcrumbList. The clinic and website nodes are referenced by the @ids the homepage
+       defines. No pricing, no outcome guarantees, no foundingDate. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": [
+          "MedicalWebPage",
+          "CollectionPage"
+        ],
+        "@id": "https://www.wound-institute.com/es/servicios/#webpage",
+        "url": "https://www.wound-institute.com/es/servicios/",
+        "name": "Servicios de Cuidado de Heridas en McAllen y Mission, TX",
+        "description": "Siete servicios para heridas en McAllen y Mission, TX: oxígeno hiperbárico, Wound VAC, desbridamiento, yeso, sustitutos de piel y más. Llame al (956) 317-4044.",
+        "inLanguage": "es-US",
+        "isPartOf": {
+          "@id": "https://www.wound-institute.com/#website"
+        },
+        "provider": {
+          "@id": "https://www.wound-institute.com/#clinic"
+        },
+        "breadcrumb": {
+          "@id": "https://www.wound-institute.com/es/servicios/#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://www.wound-institute.com/es/servicios/#services"
+        },
+        "medicalAudience": [
+          {
+            "@type": "MedicalAudience",
+            "audienceType": "Patient"
+          },
+          {
+            "@type": "MedicalAudience",
+            "audienceType": "Clinician"
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://www.wound-institute.com/es/servicios/#services",
+        "name": "Servicios de cuidado de heridas en Wound Care Institute of Texas",
+        "numberOfItems": 7,
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Terapia de Oxígeno Hiperbárico",
+            "url": "https://www.wound-institute.com/es/servicios/terapia-de-oxigeno-hiperbarico/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Terapia de Presión Negativa (Wound VAC)",
+            "url": "https://www.wound-institute.com/es/servicios/terapia-de-presion-negativa/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Desbridamiento de Heridas",
+            "url": "https://www.wound-institute.com/es/servicios/desbridamiento-de-heridas/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Yeso de Contacto Total",
+            "url": "https://www.wound-institute.com/es/servicios/yeso-de-contacto-total/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Sustitutos de Piel de Bioingeniería",
+            "url": "https://www.wound-institute.com/es/servicios/sustitutos-de-piel/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "Terapia de Compresión",
+            "url": "https://www.wound-institute.com/es/servicios/terapia-de-compresion/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "name": "Apósitos y Ungüentos Especializados",
+            "url": "https://www.wound-institute.com/es/servicios/apositos-especializados/"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.wound-institute.com/es/servicios/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://www.wound-institute.com/es/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Servicios",
+            "item": "https://www.wound-institute.com/es/servicios/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="site">
+
+  <a class="skip-link" href="#main">Ir al contenido principal</a>
+
+  <!-- ============================================================
+       HEADER (ES chrome) — brand bar (sticky) + link row. Shared by every /es/ page.
+       CTA routing is LOCKED (CLAUDE.md): Solicitar una Cita → /es/contacto/ ·
+       Referir a un Paciente → LeadingReach (new tab) · llamar → tel:+19563174044.
+       The language toggle on an ES page says "English" and goes to the EN twin.
+  ============================================================ -->
+  <header class="site-header on-dark" id="site-header">
+    <div class="brand-bar">
+      <div class="shell brand-bar__inner">
+        <a class="brand" href="/es/" aria-label="Wound Care Institute of Texas — inicio">
+          <img class="nav-logo" src="/brand_assets/wordmark-on-dark.png" width="440" height="155" alt="Wound Care Institute of Texas" />
+        </a>
+
+        <div class="brand-bar__actions">
+          <a class="lang-toggle" href="/services/" hreflang="en" lang="en" aria-label="View this page in English">
+            <span class="lang-toggle__code" aria-hidden="true">EN</span>English
+          </a>
+
+          <div class="brand-bar__desktop">
+            <a class="call-link" href="tel:+19563174044">
+              <span class="call-link__label">Llámenos</span>
+              <span class="call-link__number num">(956) 317-4044</span>
+            </a>
+            <a class="btn btn--secondary btn--compact" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+              Referir a un Paciente
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              <span class="sr-only">(se abre en una pestaña nueva)</span>
+            </a>
+            <a class="btn btn--primary btn--compact" href="/es/contacto/">Solicitar una Cita</a>
+          </div>
+
+          <button class="menu-button" type="button" data-menu-open aria-label="Menú" aria-expanded="false" aria-controls="site-menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            <span class="menu-button__label">Menú</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="link-bar" aria-label="Principal">
+      <div class="shell">
+        <ul class="link-bar__list">
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/">Inicio</a></li>
+          <li class="link-bar__item" data-dropdown>
+            <button class="link-bar__link is-active" type="button" aria-expanded="false" aria-controls="services-menu">
+              Servicios
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="dropdown" id="services-menu">
+              <ul>
+                <li><a class="dropdown__link dropdown__link--overview" href="/es/servicios/" aria-current="page">Todos los servicios de cuidado de heridas</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">Terapia de Oxígeno Hiperbárico</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/terapia-de-presion-negativa/">Terapia de Presión Negativa</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/desbridamiento-de-heridas/">Desbridamiento de Heridas</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/yeso-de-contacto-total/">Yeso de Contacto Total</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/sustitutos-de-piel/">Sustitutos de Piel</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/terapia-de-compresion/">Terapia de Compresión</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/apositos-especializados/">Apósitos y Ungüentos Especializados</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/condiciones/">Heridas que Tratamos</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/nuestro-equipo/">Nuestro Equipo</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/ubicaciones/">Ubicaciones</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/recursos-para-pacientes/">Para Pacientes</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/profesionales-que-refieren/">Para Profesionales</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/contacto/">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile / tablet menu (light surface → wordmark.png) -->
+  <div class="menu-panel" id="site-menu" role="dialog" aria-modal="true" aria-label="Menú del sitio" hidden>
+    <div class="menu-panel__top">
+      <img class="menu-panel__logo" src="/brand_assets/wordmark.png" width="440" height="155" alt="Wound Care Institute of Texas" />
+      <button class="menu-close" type="button" data-menu-close>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        Cerrar
+      </button>
+    </div>
+    <div class="menu-panel__body">
+      <nav aria-label="Principal (menú)">
+        <ul>
+          <li><a class="menu-list__link" href="/es/">Inicio</a></li>
+          <li>
+            <a class="menu-list__link" href="/es/servicios/" aria-current="page">Servicios</a>
+            <ul class="menu-sub">
+              <li><a class="menu-sub__link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">Terapia de Oxígeno Hiperbárico</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/terapia-de-presion-negativa/">Terapia de Presión Negativa</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/desbridamiento-de-heridas/">Desbridamiento de Heridas</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/yeso-de-contacto-total/">Yeso de Contacto Total</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/sustitutos-de-piel/">Sustitutos de Piel</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/terapia-de-compresion/">Terapia de Compresión</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/apositos-especializados/">Apósitos y Ungüentos Especializados</a></li>
+            </ul>
+          </li>
+          <li><a class="menu-list__link" href="/es/condiciones/">Heridas que Tratamos</a></li>
+          <li><a class="menu-list__link" href="/es/nuestro-equipo/">Nuestro Equipo</a></li>
+          <li><a class="menu-list__link" href="/es/ubicaciones/">Ubicaciones</a></li>
+          <li><a class="menu-list__link" href="/es/recursos-para-pacientes/">Para Pacientes</a></li>
+          <li><a class="menu-list__link" href="/es/profesionales-que-refieren/">Para Profesionales</a></li>
+          <li><a class="menu-list__link" href="/es/contacto/">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="menu-panel__actions">
+        <a class="btn btn--primary btn--block" href="/es/contacto/">Solicitar una Cita</a>
+        <a class="btn btn--secondary btn--block" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+          Referir a un Paciente
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          <span class="sr-only">(se abre en una pestaña nueva)</span>
+        </a>
+        <a class="btn btn--secondary btn--block" href="tel:+19563174044">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          Llamar <span class="num">(956) 317-4044</span>
+        </a>
+        <a class="lang-toggle menu-panel__lang" href="/services/" hreflang="en" lang="en">
+          <span class="lang-toggle__code" aria-hidden="true">EN</span>View in English
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============================================================
+         1. HERO — overview: breadcrumb, H1, intro, patient CTAs; the routing
+            panel ("not sure which treatment?") on the right.
+    ============================================================ -->
+    <section class="hero hero--service on-dark" aria-labelledby="page-title">
+      <!-- OFF-LIMITS: hero-background — dedicated named file only, never a content photo -->
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__vignette"></div>
+
+      <div class="shell hero__inner">
+        <div class="fade-up">
+          <nav class="crumbs" aria-label="Ruta de navegación">
+            <a href="/es/">Inicio</a>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+            <span aria-current="page">Servicios</span>
+          </nav>
+          <p class="eyebrow">Nuestros servicios</p>
+          <h1 class="display-1 hero__title mt-6" id="page-title">Servicios de cuidado de heridas en <span class="grad-text">McAllen y Mission</span></h1>
+          <p class="lede hero__lede">Tratamos heridas crónicas y que no sanan con siete tratamientos, elegidos y combinados según su herida. La mayor parte de la atención ocurre en la clínica, y usted regresa a casa el mismo día.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="/es/contacto/">Solicitar una Cita</a>
+            <a class="btn btn--secondary" href="tel:+19563174044">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+              Llamar <span class="num">(956) 317-4044</span>
+            </a>
+          </div>
+          <p class="hero__hours"><span>Siete tratamientos, un solo plan de atención</span><span>Lunes a viernes</span></p>
+        </div>
+
+        <aside class="glance fade-up" aria-labelledby="glance-title">
+          <p class="eyebrow">¿No sabe qué tratamiento necesita?</p>
+          <h2 class="heading-3 glance__title" id="glance-title">Empiece por su herida, no por el tratamiento</h2>
+          <p class="provider-panel__text">La mayoría de las personas no necesitan elegir un tratamiento. Cuéntenos sobre la herida y nuestro equipo arma el plan. Si prefiere leer primero, la página de condiciones explica cada tipo de herida y qué tratamientos suele necesitar.</p>
+          <a class="btn btn--secondary btn--block mt-5" href="/es/condiciones/">Ver las heridas que tratamos</a>
+          <p class="glance__foot">¿Va a referir a un paciente?</p>
+          <a class="arrow-link" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+            <span>Referir a través de LeadingReach</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            <span class="sr-only">(se abre en una pestaña nueva)</span>
+          </a>
+        </aside>
+      </div>
+      <div class="hairline-brand"></div>
+    </section>
+
+    <!-- ============================================================
+         2. THE SEVEN SERVICES — genuinely parallel content → cards.
+    ============================================================ -->
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="shell">
+        <div class="section-head section-head--split fade-up">
+          <p class="eyebrow">Nuestros servicios</p>
+          <h2 class="display-2" id="services-title">Siete maneras de tratar una herida que no sana</h2>
+          <p class="lede muted">Cada tratamiento resuelve un problema distinto. Su plan puede usar uno o varios, y cambia conforme su herida va sanando.</p>
+        </div>
+        <ul class="service-cards fade-up">
+          <li class="service-cards__flagship">
+            <article class="service-card service-card--flagship">
+              <p class="service-card__tag">Terapia principal</p>
+              <h3 class="service-card__name">Terapia de Oxígeno Hiperbárico</h3>
+              <p class="service-card__text">Usted descansa dentro de una cámara presurizada y respira oxígeno al <span class="num--text">100%</span>. El oxígeno adicional llega a tejido al que la circulación por sí sola no alcanza, y eso puede ayudar a que una herida estancada empiece a sanar.</p>
+              <p class="service-card__treats"><b>Se usa a menudo para:</b> úlceras del pie diabético que no han sanado con el tratamiento habitual, heridas por radiación, injertos de piel que no prenden e infecciones crónicas del hueso.</p>
+              <a class="arrow-link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">
+                <span>Sobre la terapia de oxígeno hiperbárico</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="service-card">
+              <p class="service-card__tag">Heridas profundas o con mucho drenaje</p>
+              <h3 class="service-card__name">Terapia de Presión Negativa (Wound VAC)</h3>
+              <p class="service-card__text">Un apósito de espuma sellado y una pequeña bomba portátil extraen el líquido de la herida y ayudan a que el tejido nuevo la vaya llenando.</p>
+              <p class="service-card__treats"><b>Se usa a menudo para:</b> úlceras profundas del pie diabético, úlceras por presión e incisiones que se han abierto.</p>
+              <a class="arrow-link" href="/es/servicios/terapia-de-presion-negativa/">
+                <span>Sobre la terapia Wound VAC</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="service-card">
+              <p class="service-card__tag">Casi siempre el primer paso</p>
+              <h3 class="service-card__name">Desbridamiento de Heridas</h3>
+              <p class="service-card__text">Se retira el tejido muerto, dañado o infectado, casi siempre ahí mismo en la clínica, para que el tejido sano pueda crecer.</p>
+              <p class="service-card__treats"><b>Se usa a menudo para:</b> casi todas las heridas crónicas en algún momento.</p>
+              <a class="arrow-link" href="/es/servicios/desbridamiento-de-heridas/">
+                <span>Sobre el desbridamiento</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="service-card">
+              <p class="service-card__tag">Úlceras del pie diabético</p>
+              <h3 class="service-card__name">Yeso de Contacto Total</h3>
+              <p class="service-card__text">Un yeso moldeado al pie reparte su peso por toda la parte baja de la pierna, para que la úlcera debajo del pie casi no cargue nada.</p>
+              <p class="service-card__treats"><b>Se usa a menudo para:</b> úlceras diabéticas y neuropáticas en la planta del pie.</p>
+              <a class="arrow-link" href="/es/servicios/yeso-de-contacto-total/">
+                <span>Sobre el yeso de contacto total</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="service-card">
+              <p class="service-card__tag">Heridas estancadas</p>
+              <h3 class="service-card__name">Sustitutos de Piel de Bioingeniería</h3>
+              <p class="service-card__text">Una lámina delgada hecha en laboratorio, de células, colágeno o tejido donado, le da a su cuerpo un andamio y señales de crecimiento para cerrar la herida.</p>
+              <p class="service-card__treats"><b>Se usa a menudo para:</b> úlceras limpias del pie diabético y úlceras venosas que dejaron de cerrar.</p>
+              <a class="arrow-link" href="/es/servicios/sustitutos-de-piel/">
+                <span>Sobre los sustitutos de piel</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="service-card">
+              <p class="service-card__tag">Úlceras venosas de la pierna</p>
+              <h3 class="service-card__name">Terapia de Compresión</h3>
+              <p class="service-card__text">Vendajes y medias de compresión graduada empujan la sangre acumulada de vuelta hacia arriba, bajan la hinchazón y permiten que una úlcera venosa sane.</p>
+              <p class="service-card__treats"><b>Se usa a menudo para:</b> úlceras venosas e hinchazón crónica de las piernas.</p>
+              <a class="arrow-link" href="/es/servicios/terapia-de-compresion/">
+                <span>Sobre la terapia de compresión</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="service-card">
+              <p class="service-card__tag">Toda herida, entre visitas</p>
+              <h3 class="service-card__name">Apósitos y Ungüentos Especializados</h3>
+              <p class="service-card__text">Espumas, alginatos, hidrogeles, colágeno, apósitos antimicrobianos y productos de barrera, elegidos según su herida y cambiados conforme va sanando.</p>
+              <p class="service-card__treats"><b>Se usa a menudo para:</b> todas las heridas que tratamos, y la piel alrededor de estomas y fístulas.</p>
+              <a class="arrow-link" href="/es/servicios/apositos-especializados/">
+                <span>Sobre los apósitos especializados</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. HOW WE CHOOSE — prose (dark).
+    ============================================================ -->
+    <section class="section section--dark grain on-dark" id="how-we-choose" aria-labelledby="choose-title">
+      <div class="shell index-layout">
+        <div class="index-layout__aside fade-up">
+          <p class="eyebrow">Cómo elegimos</p>
+          <h2 class="display-2 mt-5" id="choose-title">Cómo armamos su plan</h2>
+        </div>
+        <div class="prose fade-up" style="max-width: 68ch">
+          <p>Cada plan empieza igual: un médico examina la herida, la mide y busca la razón por la que no ha sanado. La mala circulación, la presión, la hinchazón, la infección y el azúcar alta en la sangre son las causas más comunes, y cada una apunta a un tratamiento distinto.</p>
+          <p>A partir de ahí, el plan se arma por capas. Primero se retira el tejido muerto. Luego se quita la presión o la hinchazón, con un yeso o con compresión. Se coloca el apósito correcto. Si la herida sigue estancada, agregamos las terapias avanzadas: presión negativa, un sustituto de piel u oxígeno hiperbárico.</p>
+          <p>Dos de nuestros clínicos están certificados por el American Board of Wound Management: el Dr. José R. Sobrevilla, MD, CWSP, y Cesar Martinez, RN, CWS. Trabajan junto a nuestros médicos y enfermeros practicantes, que aportan experiencia en cuidado de heridas y en cuidados intensivos, y todo el equipo revisa su herida en cada visita.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. NOT SURE WHICH TREATMENT? — routing to /es/condiciones/ and the appointment CTA.
+    ============================================================ -->
+    <section class="section section--tint" id="not-sure" aria-labelledby="not-sure-title">
+      <div class="shell">
+        <div class="callout fade-up" style="margin-top: 0">
+          <div>
+            <h2 class="heading-3" id="not-sure-title">¿No sabe qué tratamiento necesita?</h2>
+            <p class="callout__text mt-3">No tiene que saberlo. Empiece por el tipo de herida que tiene, o simplemente llámenos y descríbala. Nosotros le decimos qué sigue.</p>
+            <a class="arrow-link mt-4" href="/es/condiciones/">
+              <span>Encuentre su tipo de herida en la página de condiciones</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+          <div>
+            <a class="btn btn--primary" href="/es/contacto/">Solicitar una Cita</a>
+            <p class="mt-1">o llame al <a class="text-link text-link--tap num" href="tel:+19563174044">(956) 317-4044</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         9. FINAL CTA — both audiences, per CTA routing (LOCKED).
+    ============================================================ -->
+    <section class="final-cta on-dark" aria-labelledby="final-cta-title">
+      <!-- OFF-LIMITS: cta-background — dedicated named file only, never a content photo (set in site.css .final-cta__bg) -->
+      <div class="final-cta__bg"></div>
+      <div class="final-cta__overlay"></div>
+      <div class="final-cta__vignette"></div>
+
+      <div class="shell fade-up">
+        <p class="eyebrow">Siguiente paso</p>
+        <h2 class="display-1 final-cta__title mt-5" id="final-cta-title">Reciba atención para una herida que no sana</h2>
+
+        <div class="paths">
+          <div class="path">
+            <h3 class="heading-3">Pacientes y familias</h3>
+            <p class="path__text">Solicite una cita o llámenos. Examinaremos la herida y armaremos un plan a su medida.</p>
+            <div class="path__actions">
+              <a class="btn btn--primary" href="/es/contacto/">Solicitar una Cita</a>
+              <a class="btn btn--secondary" href="tel:+19563174044">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+                Llamar <span class="num">(956) 317-4044</span>
+              </a>
+            </div>
+          </div>
+          <div class="path">
+            <h3 class="heading-3">Profesionales que refieren</h3>
+            <p class="path__text">Refiera a un paciente a través de nuestro portal seguro LeadingReach, o por fax al <span class="num num--text whitespace-nowrap">(956) 800-4275</span>.</p>
+            <div class="path__actions">
+              <a class="btn btn--secondary" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+                Referir a un Paciente
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                <span class="sr-only">(se abre en una pestaña nueva)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (ES chrome) — shared by every /es/ page. Both locations' NAP, phone, fax, hours.
+  ============================================================ -->
+  <footer class="site-footer on-dark">
+    <div class="hairline-brand"></div>
+    <div class="shell">
+      <div class="site-footer__main">
+        <div>
+          <a class="brand" href="/es/" aria-label="Wound Care Institute of Texas — inicio">
+            <img class="footer-logo" src="/brand_assets/wordmark-on-dark.png" width="440" height="155" loading="lazy" alt="Wound Care Institute of Texas" />
+          </a>
+          <p class="site-footer__mission">Atención sin hospitalización para heridas crónicas y que no sanan en McAllen y Mission, Texas.</p>
+          <!-- SOCIAL LINKS: [NEEDS INPUT] — Facebook / Instagram / YouTube URLs are not stated in
+               CLAUDE.md. Add a <ul class="footer-list mt-4" aria-label="Redes sociales"> here (and the
+               schema sameAs) only once the real URLs are confirmed; never guess them. -->
+        </div>
+
+        <div>
+          <h2 class="footer-title">Clínica de McAllen</h2>
+          <address class="footer-address num num--text">2101 S. M Street<br />Suite A<br />McAllen, TX 78503</address>
+          <h2 class="footer-title mt-7">Clínica de Mission</h2>
+          <address class="footer-address num num--text">900 Plaza Drive<br />Suite 5<br />Mission, TX 78572</address>
+          <a class="footer-link mt-2" href="/es/ubicaciones/">Ubicaciones y cómo llegar</a>
+        </div>
+
+        <div>
+          <h2 class="footer-title">Contacto</h2>
+          <dl class="footer-facts">
+            <div><dt>Teléfono</dt><dd class="num"><a class="footer-link" href="tel:+19563174044">(956) 317-4044</a></dd></div>
+            <div><dt>Alterno</dt><dd class="num"><a class="footer-link" href="tel:+19563174043">(956) 317-4043</a></dd></div>
+            <div><dt>Fax</dt><dd class="num"><span class="footer-link">(956) 800-4275</span></dd></div>
+          </dl>
+          <a class="footer-link footer-email" href="mailto:wcit@wound-institute.com">wcit@wound-institute.com</a>
+          <h2 class="footer-title mt-7">Horario</h2>
+          <p class="footer-hours num num--text">Lunes a viernes<br />8:00 AM – 5:00 PM<br /><span class="muted">Sábado y domingo: cerrado</span></p>
+        </div>
+
+        <nav aria-label="Servicios">
+          <h2 class="footer-title">Servicios</h2>
+          <ul class="footer-list">
+            <li><a class="footer-link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">Terapia de Oxígeno Hiperbárico</a></li>
+            <li><a class="footer-link" href="/es/servicios/terapia-de-presion-negativa/">Terapia de Presión Negativa</a></li>
+            <li><a class="footer-link" href="/es/servicios/desbridamiento-de-heridas/">Desbridamiento de Heridas</a></li>
+            <li><a class="footer-link" href="/es/servicios/yeso-de-contacto-total/">Yeso de Contacto Total</a></li>
+            <li><a class="footer-link" href="/es/servicios/sustitutos-de-piel/">Sustitutos de Piel</a></li>
+            <li><a class="footer-link" href="/es/servicios/terapia-de-compresion/">Terapia de Compresión</a></li>
+            <li><a class="footer-link" href="/es/servicios/apositos-especializados/">Apósitos y Ungüentos Especializados</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Pie de página">
+          <h2 class="footer-title">Explorar</h2>
+          <ul class="footer-list">
+            <li><a class="footer-link" href="/es/nosotros/">Nosotros</a></li>
+            <li><a class="footer-link" href="/es/nuestro-equipo/">Nuestro Equipo</a></li>
+            <li><a class="footer-link" href="/es/servicios/" aria-current="page">Servicios</a></li>
+            <li><a class="footer-link" href="/es/condiciones/">Heridas que Tratamos</a></li>
+            <li><a class="footer-link" href="/es/recursos-para-pacientes/">Para Pacientes</a></li>
+            <li><a class="footer-link" href="/es/profesionales-que-refieren/">Para Profesionales</a></li>
+            <li><a class="footer-link" href="/es/contacto/">Contacto</a></li>
+            <li><a class="footer-link" href="/services/" hreflang="en" lang="en">English</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="site-footer__base">
+        <p>© <span class="num num--text">2026</span> Wound Care Institute of Texas, PLLC. Este sitio web comparte información general y no constituye consejo médico. En una emergencia, llame al 911.</p>
+        <p>McAllen · Mission · Valle del Río Grande, Texas</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile action bar (ES chrome) — Llamar · Referir a un Paciente · Solicitar una Cita, reachable without opening the menu -->
+  <nav class="action-bar on-dark" aria-label="Acciones rápidas">
+    <a class="action-bar__item" href="tel:+19563174044">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+      Llamar
+    </a>
+    <a class="action-bar__item action-bar__item--refer" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">Referir a un Paciente<span class="sr-only"> (se abre en una pestaña nueva)</span></a>
+    <a class="action-bar__item action-bar__item--book" href="/es/contacto/">Solicitar una Cita</a>
+  </nav>
+
+  <!-- GHL CHAT WIDGET SCRIPT GOES HERE -->
+</body>
+</html>

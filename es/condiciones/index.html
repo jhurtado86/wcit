@@ -1,0 +1,938 @@
+<!-- REVIEW: bilingual staff — Spanish mirror of the LOCKED English Conditions page (/conditions/). Copy was translated
+     at build (2026-10-19) for Rio Grande Valley patients (usted, plain everyday medical Spanish). Review every string
+     for tone and accuracy before launch; structure, schema facts, NAP, hours and CTA destinations are frozen and
+     identical to the English page. The nine section ids are the LOCKED English anchor ids (deep links from the
+     homepage and the service pages depend on them; ids are not reader-facing). Every clinical statement here is on
+     the clinical-review list (CLAUDE.md, client question b). The FAQPage schema must match the visible FAQ word for
+     word after any edit. Header, menu, footer and action bar are the approved ES chrome. -->
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heridas Crónicas que Tratamos en McAllen y Mission, TX</title>
+  <meta name="description" content="Úlceras del pie diabético, venosas, arteriales y por presión, heridas quirúrgicas y quemaduras, tratadas en McAllen y Mission, TX. Llame al (956) 317-4044." />
+  <meta name="keywords" content="tratamiento de heridas crónicas McAllen TX, úlcera del pie diabético McAllen, tratamiento úlcera venosa Mission TX, tratamiento úlcera por presión Valle del Río Grande, úlcera arterial McAllen, herida quirúrgica que no sana condado de Hidalgo, cuidado de heridas por radiación McAllen, condiciones clínica de heridas, Wound Care Institute of Texas" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://www.wound-institute.com/es/condiciones/" />
+  <link rel="alternate" hreflang="en" href="https://www.wound-institute.com/conditions/" />
+  <link rel="alternate" hreflang="es" href="https://www.wound-institute.com/es/condiciones/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.wound-institute.com/conditions/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Heridas Crónicas que Tratamos en McAllen y Mission, TX" />
+  <meta property="og:description" content="Nueve tipos de heridas que no sanan, por qué cada una se estanca y qué tratamientos de Wound Care Institute of Texas pueden ayudar. Llame al (956) 317-4044." />
+  <meta property="og:url" content="https://www.wound-institute.com/es/condiciones/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.wound-institute.com/brand_assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_US" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="Wound Care Institute of Texas" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Heridas Crónicas que Tratamos en McAllen y Mission, TX" />
+  <meta name="twitter:description" content="Nueve tipos de heridas que no sanan, por qué cada una se estanca y qué tratamientos de Wound Care Institute of Texas pueden ayudar. Llame al (956) 317-4044." />
+  <meta name="twitter:image" content="https://www.wound-institute.com/brand_assets/og-image.jpg" />
+
+  <!-- Icons — the ribbon "W" cropped from the wordmark -->
+  <link rel="icon" href="/brand_assets/favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/brand_assets/favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand_assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/brand_assets/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/apple-touch-icon.png" />
+
+  <!-- GHL EXTERNAL TRACKING SCRIPT GOES HERE -->
+
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/brand.css" />
+  <link rel="stylesheet" href="/site.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400..800;1,400..800&family=Sofia+Sans+Semi+Condensed:wght@500..800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            /* Semantic palette — values resolve from /brand.css tokens */
+            primary: { DEFAULT: 'var(--color-primary)', mid: 'var(--color-primary-mid)' },
+            accent:  { DEFAULT: 'var(--color-accent)', deep: 'var(--color-accent-deep)', bright: 'var(--color-accent-bright)' },
+            dark:    { DEFAULT: 'var(--color-dark)', 3: 'var(--color-dark-3)' },
+            ink:     'var(--color-ink)',
+            muted:   { DEFAULT: 'var(--color-muted)', light: 'var(--color-muted-light)' },
+            line:    'var(--color-line)',
+            bg:      { DEFAULT: 'var(--color-bg)', 2: 'var(--color-bg-2)' },
+            rating:  'var(--color-rating)',
+            wave:    'var(--color-wave-blue)',
+          },
+          backgroundImage: { 'gradient-brand': 'var(--gradient-brand)' },
+          fontFamily: {
+            display: ['Sofia Sans Semi Condensed', 'Arial Narrow', 'sans-serif'],
+            body:    ['Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', 'Verdana', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <script src="/site.js" defer></script>
+
+  <!-- Conditions schema (ES): a MedicalWebPage about the nine MedicalConditions (each @id is its LOCKED anchor on
+       this page; possibleTreatment points at the /es/ service pages' #procedure nodes), a BreadcrumbList, and a
+       FAQPage whose Q&As match the visible Spanish FAQ word for word. The clinic and website nodes are referenced
+       by the @ids the homepage defines. No pricing, no outcome guarantees, no foundingDate. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalWebPage",
+        "@id": "https://www.wound-institute.com/es/condiciones/#webpage",
+        "url": "https://www.wound-institute.com/es/condiciones/",
+        "name": "Heridas Crónicas que Tratamos en McAllen y Mission, TX",
+        "description": "Úlceras del pie diabético, venosas, arteriales y por presión, heridas quirúrgicas y quemaduras, tratadas en McAllen y Mission, TX. Llame al (956) 317-4044.",
+        "inLanguage": "es-US",
+        "isPartOf": { "@id": "https://www.wound-institute.com/#website" },
+        "provider": { "@id": "https://www.wound-institute.com/#clinic" },
+        "breadcrumb": { "@id": "https://www.wound-institute.com/es/condiciones/#breadcrumb" },
+        "medicalAudience": [
+          { "@type": "MedicalAudience", "audienceType": "Patient" },
+          { "@type": "MedicalAudience", "audienceType": "Clinician" }
+        ],
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://www.wound-institute.com/brand_assets/og-image.jpg",
+          "width": 1200,
+          "height": 630
+        },
+        "about": [
+          {
+            "@type": "MedicalCondition",
+            "@id": "https://www.wound-institute.com/es/condiciones/#diabetic-foot-ulcers",
+            "name": "Úlceras del pie diabético",
+            "alternateName": ["Úlceras neuropáticas del pie", "Heridas del pie diabético"],
+            "url": "https://www.wound-institute.com/es/condiciones/#diabetic-foot-ulcers",
+            "description": "Llagas abiertas en el pie, por lo general en la planta, causadas por daño a los nervios y por la presión de caminar; tardan en sanar por el azúcar alta en la sangre y la menor circulación.",
+            "possibleTreatment": [
+              { "@id": "https://www.wound-institute.com/es/servicios/yeso-de-contacto-total/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/desbridamiento-de-heridas/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/sustitutos-de-piel/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/terapia-de-oxigeno-hiperbarico/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/terapia-de-presion-negativa/#procedure" }
+            ]
+          },
+          {
+            "@type": "MedicalCondition",
+            "@id": "https://www.wound-institute.com/es/condiciones/#arterial-ulcers",
+            "name": "Úlceras arteriales",
+            "alternateName": ["Úlceras isquémicas", "Úlceras por insuficiencia arterial"],
+            "url": "https://www.wound-institute.com/es/condiciones/#arterial-ulcers",
+            "description": "Heridas en los dedos del pie, el talón, el pie o la parte externa del tobillo causadas por muy poca sangre llegando a la piel a través de arterias de la pierna estrechadas o bloqueadas.",
+            "possibleTreatment": [
+              { "@id": "https://www.wound-institute.com/es/servicios/desbridamiento-de-heridas/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/terapia-de-oxigeno-hiperbarico/#procedure" }
+            ]
+          },
+          {
+            "@type": "MedicalCondition",
+            "@id": "https://www.wound-institute.com/es/condiciones/#venous-stasis-ulcers",
+            "name": "Úlceras venosas",
+            "alternateName": ["Úlceras venosas de la pierna", "Úlceras por insuficiencia venosa"],
+            "url": "https://www.wound-institute.com/es/condiciones/#venous-stasis-ulcers",
+            "description": "Heridas superficiales y húmedas en la parte baja de la pierna, por lo general arriba de la parte interna del tobillo, causadas por venas débiles, sangre acumulada e hinchazón.",
+            "possibleTreatment": [
+              { "@id": "https://www.wound-institute.com/es/servicios/terapia-de-compresion/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/desbridamiento-de-heridas/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/sustitutos-de-piel/#procedure" }
+            ]
+          },
+          {
+            "@type": "MedicalCondition",
+            "@id": "https://www.wound-institute.com/es/condiciones/#pressure-ulcers",
+            "name": "Úlceras por presión",
+            "alternateName": ["Escaras", "Llagas por presión", "Lesiones por presión", "Úlceras de decúbito"],
+            "url": "https://www.wound-institute.com/es/condiciones/#pressure-ulcers",
+            "description": "Daño a la piel y al tejido debajo de ella sobre un hueso, como el coxis, las caderas o los talones, por estar acostado o sentado en una misma posición demasiado tiempo.",
+            "possibleTreatment": [
+              { "@id": "https://www.wound-institute.com/es/servicios/desbridamiento-de-heridas/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/terapia-de-presion-negativa/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/sustitutos-de-piel/#procedure" }
+            ]
+          },
+          {
+            "@type": "MedicalCondition",
+            "@id": "https://www.wound-institute.com/es/condiciones/#non-healing-surgical-wounds",
+            "name": "Heridas quirúrgicas que no sanan",
+            "alternateName": ["Incisiones quirúrgicas dehiscentes", "Heridas después de una amputación"],
+            "url": "https://www.wound-institute.com/es/condiciones/#non-healing-surgical-wounds",
+            "description": "Incisiones quirúrgicas que se separan, siguen drenando o dejan de sanar después de una operación, incluidas las heridas que quedan después de la amputación de un dedo o de parte del pie.",
+            "possibleTreatment": [
+              { "@id": "https://www.wound-institute.com/es/servicios/terapia-de-presion-negativa/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/desbridamiento-de-heridas/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/sustitutos-de-piel/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/terapia-de-oxigeno-hiperbarico/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/yeso-de-contacto-total/#procedure" }
+            ]
+          },
+          {
+            "@type": "MedicalCondition",
+            "@id": "https://www.wound-institute.com/es/condiciones/#radiation-wounds",
+            "name": "Heridas por radiación",
+            "alternateName": ["Lesión tardía de los tejidos por radiación", "Lesión de la piel por radiación"],
+            "url": "https://www.wound-institute.com/es/condiciones/#radiation-wounds",
+            "description": "Daño a la piel y a los tejidos en una zona tratada con radiación contra el cáncer, que puede aparecer durante el tratamiento o meses o años después.",
+            "possibleTreatment": [
+              { "@id": "https://www.wound-institute.com/es/servicios/terapia-de-oxigeno-hiperbarico/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/desbridamiento-de-heridas/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#procedure" }
+            ]
+          },
+          {
+            "@type": "MedicalCondition",
+            "@id": "https://www.wound-institute.com/es/condiciones/#burns",
+            "name": "Quemaduras",
+            "alternateName": ["Quemaduras de cicatrización lenta", "Heridas crónicas por quemadura"],
+            "url": "https://www.wound-institute.com/es/condiciones/#burns",
+            "description": "Quemaduras por calor, sustancias químicas o electricidad que sanan lentamente o se han vuelto heridas crónicas, tratadas en la clínica una vez pasada la emergencia.",
+            "possibleTreatment": [
+              { "@id": "https://www.wound-institute.com/es/servicios/desbridamiento-de-heridas/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/terapia-de-presion-negativa/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/sustitutos-de-piel/#procedure" },
+              { "@id": "https://www.wound-institute.com/es/servicios/terapia-de-oxigeno-hiperbarico/#procedure" }
+            ]
+          },
+          {
+            "@type": "MedicalCondition",
+            "@id": "https://www.wound-institute.com/es/condiciones/#peristomal-skin-irritation",
+            "name": "Irritación de la piel alrededor de un estoma",
+            "alternateName": ["Complicaciones de la piel periestomal", "Irritación de la piel por ostomía"],
+            "url": "https://www.wound-institute.com/es/condiciones/#peristomal-skin-irritation",
+            "description": "Piel adolorida, enrojecida o lastimada alrededor de un estoma, casi siempre porque el contenido se filtra debajo de la barrera de la bolsa.",
+            "possibleTreatment": [
+              { "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#procedure" }
+            ]
+          },
+          {
+            "@type": "MedicalCondition",
+            "@id": "https://www.wound-institute.com/es/condiciones/#fistulas",
+            "name": "Fístulas",
+            "alternateName": ["Fístula enterocutánea", "Fístula con drenaje"],
+            "url": "https://www.wound-institute.com/es/condiciones/#fistulas",
+            "description": "Un conducto anormal desde un órgano, por lo general el intestino, hasta la piel, por el que líquido, heces u orina drenan a través de una abertura en la piel.",
+            "possibleTreatment": [
+              { "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#procedure" }
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.wound-institute.com/es/condiciones/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.wound-institute.com/es/" },
+          { "@type": "ListItem", "position": 2, "name": "Heridas que Tratamos", "item": "https://www.wound-institute.com/es/condiciones/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.wound-institute.com/es/condiciones/#faq",
+        "url": "https://www.wound-institute.com/es/condiciones/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cómo sé si mi herida es crónica?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El tiempo es la prueba más sencilla: si no empieza a sanar después de unas 2 semanas, o no ha cerrado después de unas 6, la herida necesita atención de un especialista. Si tiene diabetes, mala circulación o enfermedad vascular, cualquier herida abierta debe revisarse antes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Necesito una referencia para que me atiendan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Usted mismo puede solicitar una cita, o su médico, hospital o centro de enfermería puede referirlo a través de LeadingReach. Algunos planes de seguro exigen una referencia de su médico de cabecera; llámenos y le ayudaremos a averiguarlo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué pasa en la primera visita?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un clínico examina y mide la herida, revisa la circulación y la sensibilidad de sus piernas y pies, y repasa su historial de salud y sus medicamentos. Usted se va sabiendo la causa que sospechamos y el plan para tratarla."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Pueden tratar mi herida si vivo en un centro de enfermería?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Atendemos a pacientes de más de 20 centros de enfermería en el Valle del Río Grande. Pida a la enfermera o al médico de su centro que lo refiera a través de LeadingReach."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Va a sanar mi herida?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La mayoría de las heridas crónicas pueden mejorar una vez que se encuentra y se trata la causa, pero nadie puede prometer que una herida va a cerrar. La circulación, el azúcar en la sangre, la nutrición y la presión influyen. En cada visita le decimos con honestidad lo que vemos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿El seguro cubre el cuidado de heridas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La cobertura depende de su plan y de su diagnóstico. Solicite una cita y nuestro equipo le ayudará a entender sus opciones antes de empezar."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="site">
+
+  <a class="skip-link" href="#main">Ir al contenido principal</a>
+
+  <!-- ============================================================
+       HEADER (ES chrome) — brand bar (sticky) + link row. Shared by every /es/ page.
+       CTA routing is LOCKED (CLAUDE.md): Solicitar una Cita → /es/contacto/ ·
+       Referir a un Paciente → LeadingReach (new tab) · llamar → tel:+19563174044.
+       The language toggle on an ES page says "English" and goes to the EN twin.
+  ============================================================ -->
+  <header class="site-header on-dark" id="site-header">
+    <div class="brand-bar">
+      <div class="shell brand-bar__inner">
+        <a class="brand" href="/es/" aria-label="Wound Care Institute of Texas — inicio">
+          <img class="nav-logo" src="/brand_assets/wordmark-on-dark.png" width="440" height="155" alt="Wound Care Institute of Texas" />
+        </a>
+
+        <div class="brand-bar__actions">
+          <a class="lang-toggle" href="/conditions/" hreflang="en" lang="en" aria-label="View this page in English">
+            <span class="lang-toggle__code" aria-hidden="true">EN</span>English
+          </a>
+
+          <div class="brand-bar__desktop">
+            <a class="call-link" href="tel:+19563174044">
+              <span class="call-link__label">Llámenos</span>
+              <span class="call-link__number num">(956) 317-4044</span>
+            </a>
+            <a class="btn btn--secondary btn--compact" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+              Referir a un Paciente
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              <span class="sr-only">(se abre en una pestaña nueva)</span>
+            </a>
+            <a class="btn btn--primary btn--compact" href="/es/contacto/">Solicitar una Cita</a>
+          </div>
+
+          <button class="menu-button" type="button" data-menu-open aria-label="Menú" aria-expanded="false" aria-controls="site-menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            <span class="menu-button__label">Menú</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="link-bar" aria-label="Principal">
+      <div class="shell">
+        <ul class="link-bar__list">
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/">Inicio</a></li>
+          <li class="link-bar__item" data-dropdown>
+            <button class="link-bar__link" type="button" aria-expanded="false" aria-controls="services-menu">
+              Servicios
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="dropdown" id="services-menu">
+              <ul>
+                <li><a class="dropdown__link dropdown__link--overview" href="/es/servicios/">Todos los servicios de cuidado de heridas</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">Terapia de Oxígeno Hiperbárico</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/terapia-de-presion-negativa/">Terapia de Presión Negativa</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/desbridamiento-de-heridas/">Desbridamiento de Heridas</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/yeso-de-contacto-total/">Yeso de Contacto Total</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/sustitutos-de-piel/">Sustitutos de Piel</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/terapia-de-compresion/">Terapia de Compresión</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/apositos-especializados/">Apósitos y Ungüentos Especializados</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/condiciones/" aria-current="page">Heridas que Tratamos</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/nuestro-equipo/">Nuestro Equipo</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/ubicaciones/">Ubicaciones</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/recursos-para-pacientes/">Para Pacientes</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/profesionales-que-refieren/">Para Profesionales</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/contacto/">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile / tablet menu (light surface → wordmark.png) -->
+  <div class="menu-panel" id="site-menu" role="dialog" aria-modal="true" aria-label="Menú del sitio" hidden>
+    <div class="menu-panel__top">
+      <img class="menu-panel__logo" src="/brand_assets/wordmark.png" width="440" height="155" alt="Wound Care Institute of Texas" />
+      <button class="menu-close" type="button" data-menu-close>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        Cerrar
+      </button>
+    </div>
+    <div class="menu-panel__body">
+      <nav aria-label="Principal (menú)">
+        <ul>
+          <li><a class="menu-list__link" href="/es/">Inicio</a></li>
+          <li>
+            <a class="menu-list__link" href="/es/servicios/">Servicios</a>
+            <ul class="menu-sub">
+              <li><a class="menu-sub__link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">Terapia de Oxígeno Hiperbárico</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/terapia-de-presion-negativa/">Terapia de Presión Negativa</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/desbridamiento-de-heridas/">Desbridamiento de Heridas</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/yeso-de-contacto-total/">Yeso de Contacto Total</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/sustitutos-de-piel/">Sustitutos de Piel</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/terapia-de-compresion/">Terapia de Compresión</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/apositos-especializados/">Apósitos y Ungüentos Especializados</a></li>
+            </ul>
+          </li>
+          <li><a class="menu-list__link" href="/es/condiciones/" aria-current="page">Heridas que Tratamos</a></li>
+          <li><a class="menu-list__link" href="/es/nuestro-equipo/">Nuestro Equipo</a></li>
+          <li><a class="menu-list__link" href="/es/ubicaciones/">Ubicaciones</a></li>
+          <li><a class="menu-list__link" href="/es/recursos-para-pacientes/">Para Pacientes</a></li>
+          <li><a class="menu-list__link" href="/es/profesionales-que-refieren/">Para Profesionales</a></li>
+          <li><a class="menu-list__link" href="/es/contacto/">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="menu-panel__actions">
+        <a class="btn btn--primary btn--block" href="/es/contacto/">Solicitar una Cita</a>
+        <a class="btn btn--secondary btn--block" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+          Referir a un Paciente
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          <span class="sr-only">(se abre en una pestaña nueva)</span>
+        </a>
+        <a class="btn btn--secondary btn--block" href="tel:+19563174044">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          Llamar <span class="num">(956) 317-4044</span>
+        </a>
+        <a class="lang-toggle menu-panel__lang" href="/conditions/" hreflang="en" lang="en">
+          <span class="lang-toggle__code" aria-hidden="true">EN</span>View in English
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============================================================
+         1. HERO — breadcrumb, H1, the when-to-see lead, patient CTAs on the
+            left; the on-page index (nine anchors + "other") on the right.
+    ============================================================ -->
+    <section class="hero hero--service on-dark" aria-labelledby="page-title">
+      <!-- OFF-LIMITS: hero-background — dedicated named file only, never a content photo -->
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__vignette"></div>
+
+      <div class="shell hero__inner">
+        <div class="fade-up">
+          <nav class="crumbs" aria-label="Ruta de navegación">
+            <a href="/es/">Inicio</a>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+            <span aria-current="page">Heridas que Tratamos</span>
+          </nav>
+          <p class="eyebrow">Condiciones que tratamos · McAllen y Mission, TX</p>
+          <h1 class="display-1 hero__title mt-6" id="page-title"><span class="grad-text">Heridas crónicas</span> que tratamos en McAllen y Mission</h1>
+          <p class="lede hero__lede">Una herida que no ha empezado a sanar después de unas 2 semanas, o que sigue abierta después de unas 6, necesita más que una venda. Estos son los nueve tipos de heridas que más vemos, por qué cada una se estanca y cuáles de nuestros tratamientos pueden ayudar.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="/es/contacto/">Solicitar una Cita</a>
+            <a class="btn btn--secondary" href="tel:+19563174044">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+              Llamar <span class="num">(956) 317-4044</span>
+            </a>
+          </div>
+          <p class="hero__hours"><span>Atención sin hospitalización en las dos clínicas</span><span class="num">Lunes a viernes, 8:00 AM – 5:00 PM</span></p>
+        </div>
+
+        <aside class="glance fade-up" aria-labelledby="index-title">
+          <p class="eyebrow">En esta página</p>
+          <h2 class="heading-3 glance__title" id="index-title">Encuentre su tipo de herida</h2>
+          <ul class="jump-list">
+            <li><a href="#diabetic-foot-ulcers">Úlceras del pie diabético<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></li>
+            <li><a href="#arterial-ulcers">Úlceras arteriales (isquémicas)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></li>
+            <li><a href="#venous-stasis-ulcers">Úlceras venosas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></li>
+            <li><a href="#pressure-ulcers">Úlceras por presión (escaras o llagas)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></li>
+            <li><a href="#non-healing-surgical-wounds">Heridas quirúrgicas que no sanan<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></li>
+            <li><a href="#radiation-wounds">Heridas por radiación<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></li>
+            <li><a href="#burns">Quemaduras<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></li>
+            <li><a href="#peristomal-skin-irritation">Irritación de la piel alrededor de un estoma<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></li>
+            <li><a href="#fistulas">Fístulas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></li>
+            <li><a href="#other-chronic-wounds">Otras heridas crónicas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></li>
+          </ul>
+          <p class="glance__foot">¿Va a referir a un paciente con una herida crónica?</p>
+          <a class="arrow-link" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+            <span>Referir a través de LeadingReach</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            <span class="sr-only">(se abre en una pestaña nueva)</span>
+          </a>
+        </aside>
+      </div>
+      <div class="hairline-brand"></div>
+    </section>
+
+    <!-- ============================================================
+         2. WHEN TO SEE A WOUND SPECIALIST — the confirmed facts (2 weeks /
+            6 weeks / risk factors) in new wording; prose + a note panel.
+    ============================================================ -->
+    <section class="section" id="when" aria-labelledby="when-title">
+      <div class="shell split split--start">
+        <div class="fade-up">
+          <p class="eyebrow">Empiece aquí</p>
+          <h2 class="display-2 mt-5" id="when-title">Cuándo una herida necesita un especialista</h2>
+          <div class="prose mt-6">
+            <p>La mayoría de las cortadas, raspones y llagas cierran solos en un par de semanas. Una herida crónica no. Algo la mantiene abierta: presión en el punto, muy poca circulación, hinchazón, infección, daño a los nervios o una condición como la diabetes. Hasta que esa causa se trate, la herida sigue estancada por más cuidado que se tenga al vendarla.</p>
+            <p>Si tiene diabetes, mala circulación o enfermedad vascular, no espere a que pasen las semanas. Una llaga nueva en un pie sin sensibilidad puede empeorar rápido. Y no necesita saber qué tipo de herida tiene antes de llamar. Descríbala, y nosotros le decimos qué sigue.</p>
+          </div>
+          <a class="arrow-link mt-5" href="/es/recursos-para-pacientes/">
+            <span>Qué esperar en su primera visita</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <aside class="note-panel fade-up" aria-labelledby="signs-title">
+          <h3 class="heading-3" id="signs-title">Tres señales de que es hora de llamar</h3>
+          <ul class="dash-list">
+            <li>La herida no ha empezado a sanar después de unas 2 semanas</li>
+            <li>La herida no ha sanado por completo después de unas 6 semanas</li>
+            <li>Tiene diabetes, mala circulación o enfermedad vascular, u otros factores de riesgo, y una herida de cualquier antigüedad</li>
+          </ul>
+          <p class="mt-6"><strong>Llame al <a class="text-link text-link--tap num" href="tel:+19563174044">(956) 317-4044</a></strong> o <a class="text-link" href="/es/contacto/">solicite una cita</a>.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. FOOT AND LEG ULCERS (tint) — the three ulcers that look alike:
+            sticky aside with the "where they form" key, three stacked entries.
+            Clinical statements are on the CLAUDE.md review list.
+    ============================================================ -->
+    <section class="section section--tint" id="foot-and-leg-ulcers" aria-labelledby="legs-title">
+      <div class="shell index-layout">
+        <div class="index-layout__aside fade-up">
+          <p class="eyebrow">Úlceras del pie y de la pierna</p>
+          <h2 class="display-2 mt-5" id="legs-title">Tres úlceras que se parecen y sanan de manera distinta</h2>
+          <div class="prose mt-6">
+            <p>La mayoría de las heridas que tratamos están en los pies y en la parte baja de las piernas, y la mayoría vienen de uno de tres problemas: daño a los nervios, arterias bloqueadas o venas débiles. Pueden parecerse, y tratar una como si fuera otra puede hacer daño, así que encontrar la causa es lo primero.</p>
+          </div>
+          <p class="entry__label mt-7">Dónde suele formarse cada una</p>
+          <ul class="dash-list">
+            <li><strong>Diabética:</strong> la planta del pie</li>
+            <li><strong>Arterial:</strong> los dedos, el talón o la parte externa del tobillo</li>
+            <li><strong>Venosa:</strong> justo arriba de la parte interna del tobillo</li>
+          </ul>
+        </div>
+
+        <div class="entry-stack fade-up">
+          <article class="entry" id="diabetic-foot-ulcers" aria-labelledby="dfu-title">
+            <h3 class="display-3" id="dfu-title">Úlceras del pie diabético y neuropáticas</h3>
+            <div class="prose mt-5">
+              <p>Una llaga abierta en el pie, por lo general en la planta. La diabetes daña los nervios de los pies, así que una ampolla, un roce o una cortada pueden no doler, y usted sigue caminando sobre ella. El daño a los nervios por otras causas, y el pie de Charcot, pueden llevar a la misma úlcera.</p>
+              <p>No puede sanar mientras usted camine sobre ella. El azúcar alta en la sangre retrasa la cicatrización y debilita las defensas del cuerpo contra la infección, y las arterias estrechadas pueden dejar al pie con poca sangre. Estas úlceras son una de las principales causas de amputación.</p>
+            </div>
+            <div class="entry__grid">
+              <div>
+                <p class="entry__label">Señales de alerta</p>
+                <ul class="dash-list">
+                  <li>Una llaga, ampolla o callo que no duele</li>
+                  <li>Drenaje o sangre en un calcetín</li>
+                  <li>Enrojecimiento, hinchazón, mal olor, tejido negro o fiebre</li>
+                </ul>
+              </div>
+              <div>
+                <p class="entry__label">Cómo la tratamos</p>
+                <p class="entry__treat">Primero se quita la presión, por lo general con un <a class="text-link" href="/es/servicios/yeso-de-contacto-total/">yeso de contacto total</a>. <a class="text-link" href="/es/servicios/desbridamiento-de-heridas/">Retiramos el tejido muerto</a> y elegimos un <a class="text-link" href="/es/servicios/apositos-especializados/">apósito</a> a la medida de la herida. Si se estanca después de aproximadamente un mes, podemos agregar <a class="text-link" href="/es/servicios/sustitutos-de-piel/">piel de bioingeniería</a> o <a class="text-link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">terapia de oxígeno hiperbárico</a>; las úlceras profundas pueden necesitar un <a class="text-link" href="/es/servicios/terapia-de-presion-negativa/">Wound VAC</a>.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="entry" id="arterial-ulcers" aria-labelledby="arterial-title">
+            <h3 class="display-3" id="arterial-title">Úlceras arteriales (isquémicas)</h3>
+            <div class="prose mt-5">
+              <p>Una herida causada por muy poca sangre llegando a la piel, por lo general por arterias de la pierna estrechadas o bloqueadas. Se forma en los dedos, el talón o la parte externa del tobillo, a menudo pequeña y “en sacabocados”, con un fondo pálido y seco, y duele, sobre todo de noche o con la pierna elevada.</p>
+              <p>La piel no puede reconstruirse sin circulación. Hasta que la circulación mejore, ningún apósito puede cerrar la herida, y el tratamiento equivocado, como una compresión apretada, puede hacer daño.</p>
+            </div>
+            <div class="entry__grid">
+              <div>
+                <p class="entry__label">Señales de alerta</p>
+                <ul class="dash-list">
+                  <li>Dolor en el pie por la noche que se alivia al dejar colgar la pierna</li>
+                  <li>Un pie frío, pálido o azulado</li>
+                  <li>Piel brillante y sin vello, o un dedo que se pone negro</li>
+                </ul>
+              </div>
+              <div>
+                <p class="entry__label">Cómo la tratamos</p>
+                <p class="entry__treat">Primero hacemos una prueba de la circulación de sus piernas. Una arteria bloqueada se trata antes que la herida, con un especialista vascular. Una vez que la circulación lo permite, usamos <a class="text-link" href="/es/servicios/desbridamiento-de-heridas/">desbridamiento</a>, <a class="text-link" href="/es/servicios/apositos-especializados/">apósitos especializados</a> y, en casos seleccionados, <a class="text-link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">terapia de oxígeno hiperbárico</a>.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="entry" id="venous-stasis-ulcers" aria-labelledby="venous-title">
+            <h3 class="display-3" id="venous-title">Úlceras venosas</h3>
+            <div class="prose mt-5">
+              <p>La úlcera de la pierna más común. Unas válvulas pequeñas en las venas de la pierna mantienen la sangre subiendo hacia el corazón. Cuando se debilitan, la sangre se acumula en la parte baja de la pierna y el líquido se filtra hacia la piel. La pierna se hincha, la piel arriba del tobillo se pone café y dura, y con el tiempo se abre.</p>
+              <p>La úlcera suele ser superficial y húmeda. Mientras la pierna siga hinchada, la piel no puede repararse.</p>
+            </div>
+            <div class="entry__grid">
+              <div>
+                <p class="entry__label">Señales de alerta</p>
+                <ul class="dash-list">
+                  <li>Hinchazón que empeora hacia la tarde</li>
+                  <li>Piernas adoloridas, pesadas o con comezón</li>
+                  <li>Manchas cafés arriba del tobillo, o una llaga que empapa las vendas</li>
+                </ul>
+              </div>
+              <div>
+                <p class="entry__label">Cómo la tratamos</p>
+                <p class="entry__treat">La <a class="text-link" href="/es/servicios/terapia-de-compresion/">terapia de compresión</a> es la base, después de la misma prueba de circulación para asegurarnos de que sea segura. <a class="text-link" href="/es/servicios/desbridamiento-de-heridas/">Retiramos el tejido muerto</a>, usamos <a class="text-link" href="/es/servicios/apositos-especializados/">apósitos absorbentes</a> y podemos agregar <a class="text-link" href="/es/servicios/sustitutos-de-piel/">piel de bioingeniería</a> si la úlcera se estanca. Después, las medias de compresión ayudan a evitar que regrese.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. PRESSURE AND SURGICAL WOUNDS (dark) — two entries side by side.
+            Speaks to both audiences; the nursing-facility line is confirmed.
+    ============================================================ -->
+    <section class="section section--dark grain on-dark" id="pressure-and-surgical" aria-labelledby="pressure-title">
+      <div class="shell">
+        <div class="section-head section-head--split fade-up">
+          <p class="eyebrow">Heridas por presión y por cirugía</p>
+          <h2 class="display-2" id="pressure-title">Úlceras por presión e incisiones que no cierran</h2>
+          <p class="lede">Dos heridas que vemos con frecuencia en pacientes referidos de hospitales y centros de enfermería.</p>
+        </div>
+
+        <div class="pair fade-up" style="margin-top: 0">
+          <article class="pair__col pair__col--key entry" id="pressure-ulcers" aria-labelledby="pu-title">
+            <h3 class="display-3" id="pu-title">Úlceras por presión (escaras o llagas)</h3>
+            <div class="prose mt-5">
+              <p>Daño a la piel y al tejido debajo de ella por estar acostado o sentado en una misma posición demasiado tiempo. El peso del cuerpo aprieta la piel contra un hueso y exprime la sangre. El coxis, las caderas, los talones y los tobillos son los puntos habituales, y la herida a menudo es más profunda de lo que parece.</p>
+              <p>No puede cerrar mientras la presión continúe. El roce, la humedad por el sudor o la incontinencia, y la mala nutrición la empeoran.</p>
+            </div>
+            <p class="entry__label mt-7">Señales de alerta</p>
+            <ul class="dash-list">
+              <li>Una mancha roja sobre un hueso que no desaparece al quitar la presión; en piel más oscura, morada, caliente o firme</li>
+              <li>Una ampolla o una llaga abierta superficial</li>
+              <li>Drenaje con olor, o fiebre</li>
+            </ul>
+            <p class="entry__label mt-7">Cómo la tratamos</p>
+            <p class="entry__treat">Aliviar la presión es el primer paso, junto con las familias y el personal del centro. <a class="text-link" href="/es/servicios/desbridamiento-de-heridas/">Retiramos el tejido muerto</a>, elegimos el <a class="text-link" href="/es/servicios/apositos-especializados/">apósito</a> y usamos un <a class="text-link" href="/es/servicios/terapia-de-presion-negativa/">Wound VAC</a> para las úlceras profundas; algunas úlceras seleccionadas pueden recibir <a class="text-link" href="/es/servicios/sustitutos-de-piel/">piel de bioingeniería</a>. Atendemos a pacientes de más de <span class="num--text">20</span> centros de enfermería.</p>
+          </article>
+
+          <article class="pair__col pair__col--key entry" id="non-healing-surgical-wounds" aria-labelledby="surgical-title">
+            <h3 class="display-3" id="surgical-title">Heridas quirúrgicas que no sanan</h3>
+            <div class="prose mt-5">
+              <p>Una incisión que se separa, sigue drenando o deja de sanar después de una operación, incluida la herida que queda después de la amputación de un dedo o de parte del pie. La infección, el líquido debajo de la piel, la tensión en los puntos, la diabetes, la mala circulación, fumar y algunos medicamentos pueden mantenerla abierta.</p>
+              <p>Una vez que los bordes se separan, la herida tiene que llenarse desde el fondo hacia arriba, lo que toma tiempo y el apoyo correcto.</p>
+            </div>
+            <p class="entry__label mt-7">Señales de alerta</p>
+            <ul class="dash-list">
+              <li>Bordes que se separan, o una incisión que sigue abierta después de unas 2 semanas</li>
+              <li>Enrojecimiento que se extiende; pus o drenaje turbio</li>
+              <li>Más dolor cada día, o fiebre</li>
+            </ul>
+            <p class="entry__label mt-7">Cómo la tratamos</p>
+            <p class="entry__treat">Un <a class="text-link" href="/es/servicios/terapia-de-presion-negativa/">Wound VAC</a> ayuda a que muchas incisiones abiertas se llenen. <a class="text-link" href="/es/servicios/desbridamiento-de-heridas/">Desbridamos</a> según sea necesario, elegimos el <a class="text-link" href="/es/servicios/apositos-especializados/">apósito</a> adecuado y podemos agregar <a class="text-link" href="/es/servicios/sustitutos-de-piel/">piel de bioingeniería</a> si la cicatrización se estanca. Un injerto que no prende o una infección del hueso pueden requerir <a class="text-link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">terapia de oxígeno hiperbárico</a>; las heridas del pie después de una amputación pueden necesitar un <a class="text-link" href="/es/servicios/yeso-de-contacto-total/">yeso de contacto total</a>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. RADIATION WOUNDS AND BURNS (white) — two fact sheets (.key-rows),
+            side by side on desktop. Thresholds are on the review list.
+    ============================================================ -->
+    <section class="section" id="radiation-and-burns" aria-labelledby="injury-title">
+      <div class="shell">
+        <div class="section-head section-head--split fade-up">
+          <p class="eyebrow">Heridas por tratamiento y por lesión</p>
+          <h2 class="display-2" id="injury-title">Heridas por radiación y quemaduras</h2>
+          <p class="lede muted">Ambas dañan la capacidad de la piel para repararse, de maneras distintas.</p>
+        </div>
+
+        <div class="entry-duo fade-up">
+          <article class="entry" id="radiation-wounds" aria-labelledby="radiation-title">
+            <h3 class="display-3" id="radiation-title">Heridas por radiación</h3>
+            <dl class="key-rows mt-6">
+              <div class="key-rows__row"><dt>Qué es</dt><dd>Daño a la piel y a los tejidos en una zona tratada con radiación contra el cáncer. Puede aparecer durante el tratamiento, o meses o años después, tras una lesión menor o una cirugía en la misma zona.</dd></div>
+              <div class="key-rows__row"><dt>Por qué no sana</dt><dd>La radiación deja cicatrices en los pequeños vasos sanguíneos de la zona tratada. Con muy poco oxígeno llegando al tejido, la piel no puede reconstruirse, y los apósitos por sí solos pueden no ser suficientes.</dd></div>
+              <div class="key-rows__row"><dt>Señales de alerta</dt><dd>Una llaga en una zona tratada que no cierra; piel que se rompe con facilidad; dolor, drenaje o hueso expuesto.</dd></div>
+              <div class="key-rows__row"><dt>Cómo la tratamos</dt><dd>La <a class="text-link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">terapia de oxígeno hiperbárico</a> aumenta el oxígeno en el tejido dañado y es uno de sus usos principales, junto con un <a class="text-link" href="/es/servicios/desbridamiento-de-heridas/">desbridamiento</a> suave y <a class="text-link" href="/es/servicios/apositos-especializados/">apósitos especializados</a>.</dd></div>
+            </dl>
+          </article>
+
+          <article class="entry" id="burns" aria-labelledby="burns-title">
+            <h3 class="display-3" id="burns-title">Quemaduras</h3>
+            <dl class="key-rows mt-6">
+              <div class="key-rows__row"><dt>Qué es</dt><dd>Una quemadura por calor, sustancias químicas o electricidad que sana lentamente o se ha vuelto una herida crónica. Tratamos las quemaduras una vez pasada la emergencia; una quemadura grande o profunda, o una en la cara, las manos, los pies o los genitales, necesita primero la sala de emergencias.</dd></div>
+              <div class="key-rows__row"><dt>Por qué no sana</dt><dd>Una quemadura profunda destruye la capa de la que crece la piel nueva. El tejido muerto, la infección y la hinchazón la mantienen abierta, y una quemadura en un pie diabético corre un riesgo especial.</dd></div>
+              <div class="key-rows__row"><dt>Señales de alerta</dt><dd>No sana después de unas 2 o 3 semanas; dolor, enrojecimiento o pus que van en aumento; fiebre; zonas blancas, como de cuero, u oscuras.</dd></div>
+              <div class="key-rows__row"><dt>Cómo la tratamos</dt><dd>El <a class="text-link" href="/es/servicios/desbridamiento-de-heridas/">desbridamiento</a> retira el tejido muerto, y los <a class="text-link" href="/es/servicios/apositos-especializados/">apósitos de plata y otros apósitos especializados</a> protegen contra la infección. Algunas quemaduras profundas se benefician de un <a class="text-link" href="/es/servicios/terapia-de-presion-negativa/">Wound VAC</a>, algunas de espesor parcial de la <a class="text-link" href="/es/servicios/sustitutos-de-piel/">piel de bioingeniería</a>, y algunas quemaduras graves de la <a class="text-link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">terapia de oxígeno hiperbárico</a>.</dd></div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. STOMA SKIN AND FISTULAS (tint) — two prose entries with a sticky
+            "before your first visit" panel.
+    ============================================================ -->
+    <section class="section section--tint" id="stoma-and-fistulas" aria-labelledby="stoma-title">
+      <div class="shell split split--start">
+        <div class="entry-stack fade-up">
+          <p class="eyebrow">La piel alrededor de un estoma, y las fístulas</p>
+          <h2 class="display-2 mt-5" id="stoma-title">Irritación de la piel alrededor de un estoma y fístulas</h2>
+
+          <article class="entry mt-10" id="peristomal-skin-irritation" aria-labelledby="peristomal-title">
+            <h3 class="display-3" id="peristomal-title">Irritación de la piel alrededor de un estoma</h3>
+            <div class="prose mt-5">
+              <p>Piel adolorida, enrojecida o lastimada alrededor de un estoma, la abertura que se hace en una cirugía para que las heces o la orina salgan del cuerpo hacia una bolsa. Casi siempre, el contenido se ha filtrado debajo de la barrera de la bolsa y se ha quedado sobre la piel. Una barrera mal ajustada, cambios frecuentes, una alergia al adhesivo o una infección por hongos también pueden causarla.</p>
+              <p>Se vuelve un círculo vicioso: una barrera no se pega a la piel dañada, así que se filtra más. <strong>Señales de alerta:</strong> ardor o comezón debajo de la barrera, piel que supura o sangra, un sarpullido con bultitos, o una bolsa que dura menos tiempo que antes.</p>
+            </div>
+            <p class="entry__label mt-7">Cómo la tratamos</p>
+            <p class="entry__treat"><a class="text-link" href="/es/servicios/apositos-especializados/">Cremas, polvos y anillos de barrera, y sistemas de bolsa</a> a la medida de su estoma protegen la piel mientras sana, y una barrera que ajuste mejor rompe el círculo.</p>
+          </article>
+
+          <article class="entry" id="fistulas" aria-labelledby="fistulas-title">
+            <h3 class="display-3" id="fistulas-title">Fístulas</h3>
+            <div class="prose mt-5">
+              <p>Un conducto anormal desde un órgano, por lo general el intestino, hasta la piel, por el que líquido, heces u orina drenan a través de una abertura en el abdomen. Las fístulas pueden aparecer después de una cirugía abdominal, por la enfermedad de Crohn, por una infección o por la radiación.</p>
+              <p>Mientras el líquido siga pasando por el conducto, no puede cerrar. Lo que drena es muy agresivo para la piel, y perder líquidos y nutrientes debilita la cicatrización. <strong>Señales de alerta:</strong> drenaje de una cicatriz o de una abertura nueva, sobre todo si huele a heces u orina; piel en carne viva alrededor; fiebre, dolor abdominal o deshidratación.</p>
+            </div>
+            <p class="entry__label mt-7">Cómo la tratamos</p>
+            <p class="entry__treat">Protegemos la piel y recogemos lo que drena con <a class="text-link" href="/es/servicios/apositos-especializados/">sistemas de bolsa y apósitos especializados</a>, y trabajamos con su cirujano. Algunas fístulas cierran una vez que se controla lo que drena; otras necesitan cirugía.</p>
+          </article>
+        </div>
+
+        <aside class="note-panel split__sticky fade-up" aria-labelledby="bring-title">
+          <h3 class="heading-3" id="bring-title">Antes de su primera visita</h3>
+          <p class="mt-3">Si tiene un estoma o una fístula, ayuda traer:</p>
+          <ul class="dash-list">
+            <li>La bolsa, la barrera y cualquier polvo o pasta que use ahora</li>
+            <li>Una nota de cuándo ocurren las fugas y cuánto le dura una bolsa</li>
+            <li>El nombre de su cirujano y la fecha de su cirugía</li>
+            <li>Una lista de sus medicamentos</li>
+          </ul>
+          <a class="arrow-link mt-5" href="/es/recursos-para-pacientes/">
+            <span>Qué esperar en su primera visita</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. OTHER CHRONIC WOUNDS (white) — the homepage's tenth row lands here;
+            narrow prose + the "not sure" callout.
+    ============================================================ -->
+    <section class="section entry" id="other-chronic-wounds" aria-labelledby="other-title">
+      <div class="shell shell--narrow">
+        <div class="fade-up">
+          <p class="eyebrow">Otras heridas crónicas</p>
+          <h2 class="display-2 mt-5" id="other-title">Heridas que no encajan en una categoría</h2>
+          <div class="prose mt-6" style="max-width: 68ch">
+            <p>Muchas de las heridas que tratamos no tienen un nombre claro. Un desgarro de la piel que se vuelve a abrir. Una cortada por una caída que sigue abierta un mes después. Una herida en alguien en diálisis, con esteroides o con una enfermedad autoinmune. Un absceso que se drenó y nunca cerró. Si una herida no ha empezado a sanar después de unas 2 semanas, o no ha cerrado después de unas 6, pertenece aquí, sea cual sea la causa.</p>
+          </div>
+        </div>
+
+        <div class="callout fade-up">
+          <div>
+            <h3 class="heading-3">¿No sabe qué tipo de herida tiene?</h3>
+            <p class="callout__text mt-3">No necesita un diagnóstico para llamarnos. Describa la herida, y nosotros le decimos qué sigue.</p>
+          </div>
+          <div>
+            <a class="btn btn--primary" href="/es/contacto/">Solicitar una Cita</a>
+            <p class="mt-1">o llame al <a class="text-link text-link--tap num" href="tel:+19563174044">(956) 317-4044</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8. FAQ — native details/summary. The FAQPage schema above repeats these
+            Q&As word for word; edit both together.
+    ============================================================ -->
+    <section class="section section--tint" id="faq" aria-labelledby="faq-title">
+      <div class="shell index-layout">
+        <div class="index-layout__aside fade-up">
+          <p class="eyebrow">Preguntas</p>
+          <h2 class="display-2 mt-5" id="faq-title">Preguntas frecuentes sobre las heridas crónicas</h2>
+          <p class="lede muted mt-6">Respuestas breves a lo que más nos preguntan los pacientes, las familias y los consultorios que refieren.</p>
+        </div>
+
+        <div class="faq fade-up">
+          <details class="faq__item">
+            <summary class="faq__q">¿Cómo sé si mi herida es crónica?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <div class="faq__a"><p>El tiempo es la prueba más sencilla: si no empieza a sanar después de unas 2 semanas, o no ha cerrado después de unas 6, la herida necesita atención de un especialista. Si tiene diabetes, mala circulación o enfermedad vascular, cualquier herida abierta debe revisarse antes.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">¿Necesito una referencia para que me atiendan?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <div class="faq__a"><p>Usted mismo puede solicitar una cita, o su médico, hospital o centro de enfermería puede referirlo a través de LeadingReach. Algunos planes de seguro exigen una referencia de su médico de cabecera; llámenos y le ayudaremos a averiguarlo.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">¿Qué pasa en la primera visita?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <div class="faq__a"><p>Un clínico examina y mide la herida, revisa la circulación y la sensibilidad de sus piernas y pies, y repasa su historial de salud y sus medicamentos. Usted se va sabiendo la causa que sospechamos y el plan para tratarla.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">¿Pueden tratar mi herida si vivo en un centro de enfermería?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <div class="faq__a"><p>Sí. Atendemos a pacientes de más de <span class="num--text">20</span> centros de enfermería en el Valle del Río Grande. Pida a la enfermera o al médico de su centro que lo refiera a través de LeadingReach.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">¿Va a sanar mi herida?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <div class="faq__a"><p>La mayoría de las heridas crónicas pueden mejorar una vez que se encuentra y se trata la causa, pero nadie puede prometer que una herida va a cerrar. La circulación, el azúcar en la sangre, la nutrición y la presión influyen. En cada visita le decimos con honestidad lo que vemos.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">¿El seguro cubre el cuidado de heridas?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <div class="faq__a"><p>La cobertura depende de su plan y de su diagnóstico. Solicite una cita y nuestro equipo le ayudará a entender sus opciones antes de empezar.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         9. FINAL CTA — both audiences, per CTA routing (LOCKED).
+    ============================================================ -->
+    <section class="final-cta on-dark" aria-labelledby="final-cta-title">
+      <!-- OFF-LIMITS: cta-background — dedicated named file only, never a content photo (set in site.css .final-cta__bg) -->
+      <div class="final-cta__bg"></div>
+      <div class="final-cta__overlay"></div>
+      <div class="final-cta__vignette"></div>
+
+      <div class="shell fade-up">
+        <p class="eyebrow">Siguiente paso</p>
+        <h2 class="display-1 final-cta__title mt-5" id="final-cta-title">Descubra por qué su herida no sana</h2>
+
+        <div class="paths">
+          <div class="path">
+            <h3 class="heading-3">Pacientes y familias</h3>
+            <p class="path__text">Solicite una cita o llámenos. Nuestro equipo examinará la herida, buscará la causa y armará un plan alrededor de ella.</p>
+            <div class="path__actions">
+              <a class="btn btn--primary" href="/es/contacto/">Solicitar una Cita</a>
+              <a class="btn btn--secondary" href="tel:+19563174044">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+                Llamar <span class="num">(956) 317-4044</span>
+              </a>
+            </div>
+          </div>
+          <div class="path">
+            <h3 class="heading-3">Profesionales que refieren</h3>
+            <p class="path__text">Refiera a un paciente con cualquier herida crónica a través de nuestro portal seguro LeadingReach, o por fax al <span class="num num--text whitespace-nowrap">(956) 800-4275</span>.</p>
+            <div class="path__actions">
+              <a class="btn btn--secondary" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+                Referir a un Paciente
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                <span class="sr-only">(se abre en una pestaña nueva)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (ES chrome) — shared by every /es/ page. Both locations' NAP, phone, fax, hours.
+  ============================================================ -->
+  <footer class="site-footer on-dark">
+    <div class="hairline-brand"></div>
+    <div class="shell">
+      <div class="site-footer__main">
+        <div>
+          <a class="brand" href="/es/" aria-label="Wound Care Institute of Texas — inicio">
+            <img class="footer-logo" src="/brand_assets/wordmark-on-dark.png" width="440" height="155" loading="lazy" alt="Wound Care Institute of Texas" />
+          </a>
+          <p class="site-footer__mission">Atención sin hospitalización para heridas crónicas y que no sanan en McAllen y Mission, Texas.</p>
+          <!-- SOCIAL LINKS: [NEEDS INPUT] — Facebook / Instagram / YouTube URLs are not stated in
+               CLAUDE.md. Add a <ul class="footer-list mt-4" aria-label="Redes sociales"> here (and the
+               schema sameAs) only once the real URLs are confirmed; never guess them. -->
+        </div>
+
+        <div>
+          <h2 class="footer-title">Clínica de McAllen</h2>
+          <address class="footer-address num num--text">2101 S. M Street<br />Suite A<br />McAllen, TX 78503</address>
+          <h2 class="footer-title mt-7">Clínica de Mission</h2>
+          <address class="footer-address num num--text">900 Plaza Drive<br />Suite 5<br />Mission, TX 78572</address>
+          <a class="footer-link mt-2" href="/es/ubicaciones/">Ubicaciones y cómo llegar</a>
+        </div>
+
+        <div>
+          <h2 class="footer-title">Contacto</h2>
+          <dl class="footer-facts">
+            <div><dt>Teléfono</dt><dd class="num"><a class="footer-link" href="tel:+19563174044">(956) 317-4044</a></dd></div>
+            <div><dt>Alterno</dt><dd class="num"><a class="footer-link" href="tel:+19563174043">(956) 317-4043</a></dd></div>
+            <div><dt>Fax</dt><dd class="num"><span class="footer-link">(956) 800-4275</span></dd></div>
+          </dl>
+          <a class="footer-link footer-email" href="mailto:wcit@wound-institute.com">wcit@wound-institute.com</a>
+          <h2 class="footer-title mt-7">Horario</h2>
+          <p class="footer-hours num num--text">Lunes a viernes<br />8:00 AM – 5:00 PM<br /><span class="muted">Sábado y domingo: cerrado</span></p>
+        </div>
+
+        <nav aria-label="Servicios">
+          <h2 class="footer-title">Servicios</h2>
+          <ul class="footer-list">
+            <li><a class="footer-link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">Terapia de Oxígeno Hiperbárico</a></li>
+            <li><a class="footer-link" href="/es/servicios/terapia-de-presion-negativa/">Terapia de Presión Negativa</a></li>
+            <li><a class="footer-link" href="/es/servicios/desbridamiento-de-heridas/">Desbridamiento de Heridas</a></li>
+            <li><a class="footer-link" href="/es/servicios/yeso-de-contacto-total/">Yeso de Contacto Total</a></li>
+            <li><a class="footer-link" href="/es/servicios/sustitutos-de-piel/">Sustitutos de Piel</a></li>
+            <li><a class="footer-link" href="/es/servicios/terapia-de-compresion/">Terapia de Compresión</a></li>
+            <li><a class="footer-link" href="/es/servicios/apositos-especializados/">Apósitos y Ungüentos Especializados</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Pie de página">
+          <h2 class="footer-title">Explorar</h2>
+          <ul class="footer-list">
+            <li><a class="footer-link" href="/es/nosotros/">Nosotros</a></li>
+            <li><a class="footer-link" href="/es/nuestro-equipo/">Nuestro Equipo</a></li>
+            <li><a class="footer-link" href="/es/servicios/">Servicios</a></li>
+            <li><a class="footer-link" href="/es/condiciones/" aria-current="page">Heridas que Tratamos</a></li>
+            <li><a class="footer-link" href="/es/recursos-para-pacientes/">Para Pacientes</a></li>
+            <li><a class="footer-link" href="/es/profesionales-que-refieren/">Para Profesionales</a></li>
+            <li><a class="footer-link" href="/es/contacto/">Contacto</a></li>
+            <li><a class="footer-link" href="/conditions/" hreflang="en" lang="en">English</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="site-footer__base">
+        <p>© <span class="num num--text">2026</span> Wound Care Institute of Texas, PLLC. Este sitio web comparte información general y no constituye consejo médico. En una emergencia, llame al 911.</p>
+        <p>McAllen · Mission · Valle del Río Grande, Texas</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile action bar (ES chrome) — Llamar · Referir a un Paciente · Solicitar una Cita, reachable without opening the menu -->
+  <nav class="action-bar on-dark" aria-label="Acciones rápidas">
+    <a class="action-bar__item" href="tel:+19563174044">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+      Llamar
+    </a>
+    <a class="action-bar__item action-bar__item--refer" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">Referir a un Paciente<span class="sr-only"> (se abre en una pestaña nueva)</span></a>
+    <a class="action-bar__item action-bar__item--book" href="/es/contacto/">Solicitar una Cita</a>
+  </nav>
+
+  <!-- GHL CHAT WIDGET SCRIPT GOES HERE -->
+</body>
+</html>

@@ -911,3 +911,12 @@ are the Mission cards, where a waiting room or front desk would be a forced fit.
   and "Para Pacientes", ES pages reuse the EN anchor ids, "Sustitutos de Piel de Bioingeniería",
   "Úlceras por presión (escaras o llagas)" — all recorded in the ES chrome table. The rest of
   the `/es/` mirror is built from the LOCKED EN pages with that chrome.
+- ✅ (2026-10-19) **Prompt 9b — `/es/` mirror complete (17 pages).** Every EN page has exactly one
+  ES twin per the slug table; reciprocal hreflang en/es/x-default on all 34 pages; every
+  Español/English toggle (brand bar, menu, footer) goes to the exact twin; no ES body link
+  points to an EN page; FAQPage schema ↔ visible FAQ parity on all 9 ES FAQ pages; sitemap =
+  32 URLs (both thank-yous excluded); ES titles <60 with McAllen (except `/es/gracias/`),
+  metas ≤160. Shared-entity `@id`s (clinic, website, the six clinicians, the two location
+  nodes) are reused on ES pages with Spanish text fields; page-level nodes (webpage,
+  breadcrumb, procedure, condition, FAQ) carry `/es/` `@id`s. Open: bilingual staff review of
+  every ES file (each opens with `<!-- REVIEW: bilingual staff -->`); the Spanish GHL form.

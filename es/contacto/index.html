@@ -1,0 +1,536 @@
+<!-- REVIEW: bilingual staff — Spanish mirror of the LOCKED English Contact page (/contact/). Copy was translated at
+     build (2026-10-19) for Rio Grande Valley patients (usted, plain everyday Spanish). Review every string for tone
+     and accuracy before launch; structure, NAP, hours, maps and CTA destinations are frozen and identical to the
+     English page. The GHL form placeholder carries Spanish labels — the live embed needs a Spanish GHL form (or
+     Spanish field labels) [NEEDS INPUT] and must redirect to /es/gracias/. Same PHI rule as the English form.
+     Header, menu, footer and action bar are the approved ES chrome. -->
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Citas de Cuidado de Heridas en McAllen, TX</title>
+  <meta name="description" content="Solicite una cita de cuidado de heridas en McAllen o Mission, TX. Llame al (956) 317-4044, Lun–Vie 8 AM a 5 PM, o envíe sus datos de contacto y le llamaremos." />
+  <meta name="keywords" content="cita cuidado de heridas McAllen TX, contacto clínica de heridas McAllen, cita cuidado de heridas Mission TX, solicitar cita cuidado de heridas Valle del Río Grande, contacto Wound Care Institute of Texas" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://www.wound-institute.com/es/contacto/" />
+  <link rel="alternate" hreflang="en" href="https://www.wound-institute.com/contact/" />
+  <link rel="alternate" hreflang="es" href="https://www.wound-institute.com/es/contacto/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.wound-institute.com/contact/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contacto | Citas de Cuidado de Heridas en McAllen, TX" />
+  <meta property="og:description" content="Solicite una cita de cuidado de heridas en Wound Care Institute of Texas en McAllen o Mission. Llame al (956) 317-4044 o envíe sus datos de contacto y le llamaremos." />
+  <meta property="og:url" content="https://www.wound-institute.com/es/contacto/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.wound-institute.com/brand_assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_US" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="Wound Care Institute of Texas" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contacto | Citas de Cuidado de Heridas en McAllen, TX" />
+  <meta name="twitter:description" content="Solicite una cita de cuidado de heridas en Wound Care Institute of Texas en McAllen o Mission. Llame al (956) 317-4044 o envíe sus datos de contacto y le llamaremos." />
+  <meta name="twitter:image" content="https://www.wound-institute.com/brand_assets/og-image.jpg" />
+
+  <!-- Icons — the ribbon "W" cropped from the wordmark -->
+  <link rel="icon" href="/brand_assets/favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/brand_assets/favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand_assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/brand_assets/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/apple-touch-icon.png" />
+
+  <!-- GHL EXTERNAL TRACKING SCRIPT GOES HERE -->
+
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/brand.css" />
+  <link rel="stylesheet" href="/site.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400..800;1,400..800&family=Sofia+Sans+Semi+Condensed:wght@500..800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            /* Semantic palette — values resolve from /brand.css tokens */
+            primary: { DEFAULT: 'var(--color-primary)', mid: 'var(--color-primary-mid)' },
+            accent:  { DEFAULT: 'var(--color-accent)', deep: 'var(--color-accent-deep)', bright: 'var(--color-accent-bright)' },
+            dark:    { DEFAULT: 'var(--color-dark)', 3: 'var(--color-dark-3)' },
+            ink:     'var(--color-ink)',
+            muted:   { DEFAULT: 'var(--color-muted)', light: 'var(--color-muted-light)' },
+            line:    'var(--color-line)',
+            bg:      { DEFAULT: 'var(--color-bg)', 2: 'var(--color-bg-2)' },
+            rating:  'var(--color-rating)',
+            wave:    'var(--color-wave-blue)',
+          },
+          backgroundImage: { 'gradient-brand': 'var(--gradient-brand)' },
+          fontFamily: {
+            display: ['Sofia Sans Semi Condensed', 'Arial Narrow', 'sans-serif'],
+            body:    ['Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', 'Verdana', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <script src="/site.js" defer></script>
+
+  <!-- Contact schema (ES): a ContactPage about the clinic, with the clinic's contact points
+       (phone, fax — identical facts) merged onto the clinic @id the homepage defines, plus a
+       BreadcrumbList. No availableLanguage until Spanish-speaking staff is confirmed (client question a). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["ContactPage", "MedicalWebPage"],
+        "@id": "https://www.wound-institute.com/es/contacto/#webpage",
+        "url": "https://www.wound-institute.com/es/contacto/",
+        "name": "Contacto | Citas de Cuidado de Heridas en McAllen, TX",
+        "description": "Solicite una cita de cuidado de heridas en McAllen o Mission, TX. Llame al (956) 317-4044, Lun–Vie 8 AM a 5 PM, o envíe sus datos de contacto y le llamaremos.",
+        "inLanguage": "es-US",
+        "isPartOf": { "@id": "https://www.wound-institute.com/#website" },
+        "provider": { "@id": "https://www.wound-institute.com/#clinic" },
+        "about": { "@id": "https://www.wound-institute.com/#clinic" },
+        "mainEntity": { "@id": "https://www.wound-institute.com/#clinic" },
+        "breadcrumb": { "@id": "https://www.wound-institute.com/es/contacto/#breadcrumb" },
+        "medicalAudience": [
+          { "@type": "MedicalAudience", "audienceType": "Patient" },
+          { "@type": "MedicalAudience", "audienceType": "Clinician" }
+        ]
+      },
+      {
+        "@type": "MedicalClinic",
+        "@id": "https://www.wound-institute.com/#clinic",
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "appointments", "telephone": "+1-956-317-4044", "areaServed": "US", "hoursAvailable": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00" } },
+          { "@type": "ContactPoint", "contactType": "appointments", "telephone": "+1-956-317-4043", "areaServed": "US" },
+          { "@type": "ContactPoint", "contactType": "referrals", "faxNumber": "+1-956-800-4275", "url": "https://referral.leadingreach.com/wound-care-institute-of-texas", "areaServed": "US" }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.wound-institute.com/es/contacto/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.wound-institute.com/es/" },
+          { "@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://www.wound-institute.com/es/contacto/" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="site">
+
+  <a class="skip-link" href="#main">Ir al contenido principal</a>
+
+  <!-- ============================================================
+       HEADER (ES chrome) — brand bar (sticky) + link row. Shared by every /es/ page.
+       CTA routing is LOCKED (CLAUDE.md): Solicitar una Cita → /es/contacto/ ·
+       Referir a un Paciente → LeadingReach (new tab) · llamar → tel:+19563174044.
+       The language toggle on an ES page says "English" and goes to the EN twin.
+  ============================================================ -->
+  <header class="site-header on-dark" id="site-header">
+    <div class="brand-bar">
+      <div class="shell brand-bar__inner">
+        <a class="brand" href="/es/" aria-label="Wound Care Institute of Texas — inicio">
+          <img class="nav-logo" src="/brand_assets/wordmark-on-dark.png" width="440" height="155" alt="Wound Care Institute of Texas" />
+        </a>
+
+        <div class="brand-bar__actions">
+          <a class="lang-toggle" href="/contact/" hreflang="en" lang="en" aria-label="View this page in English">
+            <span class="lang-toggle__code" aria-hidden="true">EN</span>English
+          </a>
+
+          <div class="brand-bar__desktop">
+            <a class="call-link" href="tel:+19563174044">
+              <span class="call-link__label">Llámenos</span>
+              <span class="call-link__number num">(956) 317-4044</span>
+            </a>
+            <a class="btn btn--secondary btn--compact" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+              Referir a un Paciente
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              <span class="sr-only">(se abre en una pestaña nueva)</span>
+            </a>
+            <a class="btn btn--primary btn--compact" href="/es/contacto/">Solicitar una Cita</a>
+          </div>
+
+          <button class="menu-button" type="button" data-menu-open aria-label="Menú" aria-expanded="false" aria-controls="site-menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            <span class="menu-button__label">Menú</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="link-bar" aria-label="Principal">
+      <div class="shell">
+        <ul class="link-bar__list">
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/">Inicio</a></li>
+          <li class="link-bar__item" data-dropdown>
+            <button class="link-bar__link" type="button" aria-expanded="false" aria-controls="services-menu">
+              Servicios
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="dropdown" id="services-menu">
+              <ul>
+                <li><a class="dropdown__link dropdown__link--overview" href="/es/servicios/">Todos los servicios de cuidado de heridas</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">Terapia de Oxígeno Hiperbárico</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/terapia-de-presion-negativa/">Terapia de Presión Negativa</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/desbridamiento-de-heridas/">Desbridamiento de Heridas</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/yeso-de-contacto-total/">Yeso de Contacto Total</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/sustitutos-de-piel/">Sustitutos de Piel</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/terapia-de-compresion/">Terapia de Compresión</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/apositos-especializados/">Apósitos y Ungüentos Especializados</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/condiciones/">Heridas que Tratamos</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/nuestro-equipo/">Nuestro Equipo</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/ubicaciones/">Ubicaciones</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/recursos-para-pacientes/">Para Pacientes</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/profesionales-que-refieren/">Para Profesionales</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/contacto/" aria-current="page">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile / tablet menu (light surface → wordmark.png) -->
+  <div class="menu-panel" id="site-menu" role="dialog" aria-modal="true" aria-label="Menú del sitio" hidden>
+    <div class="menu-panel__top">
+      <img class="menu-panel__logo" src="/brand_assets/wordmark.png" width="440" height="155" alt="Wound Care Institute of Texas" />
+      <button class="menu-close" type="button" data-menu-close>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        Cerrar
+      </button>
+    </div>
+    <div class="menu-panel__body">
+      <nav aria-label="Principal (menú)">
+        <ul>
+          <li><a class="menu-list__link" href="/es/">Inicio</a></li>
+          <li>
+            <a class="menu-list__link" href="/es/servicios/">Servicios</a>
+            <ul class="menu-sub">
+              <li><a class="menu-sub__link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">Terapia de Oxígeno Hiperbárico</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/terapia-de-presion-negativa/">Terapia de Presión Negativa</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/desbridamiento-de-heridas/">Desbridamiento de Heridas</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/yeso-de-contacto-total/">Yeso de Contacto Total</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/sustitutos-de-piel/">Sustitutos de Piel</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/terapia-de-compresion/">Terapia de Compresión</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/apositos-especializados/">Apósitos y Ungüentos Especializados</a></li>
+            </ul>
+          </li>
+          <li><a class="menu-list__link" href="/es/condiciones/">Heridas que Tratamos</a></li>
+          <li><a class="menu-list__link" href="/es/nuestro-equipo/">Nuestro Equipo</a></li>
+          <li><a class="menu-list__link" href="/es/ubicaciones/">Ubicaciones</a></li>
+          <li><a class="menu-list__link" href="/es/recursos-para-pacientes/">Para Pacientes</a></li>
+          <li><a class="menu-list__link" href="/es/profesionales-que-refieren/">Para Profesionales</a></li>
+          <li><a class="menu-list__link" href="/es/contacto/" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="menu-panel__actions">
+        <a class="btn btn--primary btn--block" href="/es/contacto/">Solicitar una Cita</a>
+        <a class="btn btn--secondary btn--block" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+          Referir a un Paciente
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          <span class="sr-only">(se abre en una pestaña nueva)</span>
+        </a>
+        <a class="btn btn--secondary btn--block" href="tel:+19563174044">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          Llamar <span class="num">(956) 317-4044</span>
+        </a>
+        <a class="lang-toggle menu-panel__lang" href="/contact/" hreflang="en" lang="en">
+          <span class="lang-toggle__code" aria-hidden="true">EN</span>View in English
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============================================================
+         1. HERO — patients: call or use the form below. The panel is the
+            separate, clear provider path (LeadingReach + fax).
+    ============================================================ -->
+    <section class="hero hero--service on-dark" aria-labelledby="page-title">
+      <!-- OFF-LIMITS: hero-background — dedicated named file only, never a content photo -->
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__vignette"></div>
+
+      <div class="shell hero__inner">
+        <div class="fade-up">
+          <nav class="crumbs" aria-label="Ruta de navegación">
+            <a href="/es/">Inicio</a>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+            <span aria-current="page">Contacto</span>
+          </nav>
+          <p class="eyebrow">Contacto · McAllen y Mission, TX</p>
+          <h1 class="display-1 hero__title mt-6" id="page-title">Comuníquese con nosotros para <span class="grad-text">solicitar una cita</span></h1>
+          <p class="lede hero__lede">Envíenos sus datos de contacto y nuestro equipo le llamará para programar su primera visita. O llámenos ahora, de lunes a viernes, de <span class="num">8:00 AM a 5:00 PM</span>.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="tel:+19563174044">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+              Llamar <span class="num">(956) 317-4044</span>
+            </a>
+            <a class="btn btn--secondary" href="#request-form">Usar el formulario de abajo</a>
+          </div>
+          <p class="hero__hours"><span>Clínicas en McAllen y Mission</span><span class="num">Lunes a viernes, 8:00 AM – 5:00 PM</span></p>
+        </div>
+
+        <aside class="glance fade-up" aria-labelledby="refer-title">
+          <p class="eyebrow">Para profesionales que refieren</p>
+          <h2 class="heading-3 glance__title" id="refer-title">¿Va a referir a un paciente?</h2>
+          <p class="mt-3">Los hospitales, centros de enfermería y consultorios médicos refieren a través de nuestro portal seguro LeadingReach, o por fax.</p>
+          <a class="btn btn--secondary btn--block mt-5" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+            Referir a un Paciente
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            <span class="sr-only">(se abre en una pestaña nueva)</span>
+          </a>
+          <dl class="contact-rows">
+            <div class="contact-rows__row"><dt>Fax para referencias</dt><dd class="num">(956) 800-4275</dd></div>
+            <div class="contact-rows__row"><dt>Teléfono</dt><dd class="num"><a href="tel:+19563174044">(956) 317-4044</a></dd></div>
+          </dl>
+          <a class="arrow-link mt-3" href="/es/profesionales-que-refieren/">
+            <span>Información para profesionales que refieren</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </aside>
+      </div>
+      <div class="hairline-brand"></div>
+    </section>
+
+    <!-- ============================================================
+         2. REQUEST AN APPOINTMENT (white) — the GHL patient form is PRIMARY.
+            PHI rule (FROZEN): contact information only; helper text below.
+            The LeadingReach appointment request is SECONDARY, in the aside.
+    ============================================================ -->
+    <section class="section entry" id="request-form" aria-labelledby="form-title">
+      <div class="shell split split--start">
+        <div class="fade-up">
+          <p class="eyebrow">Pacientes y familias</p>
+          <h2 class="display-2 mt-5" id="form-title">Solicitar una Cita</h2>
+          <div class="prose mt-6">
+            <p>Díganos cómo comunicarnos con usted y qué clínica prefiere. Nuestro equipo le llamará en horario de oficina para programar su primera visita.</p>
+            <p><strong>Por favor no incluya detalles médicos — nuestro equipo le llamará.</strong> Le preguntaremos sobre su herida por teléfono, así que este formulario solo necesita sus datos de contacto.</p>
+          </div>
+
+          <!-- GHL CONTACT FORM EMBED GOES HERE — [NEEDS INPUT: Juan providing embed — a SPANISH form, or the same
+               form with Spanish field labels, is needed for this page]
+               Replace the .embed-slot placeholder below with the GHL form embed. Requirements (CLAUDE.md,
+               FROZEN PHI rule): fields = nombre, teléfono, correo electrónico, clínica de preferencia (McAllen /
+               Mission), idioma de preferencia, mejor hora para llamar — NO wound description, diagnosis, insurance
+               ID or other health details unless a signed GHL BAA is confirmed. Submit label: "Solicitar una Cita".
+               Helper text: "Por favor no incluya detalles médicos — nuestro equipo le llamará." Success → /es/gracias/. -->
+          <div class="embed-slot mt-8" role="region" aria-labelledby="slot-title">
+            <p class="embed-slot__tag">Formulario de solicitud de cita</p>
+            <h3 class="heading-3" id="slot-title">El formulario se carga aquí</h3>
+            <p>Solo pide datos de contacto:</p>
+            <ul class="dash-list">
+              <li>Su nombre</li>
+              <li>Número de teléfono</li>
+              <li>Correo electrónico</li>
+              <li>Clínica de preferencia: McAllen o Mission</li>
+              <li>Idioma de preferencia</li>
+              <li>Mejor hora para llamarle</li>
+            </ul>
+            <p class="muted">Por favor no incluya detalles médicos — nuestro equipo le llamará.</p>
+            <button class="btn btn--primary btn--block mt-2" type="button" disabled aria-disabled="true">Solicitar una Cita</button>
+          </div>
+        </div>
+
+        <aside class="note-panel split__sticky fade-up" aria-labelledby="secure-title">
+          <h3 class="heading-3" id="secure-title">¿Prefiere nuestra solicitud segura en línea?</h3>
+          <p class="mt-3">También puede enviar una solicitud de cita a través de LeadingReach, la plataforma segura que usan los profesionales que nos refieren pacientes.</p>
+          <a class="btn btn--secondary btn--block mt-5" href="https://remote.leadingreach.com/appt-request?os=wound-care-institute-of-texas" target="_blank" rel="noopener">
+            Solicitar a través de LeadingReach
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            <span class="sr-only">(se abre en una pestaña nueva)</span>
+          </a>
+          <p class="mt-6"><strong>O llámenos:</strong> <a class="text-link text-link--tap num whitespace-nowrap" href="tel:+19563174044">(956) 317-4044</a></p>
+          <p class="muted num">Lunes a viernes, 8:00 AM – 5:00 PM</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. OUR CLINICS (tint) — both locations, short, deep-linked to
+            /es/ubicaciones/#mcallen and #mission.
+    ============================================================ -->
+    <section class="section section--tint" id="clinics" aria-labelledby="clinics-title">
+      <div class="shell">
+        <div class="section-head section-head--split fade-up">
+          <p class="eyebrow">Nuestras clínicas</p>
+          <h2 class="display-2" id="clinics-title">Dos clínicas, un solo número de teléfono</h2>
+          <p class="lede muted">Las dos clínicas abren de <span class="num num--text">lunes a viernes, 8:00 AM – 5:00 PM</span>, y cierran sábado y domingo.</p>
+        </div>
+
+        <div class="locations">
+          <article class="location fade-up">
+            <div class="location__body">
+              <p class="location__tag">Clínica de McAllen</p>
+              <h3 class="heading-3 mt-2">Cuidado de heridas en McAllen</h3>
+              <address class="location__address num num--text">2101 S. M Street, Suite A<br />McAllen, TX 78503</address>
+              <dl class="location__facts">
+                <div><dt>Teléfono</dt><dd class="num"><a href="tel:+19563174044">(956) 317-4044</a></dd></div>
+                <div><dt>Fax</dt><dd class="num">(956) 800-4275</dd></div>
+              </dl>
+              <div class="location__actions">
+                <a class="btn btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Wound+Care+Institute+of+Texas%2C+2101+S+M+St+Suite+A%2C+McAllen%2C+TX+78503" target="_blank" rel="noopener">
+                  Cómo llegar
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                  <span class="sr-only">a la clínica de McAllen (se abre en una pestaña nueva)</span>
+                </a>
+                <a class="arrow-link" href="/es/ubicaciones/#mcallen">
+                  <span>Detalles de la clínica de McAllen</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="location fade-up">
+            <div class="location__body">
+              <p class="location__tag">Clínica de Mission</p>
+              <h3 class="heading-3 mt-2">Cuidado de heridas en Mission</h3>
+              <address class="location__address num num--text">900 Plaza Drive, Suite 5<br />Mission, TX 78572</address>
+              <dl class="location__facts">
+                <div><dt>Teléfono</dt><dd class="num"><a href="tel:+19563174044">(956) 317-4044</a></dd></div>
+                <div><dt>Fax</dt><dd class="num">(956) 800-4275</dd></div>
+              </dl>
+              <div class="location__actions">
+                <a class="btn btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Wound+Care+Institute+of+Texas%2C+900+Plaza+Dr+Suite+5%2C+Mission%2C+TX+78572" target="_blank" rel="noopener">
+                  Cómo llegar
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                  <span class="sr-only">a la clínica de Mission (se abre en una pestaña nueva)</span>
+                </a>
+                <a class="arrow-link" href="/es/ubicaciones/#mission">
+                  <span>Detalles de la clínica de Mission</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. OTHER WAYS TO REACH US (dark) — phone, fax, email, hours, and the
+            911 line. This page is the CTA, so there is no final-CTA block.
+    ============================================================ -->
+    <section class="section section--dark grain on-dark" id="reach-us" aria-labelledby="reach-title">
+      <div class="shell network">
+        <div class="fade-up">
+          <p class="eyebrow">Otras formas de comunicarse</p>
+          <h2 class="display-2 mt-5" id="reach-title">Teléfono, fax y correo electrónico</h2>
+          <dl class="contact-rows mt-8" style="max-width: 36rem">
+            <div class="contact-rows__row"><dt>Teléfono</dt><dd class="num"><a href="tel:+19563174044">(956) 317-4044</a></dd></div>
+            <div class="contact-rows__row"><dt>Teléfono alterno</dt><dd class="num"><a href="tel:+19563174043">(956) 317-4043</a></dd></div>
+            <div class="contact-rows__row"><dt>Fax</dt><dd class="num">(956) 800-4275</dd></div>
+            <div class="contact-rows__row"><dt>Correo</dt><dd><a href="mailto:wcit@wound-institute.com">wcit@wound-institute.com</a></dd></div>
+            <div class="contact-rows__row"><dt>Horario</dt><dd class="num">Lun–Vie, 8:00 AM – 5:00 PM</dd></div>
+          </dl>
+        </div>
+
+        <div class="desk fade-up">
+          <h3 class="heading-3">En una emergencia, llame al 911</h3>
+          <p class="mt-3">Este sitio web y nuestras líneas telefónicas no son para emergencias. Si necesita ayuda de inmediato, llame al 911 o vaya a la sala de emergencias más cercana.</p>
+          <p class="mt-3">Para preguntas urgentes sobre su herida en horario de oficina, llame al <a class="text-link num whitespace-nowrap" href="tel:+19563174044">(956) 317-4044</a>.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (ES chrome) — shared by every /es/ page. Both locations' NAP, phone, fax, hours.
+  ============================================================ -->
+  <footer class="site-footer on-dark">
+    <div class="hairline-brand"></div>
+    <div class="shell">
+      <div class="site-footer__main">
+        <div>
+          <a class="brand" href="/es/" aria-label="Wound Care Institute of Texas — inicio">
+            <img class="footer-logo" src="/brand_assets/wordmark-on-dark.png" width="440" height="155" loading="lazy" alt="Wound Care Institute of Texas" />
+          </a>
+          <p class="site-footer__mission">Atención sin hospitalización para heridas crónicas y que no sanan en McAllen y Mission, Texas.</p>
+          <!-- SOCIAL LINKS: [NEEDS INPUT] — Facebook / Instagram / YouTube URLs are not stated in
+               CLAUDE.md. Add a <ul class="footer-list mt-4" aria-label="Redes sociales"> here (and the
+               schema sameAs) only once the real URLs are confirmed; never guess them. -->
+        </div>
+
+        <div>
+          <h2 class="footer-title">Clínica de McAllen</h2>
+          <address class="footer-address num num--text">2101 S. M Street<br />Suite A<br />McAllen, TX 78503</address>
+          <h2 class="footer-title mt-7">Clínica de Mission</h2>
+          <address class="footer-address num num--text">900 Plaza Drive<br />Suite 5<br />Mission, TX 78572</address>
+          <a class="footer-link mt-2" href="/es/ubicaciones/">Ubicaciones y cómo llegar</a>
+        </div>
+
+        <div>
+          <h2 class="footer-title">Contacto</h2>
+          <dl class="footer-facts">
+            <div><dt>Teléfono</dt><dd class="num"><a class="footer-link" href="tel:+19563174044">(956) 317-4044</a></dd></div>
+            <div><dt>Alterno</dt><dd class="num"><a class="footer-link" href="tel:+19563174043">(956) 317-4043</a></dd></div>
+            <div><dt>Fax</dt><dd class="num"><span class="footer-link">(956) 800-4275</span></dd></div>
+          </dl>
+          <a class="footer-link footer-email" href="mailto:wcit@wound-institute.com">wcit@wound-institute.com</a>
+          <h2 class="footer-title mt-7">Horario</h2>
+          <p class="footer-hours num num--text">Lunes a viernes<br />8:00 AM – 5:00 PM<br /><span class="muted">Sábado y domingo: cerrado</span></p>
+        </div>
+
+        <nav aria-label="Servicios">
+          <h2 class="footer-title">Servicios</h2>
+          <ul class="footer-list">
+            <li><a class="footer-link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">Terapia de Oxígeno Hiperbárico</a></li>
+            <li><a class="footer-link" href="/es/servicios/terapia-de-presion-negativa/">Terapia de Presión Negativa</a></li>
+            <li><a class="footer-link" href="/es/servicios/desbridamiento-de-heridas/">Desbridamiento de Heridas</a></li>
+            <li><a class="footer-link" href="/es/servicios/yeso-de-contacto-total/">Yeso de Contacto Total</a></li>
+            <li><a class="footer-link" href="/es/servicios/sustitutos-de-piel/">Sustitutos de Piel</a></li>
+            <li><a class="footer-link" href="/es/servicios/terapia-de-compresion/">Terapia de Compresión</a></li>
+            <li><a class="footer-link" href="/es/servicios/apositos-especializados/">Apósitos y Ungüentos Especializados</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Pie de página">
+          <h2 class="footer-title">Explorar</h2>
+          <ul class="footer-list">
+            <li><a class="footer-link" href="/es/nosotros/">Nosotros</a></li>
+            <li><a class="footer-link" href="/es/nuestro-equipo/">Nuestro Equipo</a></li>
+            <li><a class="footer-link" href="/es/servicios/">Servicios</a></li>
+            <li><a class="footer-link" href="/es/condiciones/">Heridas que Tratamos</a></li>
+            <li><a class="footer-link" href="/es/recursos-para-pacientes/">Para Pacientes</a></li>
+            <li><a class="footer-link" href="/es/profesionales-que-refieren/">Para Profesionales</a></li>
+            <li><a class="footer-link" href="/es/contacto/" aria-current="page">Contacto</a></li>
+            <li><a class="footer-link" href="/contact/" hreflang="en" lang="en">English</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="site-footer__base">
+        <p>© <span class="num num--text">2026</span> Wound Care Institute of Texas, PLLC. Este sitio web comparte información general y no constituye consejo médico. En una emergencia, llame al 911.</p>
+        <p>McAllen · Mission · Valle del Río Grande, Texas</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile action bar (ES chrome) — Llamar · Referir a un Paciente · Solicitar una Cita, reachable without opening the menu -->
+  <nav class="action-bar on-dark" aria-label="Acciones rápidas">
+    <a class="action-bar__item" href="tel:+19563174044">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+      Llamar
+    </a>
+    <a class="action-bar__item action-bar__item--refer" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">Referir a un Paciente<span class="sr-only"> (se abre en una pestaña nueva)</span></a>
+    <a class="action-bar__item action-bar__item--book" href="/es/contacto/">Solicitar una Cita</a>
+  </nav>
+
+  <!-- GHL CHAT WIDGET SCRIPT GOES HERE -->
+</body>
+</html>

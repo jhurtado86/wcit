@@ -1,0 +1,897 @@
+<!-- REVIEW: bilingual staff — Spanish mirror of the LOCKED English Specialty Dressings page
+     (/services/specialty-wound-dressings/). Copy was translated at build (2026-10-19) for Rio Grande Valley patients
+     (usted, plain everyday medical Spanish). Review every string for tone and accuracy before launch; structure,
+     photos, schema facts, credentials (never stronger than the English framing), NAP, hours and CTA destinations
+     are frozen and identical to the English page. Every frequency and clinical statement here (the dressing-matching
+     table, infection signs, allergy list) is on the clinical-review list (CLAUDE.md, client question b). The FAQPage
+     schema must match the visible FAQ word for word after any edit. Header, menu, footer and action bar are the
+     approved ES chrome. -->
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apósitos y Ungüentos Especializados en McAllen, TX</title>
+  <meta name="description" content="Apósitos y ungüentos especializados en McAllen y Mission, TX: cómo elegimos el apósito según su herida y cómo cuidarlo en casa. Llame al (956) 317-4044." />
+  <meta name="keywords" content="apósitos especializados para heridas McAllen, apósitos avanzados Mission TX, ungüentos para heridas Valle del Río Grande, apósito de colágeno McAllen, apósito de plata cuidado de heridas condado de Hidalgo, cuidado de la piel alrededor del estoma McAllen, Wound Care Institute of Texas" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://www.wound-institute.com/es/servicios/apositos-especializados/" />
+  <link rel="alternate" hreflang="en" href="https://www.wound-institute.com/services/specialty-wound-dressings/" />
+  <link rel="alternate" hreflang="es" href="https://www.wound-institute.com/es/servicios/apositos-especializados/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.wound-institute.com/services/specialty-wound-dressings/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Apósitos y Ungüentos Especializados en McAllen, TX" />
+  <meta property="og:description" content="Apósitos avanzados y tratamientos tópicos en Wound Care Institute of Texas, elegidos según su herida. Llame al (956) 317-4044." />
+  <meta property="og:url" content="https://www.wound-institute.com/es/servicios/apositos-especializados/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.wound-institute.com/brand_assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_US" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="Wound Care Institute of Texas" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Apósitos y Ungüentos Especializados en McAllen, TX" />
+  <meta name="twitter:description" content="Apósitos avanzados y tratamientos tópicos en Wound Care Institute of Texas, elegidos según su herida. Llame al (956) 317-4044." />
+  <meta name="twitter:image" content="https://www.wound-institute.com/brand_assets/og-image.jpg" />
+
+  <!-- Icons — the ribbon "W" cropped from the wordmark -->
+  <link rel="icon" href="/brand_assets/favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/brand_assets/favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand_assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/brand_assets/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/apple-touch-icon.png" />
+
+  <!-- GHL EXTERNAL TRACKING SCRIPT GOES HERE -->
+
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/brand.css" />
+  <link rel="stylesheet" href="/site.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400..800;1,400..800&family=Sofia+Sans+Semi+Condensed:wght@500..800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            /* Semantic palette — values resolve from /brand.css tokens */
+            primary: { DEFAULT: 'var(--color-primary)', mid: 'var(--color-primary-mid)' },
+            accent:  { DEFAULT: 'var(--color-accent)', deep: 'var(--color-accent-deep)', bright: 'var(--color-accent-bright)' },
+            dark:    { DEFAULT: 'var(--color-dark)', 3: 'var(--color-dark-3)' },
+            ink:     'var(--color-ink)',
+            muted:   { DEFAULT: 'var(--color-muted)', light: 'var(--color-muted-light)' },
+            line:    'var(--color-line)',
+            bg:      { DEFAULT: 'var(--color-bg)', 2: 'var(--color-bg-2)' },
+            rating:  'var(--color-rating)',
+            wave:    'var(--color-wave-blue)',
+          },
+          backgroundImage: { 'gradient-brand': 'var(--gradient-brand)' },
+          fontFamily: {
+            display: ['Sofia Sans Semi Condensed', 'Arial Narrow', 'sans-serif'],
+            body:    ['Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', 'Verdana', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <script src="/site.js" defer></script>
+
+  <!-- Service-page schema (ES, cloned from the HBOT template): MedicalWebPage about a MedicalProcedure, a BreadcrumbList,
+       and a FAQPage whose Q&As match the visible Spanish FAQ word for word. The clinic and website nodes are referenced
+       by the @ids the homepage defines; condition links go to the /es/ conditions page (same LOCKED anchor ids).
+       No pricing, no outcome guarantees, no foundingDate. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalWebPage",
+        "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#webpage",
+        "url": "https://www.wound-institute.com/es/servicios/apositos-especializados/",
+        "name": "Apósitos y Ungüentos Especializados en McAllen, TX",
+        "description": "Apósitos y ungüentos especializados en McAllen y Mission, TX: cómo elegimos el apósito según su herida y cómo cuidarlo en casa. Llame al (956) 317-4044.",
+        "inLanguage": "es-US",
+        "isPartOf": {
+          "@id": "https://www.wound-institute.com/#website"
+        },
+        "provider": {
+          "@id": "https://www.wound-institute.com/#clinic"
+        },
+        "breadcrumb": {
+          "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#breadcrumb"
+        },
+        "about": {
+          "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#procedure"
+        },
+        "mentions": [
+          {
+            "@type": "MedicalCondition",
+            "name": "Úlceras del pie diabético y neuropáticas",
+            "url": "https://www.wound-institute.com/es/condiciones/#diabetic-foot-ulcers"
+          },
+          {
+            "@type": "MedicalCondition",
+            "name": "Úlceras arteriales (isquémicas)",
+            "url": "https://www.wound-institute.com/es/condiciones/#arterial-ulcers"
+          },
+          {
+            "@type": "MedicalCondition",
+            "name": "Úlceras por presión (escaras o llagas)",
+            "url": "https://www.wound-institute.com/es/condiciones/#pressure-ulcers"
+          },
+          {
+            "@type": "MedicalCondition",
+            "name": "Úlceras venosas",
+            "url": "https://www.wound-institute.com/es/condiciones/#venous-stasis-ulcers"
+          },
+          {
+            "@type": "MedicalCondition",
+            "name": "Heridas quirúrgicas que no sanan",
+            "url": "https://www.wound-institute.com/es/condiciones/#non-healing-surgical-wounds"
+          },
+          {
+            "@type": "MedicalCondition",
+            "name": "Heridas por radiación",
+            "url": "https://www.wound-institute.com/es/condiciones/#radiation-wounds"
+          },
+          {
+            "@type": "MedicalCondition",
+            "name": "Quemaduras",
+            "url": "https://www.wound-institute.com/es/condiciones/#burns"
+          },
+          {
+            "@type": "MedicalCondition",
+            "name": "Irritación de la piel alrededor de un estoma",
+            "url": "https://www.wound-institute.com/es/condiciones/#peristomal-skin-irritation"
+          },
+          {
+            "@type": "MedicalCondition",
+            "name": "Fístulas",
+            "url": "https://www.wound-institute.com/es/condiciones/#fistulas"
+          }
+        ],
+        "medicalAudience": [
+          {
+            "@type": "MedicalAudience",
+            "audienceType": "Patient"
+          },
+          {
+            "@type": "MedicalAudience",
+            "audienceType": "Clinician"
+          }
+        ],
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://www.wound-institute.com/brand_assets/og-image.jpg",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      {
+        "@type": [
+          "MedicalTherapy",
+          "MedicalProcedure"
+        ],
+        "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#procedure",
+        "name": "Aplicación de Apósitos y Ungüentos Especializados",
+        "alternateName": [
+          "Apósitos avanzados para heridas",
+          "Terapia tópica de heridas",
+          "Apósitos especializados para heridas"
+        ],
+        "url": "https://www.wound-institute.com/es/servicios/apositos-especializados/",
+        "description": "Selección y aplicación de apósitos avanzados y agentes tópicos, incluidos espumas, alginatos, hidrogeles, hidrocoloides, colágeno, apósitos antimicrobianos de plata, yodo y miel, ungüentos enzimáticos y productos de barrera para la piel, elegidos según el tipo de herida, su profundidad, su drenaje y el riesgo de infección.",
+        "procedureType": "https://schema.org/NoninvasiveProcedure",
+        "howPerformed": "En cada visita la herida se mide y se evalúa por tipo de tejido, drenaje, profundidad y señales de infección; el apósito y cualquier agente tópico se eligen a la medida, se aplican en la clínica, y se le enseña al paciente o al cuidador cómo cambiarlo en casa según el calendario indicado.",
+        "preparation": "Limpieza de la herida y, cuando hace falta, desbridamiento; evaluación del drenaje, la profundidad, la infección y el estado de la piel alrededor.",
+        "followup": "Nueva evaluación en cada visita, con cambio de apósito conforme la herida cambia; las instrucciones de cuidado en casa y los suministros se actualizan según corresponda."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://www.wound-institute.com/es/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Servicios",
+            "item": "https://www.wound-institute.com/es/servicios/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Apósitos y Ungüentos Especializados",
+            "item": "https://www.wound-institute.com/es/servicios/apositos-especializados/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.wound-institute.com/es/servicios/apositos-especializados/#faq",
+        "url": "https://www.wound-institute.com/es/servicios/apositos-especializados/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Por qué no usar simplemente una venda normal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La gasa simple reseca la herida y se pega al tejido nuevo. Los apósitos especializados mantienen la herida ligeramente húmeda, absorben la cantidad correcta de líquido y protegen contra las bacterias."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puedo comprar estos apósitos en la farmacia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Algunos sencillos, sí. La mayoría de los apósitos especializados son suministros médicos que nosotros recetamos y pedimos para usted. Por favor use solo los que hemos elegido."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Con qué frecuencia cambio el apósito?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Depende del apósito y de la herida. Algunos se cambian todos los días; otros se quedan puestos hasta una semana. Le damos un calendario por escrito."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puedo bañarme con el apósito puesto?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Algunos apósitos son impermeables; la mayoría no. Le enseñamos a cubrir la herida. Nunca remoje una herida en una tina, una alberca o un jacuzzi."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuáles son las señales de infección que debo vigilar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Enrojecimiento que se extiende, calor, hinchazón, dolor nuevo o peor, drenaje espeso o de color distinto, mal olor o fiebre. Llámenos el mismo día."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿El seguro cubre los apósitos para heridas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Muchos apósitos están cubiertos como suministros médicos cuando se recetan, pero las reglas varían según el plan. Solicite una cita y le ayudaremos a entender sus opciones."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="site">
+
+  <a class="skip-link" href="#main">Ir al contenido principal</a>
+
+  <!-- ============================================================
+       HEADER (ES chrome) — brand bar (sticky) + link row. Shared by every /es/ page.
+       CTA routing is LOCKED (CLAUDE.md): Solicitar una Cita → /es/contacto/ ·
+       Referir a un Paciente → LeadingReach (new tab) · llamar → tel:+19563174044.
+       The language toggle on an ES page says "English" and goes to the EN twin.
+  ============================================================ -->
+  <header class="site-header on-dark" id="site-header">
+    <div class="brand-bar">
+      <div class="shell brand-bar__inner">
+        <a class="brand" href="/es/" aria-label="Wound Care Institute of Texas — inicio">
+          <img class="nav-logo" src="/brand_assets/wordmark-on-dark.png" width="440" height="155" alt="Wound Care Institute of Texas" />
+        </a>
+
+        <div class="brand-bar__actions">
+          <a class="lang-toggle" href="/services/specialty-wound-dressings/" hreflang="en" lang="en" aria-label="View this page in English">
+            <span class="lang-toggle__code" aria-hidden="true">EN</span>English
+          </a>
+
+          <div class="brand-bar__desktop">
+            <a class="call-link" href="tel:+19563174044">
+              <span class="call-link__label">Llámenos</span>
+              <span class="call-link__number num">(956) 317-4044</span>
+            </a>
+            <a class="btn btn--secondary btn--compact" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+              Referir a un Paciente
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              <span class="sr-only">(se abre en una pestaña nueva)</span>
+            </a>
+            <a class="btn btn--primary btn--compact" href="/es/contacto/">Solicitar una Cita</a>
+          </div>
+
+          <button class="menu-button" type="button" data-menu-open aria-label="Menú" aria-expanded="false" aria-controls="site-menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            <span class="menu-button__label">Menú</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="link-bar" aria-label="Principal">
+      <div class="shell">
+        <ul class="link-bar__list">
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/">Inicio</a></li>
+          <li class="link-bar__item" data-dropdown>
+            <button class="link-bar__link is-active" type="button" aria-expanded="false" aria-controls="services-menu">
+              Servicios
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="dropdown" id="services-menu">
+              <ul>
+                <li><a class="dropdown__link dropdown__link--overview" href="/es/servicios/">Todos los servicios de cuidado de heridas</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">Terapia de Oxígeno Hiperbárico</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/terapia-de-presion-negativa/">Terapia de Presión Negativa</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/desbridamiento-de-heridas/">Desbridamiento de Heridas</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/yeso-de-contacto-total/">Yeso de Contacto Total</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/sustitutos-de-piel/">Sustitutos de Piel</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/terapia-de-compresion/">Terapia de Compresión</a></li>
+                <li><a class="dropdown__link" href="/es/servicios/apositos-especializados/" aria-current="page">Apósitos y Ungüentos Especializados</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/condiciones/">Heridas que Tratamos</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/nuestro-equipo/">Nuestro Equipo</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/ubicaciones/">Ubicaciones</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/recursos-para-pacientes/">Para Pacientes</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/profesionales-que-refieren/">Para Profesionales</a></li>
+          <li class="link-bar__item"><a class="link-bar__link" href="/es/contacto/">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile / tablet menu (light surface → wordmark.png) -->
+  <div class="menu-panel" id="site-menu" role="dialog" aria-modal="true" aria-label="Menú del sitio" hidden>
+    <div class="menu-panel__top">
+      <img class="menu-panel__logo" src="/brand_assets/wordmark.png" width="440" height="155" alt="Wound Care Institute of Texas" />
+      <button class="menu-close" type="button" data-menu-close>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        Cerrar
+      </button>
+    </div>
+    <div class="menu-panel__body">
+      <nav aria-label="Principal (menú)">
+        <ul>
+          <li><a class="menu-list__link" href="/es/">Inicio</a></li>
+          <li>
+            <a class="menu-list__link" href="/es/servicios/">Servicios</a>
+            <ul class="menu-sub">
+              <li><a class="menu-sub__link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">Terapia de Oxígeno Hiperbárico</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/terapia-de-presion-negativa/">Terapia de Presión Negativa</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/desbridamiento-de-heridas/">Desbridamiento de Heridas</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/yeso-de-contacto-total/">Yeso de Contacto Total</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/sustitutos-de-piel/">Sustitutos de Piel</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/terapia-de-compresion/">Terapia de Compresión</a></li>
+              <li><a class="menu-sub__link" href="/es/servicios/apositos-especializados/" aria-current="page">Apósitos y Ungüentos Especializados</a></li>
+            </ul>
+          </li>
+          <li><a class="menu-list__link" href="/es/condiciones/">Heridas que Tratamos</a></li>
+          <li><a class="menu-list__link" href="/es/nuestro-equipo/">Nuestro Equipo</a></li>
+          <li><a class="menu-list__link" href="/es/ubicaciones/">Ubicaciones</a></li>
+          <li><a class="menu-list__link" href="/es/recursos-para-pacientes/">Para Pacientes</a></li>
+          <li><a class="menu-list__link" href="/es/profesionales-que-refieren/">Para Profesionales</a></li>
+          <li><a class="menu-list__link" href="/es/contacto/">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="menu-panel__actions">
+        <a class="btn btn--primary btn--block" href="/es/contacto/">Solicitar una Cita</a>
+        <a class="btn btn--secondary btn--block" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+          Referir a un Paciente
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          <span class="sr-only">(se abre en una pestaña nueva)</span>
+        </a>
+        <a class="btn btn--secondary btn--block" href="tel:+19563174044">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          Llamar <span class="num">(956) 317-4044</span>
+        </a>
+        <a class="lang-toggle menu-panel__lang" href="/services/specialty-wound-dressings/" hreflang="en" lang="en">
+          <span class="lang-toggle__code" aria-hidden="true">EN</span>View in English
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============================================================
+         1. HERO — breadcrumb, H1, plain-language lede, patient CTAs on the
+            left; the at-a-glance panel (with the provider path) on the right.
+            Clinical statements in the panel are on the CLAUDE.md review list.
+    ============================================================ -->
+    <section class="hero hero--service on-dark" aria-labelledby="page-title">
+      <!-- OFF-LIMITS: hero-background — dedicated named file only, never a content photo -->
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__vignette"></div>
+
+      <div class="shell hero__inner">
+        <div class="fade-up">
+          <nav class="crumbs" aria-label="Ruta de navegación">
+            <a href="/es/">Inicio</a>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+            <a href="/es/servicios/">Servicios</a>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+            <span aria-current="page">Apósitos y Ungüentos Especializados</span>
+          </nav>
+          <p class="eyebrow">Cuidado de heridas · Apósitos avanzados</p>
+          <h1 class="display-1 hero__title mt-6" id="page-title"><span class="grad-text">Apósitos y ungüentos especializados</span> en McAllen y Mission</h1>
+          <p class="lede hero__lede">No todas las heridas necesitan la misma venda. Elegimos apósitos avanzados y medicamentos tópicos según su herida: qué tan húmeda o seca está, qué tan profunda es y si la infección es una preocupación.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="/es/contacto/">Solicitar una Cita</a>
+            <a class="btn btn--secondary" href="tel:+19563174044">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+              Llamar <span class="num">(956) 317-4044</span>
+            </a>
+          </div>
+          <p class="hero__hours"><span>Se eligen en cada visita</span><span>Lunes a viernes</span></p>
+        </div>
+
+        <aside class="glance fade-up" aria-labelledby="glance-title">
+          <p class="eyebrow">De un vistazo</p>
+          <h2 class="heading-3 glance__title" id="glance-title">Los apósitos especializados de un vistazo</h2>
+          <dl class="contact-rows">
+            <div class="contact-rows__row"><dt>Se usan para</dt><dd>Todas las heridas crónicas que tratamos, y la piel alrededor</dd></div>
+            <div class="contact-rows__row"><dt>Incluyen</dt><dd>Espumas, alginatos, hidrogeles, colágeno, plata, miel, cremas de barrera</dd></div>
+            <div class="contact-rows__row"><dt>Se cambian</dt><dd>De diario a semanal, según el apósito</dd></div>
+            <div class="contact-rows__row"><dt>Dónde</dt><dd>En la clínica, y en casa con nuestras instrucciones</dd></div>
+            <div class="contact-rows__row"><dt>Los elige</dt><dd>Su equipo de cuidado de heridas, en cada visita</dd></div>
+          </dl>
+          <p class="glance__foot">¿Va a referir a un paciente que necesita apósitos avanzados?</p>
+          <a class="arrow-link" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+            <span>Referir a través de LeadingReach</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            <span class="sr-only">(se abre en una pestaña nueva)</span>
+          </a>
+        </aside>
+      </div>
+      <div class="hairline-brand"></div>
+    </section>
+
+    <!-- ============================================================
+         2. WHAT IT IS — plain-language explanation + this service's own visual
+            (FLEXIBLE module; the oxygen scale belongs to HBOT alone).
+    ============================================================ -->
+    <section class="section" id="what-it-is" aria-labelledby="what-title">
+      <div class="shell split split--start">
+        <div class="fade-up">
+          <p class="eyebrow">Qué son</p>
+          <h2 class="display-2 mt-5" id="what-title">¿Qué son los apósitos especializados?</h2>
+          <div class="prose mt-6">
+            <p>Las heridas sanan mejor cuando se mantienen ligeramente húmedas, protegidas de las bacterias y sin exceso de líquido. La gasa simple no hace bien ninguna de esas cosas.</p>
+            <p>Cada apósito especializado resuelve un problema distinto, y la elección correcta cambia conforme cambia su herida. Por eso revisamos la herida y volvemos a elegir en cada visita.</p>
+          </div>
+        </div>
+
+        <div class="fade-up">
+          <p class="ruler__unit">Elegir el apósito según la herida</p>
+          <dl class="key-rows">
+            <div class="key-rows__row"><dt>La herida está seca</dt><dd>Un hidrogel aporta humedad para que el tejido nuevo pueda crecer.</dd></div>
+            <div class="key-rows__row"><dt>Drena mucho</dt><dd>Los apósitos de espuma o de alginato absorben el líquido y protegen la piel alrededor.</dd></div>
+            <div class="key-rows__row"><dt>La infección es una preocupación</dt><dd>Los apósitos de plata, yodo o miel medicinal ayudan a controlar las bacterias.</dd></div>
+            <div class="key-rows__row"><dt>Hay tejido muerto</dt><dd>Un ungüento enzimático lo va retirando entre visitas.</dd></div>
+            <div class="key-rows__row"><dt>Es profunda o está estancada</dt><dd>El colágeno le da al tejido nuevo un andamio sobre el cual crecer.</dd></div>
+            <div class="key-rows__row"><dt>La piel alrededor de un estoma está lastimada</dt><dd>Las cremas, polvos y anillos de barrera la protegen del drenaje.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. WHAT TO EXPECT — the visit as numbered steps + the service photo.
+    ============================================================ -->
+    <section class="section section--tint" id="what-to-expect" aria-labelledby="expect-title">
+      <div class="shell">
+        <div class="section-head section-head--split fade-up">
+          <p class="eyebrow">Qué esperar</p>
+          <h2 class="display-2" id="expect-title">Cómo es el cuidado con apósitos</h2>
+          <p class="lede muted">Los apósitos se eligen en cada visita, y la mayoría de las personas los cambian en casa entre una y otra.</p>
+        </div>
+
+        <div class="split split--start">
+          <ol class="steps fade-up">
+            <li class="step">
+              <span class="step__num" aria-hidden="true">1</span>
+              <h3 class="step__title">Revisar de cerca</h3>
+              <div class="step__text">
+                <p>Medimos la herida y observamos el tejido que tiene, cuánto drena, qué tan profunda es y cómo se ve la piel alrededor.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__num" aria-hidden="true">2</span>
+              <h3 class="step__title">Elegir el apósito</h3>
+              <div class="step__text">
+                <p>Elegimos el apósito y cualquier ungüento que corresponda a su herida en este momento, y le explicamos qué hace cada uno.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__num" aria-hidden="true">3</span>
+              <h3 class="step__title">Aplicarlo</h3>
+              <div class="step__text">
+                <p>Limpiamos la herida, aplicamos el ungüento si lo hay y colocamos el apósito. Le enseñamos a usted o a su cuidador exactamente cómo hacerlo.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__num" aria-hidden="true">4</span>
+              <h3 class="step__title">Cuidarlo en casa</h3>
+              <div class="step__text">
+                <p>Se va con instrucciones por escrito, un calendario de cambios y una lista de suministros. Algunos apósitos se cambian a diario; otros se quedan puestos hasta una semana.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__num" aria-hidden="true">5</span>
+              <h3 class="step__title">Volver a revisar</h3>
+              <div class="step__text">
+                <p>En su siguiente visita revisamos la herida y el apósito juntos. Conforme la herida sana, el apósito se vuelve más sencillo.</p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="split__sticky fade-up">
+            <div class="photo-frame">
+              <!-- AI-generated generic scene (Gemini, picked 2026-10-18) — not WCIT's own supplies or room; alt stays generic. Swap for a real clinic photo when one is approved. -->
+              <img src="/brand_assets/service-specialty-wound-dressings.jpg" width="1200" height="900" loading="lazy" alt="Apósitos avanzados para heridas en sus empaques sellados —espuma, alginato, hidrocoloide, película transparente, hidrogel y ungüento— dispuestos sobre una bandeja de acero con tijeras, pinzas y una regla" />
+            </div>
+            <div class="callout mt-8">
+              <p class="callout__text">¿El apósito está empapado, pegado o huele mal, o el enrojecimiento se extiende alrededor de la herida? <strong>Llámenos al <a class="text-link text-link--tap num" href="tel:+19563174044">(956) 317-4044</a>.</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. CONDITIONS IT TREATS — typographic index; every row deep-links to the
+            locked /es/condiciones/ anchors. Indications are on the clinical-review list.
+    ============================================================ -->
+    <section class="section" id="conditions-treated" aria-labelledby="wounds-title">
+      <div class="shell index-layout">
+        <div class="index-layout__aside fade-up">
+          <p class="eyebrow">A quién ayuda</p>
+          <h2 class="display-2 mt-5" id="wounds-title">Heridas y piel que tratamos con apósitos especializados</h2>
+          <div class="prose mt-6">
+            <p>Cada herida crónica que tratamos recibe un apósito a su medida, y también la piel alrededor. El <a class="text-link" href="/es/servicios/desbridamiento-de-heridas/">desbridamiento</a> retira primero el tejido muerto, y la <a class="text-link" href="/es/servicios/terapia-de-compresion/">compresión</a> o el <a class="text-link" href="/es/servicios/yeso-de-contacto-total/">yeso</a> quitan la presión.</p>
+          </div>
+          <a class="arrow-link mt-5" href="/es/condiciones/">
+            <span>Todas las condiciones que tratamos</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <ul class="index-list fade-up">
+          <li class="index-list__item"><a class="index-list__link" href="/es/condiciones/#diabetic-foot-ulcers">
+            <span class="index-list__name">Úlceras del pie diabético y neuropáticas</span>
+            <span class="index-list__desc">Apósitos que manejan el drenaje debajo de un yeso o zapato de descarga.</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+          <li class="index-list__item"><a class="index-list__link" href="/es/condiciones/#arterial-ulcers">
+            <span class="index-list__name">Úlceras arteriales (isquémicas)</span>
+            <span class="index-list__desc">Apósitos suaves y no adherentes para tejido frágil con mala circulación.</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+          <li class="index-list__item"><a class="index-list__link" href="/es/condiciones/#pressure-ulcers">
+            <span class="index-list__name">Úlceras por presión (escaras o llagas)</span>
+            <span class="index-list__desc">Apósitos absorbentes y protectores para lesiones profundas por presión.</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+          <li class="index-list__item"><a class="index-list__link" href="/es/condiciones/#venous-stasis-ulcers">
+            <span class="index-list__name">Úlceras venosas</span>
+            <span class="index-list__desc">Apósitos de alta absorción que se usan debajo de los vendajes de compresión.</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+          <li class="index-list__item"><a class="index-list__link" href="/es/condiciones/#non-healing-surgical-wounds">
+            <span class="index-list__name">Heridas quirúrgicas que no sanan</span>
+            <span class="index-list__desc">Apósitos que mantienen una incisión abierta húmeda, limpia y protegida.</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+          <li class="index-list__item"><a class="index-list__link" href="/es/condiciones/#radiation-wounds">
+            <span class="index-list__name">Heridas por radiación</span>
+            <span class="index-list__desc">Apósitos calmantes y antiadherentes para la piel dañada por la radiación.</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+          <li class="index-list__item"><a class="index-list__link" href="/es/condiciones/#burns">
+            <span class="index-list__name">Quemaduras</span>
+            <span class="index-list__desc">Apósitos que protegen las superficies quemadas en proceso de sanar y controlan las bacterias.</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+          <li class="index-list__item"><a class="index-list__link" href="/es/condiciones/#peristomal-skin-irritation">
+            <span class="index-list__name">Irritación de la piel alrededor de un estoma</span>
+            <span class="index-list__desc">Cremas, polvos y anillos de barrera para la piel lastimada alrededor de un estoma.</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+          <li class="index-list__item"><a class="index-list__link" href="/es/condiciones/#fistulas">
+            <span class="index-list__name">Fístulas</span>
+            <span class="index-list__desc">Sistemas de bolsa y productos de barrera que manejan el drenaje.</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. WHO IT'S FOR (dark) — how we decide, side
+            effects, and the cost/insurance route to the appointment CTA.
+    ============================================================ -->
+    <section class="section section--dark grain on-dark" id="who-its-for" aria-labelledby="who-title">
+      <div class="shell">
+        <div class="section-head section-head--split fade-up">
+          <p class="eyebrow">Cómo elegimos</p>
+          <h2 class="display-2" id="who-title">Para quién es</h2>
+          <p class="lede">Todas las personas con una herida crónica necesitan el apósito correcto, así que aquí se trata de cómo lo elegimos, y de cómo usted puede ayudar a que el apósito haga su trabajo en casa.</p>
+        </div>
+
+        <div class="pair fade-up">
+          <div class="pair__col pair__col--key">
+            <h3 class="pair__title">Qué decide el apósito</h3>
+            <ul class="dash-list">
+              <li>Cuánto drena la herida, desde seca hasta empapada</li>
+              <li>Qué tan profunda es la herida, y si necesita rellenarse</li>
+              <li>Si hay infección o es probable que la haya</li>
+              <li>El estado de la piel alrededor de la herida</li>
+              <li>Qué puede cambiar usted en casa de manera realista, y con qué frecuencia</li>
+            </ul>
+          </div>
+          <div class="pair__col pair__col--soft">
+            <h3 class="pair__title">Llámenos antes de su siguiente visita si…</h3>
+            <ul class="dash-list">
+              <li>El apósito se empapa antes de lo que le dijimos</li>
+              <li>La herida huele mal, o el drenaje cambia de color</li>
+              <li>El enrojecimiento o la hinchazón se extienden desde la herida</li>
+              <li>El apósito está pegado y no se despega sin dolor</li>
+              <li>Tiene fiebre, o se le acaban los suministros</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="prose mt-10 fade-up">
+          <p>Las alergias también importan. Cuéntenos de cualquier reacción a adhesivos, plata, yodo, látex, cinta o ungüentos.</p>
+          <p><strong>¿Y los efectos secundarios?</strong> La irritación de la piel por los adhesivos es el problema más común, y un apósito que no absorbe lo suficiente puede ablandar la piel. Ambos se corrigen cambiando el apósito.</p>
+          <p><strong>¿Preguntas sobre el costo o el seguro?</strong> Muchos apósitos están cubiertos como suministros médicos cuando se recetan, pero las reglas varían según el plan. <a class="text-link" href="/es/contacto/">Solicite una cita</a> y nuestro equipo le ayudará a entender sus opciones antes de empezar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. TEAM TIE-IN — team-level, credential-accurate framing only (LOCKED wording
+            from CLAUDE.md, translated faithfully). No per-service clinician attributions
+            until the client confirms them (client question d).
+    ============================================================ -->
+    <section class="section" id="team" aria-labelledby="team-title">
+      <div class="shell shell--narrow">
+        <div class="fade-up">
+          <p class="eyebrow">Nuestro equipo</p>
+          <h2 class="display-2 mt-5" id="team-title">Apósitos elegidos por quienes enseñan a usarlos</h2>
+          <div class="prose mt-6" style="max-width: 68ch">
+            <p>Elegir un apósito es solo la mitad del trabajo; la otra mitad es asegurarnos de que usted o su cuidador puedan cambiarlo con confianza. Dos de nuestros clínicos están certificados por el American Board of Wound Management: el Dr. José R. Sobrevilla, MD, CWSP, y Cesar Martinez, RN, CWS. Trabajan junto a nuestros médicos y enfermeros practicantes, que aportan experiencia en cuidado de heridas y en cuidados intensivos, y todo el equipo revisa su herida en cada visita.</p>
+          </div>
+          <a class="arrow-link mt-5" href="/es/nuestro-equipo/">
+            <span>Conozca a nuestro equipo</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. FAQ — native details/summary. The FAQPage schema above repeats these
+            Q&As word for word; edit both together.
+    ============================================================ -->
+    <section class="section section--tint" id="faq" aria-labelledby="faq-title">
+      <div class="shell index-layout">
+        <div class="index-layout__aside fade-up">
+          <p class="eyebrow">Preguntas</p>
+          <h2 class="display-2 mt-5" id="faq-title">Preguntas frecuentes sobre los apósitos especializados</h2>
+          <p class="lede muted mt-6">Respuestas breves a lo que más nos preguntan los pacientes y sus familias.</p>
+        </div>
+
+        <div class="faq fade-up">
+          <details class="faq__item">
+            <summary class="faq__q">¿Por qué no usar simplemente una venda normal?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <div class="faq__a"><p>La gasa simple reseca la herida y se pega al tejido nuevo. Los apósitos especializados mantienen la herida ligeramente húmeda, absorben la cantidad correcta de líquido y protegen contra las bacterias.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">¿Puedo comprar estos apósitos en la farmacia?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <div class="faq__a"><p>Algunos sencillos, sí. La mayoría de los apósitos especializados son suministros médicos que nosotros recetamos y pedimos para usted. Por favor use solo los que hemos elegido.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">¿Con qué frecuencia cambio el apósito?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <div class="faq__a"><p>Depende del apósito y de la herida. Algunos se cambian todos los días; otros se quedan puestos hasta una semana. Le damos un calendario por escrito.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">¿Puedo bañarme con el apósito puesto?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <div class="faq__a"><p>Algunos apósitos son impermeables; la mayoría no. Le enseñamos a cubrir la herida. Nunca remoje una herida en una tina, una alberca o un jacuzzi.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">¿Cuáles son las señales de infección que debo vigilar?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <div class="faq__a"><p>Enrojecimiento que se extiende, calor, hinchazón, dolor nuevo o peor, drenaje espeso o de color distinto, mal olor o fiebre. Llámenos el mismo día.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">¿El seguro cubre los apósitos para heridas?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+            <div class="faq__a"><p>Muchos apósitos están cubiertos como suministros médicos cuando se recetan, pero las reglas varían según el plan. Solicite una cita y le ayudaremos a entender sus opciones.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8. OTHER SERVICES — the six sibling pages (light ledger).
+    ============================================================ -->
+    <section class="section" id="other-services" aria-labelledby="other-title">
+      <div class="shell">
+        <div class="section-head section-head--split fade-up">
+          <p class="eyebrow">Servicios relacionados</p>
+          <h2 class="display-2" id="other-title">Otros servicios de cuidado de heridas</h2>
+          <p class="lede muted">Los apósitos son uno de los siete tratamientos que ofrecemos, y el que se va a casa con usted.</p>
+        </div>
+
+        <ul class="ledger ledger--light ledger--compact fade-up mt-0">
+          <li class="ledger__item"><a class="ledger__link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">
+            <h3 class="heading-3 ledger__name">Terapia de Oxígeno Hiperbárico</h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+          <li class="ledger__item"><a class="ledger__link" href="/es/servicios/terapia-de-presion-negativa/">
+            <h3 class="heading-3 ledger__name">Terapia de Presión Negativa (Wound VAC)</h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+          <li class="ledger__item"><a class="ledger__link" href="/es/servicios/desbridamiento-de-heridas/">
+            <h3 class="heading-3 ledger__name">Desbridamiento de Heridas</h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+          <li class="ledger__item"><a class="ledger__link" href="/es/servicios/yeso-de-contacto-total/">
+            <h3 class="heading-3 ledger__name">Yeso de Contacto Total</h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+          <li class="ledger__item"><a class="ledger__link" href="/es/servicios/sustitutos-de-piel/">
+            <h3 class="heading-3 ledger__name">Sustitutos de Piel de Bioingeniería</h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+          <li class="ledger__item"><a class="ledger__link" href="/es/servicios/terapia-de-compresion/">
+            <h3 class="heading-3 ledger__name">Terapia de Compresión</h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+        </ul>
+
+        <a class="arrow-link mt-8 fade-up" href="/es/servicios/">
+          <span>Todos los servicios de cuidado de heridas</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         9. FINAL CTA — both audiences, per CTA routing (LOCKED).
+    ============================================================ -->
+    <section class="final-cta on-dark" aria-labelledby="final-cta-title">
+      <!-- OFF-LIMITS: cta-background — dedicated named file only, never a content photo (set in site.css .final-cta__bg) -->
+      <div class="final-cta__bg"></div>
+      <div class="final-cta__overlay"></div>
+      <div class="final-cta__vignette"></div>
+
+      <div class="shell fade-up">
+        <p class="eyebrow">Siguiente paso</p>
+        <h2 class="display-1 final-cta__title mt-5" id="final-cta-title">Pregúntenos sobre los apósitos para heridas</h2>
+
+        <div class="paths">
+          <div class="path">
+            <h3 class="heading-3">Pacientes y familias</h3>
+            <p class="path__text">Solicite una cita o llámenos. Examinaremos su herida y elegiremos el apósito que le corresponde.</p>
+            <div class="path__actions">
+              <a class="btn btn--primary" href="/es/contacto/">Solicitar una Cita</a>
+              <a class="btn btn--secondary" href="tel:+19563174044">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+                Llamar <span class="num">(956) 317-4044</span>
+              </a>
+            </div>
+          </div>
+          <div class="path">
+            <h3 class="heading-3">Profesionales que refieren</h3>
+            <p class="path__text">Refiera a un paciente para el manejo de apósitos de heridas a través de nuestro portal seguro LeadingReach, o por fax al <span class="num num--text whitespace-nowrap">(956) 800-4275</span>.</p>
+            <div class="path__actions">
+              <a class="btn btn--secondary" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">
+                Referir a un Paciente
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                <span class="sr-only">(se abre en una pestaña nueva)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (ES chrome) — shared by every /es/ page. Both locations' NAP, phone, fax, hours.
+  ============================================================ -->
+  <footer class="site-footer on-dark">
+    <div class="hairline-brand"></div>
+    <div class="shell">
+      <div class="site-footer__main">
+        <div>
+          <a class="brand" href="/es/" aria-label="Wound Care Institute of Texas — inicio">
+            <img class="footer-logo" src="/brand_assets/wordmark-on-dark.png" width="440" height="155" loading="lazy" alt="Wound Care Institute of Texas" />
+          </a>
+          <p class="site-footer__mission">Atención sin hospitalización para heridas crónicas y que no sanan en McAllen y Mission, Texas.</p>
+          <!-- SOCIAL LINKS: [NEEDS INPUT] — Facebook / Instagram / YouTube URLs are not stated in
+               CLAUDE.md. Add a <ul class="footer-list mt-4" aria-label="Redes sociales"> here (and the
+               schema sameAs) only once the real URLs are confirmed; never guess them. -->
+        </div>
+
+        <div>
+          <h2 class="footer-title">Clínica de McAllen</h2>
+          <address class="footer-address num num--text">2101 S. M Street<br />Suite A<br />McAllen, TX 78503</address>
+          <h2 class="footer-title mt-7">Clínica de Mission</h2>
+          <address class="footer-address num num--text">900 Plaza Drive<br />Suite 5<br />Mission, TX 78572</address>
+          <a class="footer-link mt-2" href="/es/ubicaciones/">Ubicaciones y cómo llegar</a>
+        </div>
+
+        <div>
+          <h2 class="footer-title">Contacto</h2>
+          <dl class="footer-facts">
+            <div><dt>Teléfono</dt><dd class="num"><a class="footer-link" href="tel:+19563174044">(956) 317-4044</a></dd></div>
+            <div><dt>Alterno</dt><dd class="num"><a class="footer-link" href="tel:+19563174043">(956) 317-4043</a></dd></div>
+            <div><dt>Fax</dt><dd class="num"><span class="footer-link">(956) 800-4275</span></dd></div>
+          </dl>
+          <a class="footer-link footer-email" href="mailto:wcit@wound-institute.com">wcit@wound-institute.com</a>
+          <h2 class="footer-title mt-7">Horario</h2>
+          <p class="footer-hours num num--text">Lunes a viernes<br />8:00 AM – 5:00 PM<br /><span class="muted">Sábado y domingo: cerrado</span></p>
+        </div>
+
+        <nav aria-label="Servicios">
+          <h2 class="footer-title">Servicios</h2>
+          <ul class="footer-list">
+            <li><a class="footer-link" href="/es/servicios/terapia-de-oxigeno-hiperbarico/">Terapia de Oxígeno Hiperbárico</a></li>
+            <li><a class="footer-link" href="/es/servicios/terapia-de-presion-negativa/">Terapia de Presión Negativa</a></li>
+            <li><a class="footer-link" href="/es/servicios/desbridamiento-de-heridas/">Desbridamiento de Heridas</a></li>
+            <li><a class="footer-link" href="/es/servicios/yeso-de-contacto-total/">Yeso de Contacto Total</a></li>
+            <li><a class="footer-link" href="/es/servicios/sustitutos-de-piel/">Sustitutos de Piel</a></li>
+            <li><a class="footer-link" href="/es/servicios/terapia-de-compresion/">Terapia de Compresión</a></li>
+            <li><a class="footer-link" href="/es/servicios/apositos-especializados/" aria-current="page">Apósitos y Ungüentos Especializados</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Pie de página">
+          <h2 class="footer-title">Explorar</h2>
+          <ul class="footer-list">
+            <li><a class="footer-link" href="/es/nosotros/">Nosotros</a></li>
+            <li><a class="footer-link" href="/es/nuestro-equipo/">Nuestro Equipo</a></li>
+            <li><a class="footer-link" href="/es/servicios/">Servicios</a></li>
+            <li><a class="footer-link" href="/es/condiciones/">Heridas que Tratamos</a></li>
+            <li><a class="footer-link" href="/es/recursos-para-pacientes/">Para Pacientes</a></li>
+            <li><a class="footer-link" href="/es/profesionales-que-refieren/">Para Profesionales</a></li>
+            <li><a class="footer-link" href="/es/contacto/">Contacto</a></li>
+            <li><a class="footer-link" href="/services/specialty-wound-dressings/" hreflang="en" lang="en">English</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="site-footer__base">
+        <p>© <span class="num num--text">2026</span> Wound Care Institute of Texas, PLLC. Este sitio web comparte información general y no constituye consejo médico. En una emergencia, llame al 911.</p>
+        <p>McAllen · Mission · Valle del Río Grande, Texas</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile action bar (ES chrome) — Llamar · Referir a un Paciente · Solicitar una Cita, reachable without opening the menu -->
+  <nav class="action-bar on-dark" aria-label="Acciones rápidas">
+    <a class="action-bar__item" href="tel:+19563174044">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+      Llamar
+    </a>
+    <a class="action-bar__item action-bar__item--refer" href="https://referral.leadingreach.com/wound-care-institute-of-texas" target="_blank" rel="noopener">Referir a un Paciente<span class="sr-only"> (se abre en una pestaña nueva)</span></a>
+    <a class="action-bar__item action-bar__item--book" href="/es/contacto/">Solicitar una Cita</a>
+  </nav>
+
+  <!-- GHL CHAT WIDGET SCRIPT GOES HERE -->
+</body>
+</html>
