@@ -22,6 +22,11 @@ Do not invent client facts; confirm or flag `[NEEDS INPUT]`.
 **STATUS: LOCKED.** All `[DECIDE]` items resolved (see DECISIONS log). Remaining
 `[NEEDS INPUT]` items are asset/integration backfill only — they never block structure.
 
+⚠️ **ENGLISH COPY IS LOCKED (2026-10-18, after the EN lock audit).** No change to any EN
+page's visible copy, titles, metas, alt text or schema text without Juan's explicit approval.
+Backfill (photos, GHL embeds, social URLs, client answers) swaps placeholders only. The `/es/`
+mirror is built FROM the locked EN pages.
+
 ---
 
 ## Build approach notes (read first)
@@ -864,3 +869,12 @@ are the Mission cards, where a waiting room or front desk would be a forced fit.
   Atkinson Hyperlegible Next (body); plain-zero rule for phone/fax/hours/addresses via `.num`;
   `site.css` + `site.js` are the shared design system; social links + `sameAs` out until the
   URLs are confirmed; no comparative healing-outcome claims in copy.
+- ✅ (2026-10-18) **EN lock audit passed and English LOCKED.** Fixes applied: FAQ schema ↔ page
+  parity (curly apostrophes), Sobrevilla schema `image` removed until a headshot exists, four
+  service metas trimmed under 160, Our Team title reframed ("Certified Wound Specialists on
+  Staff"), About team section re-skeletoned to `.index-layout`, `--text-small` raised to 18px
+  (crumbs, "Often used for" lines, footer legal line), team-banner alt "dark clinic scrubs",
+  contact action bar → `/contact/#request-form`. **Documented skeleton exception:** the
+  Locations McAllen/Mission blocks are the same `.split` + `.key-rows` skeleton, mirrored —
+  two genuinely parallel clinics. Open by design: the Providers FAQ stays at 5 until client
+  question (e) is answered; HBOT length stays as is.

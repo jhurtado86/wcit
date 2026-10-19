@@ -15,7 +15,7 @@
   /* — Type scale (body never below 18px) — */
   --text-body:   1.125rem;                          /* 18px */
   --text-lede:   clamp(1.25rem, 1.05rem + 0.7vw, 1.4375rem);
-  --text-small:  1.0625rem;                         /* 17px — legal line only */
+  --text-small:  1.125rem;                          /* 18px — legal line; the older-user floor, never below */
   --text-label:  1rem;
   --text-h1:     clamp(2.5rem, 1.5rem + 4.4vw, 4.75rem);
   --text-h2:     clamp(2.125rem, 1.5rem + 2.4vw, 3.375rem);
@@ -420,7 +420,7 @@
 /* Service-page hero: same slot and split, shorter, with a breadcrumb above the eyebrow */
 .hero--service .hero__inner { padding-block: clamp(2.5rem, 5vw, 4.5rem) clamp(3.5rem, 7vw, 6rem); }
 @media (min-width: 1280px) { .hero--service .hero__inner { min-height: 0; } }
-.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 0 4px; margin-bottom: 22px; font-size: 1.0625rem; color: var(--color-muted-light); }
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 0 4px; margin-bottom: 22px; font-size: 1.125rem; color: var(--color-muted-light); }
 .crumbs a { display: inline-flex; align-items: center; min-height: 48px; margin-block: -12px; padding-inline: 2px; font-weight: 600; color: var(--color-bg); border-radius: 4px; }
 .crumbs a:hover  { color: var(--color-accent-bright); text-decoration: underline; text-underline-offset: 4px; }
 .crumbs a:active { color: var(--color-wave-light); }
@@ -755,7 +755,7 @@
 .service-card__name { font-family: var(--font-display); font-weight: 700; font-size: 1.625rem; line-height: 1.12; }
 .service-card__text { color: var(--color-muted); line-height: 1.5; }
 .service-card--flagship .service-card__text { color: var(--color-muted-light); max-width: 60ch; }
-.service-card__treats { font-size: 1.0625rem; color: var(--color-muted); }
+.service-card__treats { font-size: 1.125rem; color: var(--color-muted); }
 .service-card--flagship .service-card__treats { color: var(--color-muted-light); }
 .service-card__treats b { font-weight: 700; color: var(--color-ink); }
 .service-card--flagship .service-card__treats b { color: var(--color-bg); }
