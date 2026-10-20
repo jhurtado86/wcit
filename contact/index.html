@@ -37,7 +37,11 @@
   <link rel="icon" type="image/png" sizes="48x48" href="/brand_assets/favicon-48.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/apple-touch-icon.png" />
 
-  <!-- GHL EXTERNAL TRACKING SCRIPT GOES HERE -->
+  <!-- GHL external tracking -->
+  <script
+    src="https://link.msgsndr.com/js/external-tracking.js"
+    data-tracking-id="tk_76ed5defb34c42fc960f1b1cf3584ca1">
+  </script>
 
   <script>document.documentElement.classList.remove('no-js');</script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -323,26 +327,30 @@
             <p><strong>Please don’t include medical details — our team will call you.</strong> We will ask about your wound by phone, so this form only needs your contact information.</p>
           </div>
 
-          <!-- GHL CONTACT FORM EMBED GOES HERE — [NEEDS INPUT: Juan providing embed]
-               Replace the .embed-slot placeholder below with the GHL form embed. Requirements (CLAUDE.md,
-               FROZEN PHI rule): fields = name, phone, email, preferred location (McAllen / Mission),
-               preferred language, best time to call — NO wound description, diagnosis, insurance ID or
-               other health details unless a signed GHL BAA is confirmed. Submit label: "Request an
-               Appointment". Success → /thank-you/ (ES twin → /es/gracias/). -->
-          <div class="embed-slot mt-8" role="region" aria-labelledby="slot-title">
-            <p class="embed-slot__tag">Appointment request form</p>
-            <h3 class="heading-3" id="slot-title">The form loads here</h3>
-            <p>It asks for contact information only:</p>
-            <ul class="dash-list">
-              <li>Your name</li>
-              <li>Phone number</li>
-              <li>Email address</li>
-              <li>Preferred clinic: McAllen or Mission</li>
-              <li>Preferred language</li>
-              <li>Best time to call</li>
-            </ul>
-            <p class="muted">Please don’t include medical details — our team will call you.</p>
-            <button class="btn btn--primary btn--block mt-2" type="button" disabled aria-disabled="true">Request an Appointment</button>
+          <!-- GHL CONTACT FORM — "Website Form" (lozF6yXOm28xqtdMii4n). form_embed.js sizes the iframe;
+               .form-embed reserves data-height (812px) so the page does not jump while it loads.
+               PHI rule (FROZEN): the form collects contact information only. -->
+          <div class="form-embed mt-8">
+            <iframe
+                src="https://api.leadconnectorhq.com/widget/form/lozF6yXOm28xqtdMii4n"
+                style="width:100%;height:100%;border:none;border-radius:10px"
+                id="inline-lozF6yXOm28xqtdMii4n"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Website Form"
+                data-height="812"
+                data-layout-iframe-id="inline-lozF6yXOm28xqtdMii4n"
+                data-form-id="lozF6yXOm28xqtdMii4n"
+                data-cookie-consent="true"
+                data-cookie-consent-provider="auto"
+                title="Website Form">
+            </iframe>
+            <script src="https://link.msgsndr.com/js/form_embed.js"></script>
           </div>
         </div>
 
@@ -534,6 +542,9 @@
     <a class="action-bar__item action-bar__item--book" href="/contact/#request-form">Request an Appointment</a>
   </nav>
 
-  <!-- GHL CHAT WIDGET SCRIPT GOES HERE -->
+  <!-- GHL chat widget -->
+  <script src="https://widgets.leadconnectorhq.com/loader.js"
+    data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+    data-widget-id="6aa457e9089a3964b7636f48"></script>
 </body>
 </html>

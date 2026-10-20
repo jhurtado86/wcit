@@ -281,20 +281,26 @@ ES equivalents: "Solicitar una Cita" → `/es/contacto/`; "Referir a un Paciente
   - "Request an Appointment" → `https://remote.leadingreach.com/appt-request?os=wound-care-institute-of-texas`
   - (Confirm exact current URLs against the live site before launch.) These are external links,
     open in a new tab. Do NOT replace with a GHL form — this is their HIPAA-grade referral plumbing.
-- **GHL CONTACT/PATIENT FORM EMBED** — `[NEEDS INPUT — Juan providing embed]`. For patient-direct
-  lead capture (patient/family inquiry → GHL CRM → follow-up). Insertion: Contact page + a patient
-  CTA path. GHL embed only.
+- **GHL CONTACT/PATIENT FORM EMBED** — **WIRED (2026-10-20):** "Website Form"
+  (`lozF6yXOm28xqtdMii4n`, iframe + `form_embed.js` once per page) in `#request-form` on
+  `/contact/` and `/es/contacto/`, inside `.form-embed` (min-height 812px = the embed's
+  `data-height`, so the page holds still while it loads). Embed code is used exactly as supplied.
+  For patient-direct lead capture (patient/family inquiry → GHL CRM → follow-up).
   ⚠️ **PHI rule (FROZEN):** unless Juan confirms a signed GHL BAA, the GHL form collects
   CONTACT INFO ONLY — name, phone, email, preferred location (McAllen/Mission), preferred
   language, best time to call. NO wound description, diagnosis, insurance ID, or other health
-  details. Add helper text: "Please don't include medical details — our team will call you."
-  Clinical information flows through LeadingReach only.
-  **Spanish form (`/es/contacto/`) `[NEEDS INPUT]`:** the live embed needs a Spanish GHL form
-  (or Spanish field labels on the same form) — the placeholder there carries the Spanish labels,
-  submit "Solicitar una Cita", and the helper text "Por favor no incluya detalles médicos —
-  nuestro equipo le llamará." Same PHI rule. Its thank-you is `/es/gracias/`.
-- **GHL CHAT WIDGET SCRIPT** — `[NEEDS INPUT — Juan providing embed]`. Before `</body>`, site-wide.
-- **GHL EXTERNAL TRACKING SCRIPT** — `[NEEDS INPUT — wire in `<head>` if Juan provides it; otherwise leave the placeholder comment]`.
+  details. Helper text above the form: "Please don't include medical details — our team will
+  call you." Clinical information flows through LeadingReach only.
+  **Spanish form `[NEEDS INPUT — pending]`:** no Spanish GHL form yet — `/es/contacto/` uses the
+  English form until one exists, with the line "Por ahora, este formulario está en inglés.
+  También puede llamarnos al (956) 317-4044." above it (tel link, `.num`). When the Spanish form
+  arrives: swap the iframe/IDs, delete that line, submit "Solicitar una Cita", thank-you
+  `/es/gracias/`. Same PHI rule.
+- **GHL CHAT WIDGET** — **WIRED (2026-10-20):** `loader.js` (widget `6aa457e9089a3964b7636f48`)
+  before `</body>` on all 34 pages. Bubble position is set in GHL, never by overriding its CSS here.
+- **GHL EXTERNAL TRACKING** — **WIRED (2026-10-20):** `external-tracking.js`
+  (`tk_76ed5defb34c42fc960f1b1cf3584ca1`) in `<head>` on all 34 pages, as supplied (synchronous —
+  render-blocking; see the Lighthouse note under Active Blockers).
 - **Google Maps embed** — wire for BOTH locations (McAllen + Mission) on the Contact/Locations page.
 - **og-image** `brand_assets/og-image.jpg` (1200×630) — DONE (2026-10-18): built from the brand
   tokens by `scripts/build-og-image.mjs` (dark wordmark at native size, brand gradient,
@@ -624,7 +630,16 @@ prominent (RGV market).
 
 ## Active Blockers & Backfill
 
-**Launch-blocking:** GHL form + chat widget embeds (Juan providing); confirm exact
+**GHL follow-ups (2026-10-20, Juan to adjust in GHL):** on mobile (390px) the chat launcher
+(58px, bottom-right) sits on top of the action bar's "Request an Appointment" button and its
+greeting bubble covers the hero Call button — move the bubble up/offset in GHL; the form's mobile
+layout heading reads "GET A FREE QUOTE" (desktop reads "Request an Appointment") — "quote"
+conflicts with the no-pricing rule; the Spanish form. Lighthouse (homepage, mobile, local) with
+GHL vs without: Performance ~69 vs 82, Best Practices 77 vs 100 (GHL's Cloudflare `__cf_bm`
+third-party cookie), Accessibility/SEO 100 both; the head tracking script is the main
+render-blocking cost.
+
+**Launch-blocking:** confirm exact
 LeadingReach URLs; the Mission clinic exterior; **patient consent for
 the homepage chamber photo** (owner-approved 2026-10-13 — confirm with the client); confirmation of
 which clinic the interior photo set shows (see photo pass).

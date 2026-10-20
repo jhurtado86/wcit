@@ -781,9 +781,11 @@ html:not(.no-js) :is(.provider-panel, .glance, .desk).fade-up:not(.visible)::bef
 .map-frame--wide { margin-top: clamp(2rem, 4vw, 3rem); }
 @media (min-width: 1024px) { .map-frame--wide { aspect-ratio: 21 / 9; } }
 
-/* Embed slot — the styled placeholder where the GHL appointment form loads (contact page) */
-.embed-slot { display: grid; align-content: start; gap: 18px; min-height: 640px; padding: clamp(24px, 3vw, 36px); border: 2px dashed var(--color-line); border-radius: var(--radius-l); background: var(--color-bg-2); }
-.embed-slot__tag { font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-muted); }
+/* Form embed — the GHL appointment form (contact pages). min-height matches the embed's
+   data-height (812px) so the page holds still while form_embed.js loads and sizes the iframe */
+.form-embed { min-height: 812px; }
+.form-embed iframe { display: block; min-height: 812px; }
+.form-note { color: var(--color-muted); }
 .btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; box-shadow: none; transform: none; }
 
 /* Note panel — a light aside beside prose (the light twin of .desk) */
