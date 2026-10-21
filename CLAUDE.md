@@ -297,10 +297,12 @@ ES equivalents: "Solicitar una Cita" → `/es/contacto/`; "Referir a un Paciente
   arrives: swap the iframe/IDs, delete that line, submit "Solicitar una Cita", thank-you
   `/es/gracias/`. Same PHI rule.
 - **GHL CHAT WIDGET** — **WIRED (2026-10-20):** `loader.js` (widget `6aa457e9089a3964b7636f48`)
-  before `</body>` on all 34 pages. Bubble position is set in GHL, never by overriding its CSS here.
+  on all 34 pages, injected by a small inline script before `</body>` after the window `load` event
+  (on `requestIdleCallback`, 3s timeout) so it never blocks the page; src, `data-resources-url` and
+  `data-widget-id` exactly as supplied. Bubble position is set in GHL, never by overriding its CSS here.
 - **GHL EXTERNAL TRACKING** — **WIRED (2026-10-20):** `external-tracking.js`
-  (`tk_76ed5defb34c42fc960f1b1cf3584ca1`) in `<head>` on all 34 pages, as supplied (synchronous —
-  render-blocking; see the Lighthouse note under Active Blockers).
+  (`tk_76ed5defb34c42fc960f1b1cf3584ca1`) in `<head>` on all 34 pages, as supplied plus `async`
+  (2026-10-21, Juan) so it no longer blocks first paint.
 - **Google Maps embed** — wire for BOTH locations (McAllen + Mission) on the Contact/Locations page.
 - **og-image** `brand_assets/og-image.jpg` (1200×630) — DONE (2026-10-18): built from the brand
   tokens by `scripts/build-og-image.mjs` (dark wordmark at native size, brand gradient,
@@ -634,10 +636,10 @@ prominent (RGV market).
 (58px, bottom-right) sits on top of the action bar's "Request an Appointment" button and its
 greeting bubble covers the hero Call button — move the bubble up/offset in GHL; the form's mobile
 layout heading reads "GET A FREE QUOTE" (desktop reads "Request an Appointment") — "quote"
-conflicts with the no-pricing rule; the Spanish form. Lighthouse (homepage, mobile, local) with
-GHL vs without: Performance ~69 vs 82, Best Practices 77 vs 100 (GHL's Cloudflare `__cf_bm`
-third-party cookie), Accessibility/SEO 100 both; the head tracking script is the main
-render-blocking cost.
+conflicts with the no-pricing rule; the Spanish form. Lighthouse (homepage, mobile, local),
+after async tracking + post-load chat (2026-10-21): Performance 71–73 simulated (78 with applied
+throttling) vs 82–83 without GHL; first paint is level with no-GHL; Best Practices 77 vs 100
+(GHL's Cloudflare `__cf_bm` third-party cookie — GHL-side, not fixable here); A11y/SEO 100.
 
 **Launch-blocking:** confirm exact
 LeadingReach URLs; the Mission clinic exterior; **patient consent for

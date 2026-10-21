@@ -45,7 +45,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/apple-touch-icon.png" />
 
   <!-- GHL external tracking -->
-  <script
+  <script async
     src="https://link.msgsndr.com/js/external-tracking.js"
     data-tracking-id="tk_76ed5defb34c42fc960f1b1cf3584ca1">
   </script>
@@ -949,9 +949,20 @@
     <a class="action-bar__item action-bar__item--book" href="/es/contacto/">Solicitar una Cita</a>
   </nav>
 
-  <!-- GHL chat widget -->
-  <script src="https://widgets.leadconnectorhq.com/loader.js"
-    data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-    data-widget-id="6aa457e9089a3964b7636f48"></script>
+  <!-- GHL chat widget — injected after the window load event (on idle) so it never blocks the page.
+       src, data-resources-url and data-widget-id are exactly as supplied by GHL. -->
+  <script>
+    window.addEventListener('load', function () {
+      var inject = function () {
+        var s = document.createElement('script');
+        s.src = 'https://widgets.leadconnectorhq.com/loader.js';
+        s.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+        s.setAttribute('data-widget-id', '6aa457e9089a3964b7636f48');
+        document.body.appendChild(s);
+      };
+      if ('requestIdleCallback' in window) requestIdleCallback(inject, { timeout: 3000 });
+      else setTimeout(inject, 1);
+    });
+  </script>
 </body>
 </html>
